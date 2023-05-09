@@ -17,3 +17,10 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+# Ignore Composer-related files
+/vendor/
+/composer.lock
+/composer.phar
+# Ignore Laravel Mix-related files
+/node_modules
