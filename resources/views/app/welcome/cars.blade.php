@@ -186,10 +186,10 @@
                     </div>
                 </div>
 
-                <div class="col-lg-9">
-                    <div class="row">
+                <div class="col-lg-9" id="car-list">
+                    <div class="row pagi" style="display: none">
 
-                        <div class="col-xl-4 col-lg-6">
+                        <div class="col-xl-4 col-lg-6 cart">
                             <div class="de-item mb30">
                                 <div class="d-img">
                                     <img src="{{ asset('welcome/images/cars/jeep-renegade.jpg')}}" class="img-fluid" alt="">
@@ -215,7 +215,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-4 col-lg-6">
+                        <div class="col-xl-4 col-lg-6 cart">
                             <div class="de-item mb30">
                                 <div class="d-img">
                                     <img src="{{ asset('welcome/images/cars/bmw-m5.jpg')}}" class="img-fluid" alt="">
@@ -241,7 +241,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-4 col-lg-6">
+                        <div class="col-xl-4 col-lg-6 cart">
                             <div class="de-item mb30">
                                 <div class="d-img">
                                     <img src="{{ asset('welcome/images/cars/ferrari-enzo.jpg')}}" class="img-fluid" alt="">
@@ -267,7 +267,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-4 col-lg-6">
+                        <div class="col-xl-4 col-lg-6 cart">
                             <div class="de-item mb30">
                                 <div class="d-img">
                                     <img src="{{ asset('welcome/images/cars/ford-raptor.jpg')}}" class="img-fluid" alt="">
@@ -293,7 +293,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-4 col-lg-6">
+                        <div class="col-xl-4 col-lg-6 cart">
                             <div class="de-item mb30">
                                 <div class="d-img">
                                     <img src="{{ asset('welcome/images/cars/mini-cooper.jpg')}}" class="img-fluid" alt="">
@@ -319,7 +319,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-4 col-lg-6">
+                        <div class="col-xl-4 col-lg-6 cart">
                             <div class="de-item mb30">
                                 <div class="d-img">
                                     <img src="{{ asset('welcome/images/cars/vw-polo.jpg')}}" class="img-fluid" alt="">
@@ -345,7 +345,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-4 col-lg-6">
+                        <div class="col-xl-4 col-lg-6 cart">
                             <div class="de-item mb30">
                                 <div class="d-img">
                                     <img src="{{ asset('welcome/images/cars/chevrolet-camaro.jpg')}}" class="img-fluid" alt="">
@@ -371,7 +371,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-4 col-lg-6">
+                        <div class="col-xl-4 col-lg-6 cart">
                             <div class="de-item mb30">
                                 <div class="d-img">
                                     <img src="{{ asset('welcome/images/cars/hyundai-staria.jpg')}}" class="img-fluid" alt="">
@@ -397,13 +397,26 @@
                             </div>
                         </div>
 
+                        <div class="pagination">
+                            <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
+                                      <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>
+                                      <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+                                      <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
+                                      <li class="page-item current-page"><a class="page-link" href="#">6</a></li>
+                                      <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+                                      <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
+                                      <li class="page-item next-page"><a class="page-link" href="#">Next</a></li>
+                                  </div>
+
 
 
 
 
                     </div>
                 </div>
+                
             </div>
+          
         </div>
     </section>
 

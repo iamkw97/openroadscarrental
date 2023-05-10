@@ -22,7 +22,7 @@
         <div id="top"></div>
         <section id="section-hero" aria-label="section" class="jarallax full-height vertical-center">
             <div class="hero-overlay"></div>
-            <img src="{{ asset('welcome/images/background/1.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/iceland.jpg') }}" class="jarallax-img" alt="">
             <div class="container position-relative z1000">
                 <div class="row align-items-center">
                     <div class="col-lg-5 text-light">
