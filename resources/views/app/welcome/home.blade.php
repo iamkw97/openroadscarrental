@@ -6,16 +6,29 @@
 
 @section('welcomebody')
     <!-- content begin -->
+    <style>
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            z-index: 1;
+            background: linear-gradient(to bottom, rgb(0, 0, 0,0.9) 0%, rgba(0, 0, 0, 0) 100%);
+            backdrop-filter: blur(5px);
+        }
+    </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
         <section id="section-hero" aria-label="section" class="jarallax full-height vertical-center">
+            <div class="hero-overlay"></div>
             <img src="{{ asset('welcome/images/background/1.jpg') }}" class="jarallax-img" alt="">
             <div class="container position-relative z1000">
                 <div class="row align-items-center">
                     <div class="col-lg-5 text-light">
                         <h4><span class="id-color">Rent the Adventure: </span></h4>
                         <div class="spacer-10"></div>
-                        <h1 class="mb-2">Explore the World on Your Terms</h1>
+                        <h1 class="mb-2">Explore the <span class="id-color">Iceland</span> on Your Terms</h1>
                         <div class="spacer-10"></div>
                         <p class="lead">Whether you're planning a weekend getaway, a business trip, or simply need a car
                             for everyday use, we've got you covered. Our wide range of vehicles suits every occasion and
