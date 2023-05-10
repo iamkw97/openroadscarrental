@@ -12,7 +12,7 @@
             <img src="{{ asset('welcome/images/background/1.jpg') }}" class="jarallax-img" alt="">
             <div class="container position-relative z1000">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 text-light">
+                    <div class="col-lg-5 text-light">
                         <h4><span class="id-color">Rent the Adventure: </span></h4>
                         <div class="spacer-10"></div>
                         <h1 class="mb-2">Explore the World on Your Terms</h1>
@@ -22,94 +22,161 @@
                             budget.</p>
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-7">
                         <div class="spacer-single sm-hide"></div>
-                        <div class="p-4 rounded-3 shadow-soft" data-bgcolor="#ffffff">
 
+                        <form name="contactForm" id='contact_form' method="post">
 
-                            <form name="contactForm" id='contact_form' method="post">
-                                <h5>What is your vehicle type?</h5>
+                            <div class="col-md-12">
+                                <div class="row my-4">
+                                    <div class="col-md-6">
+                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                            <h6>Pick Up Location</h6>
+                                            <input type="text"
+                                                style="border: none; border-bottom: 1px solid #ccc; outline: none;"
+                                                name="PickupLocation" onfocus="geolocate()"
+                                                placeholder="Enter your pickup location" id="autocomplete"
+                                                autocomplete="off" class="form-control">
 
-                                <div class="de_form de_radio row g-3">
-                                    <div class="radio-img col-lg-3 col-sm-3 col-6">
-                                        <input id="radio-1a" name="Car_Type" type="radio" value="Residential"
-                                            checked="checked">
-                                        <label for="radio-1a"><img src="{{ asset('welcome/images/select-form/car.png') }}"
-                                                alt="">Car</label>
-                                    </div>
-
-                                    <div class="radio-img col-lg-3 col-sm-3 col-6">
-                                        <input id="radio-1b" name="Car_Type" type="radio" value="Office">
-                                        <label for="radio-1b"><img src="{{ asset('welcome/images/select-form/van.png') }}"
-                                                alt="">Van</label>
-                                    </div>
-
-                                    <div class="radio-img col-lg-3 col-sm-3 col-6">
-                                        <input id="radio-1c" name="Car_Type" type="radio" value="Commercial">
-                                        <label for="radio-1c"><img
-                                                src="{{ asset('welcome/images/select-form/minibus.png') }}"
-                                                alt="">Minibus</label>
-                                    </div>
-
-                                    <div class="radio-img col-lg-3 col-sm-3 col-6">
-                                        <input id="radio-1d" name="Car_Type" type="radio" value="Retail">
-                                        <label for="radio-1d"><img
-                                                src="{{ asset('welcome/images/select-form/sportscar.png') }}"
-                                                alt="">Prestige</label>
-                                    </div>
-                                </div>
-
-                                <div class="spacer-20"></div>
-
-                                <div class="row">
-                                    <div class="col-lg-6 mb20">
-                                        <h5>Pick Up Location</h5>
-                                        <input type="text" name="PickupLocation" onfocus="geolocate()"
-                                            placeholder="Enter your pickup location" id="autocomplete" autocomplete="off"
-                                            class="form-control">
-
-                                        <div class="jls-address-preview jls-address-preview--hidden">
-                                            <div class="jls-address-preview__header">
+                                            <div class="jls-address-preview jls-address-preview--hidden">
+                                                <div class="jls-address-preview__header">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                            <h6>Drop Off Location</h6>
+                                            <input type="text"
+                                                style="border: none; border-bottom: 1px solid #ccc; outline: none;"
+                                                name="DropoffLocation" onfocus="geolocate()"
+                                                placeholder="Enter your dropoff location" id="autocomplete2"
+                                                autocomplete="off" class="form-control">
 
-                                    <div class="col-lg-6 mb20">
-                                        <h5>Drop Off Location</h5>
-                                        <input type="text" name="DropoffLocation" onfocus="geolocate()"
-                                            placeholder="Enter your dropoff location" id="autocomplete2" autocomplete="off"
-                                            class="form-control">
-
-                                        <div class="jls-address-preview jls-address-preview--hidden">
-                                            <div class="jls-address-preview__header">
+                                            <div class="jls-address-preview jls-address-preview--hidden">
+                                                <div class="jls-address-preview__header">
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 mb20">
-                                        <h5>Pick Up Date & Time</h5>
-                                        <div class="date-time-field">
-                                            <input type="date" id="" name="" value="">
-                                            <input type="time" name="Pick Up Time" id="">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 mb20">
-                                        <h5>Return Date & Time</h5>
-                                        <div class="date-time-field">
-                                            <input type="date" id="" name="" value="">
-                                            <input type="time" name="Pick Up Time" id="">
                                         </div>
                                     </div>
                                 </div>
 
-                                <input type='submit' id='send_message' value='Find a Vehicle'
-                                    class="btn-main pull-right">
+                                <div class="row  my-4">
+                                    <div class="col-md-6">
+                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                            <h6>Pick Up Date</h6>
+                                            <div class="date-time-field">
+                                                <input
+                                                    style="width: 100%;
+                                                            border: none;
+                                                            border-bottom: 1px solid #ccc;"
+                                                    type="date" id="" name="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                            <h6>Return Date</h6>
+                                            <div class="date-time-field">
+                                                <input
+                                                    style="width: 100%;
+                                                            border: none;
+                                                            border-bottom: 1px solid #ccc;"
+                                                    type="date" id="" name="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row  mt-4 mb-2">
+                                    <div class="col-md-6">
+                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                            <h6>Pick Up Time</h6>
+                                            <div class="date-time-field">
+                                                <input
+                                                    style="width: 100%;
+                                                            border: none;
+                                                            border-bottom: 1px solid #ccc;"
+                                                    type="time" name="Pick Up Time" id="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                            <h6>Return Time</h6>
+                                            <div class="date-time-field">
+                                                <input
+                                                    style="width: 100%;
+                                                            border: none;
+                                                            border-bottom: 1px solid #ccc;"
+                                                    type="time" name="Pick Up Time" id="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row  mt-2">
+                                    <div class="col-md-12">
+                                        {{-- <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#fff"> --}}
+                                        {{-- <h6 style="color:#fff">What is your vehicle type?</h6> --}}
+
+                                        <div class="de_form de_radio row g-3">
+                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
+                                                <input id="radio-1a" name="Car_Type" type="radio" value="Residential"
+                                                    checked="checked">
+                                                <label for="radio-1a"><img
+                                                        src="{{ asset('welcome/images/select-form/car.png') }}"
+                                                        alt="">Car</label>
+                                            </div>
+
+                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
+                                                <input id="radio-1b" name="Car_Type" type="radio" value="Office">
+                                                <label for="radio-1b"><img
+                                                        src="{{ asset('welcome/images/select-form/van.png') }}"
+                                                        alt="">Van</label>
+                                            </div>
+
+                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
+                                                <input id="radio-1c" name="Car_Type" type="radio" value="Commercial">
+                                                <label for="radio-1c"><img
+                                                        src="{{ asset('welcome/images/select-form/minibus.png') }}"
+                                                        alt="">Minibus</label>
+                                            </div>
+
+                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
+                                                <input id="radio-1d" name="Car_Type" type="radio" value="Retail">
+                                                <label for="radio-1d"><img
+                                                        src="{{ asset('welcome/images/select-form/sportscar.png') }}"
+                                                        alt="">Prestige</label>
+                                            </div>
+
+                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
+                                                <input id="radio-1c" name="Car_Type" type="radio" value="Commercial">
+                                                <label for="radio-1c"><img
+                                                        src="{{ asset('welcome/images/select-form/minibus.png') }}"
+                                                        alt="">Minibus</label>
+                                            </div>
+
+                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
+                                                <input id="radio-1d" name="Car_Type" type="radio" value="Retail">
+                                                <label for="radio-1d"><img
+                                                        src="{{ asset('welcome/images/select-form/sportscar.png') }}"
+                                                        alt="">Prestige</label>
+                                            </div>
+                                        </div>
+                                        {{-- </div> --}}
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-12">
+                                        <input type='submit' id='send_message' value='Find a Vehicle'
+                                            class="btn-main pull-right">
+                                    </div>
+                                </div>
 
                                 <div class="clearfix"></div>
-
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -365,7 +432,7 @@
                                         </div>
                                         <div class="d-price">
                                             Daily rate from <span>$265</span>
-                                            <a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>
+                                            <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -396,7 +463,7 @@
                                         </div>
                                         <div class="d-price">
                                             Daily rate from <span>$244</span>
-                                            <a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>
+                                            <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -428,7 +495,7 @@
                                         </div>
                                         <div class="d-price">
                                             Daily rate from <span>$167</span>
-                                            <a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>
+                                            <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -460,7 +527,7 @@
                                         </div>
                                         <div class="d-price">
                                             Daily rate from <span>$147</span>
-                                            <a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>
+                                            <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -491,7 +558,7 @@
                                         </div>
                                         <div class="d-price">
                                             Daily rate from <span>$238</span>
-                                            <a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>
+                                            <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -522,7 +589,7 @@
                                         </div>
                                         <div class="d-price">
                                             Daily rate from <span>$106</span>
-                                            <a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>
+                                            <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -548,7 +615,8 @@
                                 </li>
                                 <li>
                                     <h4>Pick location &amp; date</h4>
-                                    <p>Select your preferred pickup location and date to book your ride in just a few clicks.
+                                    <p>Select your preferred pickup location and date to book your ride in just a few
+                                        clicks.
                                     </p>
                                 </li>
                                 <li>
@@ -558,7 +626,8 @@
                                 </li>
                                 <li>
                                     <h4>Sit back &amp; relax</h4>
-                                    <p>Get ready to hit the road! Sit back and relax while we prepare your ride for the ultimate driving experience.
+                                    <p>Get ready to hit the road! Sit back and relax while we prepare your ride for the
+                                        ultimate driving experience.
                                     </p>
                                 </li>
                             </ul>

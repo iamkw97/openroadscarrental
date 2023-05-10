@@ -19,7 +19,7 @@
     <link href="{{ asset('welcome/css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('welcome/css/coloring.css') }}" rel="stylesheet" type="text/css">
     <!-- color scheme -->
-    <link id="colors" href="{{ asset('welcome/css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css">
+    <link id="colors" href="{{ asset('welcome/css/colors/scheme-08.css') }}" rel="stylesheet" type="text/css">
 </head>
 
 <body onload="initialize()">
@@ -72,9 +72,9 @@
                                     <!-- logo begin -->
                                     <div id="logo">
                                         <a href="{{route('home.index')}}">
-                                            <img class="logo-1" src="{{ asset('welcome/images/logo-light.png') }}"
+                                            <img class="logo-1" src="{{ asset('welcome/images/orcr-logo.png') }}"
                                                 alt="">
-                                            <img class="logo-2" src="{{ asset('welcome/images/logo.png') }}"
+                                            <img class="logo-2" src="{{ asset('welcome/images/orcr-logo.png') }}"
                                                 alt="">
                                         </a>
                                     </div>
