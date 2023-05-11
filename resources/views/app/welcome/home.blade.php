@@ -14,21 +14,25 @@
             width: 100%;
             height: 20%;
             z-index: 1;
-            background: linear-gradient(to bottom, rgb(0, 0, 0) 100%, rgba(0, 0, 0, 1) 100%);
+            background: linear-gradient(to bottom, rgb(255, 255, 255,0.8) 100%, rgba(0, 0, 0, 1) 100%);
             backdrop-filter: blur(5px);
+        }
+
+        .shadow-soft{
+            background: linear-gradient(to bottom, rgb(255, 255, 255,0.8) 100%, rgba(0, 0, 0, 1) 100%);
         }
     </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
         <section id="section-hero" aria-label="section" class="jarallax full-height vertical-center">
             <div class="hero-overlay"></div>
-            <img src="{{ asset('welcome/images/background/iceland.jpg') }}" class="jarallax-img" alt="">
-            <div class="container position-relative z1000">
+            <img src="{{ asset('welcome/images/background/iceland taxi.jpg') }}" class="jarallax-img" alt="" >
+            <div class="container position-relative z1000" style="position: relative; top:70px;">
                 <div class="row align-items-center">
                     <div class="col-lg-5 text-light">
-                        <h4><span class="id-color">Rent the Adventure: </span></h4>
+                        <h4><span >Rent the Adventure: </span></h4>
                         <div class="spacer-10"></div>
-                        <h1 class="mb-2">Explore the <span class="id-color">Iceland</span> on Your Terms</h1>
+                        <h1 class="mb-2">Explore the <span style="color:rgb(245, 245, 245);">Iceland</span> on Your Terms</h1>
                         <div class="spacer-10"></div>
                         <p class="lead">Whether you're planning a weekend getaway, a business trip, or simply need a car
                             for everyday use, we've got you covered. Our wide range of vehicles suits every occasion and
@@ -43,7 +47,7 @@
                             <div class="col-md-12">
                                 <div class="row my-1">
                                     <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" >
                                             <h6>Pick Up Location</h6>
                                             <select name="" id="pickup-time"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
@@ -56,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" >
                                             <h6>Drop Off Location</h6>
                                             <select name="" id="pickup-time"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
@@ -73,7 +77,7 @@
 
                                 <div class="row  my-1">
                                     <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" >
                                             <h6>Pick Up Date</h6>
                                             <div class="date-time-field">
                                                 <input
@@ -85,7 +89,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" >
                                             <h6>Return Date</h6>
                                             <div class="date-time-field">
                                                 <input
@@ -100,7 +104,7 @@
 
                                 <div class="row  mt-2 mb-2">
                                     <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" >
                                             <h6>Pick Up Time</h6>
                                             <div class="date-time-field">
                                                 <input
@@ -112,7 +116,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" >
                                             <h6>Return Time</h6>
                                             <div class="date-time-field">
                                                 <input
@@ -193,118 +197,12 @@
                 </div>
             </div>
 
-            <div class="position-absolute d-flex bottom-20">
-                <div class="de-marquee-list style-2">
-                    <div class="d-item">
-                        <span class="d-item-txt">SUV</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Hatchback</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Crossover</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Convertible</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Sedan</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Sports Car</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Coupe</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Minivan</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Station Wagon</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Pickup Truck</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Minivans</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Exotic Cars</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="de-marquee-list style-2">
-                    <div class="d-item">
-                        <span class="d-item-txt">SUV</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Hatchback</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Crossover</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Convertible</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Sedan</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Sports Car</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Coupe</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Minivan</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Station Wagon</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Pickup Truck</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Minivans</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                        <span class="d-item-txt">Exotic Cars</span>
-                        <span class="d-item-display">
-                            <i class="d-item-dot"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
+            
         </section>
 
-        <section aria-label="section">
+        <section aria-label="section" >
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row align-items-center" >
                     <div class="col-lg-6 offset-lg-3 text-center">
                         <h2>Our Features</h2>
                         <p>Seamless car rental. Wide vehicle selection, online booking, and contactless options. Plus, enjoy
