@@ -14,7 +14,7 @@
             width: 100%;
             height: 20%;
             z-index: 1;
-            background: linear-gradient(to bottom, rgb(0, 0, 0,0.9) 0%, rgba(0, 0, 0, 0) 100%);
+            background: linear-gradient(to bottom, rgb(0, 0, 0) 100%, rgba(0, 0, 0, 1) 100%);
             backdrop-filter: blur(5px);
         }
     </style>
@@ -41,42 +41,39 @@
                         <form name="contactForm" id='contact_form' method="post">
 
                             <div class="col-md-12">
-                                <div class="row my-4">
+                                <div class="row my-1">
                                     <div class="col-md-6">
-                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
                                             <h6>Pick Up Location</h6>
-                                            <input type="text"
+                                            <select name="" id="pickup-time"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
                                                 name="PickupLocation" onfocus="geolocate()"
                                                 placeholder="Enter your pickup location" id="autocomplete"
                                                 autocomplete="off" class="form-control">
-
-                                            <div class="jls-address-preview jls-address-preview--hidden">
-                                                <div class="jls-address-preview__header">
-                                                </div>
-                                            </div>
+                                                <option selected value="kef_airport">KEF Airport</option>
+                                                <option value="reykjavik">Reykjavik</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
                                             <h6>Drop Off Location</h6>
-                                            <input type="text"
+                                            <select name="" id="pickup-time"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
-                                                name="DropoffLocation" onfocus="geolocate()"
-                                                placeholder="Enter your dropoff location" id="autocomplete2"
+                                                name="PickupLocation" onfocus="geolocate()"
+                                                placeholder="Enter your pickup location" id="autocomplete"
                                                 autocomplete="off" class="form-control">
-
-                                            <div class="jls-address-preview jls-address-preview--hidden">
-                                                <div class="jls-address-preview__header">
-                                                </div>
-                                            </div>
+                                                <option selected value="reykjavik">Reykjavik</option>
+                                                <option value="kef_airport">KEF Airport</option>
+                                                <option value="same_location">[Return to the same location]</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row  my-4">
+                                <div class="row  my-1">
                                     <div class="col-md-6">
-                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
                                             <h6>Pick Up Date</h6>
                                             <div class="date-time-field">
                                                 <input
@@ -88,7 +85,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
                                             <h6>Return Date</h6>
                                             <div class="date-time-field">
                                                 <input
@@ -101,9 +98,9 @@
                                     </div>
                                 </div>
 
-                                <div class="row  mt-4 mb-2">
+                                <div class="row  mt-2 mb-2">
                                     <div class="col-md-6">
-                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
                                             <h6>Pick Up Time</h6>
                                             <div class="date-time-field">
                                                 <input
@@ -115,7 +112,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#ffffff">
+                                        <div class="p-2 my-1 rounded-3 shadow-soft" data-bgcolor="#ffffff">
                                             <h6>Return Time</h6>
                                             <div class="date-time-field">
                                                 <input
@@ -139,42 +136,42 @@
                                                     checked="checked">
                                                 <label for="radio-1a"><img
                                                         src="{{ asset('welcome/images/select-form/car.png') }}"
-                                                        alt="">Car</label>
+                                                        alt="">SUV</label>
                                             </div>
 
                                             <div class="radio-img col-lg-2 col-sm-2 col-2">
                                                 <input id="radio-1b" name="Car_Type" type="radio" value="Office">
                                                 <label for="radio-1b"><img
+                                                        src="{{ asset('welcome/images/select-form/sportscar.png') }}"
+                                                        alt="">Coupe</label>
+                                            </div>
+
+                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
+                                                <input id="radio-1c" name="Car_Type" type="radio" value="Commercial">
+                                                <label for="radio-1c"><img
+                                                        src="{{ asset('welcome/images/select-form/minibus.png') }}"
+                                                        alt="">Hback</label>
+                                            </div>
+
+                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
+                                                <input id="radio-1d" name="Car_Type" type="radio" value="Retail">
+                                                <label for="radio-1d"><img
+                                                        src="{{ asset('welcome/images/select-form/minibus.png') }}"
+                                                        alt="">SWgon</label>
+                                            </div>
+
+                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
+                                                <input id="radio-1e" name="Car_Type" type="radio" value="Commercial">
+                                                <label for="radio-1e"><img
+                                                        src="{{ asset('welcome/images/select-form/sportscar.png') }}"
+                                                        alt="">Convertible</label>
+                                            </div>
+
+                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
+                                                <input id="radio-1f" name="Car_Type" type="radio" value="Retail">
+                                                <label for="radio-1f"><img
                                                         src="{{ asset('welcome/images/select-form/van.png') }}"
-                                                        alt="">Van</label>
-                                            </div>
-
-                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
-                                                <input id="radio-1c" name="Car_Type" type="radio" value="Commercial">
-                                                <label for="radio-1c"><img
-                                                        src="{{ asset('welcome/images/select-form/minibus.png') }}"
-                                                        alt="">Minibus</label>
-                                            </div>
-
-                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
-                                                <input id="radio-1d" name="Car_Type" type="radio" value="Retail">
-                                                <label for="radio-1d"><img
-                                                        src="{{ asset('welcome/images/select-form/sportscar.png') }}"
-                                                        alt="">Prestige</label>
-                                            </div>
-
-                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
-                                                <input id="radio-1c" name="Car_Type" type="radio" value="Commercial">
-                                                <label for="radio-1c"><img
-                                                        src="{{ asset('welcome/images/select-form/minibus.png') }}"
-                                                        alt="">Minibus</label>
-                                            </div>
-
-                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
-                                                <input id="radio-1d" name="Car_Type" type="radio" value="Retail">
-                                                <label for="radio-1d"><img
-                                                        src="{{ asset('welcome/images/select-form/sportscar.png') }}"
-                                                        alt="">Prestige</label>
+                                                        alt="">Minivan</label>
                                             </div>
                                         </div>
                                         {{-- </div> --}}
@@ -182,8 +179,10 @@
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-md-12">
-                                        <input type='submit' id='send_message' value='Find a Vehicle'
+                                        <a href="{{ route('booking.index') }}" type='' id=''
                                             class="btn-main pull-right">
+                                            Find a Vehicle
+                                        </a>
                                     </div>
                                 </div>
 

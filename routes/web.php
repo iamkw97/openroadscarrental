@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\CarController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BaseController;
 use Illuminate\Support\Facades\Route;
@@ -28,3 +30,11 @@ Route::get('/cars/view', [BaseController::class, 'carInfo'])->name('cars.show');
 Route::get('/booking', [BaseController::class, 'booking'])->name('booking.index');
 Route::get('/aboutus', [BaseController::class, 'about'])->name('about.index');
 Route::get('/contactus', [BaseController::class, 'contact'])->name('contact.index');
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/admin/home', [AdminController::class, 'adminHome'])->name('admin.home');
+Route::get('/admin/cars', [CarController::class, 'index'])->name('admin.cars.index');
+Route::get('/admin/cars/new', [CarController::class, 'create'])->name('admin.cars.create');
