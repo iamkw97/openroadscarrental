@@ -5,6 +5,28 @@
 @endsection
 
 @section('adminbody')
+    {{-- preview and remove vehicle images --}}
+    <style>
+        .preview-square {
+            display: inline-block;
+            margin: 10px;
+            position: relative;
+        }
+
+        .preview-image {
+            width: 100px;
+            height: 100px;
+        }
+
+        .remove-icon {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 20px;
+            color: red;
+            cursor: pointer;
+        }
+    </style>
     <!--start page wrapper -->
     <div class="page-wrapper">
         <div class="page-content">
@@ -58,6 +80,16 @@
                                         </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#displaytab" role="tab"
+                                            aria-selected="false">
+                                            <div class="d-flex align-items-center">
+                                                <div class="tab-icon"><i class='bx bx-camera font-18 me-1'></i>
+                                                </div>
+                                                <div class="tab-title">Display</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
                                         <a class="nav-link" data-bs-toggle="tab" href="#pricestab" role="tab"
                                             aria-selected="false">
                                             <div class="d-flex align-items-center">
@@ -91,22 +123,6 @@
                                 <div class="tab-content py-3">
                                     <div class="tab-pane fade show active" id="generaltab" role="tabpanel">
                                         <div class="col-md-12">
-                                            <div class="row mt-2">
-                                                <div class="col-md-12 my-1">
-                                                    <label for="displaying_name" class="form-label">Displaying
-                                                        Name</label>
-                                                    <input type="text" class="form-control" id="displaying_name"
-                                                        name="displaying_name" placeholder="00.00">
-                                                </div>
-                                            </div>
-                                            <div class="row mt-2">
-                                                <div class="col-md-12 my-1">
-                                                    <label for="vehicle_description" class="form-label">Vehicle
-                                                        Description</label>
-                                                    <textarea class="form-control" id="vehicle_description" name="vehicle_description" placeholder="00.00">
-                                                        </textarea>
-                                                </div>
-                                            </div>
                                             <div class="row mt-2">
                                                 <div class="col-md-4 my-1">
                                                     <label for="vehicle_id" class="form-label">Vehicle ID</label>
@@ -218,6 +234,33 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="tab-pane fade" id="displaytab" role="tabpanel">
+                                        <div class="col-md-12">
+                                            <div class="row mt-2">
+                                                <div class="col-md-12 my-1">
+                                                    <label for="displaying_name" class="form-label">Displaying
+                                                        Name</label>
+                                                    <input type="text" class="form-control" id="displaying_name"
+                                                        name="displaying_name" placeholder="00.00">
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-md-12 my-1">
+                                                    <label for="vehicle_description" class="form-label">Vehicle
+                                                        Description</label>
+                                                    <textarea class="form-control" id="vehicle_description" name="vehicle_description" placeholder="00.00">
+                                                        </textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-md-12 my-1">
+                                                    <label for="vehicle_image" class="form-label">Vehicle Image</label>
+                                                    <input id="vehicle_image" type="file" accept="image/*" multiple>
+                                                </div>
+                                                <div id="vehicle_preview"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="tab-pane fade" id="pricestab" role="tabpanel">
                                         <p>Net Prices</p>
                                         <table class="table table-bordered mb-0">
@@ -231,44 +274,448 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
+                                                    <td>Initial</td>
+                                                    <td>Initial, fixed fee added to the booking.</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" id="cost_initial"
+                                                            name="cost_initial" placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="tax_initial"
+                                                            name="tax_initial">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
+                                                    <td>Rental per Day</td>
+                                                    <td>Price for a car rent per day.
+                                                        This price applies for "Daily" and "Daily and Hourly" billing type
+                                                        only.</td>
+                                                    <td>
+                                                        <input type="number" class="form-control"
+                                                            id="cost_rental_per_day" name="cost_rental_per_day"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select"
+                                                            id="tax_rental_per_day" name="tax_rental_per_day">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">3</th>
-                                                    <td colspan="2">Larry the Bird</td>
-                                                    <td>@twitter</td>
+                                                    <td>Rental per Hour</td>
+                                                    <td>Price for a car rent per hour.
+                                                        This price applies for "Hourly" and "Daily and Hourly" billing type
+                                                        only.</td>
+                                                    <td>
+                                                        <input type="number" class="form-control"
+                                                            id="cost_rental_per_hour" name="cost_rental_per_hour"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select"
+                                                            id="tax_rental_per_hour" name="tax_rental_per_hour">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Delivery</td>
+                                                    <td>Price per distance (mile/kilometer) for delivery a vehicle from
+                                                        company (base location) to customer (custom) pickup location.</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" id="cost_delivery"
+                                                            name="cost_delivery" placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="tax_delivery"
+                                                            name="tax_delivery">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Delivery (return)</td>
+                                                    <td>Price per distance (mile/kilometer) for delivery vehicle from
+                                                        customer (custom) return location to company (base location).</td>
+                                                    <td>
+                                                        <input type="number" class="form-control"
+                                                            id="cost_delivery_return" name="cost_delivery_return"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select"
+                                                            id="tax_delivery_return" name="tax_delivery_return">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Security deposit</td>
+                                                    <td>Fixed value added to the booking.
+                                                        This amount protects the owner against costs related to vehicle
+                                                        damage. Should be returned to the customer, if vehicle has no signs
+                                                        of damage.</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" id="cost_security"
+                                                            name="cost_security" placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="tax_security"
+                                                            name="tax_security">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>One way</td>
+                                                    <td>Fixed value added to the booking if car is returned to different
+                                                        location than pickup location.</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" id="cost_oneway"
+                                                            name="cost_oneway" placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="tax_oneway"
+                                                            name="tax_oneway">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pickup after business hours</td>
+                                                    <td>Fixed value added to the booking, if vehicle will be pickup after
+                                                        business hours.</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" id="cost_late_pickup"
+                                                            name="cost_late_pickup" placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="tax_late_pickup"
+                                                            name="tax_late_pickup">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Return after business hours</td>
+                                                    <td>Fixed value added to the booking, if vehicle has been returned after
+                                                        business hours.</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" id="cost_late_return"
+                                                            name="cost_late_return" placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="tax_late_return"
+                                                            name="tax_late_return">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Customer pickup location fee</td>
+                                                    <td>Fixed value added to the booking, if customer enter (type) own
+                                                        pickup location.</td>
+                                                    <td>
+                                                        <input type="number" class="form-control"
+                                                            id="cost_customer_pickup_fee" name="cost_customer_pickup_fee"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select"
+                                                            id="tax_customer_pickup_fee" name="tax_customer_pickup_fee">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Customer return location fee</td>
+                                                    <td>Fixed value added to the booking, if customer enter (type) own
+                                                        return location.</td>
+                                                    <td>
+                                                        <input type="number" class="form-control"
+                                                            id="cost_customer_return_fee" name="cost_customer_return_fee"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select"
+                                                            id="tax_customer_return_fee" name="tax_customer_return_fee">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="tab-pane fade" id="attributestab" role="tabpanel">
-                                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out
-                                            mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.
-                                            Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
-                                            locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy
-                                            irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi
-                                            whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk
-                                            vice blog. Scenester cred you probably haven't heard of them, vinyl craft
-                                            beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                                        <p>Specify attributes of the vehicle.</p>
+                                        <table class="table table-bordered mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-8" scope="col">Attribute</th>
+                                                    <th class="col-4" scope="col">Value</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        Free GPS
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="free_gps"
+                                                            name="free_gps">
+                                                            <option value="notset" selected>- Not set -</option>
+                                                            <option value="yes">Yes</option>
+                                                            <option value="no">No</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Mileage
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="mileage"
+                                                            name="mileage">
+                                                            <option value="notset" selected>- Not set -</option>
+                                                            <option value="unlimited">Unlimited</option>
+                                                            <option value="600km">600km per Rental</option>
+                                                            <option value="750km">750km per Rental</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        WD
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="wd"
+                                                            name="wd">
+                                                            <option value="notset" selected>- Not set -</option>
+                                                            <option value="4">4</option>
+                                                            <option value="2">2</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Air Conditioning
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="air_conditioning"
+                                                            name="air_conditioning">
+                                                            <option value="notset" selected>- Not set -</option>
+                                                            <option value="yes">Yes</option>
+                                                            <option value="no">No</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Fuel Policy
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="fuel_policy"
+                                                            name="fuel_policy">
+                                                            <option value="notset" selected>- Not set -</option>
+                                                            <option value="full_to_full">Full to Full</option>
+                                                            <option value="full_to_empty">full to Empty</option>
+                                                            <option value="partial_refund">Partial Refund</option>
+                                                            <option value="free_tank">Free Tank</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Fuel Type
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="fuel_type"
+                                                            name="fuel_type">
+                                                            <option value="notset" selected>- Not set -</option>
+                                                            <option value="petrol">Petrol</option>
+                                                            <option value="diesel">Diesel</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Engine
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="engine"
+                                                            name="engine">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Doors Number
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" id="doors_number"
+                                                            name="doors_number">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Transmission
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select" id="transmission"
+                                                            name="transmission">
+                                                            <option value="notset" selected>- Not set -</option>
+                                                            <option value="manual">Manual</option>
+                                                            <option value="automatic">Automatic</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Extras
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check form-check-lg col-md-6 ">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="notset" id="notset" name="notset">
+                                                            <label class="form-check-label" for="notset">
+                                                                Not set
+                                                            </label>
+                                                        </div>
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-check form-check-lg col-md-6">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="alloy_wheels" id="alloy_wheels"
+                                                                name="alloy_wheels">
+                                                            <label class="form-check-label" for="alloy_wheels">
+                                                                Alloy Wheels
+                                                            </label>
+                                                        </div>
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-check form-check-lg col-md-6">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="blutooth" id="blutooth" name="blutooth">
+                                                            <label class="form-check-label" for="blutooth">
+                                                                Blutooth
+                                                            </label>
+                                                        </div>
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-check form-check-lg col-md-6">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="damage_waiver" id="damage_waiver"
+                                                                name="damage_waiver">
+                                                            <label class="form-check-label" for="blutooth">
+                                                                Damage Waiver
+                                                            </label>
+                                                        </div>
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-check form-check-lg col-md-6">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="free_cancellation" id="free_cancellation"
+                                                                name="free_cancellation">
+                                                            <label class="form-check-label" for="blutooth">
+                                                                Free Cancellation
+                                                            </label>
+                                                        </div>
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-check form-check-lg col-md-6">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="sunroof" id="sunroof" name="sunroof">
+                                                            <label class="form-check-label" for="blutooth">
+                                                                Sunroof
+                                                            </label>
+                                                        </div>
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-check form-check-lg col-md-6">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="radio" id="radio" name="radio">
+                                                            <label class="form-check-label" for="blutooth">
+                                                                Radio
+                                                            </label>
+                                                        </div>
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-check form-check-lg col-md-6">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="no_deposit" id="no_deposit" name="no_deposit">
+                                                            <label class="form-check-label" for="blutooth">
+                                                                No Deposit
+                                                            </label>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                     <div class="tab-pane fade" id="availability" role="tabpanel">
-                                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out
-                                            mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.
-                                            Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
-                                            locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy
-                                            irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi
-                                            whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk
-                                            vice blog. Scenester cred you probably haven't heard of them, vinyl craft
-                                            beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                                        <p>Specify dates when vehicle is not available.</p>
+                                        <table class="table table-bordered mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Start Date</th>
+                                                    <th scope="col">End Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input type="date" class="form-control"
+                                                            id="avalable_start_date" name="avalable_start_date"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td>
+                                                        <input type="date" class="form-control" id="avalable_end_date"
+                                                            name="avalable_end_date" placeholder="0.00">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
                                     </div>
                                     <hr>
                                     <button class="btn btn-primary">aa</button>
@@ -280,9 +727,53 @@
                 </div>
             </div>
         </div>
-
-
     </div>
-    </div>
+    {{-- preview & remove vehicle images --}}
+    <script>
+        function previewImages() {
+            var previewContainer = document.getElementById("vehicle_preview");
+            previewContainer.innerHTML = "";
+
+            var files = document.getElementById("vehicle_image").files;
+
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                var reader = new FileReader();
+
+                reader.onload = function(event) {
+                    var imgElement = document.createElement("img");
+                    imgElement.className = "preview-image";
+                    imgElement.src = event.target.result;
+
+                    var removeIcon = document.createElement("i");
+                    removeIcon.className = "remove-icon";
+                    removeIcon.setAttribute("data-index", i);
+                    removeIcon.addEventListener("click", function(event) {
+                        var index = event.target.getAttribute("data-index");
+                        removeImage(index);
+                    });
+
+                    var previewSquare = document.createElement("div");
+                    previewSquare.className = "preview-square";
+                    previewSquare.appendChild(imgElement);
+                    previewSquare.appendChild(removeIcon);
+
+                    previewContainer.appendChild(previewSquare);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removeImage(index) {
+            var filesInput = document.getElementById("vehicle_image");
+            var files = Array.from(filesInput.files);
+            files.splice(index, 1);
+            filesInput.files = new FileListArray(files);
+            previewImages();
+        }
+
+        document.getElementById("vehicle_image").addEventListener("change", previewImages);
+    </script>
     <!--end page wrapper -->
 @endsection
