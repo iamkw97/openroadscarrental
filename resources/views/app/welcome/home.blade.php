@@ -21,6 +21,16 @@
         .shadow-soft{
             background: linear-gradient(to bottom, rgb(255, 255, 255,0.8) 100%, rgba(0, 0, 0, 1) 100%);
         }
+
+        #mainmenu a {
+    position: relative;
+    display: inline-block;
+    padding: 30px;
+    text-decoration: none;
+    color: #323232;
+    text-align: center;
+    outline: none;
+}
     </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
@@ -49,28 +59,32 @@
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft" >
                                             <h6>Pick Up Location</h6>
-                                            <select name="" id="pickup-time"
+                                            <select name="" id="pickup-location"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
                                                 name="PickupLocation" onfocus="geolocate()"
                                                 placeholder="Enter your pickup location" id="autocomplete"
                                                 autocomplete="off" class="form-control">
-                                                <option selected value="kef_airport">KEF Airport</option>
+                                                <option selected value="">Select Location</option>
+                                                <option  value="kef_airport">KEF Airport</option>
                                                 <option value="reykjavik">Reykjavik</option>
                                             </select>
+                                            <div id="PickupLocation_error"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft" >
                                             <h6>Drop Off Location</h6>
-                                            <select name="" id="pickup-time"
+                                            <select name="" id="dropoff-location"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
                                                 name="PickupLocation" onfocus="geolocate()"
                                                 placeholder="Enter your pickup location" id="autocomplete"
                                                 autocomplete="off" class="form-control">
-                                                <option selected value="reykjavik">Reykjavik</option>
+                                                <option selected value="">Select Location</option>
+                                                <option  value="reykjavik">Reykjavik</option>
                                                 <option value="kef_airport">KEF Airport</option>
                                                 <option value="same_location">[Return to the same location]</option>
                                             </select>
+                                            <div id="dropoff-location_error"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +98,8 @@
                                                     style="width: 100%;
                                                             border: none;
                                                             border-bottom: 1px solid #ccc;"
-                                                    type="date" id="" name="" value="">
+                                                    type="date" id="pickup-date" name="" value="">
+                                                    <div id="pickup_date_error"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -96,7 +111,8 @@
                                                     style="width: 100%;
                                                             border: none;
                                                             border-bottom: 1px solid #ccc;"
-                                                    type="date" id="" name="" value="">
+                                                    type="date" id="return-date" name="" value="">
+                                                    <div id="return-date-error"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -111,7 +127,8 @@
                                                     style="width: 100%;
                                                             border: none;
                                                             border-bottom: 1px solid #ccc;"
-                                                    type="time" name="Pick Up Time" id="">
+                                                    type="time" name="Pick Up Time" id="pickup-time">
+                                                    <div id="pickup-time-error"></div> 
                                             </div>
                                         </div>
                                     </div>
@@ -123,7 +140,8 @@
                                                     style="width: 100%;
                                                             border: none;
                                                             border-bottom: 1px solid #ccc;"
-                                                    type="time" name="Pick Up Time" id="">
+                                                    type="time" name="Pick Up Time" id="return-time">
+                                                    <div id="return-time-error"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -183,10 +201,14 @@
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-md-12">
-                                        <a href="{{ route('booking.index') }}" type='' id=''
+                                        <a href="#" type='' id='' onclick="validateForm()"
                                             class="btn-main pull-right">
                                             Find a Vehicle
                                         </a>
+                                        {{-- <a href="{{ route('booking.index') }}" type='' id=''
+                                            class="btn-main pull-right">
+                                            Find a Vehicle
+                                        </a> --}}
                                     </div>
                                 </div>
 
