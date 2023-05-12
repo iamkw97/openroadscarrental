@@ -873,7 +873,10 @@
                                 text: "Car Registered Successfully!",
                                 showConfirmButton: false,
                                 timer: 1500
-                            })
+                            }).then(function() {
+                                // Reload the page
+                                location.reload();
+                            });
                         } else if (statusCode === 422) {
                             // handle the validation errors
                             // ----------------------------------------------------------------------------------
