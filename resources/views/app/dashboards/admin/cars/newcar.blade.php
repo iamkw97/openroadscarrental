@@ -124,17 +124,17 @@
                                     <div class="tab-pane fade show active" id="generaltab" role="tabpanel">
                                         <div class="col-md-12">
                                             <div class="row mt-2">
-                                                <div class="col-md-4 my-1">
+                                                {{-- <div class="col-md-4 my-1">
                                                     <label for="vehicle_id" class="form-label">Vehicle ID</label>
                                                     <input type="text" class="form-control" id="vehicle_id"
                                                         name="vehicle_id" placeholder="00.00">
-                                                </div>
-                                                <div class="col-md-4 my-1">
+                                                </div> --}}
+                                                <div class="col-md-6 my-1">
                                                     <label for="category" class="form-label">Vehicle Category</label>
                                                     <input type="text" class="form-control" id="category"
                                                         name="category" placeholder="00.00">
                                                 </div>
-                                                <div class="col-md-4 my-1">
+                                                <div class="col-md-6 my-1">
                                                     <label for="vehicle_make" class="form-label">Vehicle Make</label>
                                                     <input type="text" class="form-control" id="vehicle_make"
                                                         name="vehicle_make" placeholder="00.00">
@@ -787,7 +787,6 @@
                 var vehicle_images = $('input[name="vehicle_image[]"]').prop('files');
 
                 var formData = new FormData();
-                formData.append('vehicle_id', $('#vehicle_id').val());
                 formData.append('category', $('#category').val());
                 formData.append('vehicle_make', $('#vehicle_make').val());
                 formData.append('vehicle_model', $('#vehicle_model').val());
@@ -863,14 +862,46 @@
                     data: formData,
                     contentType: false,
                     processData: false,
-                    success: function(data) {
-                        // Show SweetAlert success message
-                        swal('Success!', 'Car has been submitted.', 'success');
+                    success: function(data, status, xhr) {
+                        if (data.status == 'Success') {
+                            // Do something with success message here
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: "Success",
+                                text: "Car Registered Successfully!",
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        } else if (xhr.status == 422) {
+                            // handle the validation errors
+                            // ----------------------------------------------------------------------------------
+                            // var errors = data.errors;
+                            // loop through the errors and show them
+                            // for (var key in errors) {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'Input Valid Data!',
+                                // title: key,
+                                // text: errors[key][0],
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            // }
+                        } else {
+                            // Do something with failure message here
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: "Error",
+                                text: "Car Registration Failed!",
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
                     },
-                    error: function(data) {
-                        // Show SweetAlert error message
-                        swal('Oops...', 'Something went wrong!', 'error');
-                    }
                 });
             });
         });
