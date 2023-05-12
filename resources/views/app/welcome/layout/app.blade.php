@@ -287,5 +287,87 @@
         return showPage(currentPage - 1);
       });
     });
+
+
+
+    
+    function validateForm() {
+    var pickupLocation = document.getElementById("pickup-location");
+    var dropoffLocation = document.getElementById("dropoff-location");
+    var pickupDate = document.getElementById("pickup-date");
+    var returnDate = document.getElementById("return-date");
+    var pickupTime = document.getElementById("pickup-time");
+    var returnTime = document.getElementById("return-time");
+
+    var isValid = true;
+
+    // Resetting previous validation state
+    pickupLocation.style.outline = "none";
+    dropoffLocation.style.outline = "none";
+    pickupDate.style.outline = "none";
+    returnDate.style.outline = "none";
+    pickupTime.style.outline = "none";
+    returnTime.style.outline = "none";
+
+    // Checking pickup location
+    if (pickupLocation.value.trim() === "") {
+        pickupLocation.style.outline = "2px solid red";
+        isValid = false;
+        document.getElementById("PickupLocation_error").innerHTML = "𝘗𝘪𝘤𝘬 𝘜𝘱 𝘓𝘰𝘤𝘢𝘵𝘪𝘰𝘯 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+        document.getElementById("PickupLocation_error").style.color = "red";
+    }
+
+    // Checking dropoff location
+    if (dropoffLocation.value.trim() === "") {
+        dropoffLocation.style.outline = "2px solid red";
+        isValid = false;
+        document.getElementById("dropoff-location_error").innerHTML = "𝘋𝘳𝘰𝘱𝘰𝘧𝘧 𝘓𝘰𝘤𝘢𝘵𝘪𝘰𝘯 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+        document.getElementById("dropoff-location_error").style.color = "red";
+    }
+
+    // Checking pickup date
+    if (pickupDate.value.trim() === "") {
+        pickupDate.style.outline = "2px solid red";
+        isValid = false;
+        document.getElementById("pickup_date_error").innerHTML = "𝘗𝘪𝘤𝘬 𝘜𝘱 𝘋𝘢𝘵𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬";
+        document.getElementById("pickup_date_error").style.color = "red";
+    }
+
+    // Checking return date
+    if (returnDate.value.trim() === "") {
+        returnDate.style.outline = "2px solid red";
+        isValid = false;
+        document.getElementById("return-date-error").innerHTML = "𝘙𝘦𝘵𝘶𝘳𝘯 𝘋𝘢𝘵𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬";
+        document.getElementById("return-date-error").style.color = "red";
+        
+    }
+
+    // Checking pickup time
+    if (pickupTime.value.trim() === "") {
+        pickupTime.style.outline = "2px solid red";
+        isValid = false;
+        document.getElementById("pickup-time-error").innerHTML = "𝘗𝘪𝘤𝘬𝘶𝘱 𝘵𝘪𝘮𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+        document.getElementById("pickup-time-error").style.color = "red";
+    }
+    
+    // Checking return time
+    if (returnTime.value.trim() === "") {
+        returnTime.style.outline = "2px solid red";
+        isValid = false;
+        document.getElementById("return-time-error").innerHTML = "𝘙𝘦𝘵𝘶𝘳𝘯 𝘵𝘪𝘮𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+        document.getElementById("return-time-error").style.color = "red";
+    }
+
+    // Displaying error message
+    if (isValid) {
+        window.location.href = "{{ route('cars.index') }}";
+  
+    }
+    
+
+    return isValid;
+}
+
+
     </script>
 
