@@ -61,14 +61,16 @@ class CarController extends Controller
         ]);
 
         // store car images
-        foreach ($request->file('vehicle_image') as $index => $image) {
-            $imageName = time() . rand(1, 9) . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/cars', $imageName);
+        if($request->hasFile('vehicle_image')) {
+            foreach ($request->file('vehicle_image') as $index => $image) {
+                $imageName = time() . rand(1, 9) . '.' . $image->getClientOriginalExtension();
+                $image->storeAs('public/cars', $imageName);
 
-            $customerNic = new CarImage();
-            $customerNic->vehicle_image = $imageName;
-            $customerNic->car_id = $car->id;
-            $customerNic->save();
+                $customerNic = new CarImage();
+                $customerNic->vehicle_image = $imageName;
+                $customerNic->car_id = $car->id;
+                $customerNic->save();
+            }
         }
 
         // store data into Car prices
@@ -107,9 +109,10 @@ class CarController extends Controller
         ]);
 
         if ($car) {
-            return response()->json(['success' => 'Car Registered Successfully!']);
+            return response('Success', 200);
         } else {
-            return response()->json(['error' => 'Car Registration Failed!']);
+            return response('Error', 400);
         }
+
     }
 }

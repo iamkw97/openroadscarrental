@@ -863,7 +863,8 @@
                     contentType: false,
                     processData: false,
                     success: function(data, status, xhr) {
-                        if (data.status == 'Success') {
+                        var statusCode = xhr.status;
+                        if (statusCode === 200) {
                             // Do something with success message here
                             Swal.fire({
                                 position: 'center',
@@ -873,7 +874,7 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             })
-                        } else if (xhr.status == 422) {
+                        } else if (statusCode === 422) {
                             // handle the validation errors
                             // ----------------------------------------------------------------------------------
                             // var errors = data.errors;
@@ -902,6 +903,7 @@
                             })
                         }
                     },
+
                 });
             });
         });
