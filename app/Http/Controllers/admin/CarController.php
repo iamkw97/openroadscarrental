@@ -15,4 +15,10 @@ class CarController extends Controller
     public function create(){
         return view('app.dashboards.admin.cars.newcar');
     }
+    // store admin new car
+    public function store(Request $request){
+        $data = $request->all();
+
+        dd($data);
+    }
 }

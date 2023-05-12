@@ -38,3 +38,4 @@ Route::get('/contactus', [BaseController::class, 'contact'])->name('contact.inde
 Route::get('/admin/home', [AdminController::class, 'adminHome'])->name('admin.home');
 Route::get('/admin/cars', [CarController::class, 'index'])->name('admin.cars.index');
 Route::get('/admin/cars/new', [CarController::class, 'create'])->name('admin.cars.create');
+Route::post('/admin/cars/store', [CarController::class, 'store'])->name('admin.cars.store');

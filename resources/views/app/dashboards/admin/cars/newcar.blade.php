@@ -44,15 +44,15 @@
                 </div>
                 <div class="ms-auto">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-primary">Settings</button>
+                        <button type="button" class="btn btn-primary"><i class='bx bx-plus-medical'></i></button>
                         <button type="button"
                             class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split"
-                            data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+                            data-bs-toggle="dropdown"> <span class="visually-hidden"></span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"> <a class="dropdown-item"
                                 href="javascript:;">Action</a>
-                            <a class="dropdown-item" href="javascript:;">Another action</a>
-                            <a class="dropdown-item" href="javascript:;">Something else here</a>
+                            <a class="dropdown-item" href="javascript:;">All Cars</a>
+                            <a class="dropdown-item" href="javascript:;">Attributes</a>
                             <div class="dropdown-divider"></div> <a class="dropdown-item" href="javascript:;">Separated
                                 link</a>
                         </div>
@@ -255,7 +255,8 @@
                                             <div class="row mt-2">
                                                 <div class="col-md-12 my-1">
                                                     <label for="vehicle_image" class="form-label">Vehicle Image</label>
-                                                    <input id="vehicle_image" type="file" accept="image/*" multiple>
+                                                    <input id="vehicle_image" name="vehicle_image[]" type="file"
+                                                        accept="image/*" multiple data-max_length="20">
                                                 </div>
                                                 <div id="vehicle_preview"></div>
                                             </div>
@@ -718,7 +719,10 @@
 
                                     </div>
                                     <hr>
-                                    <button class="btn btn-primary">aa</button>
+                                    <div style="float: right;">
+                                        <button id="btn_submit_car" name="btn_submit_car"
+                                            class="btn btn-primary">Submit</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -728,8 +732,8 @@
             </div>
         </div>
     </div>
-    {{-- preview & remove vehicle images --}}
     <script>
+        // preview & remove vehicle images----------------------------------------------
         function previewImages() {
             var previewContainer = document.getElementById("vehicle_preview");
             previewContainer.innerHTML = "";
@@ -774,6 +778,102 @@
         }
 
         document.getElementById("vehicle_image").addEventListener("change", previewImages);
+
+        //store vehicle info----------------------------------------------
+        $(document).ready(function() {
+            $('#btn_submit_car').click(function(e) {
+                e.preventDefault();
+
+                var vehicle_images = $('input[name="vehicle_image[]"]').prop('files');
+
+                var formData = new FormData();
+                formData.append('vehicle_id', $('#vehicle_id').val());
+                formData.append('category', $('#category').val());
+                formData.append('vehicle_make', $('#vehicle_make').val());
+                formData.append('vehicle_model', $('#vehicle_model').val());
+                formData.append('no_of_seats', $('#no_of_seats').val());
+                formData.append('no_of_suitcases', $('#no_of_suitcases').val());
+                formData.append('gear_box_type', $('#gear_box_type').val());
+                formData.append('fuel_state', $('#fuel_state').val());
+                formData.append('drivers_age_min', $('#drivers_age_min').val());
+                formData.append('drivers_age_max', $('#drivers_age_max').val());
+                formData.append('default_pickup_time', $('#default_pickup_time').val());
+                formData.append('default_return_time', $('#default_return_time').val());
+                formData.append('location_kef_airport', $('#location_kef_airport').prop('checked'));
+                formData.append('location_eykjavik', $('#location_eykjavik').prop('checked'));
+
+                formData.append('displaying_name', $('#displaying_name').val());
+                formData.append('vehicle_description', $('#vehicle_description').val());
+
+                $.each(vehicle_images, function(i, file) {
+                    formData.append('vehicle_image[]', file);
+                });
+
+                formData.append('cost_initial', $('#cost_initial').val());
+                formData.append('tax_initial', $('#tax_initial').val());
+                formData.append('cost_rental_per_day', $('#cost_rental_per_day').val());
+                formData.append('tax_rental_per_day', $('#tax_rental_per_day').val());
+                formData.append('cost_rental_per_hour', $('#cost_rental_per_hour').val());
+                formData.append('tax_rental_per_hour', $('#tax_rental_per_hour').val());
+                formData.append('cost_delivery', $('#cost_delivery').val());
+                formData.append('tax_delivery', $('#tax_delivery').val());
+                formData.append('cost_delivery_return', $('#cost_delivery_return').val());
+                formData.append('tax_delivery_return', $('#tax_delivery_return').val());
+                formData.append('cost_security', $('#cost_security').val());
+                formData.append('tax_security', $('#tax_security').val());
+                formData.append('cost_oneway', $('#cost_oneway').val());
+                formData.append('tax_oneway', $('#tax_oneway').val());
+                formData.append('cost_late_pickup', $('#cost_late_pickup').val());
+                formData.append('tax_late_pickup', $('#tax_late_pickup').val());
+                formData.append('cost_late_return', $('#cost_late_return').val());
+                formData.append('tax_late_return', $('#tax_late_return').val());
+                formData.append('cost_customer_pickup_fee', $('#cost_customer_pickup_fee').val());
+                formData.append('tax_customer_pickup_fee', $('#tax_customer_pickup_fee').val());
+                formData.append('cost_customer_return_fee', $('#cost_customer_return_fee').val());
+                formData.append('tax_customer_return_fee', $('#tax_customer_return_fee').val());
+
+                formData.append('free_gps', $('#free_gps').val());
+                formData.append('mileage', $('#mileage').val());
+                formData.append('wd', $('#wd').val());
+                formData.append('air_conditioning', $('#air_conditioning').val());
+                formData.append('fuel_policy', $('#fuel_policy').val());
+                formData.append('fuel_type', $('#fuel_type').val());
+                formData.append('engine', $('#engine').val());
+                formData.append('doors_number', $('#doors_number').val());
+                formData.append('transmission', $('#transmission').val());
+                formData.append('extras_notset', $('#notset').prop('checked'));
+                formData.append('extras_alloy_wheels', $('#alloy_wheels').prop('checked'));
+                formData.append('extras_blutooth', $('#blutooth').prop('checked'));
+                formData.append('extras_damage_waiver', $('#damage_waiver').prop('checked'));
+                formData.append('extras_free_cancellation', $('#free_cancellation').prop('checked'));
+                formData.append('extras_sunroof', $('#sunroof').prop('checked'));
+                formData.append('extras_radio', $('#radio').prop('checked'));
+                formData.append('extras_no_deposit', $('#no_deposit').prop('checked'));
+
+                formData.append('avalable_start_date', $('#avalable_start_date').val());
+                formData.append('avalable_end_date', $('#avalable_end_date').val());
+
+
+                $.ajax({
+                    type: 'POST',
+                    url: '{{ route('admin.cars.store') }}',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(data) {
+                        // Show SweetAlert success message
+                        swal('Success!', 'Car has been submitted.', 'success');
+                    },
+                    error: function(data) {
+                        // Show SweetAlert error message
+                        swal('Oops...', 'Something went wrong!', 'error');
+                    }
+                });
+            });
+        });
     </script>
     <!--end page wrapper -->
 @endsection
