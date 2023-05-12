@@ -698,7 +698,7 @@ header .header-col.mid .social-icons {
     display: inline-block;
     padding: 30px;
     text-decoration: none;
-    color: #ffffff;
+    color: #323232;
     text-align: center;
     outline: none;
 }
@@ -12175,7 +12175,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .de-marquee-list.style-2 .d-item-txt {
-    font-size: 100px;
+    font-size: 60px;
     background: rgba(255, 255, 255, .2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
