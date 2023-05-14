@@ -291,9 +291,11 @@ $(document).ready(function() {
     });
 
 
+});
 
-    
-    function validateForm() {
+
+
+function validateForm() {
     var pickupLocation = document.getElementById("pickup-location");
     var dropoffLocation = document.getElementById("dropoff-location");
     var pickupDate = document.getElementById("pickup-date");
@@ -374,8 +376,6 @@ $(document).ready(function() {
 
     return isValid;
 }
-
-});
 
 $(document).ready(function() {
   var pickupLocationSelect = $("#picklocation");
