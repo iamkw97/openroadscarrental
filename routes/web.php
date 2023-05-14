@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\CarController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BaseController;
+use App\Http\Controllers\user\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +42,12 @@ Route::get('/admin/home', [AdminController::class, 'adminHome'])->name('admin.ho
 Route::get('/admin/cars', [CarController::class, 'index'])->name('admin.cars.index');
 Route::get('/admin/cars/new', [CarController::class, 'create'])->name('admin.cars.create');
 Route::post('/admin/cars/store', [CarController::class, 'store'])->name('admin.cars.store');
+/*
+|--------------------------------------------------------------------------
+| User Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/user/home', [UserController::class, 'userHome'])->name('user.home');
+Route::get('/user/bookings', [UserController::class, 'userBookings'])->name('user.bookings');
+Route::get('/user/cars/', [UserController::class, 'userCars'])->name('user.cars');
+Route::get('/user/profile', [UserController::class, 'userProfile'])->name('user.profile');
