@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
-                        <h3>Don't have an account?&nbsp; Sign up now.</h3>
+                        <h3>Don't have an account?&nbsp; Sign Up now.</h3>
 
                         <div class="spacer-10"></div>
 

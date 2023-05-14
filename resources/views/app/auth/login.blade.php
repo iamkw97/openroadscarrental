@@ -44,7 +44,7 @@
                                 <div class="row g-2">
                                     <div class="col-lg-12">
                                         <a class="btn-sc btn-fullwidth mb10" href="{{ route('register.index') }}"><img
-                                                src="{{ asset('welcome/images/svg/user.png') }}" alt="">Sign up</a>
+                                                src="{{ asset('welcome/images/svg/user.png') }}" alt="">Sign Up</a>
                                     </div>
                                 </div>
                             </div>
