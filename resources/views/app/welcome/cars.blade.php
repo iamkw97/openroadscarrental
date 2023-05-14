@@ -241,8 +241,8 @@
                 </div>
 
                 <div class="col-lg-9" id="car-list">
-                    <div class="row pagi" id="pagi" style="display: none">
-
+                    <div class="row pagi" id="pagi" >
+                        {{-- <div class="row pagi" id="pagi" style="display: none"> --}}
                         {{-- <div class="col-xl-4 col-lg-6 cart">
                             <div class="de-item mb30">
                                 <div class="d-img">
@@ -526,9 +526,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
 
-                        {{-- <div class="col-xl-4 col-lg-6 cart">
+                        <div class="col-xl-4 col-lg-6 cart">
                             <div class="de-item mb30">
                                 <div class="d-img">
                                     <img src="{{ asset('welcome/images/cars/hyundai-staria.jpg')}}" class="img-fluid" alt="">
@@ -558,16 +558,17 @@
 
                     </div>
                     <div class="pagination" id="pagination">
-                        <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
+                        {{-- <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
                         <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>
                         <li class="page-item dots"><a class="page-link" href="#">...</a></li>
                         <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
                         <li class="page-item current-page"><a class="page-link" href="#">6</a></li>
                         <li class="page-item dots"><a class="page-link" href="#">...</a></li>
                         <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
-                        <li class="page-item next-page"><a class="page-link" href="#">Next</a></li>
+                        <li class="page-item next-page"><a class="page-link" href="#">Next</a></li> --}}
                     </div>
                 </div>
+                {{-- <div id="pagination"></div> --}}
                 
             </div>
           

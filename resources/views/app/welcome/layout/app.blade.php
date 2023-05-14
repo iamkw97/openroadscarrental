@@ -216,86 +216,83 @@
         
 </html>
 <script type="text/javascript">
-$(document).ready(function() {
+// $(document).ready(function() {
 
-    function getPageList(totalPages, page, maxLength){
-      function range(start, end){
-        return Array.from(Array(end - start + 1), (_, i) => i + start);
-      }
+//     function getPageList(totalPages, page, maxLength){
+//       function range(start, end){
+//         return Array.from(Array(end - start + 1), (_, i) => i + start);
+//       }
     
-      var sideWidth = maxLength < 9 ? 1 : 2;
-      var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1;
-      var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1;
+//       var sideWidth = maxLength < 9 ? 1 : 2;
+//       var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1;
+//       var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1;
     
-      if(totalPages <= maxLength){
-        return range(1, totalPages);
-      }
+//       if(totalPages <= maxLength){
+//         return range(1, totalPages);
+//       }
     
-      if(page <= maxLength - sideWidth - 1 - rightWidth){
-        return range(1, maxLength - sideWidth - 1).concat(0, range(totalPages - sideWidth + 1, totalPages));
-      }
+//       if(page <= maxLength - sideWidth - 1 - rightWidth){
+//         return range(1, maxLength - sideWidth - 1).concat(0, range(totalPages - sideWidth + 1, totalPages));
+//       }
     
-      if(page >= totalPages - sideWidth - 1 - rightWidth){
-        return range(1, sideWidth).concat(0, range(totalPages- sideWidth - 1 - rightWidth - leftWidth, totalPages));
-      }
+//       if(page >= totalPages - sideWidth - 1 - rightWidth){
+//         return range(1, sideWidth).concat(0, range(totalPages- sideWidth - 1 - rightWidth - leftWidth, totalPages));
+//       }
     
-      return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
-    }
+//       return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
+//     }
     
-    $(function(){
-      var numberOfItems = $(".pagi .cart").length;
-      var limitPerPage = 9; //How many card items visible per a page
-      var totalPages = Math.ceil(numberOfItems / limitPerPage);
-      var paginationSize = 7; //How many page elements visible in the pagination
-      var currentPage;
+//     $(function(){
+//       var numberOfItems = $(".pagi .cart").length;
+//       var limitPerPage = 9; //How many card items visible per a page
+//       var totalPages = Math.ceil(numberOfItems / limitPerPage);
+//       var paginationSize = 7; //How many page elements visible in the pagination
+//       var currentPage;
     
-      function showPage(whichPage){
-        if(whichPage < 1 || whichPage > totalPages) return false;
+//       function showPage(whichPage){
+//         if(whichPage < 1 || whichPage > totalPages) return false;
     
-        currentPage = whichPage;
+//         currentPage = whichPage;
     
-        $(".pagi .cart").hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
+//         $(".pagi .cart").hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
     
-        $(".pagination li").slice(1, -1).remove();
+//         $(".pagination li").slice(1, -1).remove();
     
-        getPageList(totalPages, currentPage, paginationSize).forEach(item => {
-          $("<li>").addClass("page-item").addClass(item ? "current-page" : "dots")
-          .toggleClass("active", item === currentPage).append($("<a>").addClass("page-link")
-          .attr({href: "javascript:void(0)"}).text(item || "...")).insertBefore(".next-page");
-        });
+//         getPageList(totalPages, currentPage, paginationSize).forEach(item => {
+//           $("<li>").addClass("page-item").addClass(item ? "current-page" : "dots")
+//           .toggleClass("active", item === currentPage).append($("<a>").addClass("page-link")
+//           .attr({href: "javascript:void(0)"}).text(item || "...")).insertBefore(".next-page");
+//         });
     
-        $(".previous-page").toggleClass("disable", currentPage === 1);
-        $(".next-page").toggleClass("disable", currentPage === totalPages);
-        return true;
-      }
+//         $(".previous-page").toggleClass("disable", currentPage === 1);
+//         $(".next-page").toggleClass("disable", currentPage === totalPages);
+//         return true;
+//       }
     
-      $(".pagination").append(
-        $("<li>").addClass("page-item").addClass("previous-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Prev")),
-        $("<li>").addClass("page-item").addClass("next-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Next"))
-      );
+//       $(".pagination").append(
+//         $("<li>").addClass("page-item").addClass("previous-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Prev")),
+//         $("<li>").addClass("page-item").addClass("next-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Next"))
+//       );
     
-      $(".pagi").show();
-      showPage(1);
+//       $(".pagi").show();
+//       showPage(1);
     
-      $(document).on("click", ".pagination li.current-page:not(.active)", function(){
-        return showPage(+$(this).text());
-      });
+//       $(document).on("click", ".pagination li.current-page:not(.active)", function(){
+//         return showPage(+$(this).text());
+//       });
     
-      $(".next-page").on("click", function(){
-        return showPage(currentPage + 1);
-      });
+//       $(".next-page").on("click", function(){
+//         return showPage(currentPage + 1);
+//       });
     
-      $(".previous-page").on("click", function(){
-        return showPage(currentPage - 1);
-      });
-    });
+//       $(".previous-page").on("click", function(){
+//         return showPage(currentPage - 1);
+//       });
+//     });
 
+// });
 
-});
-
-
-
-function validateForm() {
+ function validateForm() {
     var pickupLocation = document.getElementById("pickup-location");
     var dropoffLocation = document.getElementById("dropoff-location");
     var pickupDate = document.getElementById("pickup-date");
@@ -412,92 +409,150 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+
     $.ajax({
-        url: '/getcars',
-        method: 'GET',
-        success: function(response) {
-            var data = response.data;
-            console.log(data);
-            var inputFields = ''; // Initialize the inputFields variable outside the loop
-            
-            $.each(data, function(index, item) {
-                var category = item.category;
-                var vehicle_make = item.vehicle_make;
-                var vehicle_model = item.vehicle_model;
-                var no_of_seats = item.no_of_seats;
-                var count = 0;
-                
-                if (item.category == 'Car'  ) {
-                    inputFields += '<div class="col-xl-4 col-lg-6 cart">' +
-                                    '<div class="de-item mb30">' +
-                                        '<div class="d-img">' +
-                                            '<img src="{{ asset('welcome/images/cars/hyundai-staria.jpg')}}" class="img-fluid" alt="">' +
-                                        '</div>' +
-                                        '<div class="d-info">' +
-                                            '<div class="d-text">' +
-                                                '<h4>' + item.category + '</h4>' +
-                                                '<div class="d-item_like">' +
-                                                    '<i class="fa fa-heart"></i><span>23</span>' +
-                                                '</div>' +
-                                                '<div class="d-atr-group">' +
-                                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
-                                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
-                                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
-                                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">' + item.category + '</span>' +
-                                                '</div>' +
-                                                '<div class="d-price">' +
-                                                    'Daily rate from <span>$191</span>' +
-                                                    '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
-                                                '</div>' +
-                                            '</div>' +
-                                        '</div>' +
-                                    '</div>' +
-                                '</div>';
+  url: '/getcars',
+  method: 'GET',
+  success: function(response) {
+    var data = response.data;
+    console.log(data);
+    var inputFields = '';
+    var currentPage = 1;
+    var itemsPerPage = 9;
 
-                               
-                }
-                
-            if (item.category == 'Van' ) {
-                var vanInputFields =
-                '<div class="col-xl-4 col-lg-6 cart">'+
-                            '<div class="de-item mb30">'+
-                                '<div class="d-img">'+
-                                    '<img src="{{ asset('welcome/images/cars/hyundai-staria.jpg')}}" class="img-fluid" alt="">'+
-                                '</div>'+
-                                '<div class="d-info">' + 
-                                    '<div class="d-text">' +
-                                        '<h4>' + item.category + '</h4>'+
-                                        '<div class="d-item_like">' +
-                                    '<i class="fa fa-heart"></i><span>23</span>' +
-                                '</div>' +
-                                '<div class="d-atr-group">' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">Minivan</span>' +
-                                        '</div>' +
-                                        '<div class="d-price">' +
-                                            'Daily rate from <span>$191</span>' +
-                                            '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
-                                        '</div>' +
-                                    '</div>' +
-                                '</div>'+
-                            '</div>'+
-                        '</div>' ;
+    renderItems(); // Initial render
 
-                        inputFields += vanInputFields;
+    function renderItems() {
+      var startIndex = (currentPage - 1) * itemsPerPage;
+      var endIndex = startIndex + itemsPerPage;
 
-                
-            } 
-            
-        });
-        $('#pagi').html(inputFields);
+      inputFields = ''; // Reset inputFields
+
+      $.each(data, function(index, item) {
+        var category = item.category;
+        var vehicle_make = item.vehicle_make;
+        var vehicle_model = item.vehicle_model;
+        var no_of_seats = item.no_of_seats;
+        var count = 0;
+
+        if (item.category == 'Car') {
+          if (index >= startIndex && index < endIndex) {
+            inputFields += '<div class="col-xl-4 col-lg-6 cart Car">' +
+              '<div class="de-item mb30">' +
+              '<div class="d-img">' +
+              '<img src="{{ asset('welcome/images/cars/hyundai-staria.jpg')}}" class="img-fluid" alt="">' +
+              '</div>' +
+              '<div class="d-info">' +
+              '<div class="d-text">' +
+              '<h4>' + item.vehicle_model + '</h4>' +
+              '<div class="d-item_like">' +
+              '<i class="fa fa-heart"></i><span>23</span>' +
+              '</div>' +
+              '<div class="d-atr-group">' +
+              '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
+              '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
+              '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
+              '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">' + item.category + '</span>' +
+              '</div>' +
+              '<div class="d-price">' +
+              'Daily rate from <span>$191</span>' +
+              '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
+              '</div>' +
+              '</div>' +
+              '</div>' +
+              '</div>' +
+              '</div>';
+          }
+        }
         
-    },
-    error: function(xhr, status, error) {
-        console.error(xhr.responseText);
+        if (item.category == 'Van' ) {
+            if (index >= startIndex && index < endIndex) {
+          var vanInputFields =
+          '<div class="col-xl-4 col-lg-6 cart Van">'+
+          '<div class="de-item mb30">'+
+          '<div class="d-img">'+
+          '<img src="{{ asset('welcome/images/cars/hyundai-staria.jpg')}}" class="img-fluid" alt="">'+
+          '</div>'+
+          '<div class="d-info">' + 
+          '<div class="d-text">' +
+          '<h4>' + item.vehicle_model + '</h4>'+
+          '<div class="d-item_like">' +
+          '<i class="fa fa-heart"></i><span>23</span>' +
+          '</div>' +
+          '<div class="d-atr-group">' +
+          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
+          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
+          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
+          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">'+ item.category + '</span>' +
+          '</div>' +
+          '<div class="d-price">' +
+'Daily rate from <span>$191</span>' +
+'<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
+'</div>' +
+'</div>' +
+'</div>' +
+'</div>' +
+'</div>';
+
+inputFields += vanInputFields;
+}
+}
+});
+    $('#pagi').html(inputFields);
+    setupPagination();
+
+  }
+
+ 
+function setupPagination() {
+  var totalPages = Math.ceil(data.length / itemsPerPage);
+  var paginationHTML = '';
+
+  if (totalPages > 1) {
+    paginationHTML += '<ul class="pagination">';
+    for (var i = 1; i <= totalPages; i++) {
+      paginationHTML += '<li class="page-item"><a class="page-link" href="#" data-page="' + i + '">' + i + '</a></li>';
     }
-    });
+    paginationHTML += '</ul>';
+  }
+  
+  $('#pagination').html(paginationHTML);
+
+  $('.page-link').on('click', function(e) {
+        e.preventDefault();
+        currentPage = parseInt($(this).data('page'));
+        renderItems();
+      });
+}
+},
+error: function(xhr, status, error) {
+  console.error(xhr.responseText);
+}
+});
+    
+var data; // Placeholder for the data retrieved from the server
+
+// ...
+
+// Click event listener for checkboxes in item_filter_group
+$('.de_checkbox input[type="checkbox"]').on('click', function() {
+  var checkboxValue = $(this).val();
+  
+  if (checkboxValue === 'vehicle_type_1') {
+    $('.cart.Van').toggle();
+  } else if (checkboxValue === 'vehicle_type_2') {
+    $('.cart.Car').toggle();
+  } 
+  
+  // Add condition for both checkboxes selected
+  var checkbox1Checked = $('#vehicle_type_1').prop('checked');
+  var checkbox2Checked = $('#vehicle_type_2').prop('checked');
+  
+  if (checkbox1Checked && checkbox2Checked) {
+    $('.cart.Van, .cart.Car').toggle();
+  } 
+});
+
 });
 
     </script>
