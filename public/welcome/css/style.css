@@ -13540,7 +13540,7 @@ section.no-padding {
     border-radius: 0 5px 5px 0;
     -moz-border-radius: 0 5px 5px 0;
     -webkit-border-radius: 0 5px 5px 0;
-    \
+    
  padding: 12px 5px;
     border: solid 1px #bbbbbb;
     border-left: none;
@@ -18586,4 +18586,50 @@ img {
         left: 0;
         top: -21px;
     }
+}
+
+.serchform{
+
+    position: relative;
+}
+
+.serchform .fa-search{
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    color: #9ca3af;
+
+}
+
+.serchform span{
+
+        position: absolute;
+    right: 17px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid #d1d5db;
+
+}
+
+.left-pan{
+    padding-left: 7px;
+}
+
+.left-pan i{
+   
+   padding-left: 10px;
+}
+
+.serchform-input{
+
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+}
+
+.serchform-input:focus{
+
+    box-shadow: none;
+    border:none;
 }

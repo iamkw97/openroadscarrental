@@ -62,7 +62,7 @@
                                             <select name="" id="pickup-location"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
                                                 name="PickupLocation" onfocus="geolocate()"
-                                                placeholder="Enter your pickup location" id="autocomplete"
+                                                placeholder="Enter your pickup location" 
                                                 autocomplete="off" class="form-control">
                                                 <option selected value="">Select Location</option>
                                                 <option  value="kef_airport">KEF Airport</option>
@@ -77,7 +77,7 @@
                                             <select name="" id="dropoff-location"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
                                                 name="PickupLocation" onfocus="geolocate()"
-                                                placeholder="Enter your pickup location" id="autocomplete"
+                                                placeholder="Enter your pickup location" 
                                                 autocomplete="off" class="form-control">
                                                 <option selected value="">Select Location</option>
                                                 <option  value="reykjavik">Reykjavik</option>
