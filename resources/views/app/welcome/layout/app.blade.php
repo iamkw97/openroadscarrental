@@ -435,7 +435,7 @@ $(document).ready(function() {
         var no_of_seats = item.no_of_seats;
         var no_of_seats = item.no_of_seats;
         
-        var images = item.images; // Access the images array
+        var images=item.images; // Access the images array
           var vehicle_image = ''; // Variable to store the vehicle image URL
 
           if (images && images.length > 0) {
@@ -446,10 +446,10 @@ $(document).ready(function() {
      
         if (item.category == 'Sedan') {
           if (index >= startIndex && index < endIndex) {
-            inputFields += '<div class="col-xl-4 col-lg-6 cart Car">' +
+            inputFields += '<div class="col-xl-4 col-lg-6 cart Car Sedan">' +
               '<div class="de-item mb30">' +
               '<div class="d-img">' +
-              '<img src="{{ asset('storage/app/public/cars/16840625461.jpeg')}}" class="img-fluid" alt="">' +
+                '<img src="img/cars/'+ vehicle_image +'" class="img-fluid" alt="">' + 
               '</div>' +
               '<div class="d-info">' +
               '<div class="d-text">' +
@@ -473,14 +473,14 @@ $(document).ready(function() {
               '</div>';
           }
         }
-        
-        if (item.category == 'Van' ) {
+
+        if (item.category == 'SUV' ) {
             if (index >= startIndex && index < endIndex) {
-          var vanInputFields =
-          '<div class="col-xl-4 col-lg-6 cart Van">'+
+          var SUVInputFields =
+          '<div class="col-xl-4 col-lg-6 cart Car SUV">'+
           '<div class="de-item mb30">'+
           '<div class="d-img">'+
-          '<img src="{{ asset('welcome/images/cars/hyundai-staria.jpg')}}" class="img-fluid" alt="">'+
+            '<img src="img/cars/'+ vehicle_image +'" class="img-fluid" alt="">' + 
           '</div>'+
           '<div class="d-info">' + 
           '<div class="d-text">' +
@@ -503,8 +503,78 @@ $(document).ready(function() {
           '</div>' +
           '</div>';
 
-        inputFields += vanInputFields;
+        inputFields += SUVInputFields;
       }
+      
+    }
+    if (item.category == 'HatchBack' ) {
+            if (index >= startIndex && index < endIndex) {
+          var HatchBackInputFields =
+          '<div class="col-xl-4 col-lg-6 cart Car HatchBack ">'+
+          '<div class="de-item mb30">'+
+          '<div class="d-img">'+
+            '<img src="img/cars/'+ vehicle_image +'" class="img-fluid" alt="">' + 
+          '</div>'+
+          '<div class="d-info">' + 
+          '<div class="d-text">' +
+          '<h4>' + item.vehicle_model + '</h4>'+
+          '<div class="d-item_like">' +
+          '<i class="fa fa-heart"></i><span>23</span>' +
+          '</div>' +
+          '<div class="d-atr-group">' +
+          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
+          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
+          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
+          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">'+ item.category + '</span>' +
+          '</div>' +
+          '<div class="d-price">' +
+          'Daily rate from <span>$191</span>' +
+          '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '</div>';
+
+        inputFields += HatchBackInputFields;
+      }
+      
+    }
+        
+        if (item.category == 'Van' ) {
+            if (item.no_of_seats == '8' || item.no_of_seats == '10' || item.no_of_seats == '12') {
+        if (index >= startIndex && index < endIndex) {
+            var vanInputFields =
+                '<div class="col-xl-4 col-lg-6 cart Van set'+item.no_of_seats+'">' +
+                '<div class="de-item mb30">' +
+                '<div class="d-img">' +
+                '<img src="img/cars/' + vehicle_image + '" class="img-fluid" alt="">' +
+                '</div>' +
+                '<div class="d-info">' +
+                '<div class="d-text">' +
+                '<h4>' + item.vehicle_model + '</h4>' +
+                '<div class="d-item_like">' +
+                '<i class="fa fa-heart"></i><span>23</span>' +
+                '</div>' +
+                '<div class="d-atr-group">' +
+                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
+                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
+                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
+                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">' + item.category + '</span>' +
+                '</div>' +
+                '<div class="d-price">' +
+                'Daily rate from <span>$191</span>' +
+                '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+
+            inputFields += vanInputFields;
+        }
+    }
+      
     }
 });
     $('#pagi').html(inputFields);
