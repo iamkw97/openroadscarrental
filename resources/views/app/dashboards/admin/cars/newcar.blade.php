@@ -131,13 +131,20 @@
                                                 </div> --}}
                                                 <div class="col-md-6 my-1">
                                                     <label for="category" class="form-label">Vehicle Category</label>
-                                                    <input type="text" class="form-control" id="category"
-                                                        name="category" placeholder="00.00">
+                                                    <select type="text" class="form-control" id="category"
+                                                        name="category">
+                                                        <option value="SUV">SUV</option>
+                                                        <option value="Coupe">Coupe</option>
+                                                        <option value="Hatch Back">Hatch Back</option>
+                                                        <option value="Station vagon">Station vagon</option>
+                                                        <option value="Convertible">Convertible</option>
+                                                        <option value="Mini Van">Mini Van</option>
+                                                    </select>
                                                 </div>
                                                 <div class="col-md-6 my-1">
                                                     <label for="vehicle_make" class="form-label">Vehicle Make</label>
                                                     <input type="text" class="form-control" id="vehicle_make"
-                                                        name="vehicle_make" placeholder="00.00">
+                                                        name="vehicle_make" placeholder="Enter vehicle make">
                                                 </div>
                                             </div>
                                             <div class="row mt-2">
@@ -145,7 +152,7 @@
                                                     <label for="vehicle_model" class="form-label">Vehicle
                                                         Model</label>
                                                     <input type="text" class="form-control" id="vehicle_model"
-                                                        name="vehicle_model" placeholder="00.00">
+                                                        name="vehicle_model" placeholder="Enter vehicle model">
                                                 </div>
                                                 <div class="col-md-4 my-1">
                                                     <label for="no_of_seats" class="form-label">Number of
@@ -164,19 +171,19 @@
                                                     <label for="no_of_suitcases" class="form-label">Number of
                                                         Suitcases</label>
                                                     <input type="number" class="form-control" id="no_of_suitcases"
-                                                        name="no_of_suitcases" placeholder="00.00">
+                                                        name="no_of_suitcases" placeholder="Enter suitcases count">
                                                 </div>
                                             </div>
                                             <div class="row mt-2">
                                                 <div class="col-md-4 my-1">
                                                     <label for="gear_box_type" class="form-label">Gear Box</label>
                                                     <input type="text" class="form-control" id="gear_box_type"
-                                                        name="gear_box_type" placeholder="00.00">
+                                                        name="gear_box_type" placeholder="Enter gear box type">
                                                 </div>
                                                 <div class="col-md-4 my-1">
                                                     <label for="fuel_state" class="form-label">Fuel State</label>
                                                     <input type="text" class="form-control" id="fuel_state"
-                                                        name="fuel_state" placeholder="00.00">
+                                                        name="fuel_state" placeholder="Enter fuel state">
                                                 </div>
                                                 <div class="col-md-4 my-1">
                                                     <label for="drivers_age" class="form-label">Drivers Age</label>
@@ -241,22 +248,21 @@
                                                     <label for="displaying_name" class="form-label">Displaying
                                                         Name</label>
                                                     <input type="text" class="form-control" id="displaying_name"
-                                                        name="displaying_name" placeholder="00.00">
+                                                        name="displaying_name" placeholder="Enter an unique name for the vehicle">
                                                 </div>
                                             </div>
                                             <div class="row mt-2">
                                                 <div class="col-md-12 my-1">
                                                     <label for="vehicle_description" class="form-label">Vehicle
                                                         Description</label>
-                                                    <textarea class="form-control" id="vehicle_description" name="vehicle_description" placeholder="00.00">
-                                                        </textarea>
+                                                    <textarea class="form-control" id="vehicle_description" name="vehicle_description"></textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-2">
                                                 <div class="col-md-12 my-1">
                                                     <label for="vehicle_image" class="form-label">Vehicle Image</label>
                                                     <input id="vehicle_image" name="vehicle_image[]" type="file"
-                                                        accept="image/*" multiple data-max_length="20">
+                                                        accept="image/*" multiple data-max_length="5">
                                                 </div>
                                                 <div id="vehicle_preview"></div>
                                             </div>

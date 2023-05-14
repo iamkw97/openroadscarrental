@@ -28,7 +28,9 @@
     <link rel="stylesheet" href="{{ asset('admin/css/dark-theme.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/css/semi-dark.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/css/header-colors.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.min.css" integrity="sha512-InYSgxgTnnt8BG3Yy0GcpSnorz5gxHvT6OEoRWj91Gg+RvNdCiAharnBe+XFIDS754Kd9TekdjXw3V7TAgh6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.min.css"
+        integrity="sha512-InYSgxgTnnt8BG3Yy0GcpSnorz5gxHvT6OEoRWj91Gg+RvNdCiAharnBe+XFIDS754Kd9TekdjXw3V7TAgh6Vw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>
         @yield('admintitle')
     </title>
@@ -58,6 +60,14 @@
                         <div class="menu-title">Home</div>
                     </a>
                 </li>
+                <li class="menu-label">Booking Management</li>
+                <li>
+                    <a href="{{route('admin.bookings.index')}}">
+                        <div class="parent-icon"><i class='bx bx-bookmarks'></i>
+                        </div>
+                        <div class="menu-title">Bookings</div>
+                    </a>
+                </li>
                 <li class="menu-label">Car Management</li>
                 <li>
                     <a href="javascript:;" class="has-arrow">
@@ -67,21 +77,15 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{route('admin.cars.index')}}"><i class='bx bx-list-ul' ></i>Cars</a>
+                            <a href="{{ route('admin.cars.index') }}"><i class='bx bx-list-ul'></i>Cars</a>
                         </li>
                         <li>
-                            <a href="{{route('admin.cars.create')}}"><i class='bx bx-list-plus'></i>Add New Car</a>
+                            <a href="{{ route('admin.cars.create') }}"><i class='bx bx-list-plus'></i>Add New Car</a>
                         </li>
                     </ul>
                 </li>
 
-                <li>
-                    <a href="faq.html">
-                        <div class="parent-icon"><i class="bx bx-help-circle"></i>
-                        </div>
-                        <div class="menu-title">FAQ</div>
-                    </a>
-                </li>
+
             </ul>
             <!--end navigation-->
         </div>
@@ -119,9 +123,9 @@
                                                 src="{{ asset('admin/images/county/01.png') }}" width="20"
                                                 alt=""><span class="ms-2">English</span></a>
                                     </li>
-                                    <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img
-                                                src="{{ asset('admin/images/county/02.png') }}" width="20"
-                                                alt=""><span class="ms-2">Catalan</span></a>
+                                    <li><a class="dropdown-item d-flex align-items-center py-2"
+                                            href="javascript:;"><img src="{{ asset('admin/images/county/02.png') }}"
+                                                width="20" alt=""><span class="ms-2">Catalan</span></a>
                                     </li>
                                     <li><a class="dropdown-item d-flex align-items-center py-2"
                                             href="javascript:;"><img src="{{ asset('admin/images/county/03.png') }}"
@@ -154,254 +158,6 @@
                             <li class="nav-item dark-mode d-none d-sm-flex">
                                 <a class="nav-link dark-mode-icon" href="javascript:;"><i class='bx bx-moon'></i>
                                 </a>
-                            </li>
-
-                            <li class="nav-item dropdown dropdown-app">
-                                <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"
-                                    href="javascript:;"><i class='bx bx-grid-alt'></i></a>
-                                <div class="dropdown-menu dropdown-menu-end p-0">
-                                    <div class="app-container p-2 my-2">
-                                        <div class="row gx-0 gy-2 row-cols-3 justify-content-center p-2">
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/slack.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Slack</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/behance.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Behance</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/google-drive.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Dribble</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/outlook.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Outlook</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/github.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">GitHub</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/stack-overflow.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Stack</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/figma.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Stack</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/twitter.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Twitter</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/google-calendar.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Calendar</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/spotify.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Spotify</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/google-photos.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Photos</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/pinterest.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Photos</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/linkedin.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">linkedin</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/dribble.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Dribble</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/youtube.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">YouTube</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/google.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">News</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/envato.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Envato</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="javascript:;">
-                                                    <div class="app-box text-center">
-                                                        <div class="app-icon">
-                                                            <img src="{{ asset('admin/images/app/safari.png') }}"
-                                                                width="30" alt="">
-                                                        </div>
-                                                        <div class="app-name">
-                                                            <p class="mb-0 mt-1">Safari</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                        <!--end row-->
-
-                                    </div>
-                                </div>
                             </li>
 
                             <li class="nav-item dropdown dropdown-large">
@@ -750,8 +506,8 @@
                             <img src="{{ asset('admin/images/avatars/avatar-2.png') }}" class="user-img"
                                 alt="user avatar">
                             <div class="user-info">
-                                <p class="user-name mb-0">Pauline Seitz</p>
-                                <p class="designattion mb-0">Web Designer</p>
+                                <p class="user-name mb-0">{{ auth()->user()->fullname }}</p>
+                                <p class="designattion mb-0">{{ auth()->user()->email }}</p>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -773,8 +529,13 @@
                             <li>
                                 <div class="dropdown-divider mb-0"></div>
                             </li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        class="bx bx-log-out-circle"></i><span>Logout</span></a>
+                            <li>
+                                <form action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                    @method('post')
+                                    <button class="dropdown-item d-flex align-items-center frmbtnlgout"> <i
+                                            class="bx bx-log-out-circle"></i><span>Sign Out</span></button>
+                                </form>
                             </li>
                         </ul>
                     </div>
@@ -893,7 +654,9 @@
     <script src="{{ asset('admin/plugins/vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
     <script src="{{ asset('admin/plugins/chartjs/js/chart.js') }}"></script>
     <script src="{{ asset('admin/js/index.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.all.min.js" integrity="sha512-2JsZvEefv9GpLmJNnSW3w/hYlXEdvCCfDc+Rv7ExMFHV9JNlJ2jaM+uVVlCI1MAQMkUG8K83LhsHYx1Fr2+MuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.all.min.js"
+        integrity="sha512-2JsZvEefv9GpLmJNnSW3w/hYlXEdvCCfDc+Rv7ExMFHV9JNlJ2jaM+uVVlCI1MAQMkUG8K83LhsHYx1Fr2+MuA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!--app JS-->
     <script src="{{ asset('admin/js/app.js') }}"></script>

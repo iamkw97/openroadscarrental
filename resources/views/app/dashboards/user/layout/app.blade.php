@@ -13,13 +13,31 @@
     <meta content="" name="author">
     <!-- CSS Files
     ================================================== -->
-    <link href="{{ asset('welcome/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bootstrap">
-    <link href="{{ asset('welcome/css/mdb.min.css')}}" rel="stylesheet" type="text/css" id="mdb">
-    <link href="{{ asset('welcome/css/plugins.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('welcome/css/style.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('welcome/css/coloring.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('welcome/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="{{ asset('welcome/css/mdb.min.css') }}" rel="stylesheet" type="text/css" id="mdb">
+    <link href="{{ asset('welcome/css/plugins.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('welcome/css/style.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('welcome/css/coloring.css') }}" rel="stylesheet" type="text/css">
     <!-- color scheme -->
-    <link id="colors" href="{{ asset('welcome/css/colors/scheme-08.css')}}" rel="stylesheet" type="text/css">
+    <link id="colors" href="{{ asset('welcome/css/colors/scheme-08.css') }}" rel="stylesheet" type="text/css">
+    <style>
+        .frmbtnlgout {
+            padding: 5px 10px;
+            display: block;
+            color: #333333;
+            -webkit-border-radius: 6;
+            -moz-border-radius: 6;
+            border-radius: 6px;
+            background-color: #ffffff;
+            text-decoration: none;
+            border: none;
+            font-weight: 500;
+        }
+
+        .frmbtnlgout i {
+            color: #0066FF;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,7 +64,8 @@
                                         <i class="fa fa-envelope"></i>
                                         openroadscarrental@gmail.com</a>
                                 </div>
-                                <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>24/7 Customer Service</a></div>
+                                <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>24/7 Customer
+                                        Service</a></div>
                             </div>
                         </div>
                     </div>
@@ -54,8 +73,8 @@
                     <div class="topbar-right">
                         <div class="social-icons">
                             <a href="https://wa.me/003547737904"><i class="fa fa-whatsapp fa-lg"></i></a>
-                                <a href="https://www.facebook.com/openroadscarrental"><i
-                                        class="fa fa-facebook fa-lg"></i></a>
+                            <a href="https://www.facebook.com/openroadscarrental"><i
+                                    class="fa fa-facebook fa-lg"></i></a>
                             {{-- <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
                             <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
                             <a href="#"><i class="fa fa-youtube fa-lg"></i></a>
@@ -73,7 +92,7 @@
                                 <div class="de-flex-col">
                                     <!-- logo begin -->
                                     <div id="logo">
-                                        <a href="{{route('home.index')}}">
+                                        <a href="{{ route('home.index') }}">
                                             <img class="logo-1" src="{{ asset('welcome/images/orcr-logo.png') }}"
                                                 alt="">
                                             <img class="logo-2" src="{{ asset('welcome/images/orcr-logo.png') }}"
@@ -107,25 +126,39 @@
                                     <div class="de-login-menu">
 
                                         <span id="de-click-menu-profile" class="de-menu-profile">
-                                            <img src="{{ asset('welcome/images/profile/1.jpg')}}" class="img-fluid" alt="">
+                                            <img src="{{ asset('welcome/images/profile/1.jpg') }}" class="img-fluid"
+                                                alt="">
                                         </span>
-
-
 
                                         <div id="de-submenu-profile" class="de-submenu">
                                             <div class="d-name">
-                                                <h4>Monica Lucas</h4>
-                                                <span class="text-gray">monica@rentaly.com</span>
+                                                <h4>
+                                                    {{ auth()->user()->fullname }}
+                                                </h4>
+                                                <span class="text-gray">
+                                                    {{ auth()->user()->email }}
+                                                </span>
                                             </div>
 
                                             <div class="d-line"></div>
 
                                             <ul class="menu-col">
-                                                <li><a href="account-dashboard.html"><i class="fa fa-home"></i>Dashboard</a></li>
-                                                <li><a href="account-profile.html"><i class="fa fa-user"></i>My Profile</a></li>
-                                                <li><a href="account-booking.html"><i class="fa fa-calendar"></i>My Orders</a></li>
-                                                <li><a href="account-favorite.html"><i class="fa fa-car"></i>My Favorite Cars</a></li>
-                                                <li><a href="#"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+                                                <li><a href="{{ route('user.home') }}"><i
+                                                            class="fa fa-home"></i>Dashboard</a></li>
+                                                <li><a href="{{ route('user.bookings') }}"><i
+                                                            class="fa fa-calendar"></i>My Bookings</a></li>
+                                                <li><a href="{{ route('user.cars') }}"><i
+                                                            class="fa fa-car"></i>Cars</a></li>
+                                                <li><a href="{{ route('user.profile') }}"><i
+                                                            class="fa fa-user"></i>Profile</a></li>
+                                                <li>
+                                                    <form action="{{ route('logout') }}" method="post">
+                                                        @csrf
+                                                        @method('post')
+                                                        <button class="frmbtnlgout"> <i
+                                                                class="fa fa-sign-out"></i>Sign Out</button>
+                                                    </form>
+                                                </li>
                                             </ul>
                                         </div>
                                         <span id="menu-btn"></span>
@@ -137,26 +170,26 @@
                 </div>
             </div>
         </header>
-            <!-- header close -->
+        <!-- header close -->
         <!-- content begin -->
         <div class="no-bottom no-top zebra" id="content">
             <div id="top"></div>
 
             <!-- section begin -->
             <section id="subheader" class="jarallax text-light">
-                <img src="{{ asset('welcome/images/background/14.jpg')}}" class="jarallax-img" alt="">
-                    <div class="center-y relative text-center">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-									<h1>
-                                        @yield('usersubheader')
-                                    </h1>
-                                </div>
-                                <div class="clearfix"></div>
+                <img src="{{ asset('welcome/images/background/14.jpg') }}" class="jarallax-img" alt="">
+                <div class="center-y relative text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h1>
+                                    @yield('usersubheader')
+                                </h1>
                             </div>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
+                </div>
             </section>
             <!-- section close -->
 
@@ -167,12 +200,13 @@
                             <div class="card p-4 rounded-5">
                                 <div class="profile_avatar">
                                     <div class="profile_img">
-                                        <img src="{{ asset('welcome/images/profile/1.jpg')}}" alt="">
+                                        <img src="{{ asset('welcome/images/profile/1.jpg') }}" alt="">
                                     </div>
                                     <div class="profile_name">
                                         <h4>
-                                            Monica Lucas
-                                            <span class="profile_username text-gray">monica@rentaly.com</span>
+                                            {{ auth()->user()->fullname }}
+                                            <span class="profile_username text-gray">
+                                                {{ auth()->user()->email }}</span>
                                         </h4>
                                     </div>
                                 </div>
@@ -283,8 +317,8 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="{{ asset('welcome/js/plugins.js')}}"></script>
-    <script src="{{ asset('welcome/js/designesia.js')}}"></script>
+    <script src="{{ asset('welcome/js/plugins.js') }}"></script>
+    <script src="{{ asset('welcome/js/designesia.js') }}"></script>
 
 </body>
 
