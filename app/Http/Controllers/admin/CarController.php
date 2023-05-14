@@ -69,7 +69,7 @@ class CarController extends Controller
         if ($request->hasFile('vehicle_image')) {
             foreach ($request->file('vehicle_image') as $index => $image) {
                 $imageName = time() . rand(1, 9) . '.' . $image->getClientOriginalExtension();
-                $image->storeAs('public/cars', $imageName);
+                $image->move('img/cars', $imageName);
 
                 $customerNic = new CarImage();
                 $customerNic->vehicle_image = $imageName;
