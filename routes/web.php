@@ -46,3 +46,6 @@ Route::post('/admin/cars/store', [CarController::class, 'store'])->name('admin.c
 |--------------------------------------------------------------------------
 */
 Route::get('/user/home', [UserController::class, 'userHome'])->name('user.home');
+Route::get('/user/bookings', [UserController::class, 'userBookings'])->name('user.bookings');
+Route::get('/user/cars/', [UserController::class, 'userCars'])->name('user.cars');
+Route::get('/user/profile', [UserController::class, 'userProfile'])->name('user.profile');
