@@ -31,6 +31,22 @@
             text-align: center;
             outline: none;
         }
+
+        #mainmenu a:hover {
+            position: relative;
+            display: inline-block;
+            padding: 30px;
+            text-decoration: none;
+            color: #3273ff;
+            text-align: center;
+            outline: none;
+            transform: scale(1.2);
+        }
+
+        .radio-img img:hover {
+            transition: transform .2s;
+            transform: scale(1.2);
+        }
     </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
@@ -63,8 +79,8 @@
                                             <select name="" id="pickup-location"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
                                                 name="PickupLocation" onfocus="geolocate()"
-                                                placeholder="Enter your pickup location" 
-                                                autocomplete="off" class="form-control">
+                                                placeholder="Enter your pickup location" autocomplete="off"
+                                                class="form-control">
                                                 <option selected value="">Select Location</option>
                                                 <option value="kef_airport">KEF Airport</option>
                                                 <option value="reykjavik">Reykjavik</option>
@@ -78,8 +94,8 @@
                                             <select name="" id="dropoff-location"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
                                                 name="PickupLocation" onfocus="geolocate()"
-                                                placeholder="Enter your pickup location" 
-                                                autocomplete="off" class="form-control">
+                                                placeholder="Enter your pickup location" autocomplete="off"
+                                                class="form-control">
                                                 <option selected value="">Select Location</option>
                                                 <option value="reykjavik">Reykjavik</option>
                                                 <option value="kef_airport">KEF Airport</option>
