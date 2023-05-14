@@ -12,15 +12,18 @@ use Illuminate\Http\Request;
 class CarController extends Controller
 {
     // view admin cars
-    public function index(){
+    public function index()
+    {
         return view('app.dashboards.admin.cars.cars');
     }
     // view admin add new car
-    public function create(){
+    public function create()
+    {
         return view('app.dashboards.admin.cars.newcar');
     }
     // store admin new car
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $data = $request->all();
 
         // store data into Car table
@@ -61,7 +64,7 @@ class CarController extends Controller
         ]);
 
         // store car images
-        if($request->hasFile('vehicle_image')) {
+        if ($request->hasFile('vehicle_image')) {
             foreach ($request->file('vehicle_image') as $index => $image) {
                 $imageName = time() . rand(1, 9) . '.' . $image->getClientOriginalExtension();
                 $image->storeAs('public/cars', $imageName);
@@ -101,8 +104,8 @@ class CarController extends Controller
             'car_id' => $car->id
         ]);
 
-         // store data into Car availability
-         $car = CarAvailability::create([
+        // store data into Car availability
+        $car = CarAvailability::create([
             'avalable_start_date' => $data['avalable_start_date'],
             'avalable_end_date' => $data['avalable_end_date'],
             'car_id' => $car->id
@@ -113,6 +116,5 @@ class CarController extends Controller
         } else {
             return response('Error', 400);
         }
-
     }
 }
