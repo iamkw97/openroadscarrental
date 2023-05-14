@@ -15,7 +15,8 @@
     <link href="{{ asset('admin/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
     <link href="{{ asset('admin/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('admin/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
-    <!-- loader-->
+    <link href="{{ asset('admin/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+	<!-- loader-->
     <link href="{{ asset('admin/css/pace.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('admin/js/pace.min.js') }}"></script>
     <!-- Bootstrap CSS -->
@@ -410,6 +411,8 @@
     <script src="{{ asset('admin/plugins/vectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
     <script src="{{ asset('admin/plugins/vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
     <script src="{{ asset('admin/plugins/chartjs/js/chart.js') }}"></script>
+    <script src="{{ asset('admin/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+	<script src="{{ asset('admin/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
     <script src="{{ asset('admin/js/index.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.all.min.js"
         integrity="sha512-2JsZvEefv9GpLmJNnSW3w/hYlXEdvCCfDc+Rv7ExMFHV9JNlJ2jaM+uVVlCI1MAQMkUG8K83LhsHYx1Fr2+MuA=="

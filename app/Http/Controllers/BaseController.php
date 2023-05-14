@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use Illuminate\Http\Request;
 
 class BaseController extends Controller
 {
     public function home(){
-        return view('app.welcome.home');
+        $cars_for_gallery = Car::all();
+        return view('app.welcome.home', compact('cars_for_gallery'));
     }
     public function cars(){
         return view('app.welcome.cars');
