@@ -17,15 +17,20 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+/*
+|--------------------------------------------------------------------------
+| Auth Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/login', [AuthController::class, 'loginIndex'])->name('login.index');
+Route::get('/register', [AuthController::class, 'registerIndex'])->name('register.index');
+Route::post('/register/store', [AuthController::class, 'registerStore'])->name('register.store');
 /*
 |--------------------------------------------------------------------------
 | Welcome Routes
 |--------------------------------------------------------------------------
 */
 Route::get('/', [BaseController::class, 'home'])->name('home.index');
-Route::get('/login', [AuthController::class, 'loginIndex'])->name('login.index');
-Route::get('/register', [AuthController::class, 'registerIndex'])->name('register.index');
 Route::get('/cars', [BaseController::class, 'cars'])->name('cars.index');
 Route::get('/cars/view', [BaseController::class, 'carInfo'])->name('cars.show');
 Route::get('/booking', [BaseController::class, 'booking'])->name('booking.index');
