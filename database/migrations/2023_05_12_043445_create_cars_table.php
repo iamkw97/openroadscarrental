@@ -47,6 +47,7 @@ return new class extends Migration
             $table->string('extras_sunroof')->nullable();
             $table->string('extras_radio')->nullable();
             $table->string('extras_no_deposit')->nullable();
+            $table->string('availabality_status')->default('available');
             $table->timestamps();
         });
     }

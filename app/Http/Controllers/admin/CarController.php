@@ -25,6 +25,7 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $availabality_status = "available";
 
         // store data into Car table
         $car = Car::create([
@@ -61,6 +62,7 @@ class CarController extends Controller
             'extras_sunroof' => $data['extras_sunroof'],
             'extras_radio' => $data['extras_radio'],
             'extras_no_deposit' => $data['extras_no_deposit'],
+            'availabality_status' => $availabality_status,
         ]);
 
         // store car images
@@ -118,19 +120,19 @@ class CarController extends Controller
         }
     }
 
-    
+
     public function getcar()
-{
-    $cars = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
-        ->select('cars.*', 'car_prices.cost_rental_per_day', 'car_prices.cost_rental_per_hour')
-        ->get();
+    {
+        $cars = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
+            ->select('cars.*', 'car_prices.cost_rental_per_day', 'car_prices.cost_rental_per_hour')
+            ->get();
 
-    foreach ($cars as $car) {
-        $carImages = CarImage::where('car_id', $car->id)->get();
-        $car->images = $carImages;
+        foreach ($cars as $car) {
+            $carImages = CarImage::where('car_id', $car->id)->get();
+            $car->images = $carImages;
+        }
+
+        $response['data'] = $cars;
+        return response()->json($response);
     }
-
-    $response['data'] = $cars;
-    return response()->json($response);
-}
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\BookingController;
 use App\Http\Controllers\admin\CarController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BaseController;
@@ -54,6 +55,7 @@ Route::middleware(['web'])->group(function () {
         Route::get('/admin/cars', [CarController::class, 'index'])->name('admin.cars.index');
         Route::get('/admin/cars/new', [CarController::class, 'create'])->name('admin.cars.create');
         Route::post('/admin/cars/store', [CarController::class, 'store'])->name('admin.cars.store');
+        Route::get('/admin/cars/store', [BookingController::class, 'index'])->name('admin.bookings.index');
     });
 
     /*

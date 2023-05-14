@@ -42,6 +42,7 @@ class Car extends Model
         'extras_sunroof',
         'extras_radio',
         'extras_no_deposit',
+        'availabality_status',
     ];
     public function car_images()
     {
