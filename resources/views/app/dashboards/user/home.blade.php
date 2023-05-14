@@ -9,7 +9,14 @@
     <li><a href="{{ route('user.bookings') }}"><i class="fa fa-calendar"></i>My Bookings</a></li>
     <li><a href="{{ route('user.cars') }}"><i class="fa fa-car"></i>Cars</a></li>
     <li><a href="{{ route('user.profile') }}"><i class="fa fa-user"></i>Profile</a></li>
-    <li><a href=""><i class="fa fa-sign-out"></i>Sign Out</a></li>
+    <li>
+        <form action="{{ route('logout') }}" method="post">
+            @csrf
+            @method('post')
+            <button class="frmbtnlgout"> <i
+                    class="fa fa-sign-out"></i>Sign Out</button>
+        </form>
+    </li>
 @endsection
 
 @section('usersubheader')

@@ -28,7 +28,9 @@
     <link rel="stylesheet" href="{{ asset('admin/css/dark-theme.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/css/semi-dark.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/css/header-colors.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.min.css" integrity="sha512-InYSgxgTnnt8BG3Yy0GcpSnorz5gxHvT6OEoRWj91Gg+RvNdCiAharnBe+XFIDS754Kd9TekdjXw3V7TAgh6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.min.css"
+        integrity="sha512-InYSgxgTnnt8BG3Yy0GcpSnorz5gxHvT6OEoRWj91Gg+RvNdCiAharnBe+XFIDS754Kd9TekdjXw3V7TAgh6Vw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>
         @yield('admintitle')
     </title>
@@ -67,10 +69,10 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{route('admin.cars.index')}}"><i class='bx bx-list-ul' ></i>Cars</a>
+                            <a href="{{ route('admin.cars.index') }}"><i class='bx bx-list-ul'></i>Cars</a>
                         </li>
                         <li>
-                            <a href="{{route('admin.cars.create')}}"><i class='bx bx-list-plus'></i>Add New Car</a>
+                            <a href="{{ route('admin.cars.create') }}"><i class='bx bx-list-plus'></i>Add New Car</a>
                         </li>
                     </ul>
                 </li>
@@ -119,9 +121,9 @@
                                                 src="{{ asset('admin/images/county/01.png') }}" width="20"
                                                 alt=""><span class="ms-2">English</span></a>
                                     </li>
-                                    <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img
-                                                src="{{ asset('admin/images/county/02.png') }}" width="20"
-                                                alt=""><span class="ms-2">Catalan</span></a>
+                                    <li><a class="dropdown-item d-flex align-items-center py-2"
+                                            href="javascript:;"><img src="{{ asset('admin/images/county/02.png') }}"
+                                                width="20" alt=""><span class="ms-2">Catalan</span></a>
                                     </li>
                                     <li><a class="dropdown-item d-flex align-items-center py-2"
                                             href="javascript:;"><img src="{{ asset('admin/images/county/03.png') }}"
@@ -750,8 +752,8 @@
                             <img src="{{ asset('admin/images/avatars/avatar-2.png') }}" class="user-img"
                                 alt="user avatar">
                             <div class="user-info">
-                                <p class="user-name mb-0">Pauline Seitz</p>
-                                <p class="designattion mb-0">Web Designer</p>
+                                <p class="user-name mb-0">{{auth()->user()->fullname}}</p>
+                                <p class="designattion mb-0">{{auth()->user()->email}}</p>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -773,8 +775,13 @@
                             <li>
                                 <div class="dropdown-divider mb-0"></div>
                             </li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="javascript:;"><i
-                                        class="bx bx-log-out-circle"></i><span>Logout</span></a>
+                            <li>
+                                <form action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                    @method('post')
+                                    <button class="dropdown-item d-flex align-items-center frmbtnlgout"> <i
+                                            class="bx bx-log-out-circle"></i><span>Sign Out</span></button>
+                                </form>
                             </li>
                         </ul>
                     </div>
@@ -893,7 +900,9 @@
     <script src="{{ asset('admin/plugins/vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
     <script src="{{ asset('admin/plugins/chartjs/js/chart.js') }}"></script>
     <script src="{{ asset('admin/js/index.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.all.min.js" integrity="sha512-2JsZvEefv9GpLmJNnSW3w/hYlXEdvCCfDc+Rv7ExMFHV9JNlJ2jaM+uVVlCI1MAQMkUG8K83LhsHYx1Fr2+MuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.all.min.js"
+        integrity="sha512-2JsZvEefv9GpLmJNnSW3w/hYlXEdvCCfDc+Rv7ExMFHV9JNlJ2jaM+uVVlCI1MAQMkUG8K83LhsHYx1Fr2+MuA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!--app JS-->
     <script src="{{ asset('admin/js/app.js') }}"></script>

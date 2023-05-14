@@ -26,6 +26,7 @@ class User extends Authenticatable
         'phone2',
         'dob',
         'license_no',
+        'role',
         'password'
     ];
 

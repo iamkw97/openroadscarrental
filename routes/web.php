@@ -19,17 +19,10 @@ use Illuminate\Support\Facades\Route;
 */
 /*
 |--------------------------------------------------------------------------
-| Auth Routes
-|--------------------------------------------------------------------------
-*/
-Route::get('/login', [AuthController::class, 'loginIndex'])->name('login.index');
-Route::get('/register', [AuthController::class, 'registerIndex'])->name('register.index');
-Route::post('/register/store', [AuthController::class, 'registerStore'])->name('register.store');
-/*
-|--------------------------------------------------------------------------
 | Welcome Routes
 |--------------------------------------------------------------------------
 */
+
 Route::get('/', [BaseController::class, 'home'])->name('home.index');
 Route::get('/cars', [BaseController::class, 'cars'])->name('cars.index');
 Route::get('/cars/view', [BaseController::class, 'carInfo'])->name('cars.show');
@@ -38,21 +31,40 @@ Route::get('/aboutus', [BaseController::class, 'about'])->name('about.index');
 Route::get('/contactus', [BaseController::class, 'contact'])->name('contact.index');
 
 Route::get('/getcars', [CarController::class, 'getcar'])->name('getcars.details');
-/*
-|--------------------------------------------------------------------------
-| Admin Routes
-|--------------------------------------------------------------------------
-*/
-Route::get('/admin/home', [AdminController::class, 'adminHome'])->name('admin.home');
-Route::get('/admin/cars', [CarController::class, 'index'])->name('admin.cars.index');
-Route::get('/admin/cars/new', [CarController::class, 'create'])->name('admin.cars.create');
-Route::post('/admin/cars/store', [CarController::class, 'store'])->name('admin.cars.store');
-/*
-|--------------------------------------------------------------------------
-| User Routes
-|--------------------------------------------------------------------------
-*/
-Route::get('/user/home', [UserController::class, 'userHome'])->name('user.home');
-Route::get('/user/bookings', [UserController::class, 'userBookings'])->name('user.bookings');
-Route::get('/user/cars/', [UserController::class, 'userCars'])->name('user.cars');
-Route::get('/user/profile', [UserController::class, 'userProfile'])->name('user.profile');
+
+Route::middleware(['web'])->group(function () {
+    /*
+    |--------------------------------------------------------------------------
+    | Auth Routes
+    |--------------------------------------------------------------------------
+    */
+    Route::get('/register', [AuthController::class, 'registerIndex'])->name('register.index');
+    Route::get('/login', [AuthController::class, 'loginIndex'])->name('login.index');
+    Route::post('/register/store', [AuthController::class, 'registerStore'])->name('register.store');
+    Route::post('/login/store', [AuthController::class, 'loginAuthenticated'])->name('login.authenticate');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Protected Routes
+    |--------------------------------------------------------------------------
+    */
+    Route::middleware(['admin'])->group(function () {
+        Route::get('/admin/home', [AdminController::class, 'adminHome'])->name('admin.home');
+        Route::get('/admin/cars', [CarController::class, 'index'])->name('admin.cars.index');
+        Route::get('/admin/cars/new', [CarController::class, 'create'])->name('admin.cars.create');
+        Route::post('/admin/cars/store', [CarController::class, 'store'])->name('admin.cars.store');
+    });
+
+    /*
+    |--------------------------------------------------------------------------
+    | User Protected Routes
+    |--------------------------------------------------------------------------
+    */
+    Route::middleware(['user'])->group(function () {
+        Route::get('/user/home', [UserController::class, 'userHome'])->name('user.home');
+        Route::get('/user/bookings', [UserController::class, 'userBookings'])->name('user.bookings');
+        Route::get('/user/cars/', [UserController::class, 'userCars'])->name('user.cars');
+        Route::get('/user/profile', [UserController::class, 'userProfile'])->name('user.profile');
+    });
+});
