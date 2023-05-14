@@ -31,6 +31,8 @@ Route::get('/cars/view', [BaseController::class, 'carInfo'])->name('cars.show');
 Route::get('/booking', [BaseController::class, 'booking'])->name('booking.index');
 Route::get('/aboutus', [BaseController::class, 'about'])->name('about.index');
 Route::get('/contactus', [BaseController::class, 'contact'])->name('contact.index');
+
+Route::get('/getcars', [CarController::class, 'getcar'])->name('getcars.details');
 /*
 |--------------------------------------------------------------------------
 | Admin Routes

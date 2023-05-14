@@ -213,9 +213,11 @@
 
         <!-- Include jQuery Pagination plugin -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-pagination/1.2.7/jquery.pagination.min.js"></script>
-
+        
 </html>
 <script type="text/javascript">
+$(document).ready(function() {
+
     function getPageList(totalPages, page, maxLength){
       function range(start, end){
         return Array.from(Array(end - start + 1), (_, i) => i + start);
@@ -360,7 +362,12 @@
 
     // Displaying error message
     if (isValid) {
-        window.location.href = "{{ route('cars.index') }}";
+        // alert(pickupLocation)
+        // window.location.href = "{{ route('cars.index') }}";
+        window.location.href = "{{ route('cars.index') }}?pickupLocation=" + encodeURIComponent(pickupLocation.value) + "&dropoffLocation=" + encodeURIComponent(dropoffLocation.value) + "&pickupDate=" + encodeURIComponent(pickupDate.value)
+        + "&dropoffDate=" + encodeURIComponent(returnDate.value)
+        + "&pickupTime=" + encodeURIComponent(pickupTime.value)
+        + "&returnTime=" + encodeURIComponent(returnTime.value);
   
     }
     
@@ -368,6 +375,130 @@
     return isValid;
 }
 
+});
+
+$(document).ready(function() {
+  var pickupLocationSelect = $("#picklocation");
+  var droplocationSelect = $("#droplocation");
+  var pickdate = $("#pickdate");
+  var dropoff_date = $("#dropdate");
+
+  var pickupTime = $("#pickup_time");
+  var dropoff_time = $("#droptime");
+
+
+
+  var queryString = window.location.search;
+  var urlParams = new URLSearchParams(queryString);
+  var pickupLocation = urlParams.get("pickupLocation");
+  var dropoffLocation = urlParams.get("dropoffLocation");
+  var pickupDate = urlParams.get("pickupDate");
+  var dropoffDate = urlParams.get("dropoffDate");
+
+  var pickTime = urlParams.get("pickupTime");
+  var dropTime = urlParams.get("returnTime");
+
+
+  if (pickupLocation != null && dropoffLocation != null && pickupDate != null) {
+    pickupLocationSelect.val(pickupLocation);
+    droplocationSelect.val(dropoffLocation);
+    pickdate.val(pickupDate);
+    dropoff_date.val(dropoffDate);
+    pickupTime.val(pickTime);
+    dropoff_time.val(dropTime);
+  }
+});
+
+
+
+$(document).ready(function() {
+    $.ajax({
+        url: '/getcars',
+        method: 'GET',
+        success: function(response) {
+            var data = response.data;
+            console.log(data);
+            var inputFields = ''; // Initialize the inputFields variable outside the loop
+            
+            $.each(data, function(index, item) {
+                var category = item.category;
+                var vehicle_make = item.vehicle_make;
+                var vehicle_model = item.vehicle_model;
+                var no_of_seats = item.no_of_seats;
+                var count = 0;
+                
+                if (item.category == 'Car'  ) {
+                    inputFields += '<div class="col-xl-4 col-lg-6 cart">' +
+                                    '<div class="de-item mb30">' +
+                                        '<div class="d-img">' +
+                                            '<img src="{{ asset('welcome/images/cars/hyundai-staria.jpg')}}" class="img-fluid" alt="">' +
+                                        '</div>' +
+                                        '<div class="d-info">' +
+                                            '<div class="d-text">' +
+                                                '<h4>' + item.category + '</h4>' +
+                                                '<div class="d-item_like">' +
+                                                    '<i class="fa fa-heart"></i><span>23</span>' +
+                                                '</div>' +
+                                                '<div class="d-atr-group">' +
+                                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
+                                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
+                                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
+                                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">' + item.category + '</span>' +
+                                                '</div>' +
+                                                '<div class="d-price">' +
+                                                    'Daily rate from <span>$191</span>' +
+                                                    '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>';
+
+                               
+                }
+                
+            if (item.category == 'Van' ) {
+                var vanInputFields =
+                '<div class="col-xl-4 col-lg-6 cart">'+
+                            '<div class="de-item mb30">'+
+                                '<div class="d-img">'+
+                                    '<img src="{{ asset('welcome/images/cars/hyundai-staria.jpg')}}" class="img-fluid" alt="">'+
+                                '</div>'+
+                                '<div class="d-info">' + 
+                                    '<div class="d-text">' +
+                                        '<h4>' + item.category + '</h4>'+
+                                        '<div class="d-item_like">' +
+                                    '<i class="fa fa-heart"></i><span>23</span>' +
+                                '</div>' +
+                                '<div class="d-atr-group">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">Minivan</span>' +
+                                        '</div>' +
+                                        '<div class="d-price">' +
+                                            'Daily rate from <span>$191</span>' +
+                                            '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>'+
+                            '</div>'+
+                        '</div>' ;
+
+                        inputFields += vanInputFields;
+
+                
+            } 
+            
+        });
+        $('#pagi').html(inputFields);
+        
+    },
+    error: function(xhr, status, error) {
+        console.error(xhr.responseText);
+    }
+    });
+});
 
     </script>
 
