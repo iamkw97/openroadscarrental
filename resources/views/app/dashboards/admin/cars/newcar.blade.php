@@ -133,12 +133,15 @@
                                                     <label for="category" class="form-label">Vehicle Category</label>
                                                     <select type="text" class="form-control" id="category"
                                                         name="category">
+                                                        <option value="Micro">Micro</option>
+                                                        <option value="Sedan">Sedan</option>
                                                         <option value="SUV">SUV</option>
                                                         <option value="Coupe">Coupe</option>
                                                         <option value="Hatch Back">Hatch Back</option>
                                                         <option value="Station vagon">Station vagon</option>
                                                         <option value="Convertible">Convertible</option>
                                                         <option value="Mini Van">Mini Van</option>
+                                                        <option value="Mini Van">Van</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 my-1">
