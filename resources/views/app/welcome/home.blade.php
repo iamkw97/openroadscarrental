@@ -545,7 +545,7 @@
                                     <h4><a href="news-single.html">Enjoy Best Travel Experience<span></span></a></h4>
                                     <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit
                                         cupidatat labore ad laborum consectetur.</p>
-                                    <a class="btn-main" href="#">Read More</a>
+                                    <a class="btn-main" href="{{route('destinationinfo.index')}}">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -566,7 +566,7 @@
                                     <h4><a href="news-single.html">The Future of Car Rent<span></span></a></h4>
                                     <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit
                                         cupidatat labore ad laborum consectetur.</p>
-                                    <a class="btn-main" href="#">Read More</a>
+                                    <a class="btn-main" href="{{route('destinationinfo.index')}}">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -587,7 +587,7 @@
                                     <h4><a href="news-single.html">Holiday Tips For Backpacker<span></span></a></h4>
                                     <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit
                                         cupidatat labore ad laborum consectetur.</p>
-                                    <a class="btn-main" href="news-single.html">Read More</a>
+                                    <a class="btn-main" href="{{route('destinationinfo.index')}}">Read More</a>
                                 </div>
                             </div>
                         </div>
