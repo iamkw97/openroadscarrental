@@ -31,6 +31,8 @@ class AuthController extends Controller
             'role' => $role,
             'password' => bcrypt($inputs['password']),
         ]);
+        $request->session()->regenerate();
+        return redirect()->route('user.home');
     }
 
     public function loginIndex()
