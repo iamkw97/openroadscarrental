@@ -133,12 +133,15 @@
                                                     <label for="category" class="form-label">Vehicle Category</label>
                                                     <select type="text" class="form-control" id="category"
                                                         name="category">
+                                                        <option value="Micro">Micro</option>
+                                                        <option value="Sedan">Sedan</option>
                                                         <option value="SUV">SUV</option>
                                                         <option value="Coupe">Coupe</option>
-                                                        <option value="Hatch Back">Hatch Back</option>
-                                                        <option value="Station vagon">Station vagon</option>
+                                                        <option value="HatchBack">Hatch Back</option>
+                                                        <option value="Stationvagon">Station vagon</option>
                                                         <option value="Convertible">Convertible</option>
-                                                        <option value="Mini Van">Mini Van</option>
+                                                        <option value="MiniVan">Mini Van</option>
+                                                        <option value="Van">Van</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 my-1">
@@ -159,6 +162,8 @@
                                                         Seats</label>
                                                     <select type="text" class="form-control" id="no_of_seats"
                                                         name="no_of_seats">
+                                                        <option value="12">12</option>
+                                                        <option value="10">10</option>
                                                         <option value="8">8</option>
                                                         <option value="7">7</option>
                                                         <option value="6">6</option>
