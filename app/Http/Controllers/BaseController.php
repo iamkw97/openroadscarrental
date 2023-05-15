@@ -8,7 +8,12 @@ use Illuminate\Http\Request;
 class BaseController extends Controller
 {
     public function home(){
-        $cars_for_gallery = Car::all();
+        $cars_for_gallery = Car::join('car_images', 'cars.id', '=', 'car_images.car_id')
+            ->select('cars.displaying_name', 'cars.no_of_seats', 'cars.no_of_suitcases', 'cars.category', 'car_images.vehicle_image')
+            ->get();
+
+
+        // $cars_for_gallery = Car::all();
         return view('app.welcome.home', compact('cars_for_gallery'));
     }
     public function cars(){
