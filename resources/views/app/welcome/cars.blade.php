@@ -111,22 +111,22 @@
                     <div class="item_filter_group">
                         <h4>Vehicle Type</h4>
                         <div class="de_form">
-                            <div class="de_checkbox">
+                            <div class="de_checkbox VehicleCategory">
                                 <input id="vehicle_type_1" name="vehicle_type_1" type="checkbox" value="vehicle_type_1">
                                 <label for="vehicle_type_1">Car</label>
                             </div>
 
-                            <div class="de_checkbox">
+                            <div class="de_checkbox VehicleCategory">
                                 <input id="vehicle_type_2" name="vehicle_type_2" type="checkbox" value="vehicle_type_2">
                                 <label for="vehicle_type_2">Van</label>
                             </div>
 
-                            <div class="de_checkbox">
+                            <div class="de_checkbox VehicleCategory">
                                 <input id="vehicle_type_3" name="vehicle_type_3" type="checkbox" value="vehicle_type_3">
                                 <label for="vehicle_type_3">Minibus</label>
                             </div>
 
-                            <div class="de_checkbox">
+                            <div class="de_checkbox VehicleCategory">
                                 <input id="vehicle_type_4" name="vehicle_type_4" type="checkbox" value="vehicle_type_4">
                                 <label for="vehicle_type_4">Prestige</label>
                             </div>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
 
-                    <div class="item_filter_group">
+                    {{-- <div class="item_filter_group">
                         <h4>Car Body Type</h4>
                         <div class="de_form">
                             <div class="de_checkbox">
@@ -188,29 +188,41 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="item_filter_group">
+                    <div class="item_filter_group seatCount">
                         <h4>Car Seats</h4>
                         <div class="de_form">
                             <div class="de_checkbox">
-                                <input id="car_seat_1" name="car_seat_1" type="checkbox" value="car_seat_1">
-                                <label for="car_seat_1">2 seats</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_seat_2" name="car_seat_2" type="checkbox" value="car_seat_2">
-                                <label for="car_seat_2">4 seats</label>
-                            </div>
-
-                            <div class="de_checkbox">
                                 <input id="car_seat_3" name="car_seat_3" type="checkbox" value="car_seat_3">
-                                <label for="car_seat_3">6 seats</label>
+                                <label for="car_seat_3">3 seats</label>
                             </div>
-
                             <div class="de_checkbox">
                                 <input id="car_seat_4" name="car_seat_4" type="checkbox" value="car_seat_4">
-                                <label for="car_seat_4">6+ seats</label>
+                                <label for="car_seat_4">4 seats</label>
+                            </div>
+
+                            <div class="de_checkbox">
+                                <input id="car_seat_5" name="car_seat_5" type="checkbox" value="car_seat_5">
+                                <label for="car_seat_5">5 seats</label>
+                            </div>
+
+                            <div class="de_checkbox">
+                                <input id="car_seat_6" name="car_seat_6" type="checkbox" value="car_seat_6">
+                                <label for="car_seat_6">7 seats</label>
+                            </div>
+
+                            <div class="de_checkbox">
+                                <input id="car_seat_8" name="car_seat_8" type="checkbox" value="car_seat_8">
+                                <label for="car_seat_8">8 seats</label>
+                            </div>
+                            <div class="de_checkbox">
+                                <input id="car_seat_10" name="car_seat_10" type="checkbox" value="car_seat_10">
+                                <label for="car_seat_10">10 seats</label>
+                            </div>
+                            <div class="de_checkbox">
+                                <input id="car_seat_10+" name="car_seat_10+" type="checkbox" value="car_seat_10+">
+                                <label for="car_seat_10+">10+ seats</label>
                             </div>
 
                         </div>

@@ -404,6 +404,11 @@ $(document).ready(function() {
     pickupTime.val(pickTime);
     dropoff_time.val(dropTime);
   }
+
+
+  $("#RentNow").click(function() {
+    alert("click");
+});
 });
 
 
@@ -446,7 +451,7 @@ $(document).ready(function() {
      
         if (item.category == 'Sedan') {
           if (index >= startIndex && index < endIndex) {
-            inputFields += '<div class="col-xl-4 col-lg-6 cart Car Sedan">' +
+            inputFields += '<div class="col-xl-4 col-lg-6 cart Car Sedan seat5">' +
               '<div class="de-item mb30">' +
               '<div class="d-img">' +
                 '<img src="img/cars/'+ vehicle_image +'" class="img-fluid" alt="">' + 
@@ -465,7 +470,7 @@ $(document).ready(function() {
               '</div>' +
               '<div class="d-price">' +
               'Daily rate from <span>$191</span>' +
-              '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
+              '<a class="btn-main" id="RentNow">Rent Now</a>' +
               '</div>' +
               '</div>' +
               '</div>' +
@@ -475,42 +480,44 @@ $(document).ready(function() {
         }
 
         if (item.category == 'SUV' ) {
-            if (index >= startIndex && index < endIndex) {
-          var SUVInputFields =
-          '<div class="col-xl-4 col-lg-6 cart Car SUV">'+
-          '<div class="de-item mb30">'+
-          '<div class="d-img">'+
-            '<img src="img/cars/'+ vehicle_image +'" class="img-fluid" alt="">' + 
-          '</div>'+
-          '<div class="d-info">' + 
-          '<div class="d-text">' +
-          '<h4>' + item.vehicle_model + '</h4>'+
-          '<div class="d-item_like">' +
-          '<i class="fa fa-heart"></i><span>23</span>' +
-          '</div>' +
-          '<div class="d-atr-group">' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">'+ item.category + '</span>' +
-          '</div>' +
-          '<div class="d-price">' +
-          'Daily rate from <span>$191</span>' +
-          '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
-          '</div>' +
-          '</div>' +
-          '</div>' +
-          '</div>' +
-          '</div>';
+            if (item.no_of_seats == '5' || item.no_of_seats == '7' ) {
+             if (index >= startIndex && index < endIndex) {
+            var SUVInputFields =
+                '<div class="col-xl-4 col-lg-6 cart Van seat'+item.no_of_seats+'">' +
+                '<div class="de-item mb30">' +
+                '<div class="d-img">' +
+                '<img src="img/cars/' + vehicle_image + '" class="img-fluid" alt="">' +
+                '</div>' +
+                '<div class="d-info">' +
+                '<div class="d-text">' +
+                '<h4>' + item.vehicle_model + '</h4>' +
+                '<div class="d-item_like">' +
+                '<i class="fa fa-heart"></i><span>23</span>' +
+                '</div>' +
+                '<div class="d-atr-group">' +
+                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
+                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
+                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
+                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">' + item.category + '</span>' +
+                '</div>' +
+                '<div class="d-price">' +
+                'Daily rate from <span>$191</span>' +
+                '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
 
-        inputFields += SUVInputFields;
-      }
+                inputFields += SUVInputFields;
+        }
+    }
       
     }
     if (item.category == 'HatchBack' ) {
             if (index >= startIndex && index < endIndex) {
           var HatchBackInputFields =
-          '<div class="col-xl-4 col-lg-6 cart Car HatchBack ">'+
+          '<div class="col-xl-4 col-lg-6 cart Car HatchBack seat5">'+
           '<div class="de-item mb30">'+
           '<div class="d-img">'+
             '<img src="img/cars/'+ vehicle_image +'" class="img-fluid" alt="">' + 
@@ -545,7 +552,7 @@ $(document).ready(function() {
             if (item.no_of_seats == '8' || item.no_of_seats == '10' || item.no_of_seats == '12') {
         if (index >= startIndex && index < endIndex) {
             var vanInputFields =
-                '<div class="col-xl-4 col-lg-6 cart Van set'+item.no_of_seats+'">' +
+                '<div class="col-xl-4 col-lg-6 cart Van seat'+item.no_of_seats+'">' +
                 '<div class="de-item mb30">' +
                 '<div class="d-img">' +
                 '<img src="img/cars/' + vehicle_image + '" class="img-fluid" alt="">' +
@@ -614,7 +621,7 @@ var data; // Placeholder for the data retrieved from the server
 // ...
 
 // Click event listener for checkboxes in item_filter_group
-$('.de_checkbox input[type="checkbox"]').on('click', function() {
+$('.VehicleCategory input[type="checkbox"]').on('click', function() {
   var checkboxValue = $(this).val();
   
   if (checkboxValue === 'vehicle_type_1') {
@@ -630,6 +637,38 @@ $('.de_checkbox input[type="checkbox"]').on('click', function() {
   if (checkbox1Checked && checkbox2Checked) {
     $('.cart.Van, .cart.Car').toggle();
   } 
+});
+
+$('.seatCount input[type="checkbox"]').on('click', function() {
+  var checkboxValue = $(this).val();
+  
+  if (checkboxValue === 'car_seat_3') {
+    $('.seat8, .seat10, .seat5 , .seat7, .seat12').toggle();
+  } else if (checkboxValue === 'car_seat_4') {
+    $('.seat8, .seat10, .seat5 , .seat7, .seat12').toggle();
+  } 
+ else if (checkboxValue === 'car_seat_5') {
+    $('.seat8, .seat10, .seat12 , .seat7').toggle();
+  } 
+  else if (checkboxValue === 'car_seat_6') {
+    $('.seat8, .seat10, .seat5 , .seat7, .seat12').toggle();
+  } 
+  else if (checkboxValue === 'car_seat_8') {
+    $('.seat10, .seat12, .seat5, .seat7').toggle();
+  } 
+  else if (checkboxValue === 'car_seat_10') {
+    $('.seat8, .seat12, .seat5, .seat7').toggle();
+  } 
+  else if (checkboxValue === 'car_seat_10+') {
+    $('.seat8, .seat10, .seat5 , .seat7').toggle();
+  } 
+  // Add condition for both checkboxes selected
+//   var checkbox1Checked = $('#vehicle_type_1').prop('checked');
+//   var checkbox2Checked = $('#vehicle_type_2').prop('checked');
+  
+//   if (checkbox1Checked && checkbox2Checked) {
+//     $('.cart.Van, .cart.Car').toggle();
+//   } 
 });
 
 });
