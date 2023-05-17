@@ -144,7 +144,7 @@
 
                                             <ul class="menu-col">
                                                 <li><a href="{{ route('user.home') }}"><i
-                                                            class="fa fa-home"></i>Dashboard</a></li>
+                                                            class="fa fa-home"></i>Home</a></li>
                                                 <li><a href="{{ route('user.bookings') }}"><i
                                                             class="fa fa-calendar"></i>My Bookings</a></li>
                                                 <li><a href="{{ route('user.cars') }}"><i

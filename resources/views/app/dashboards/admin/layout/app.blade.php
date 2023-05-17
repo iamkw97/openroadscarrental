@@ -78,14 +78,29 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{ route('admin.cars.index') }}"><i class='bx bx-list-ul'></i>Cars</a>
+                            <a href="{{ route('admin.cars.index') }}"><i class='bx bx-list-ul'></i>List Cars</a>
                         </li>
                         <li>
                             <a href="{{ route('admin.cars.create') }}"><i class='bx bx-list-plus'></i>Add New Car</a>
                         </li>
                     </ul>
                 </li>
-
+                <li class="menu-label">Website Customization</li>
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class='bx bx-car'></i>
+                        </div>
+                        <div class="menu-title">Destinations</div>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('admin.destinations.index') }}"><i class='bx bx-list-ul'></i>List Destinations</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.destinations.create') }}"><i class='bx bx-list-plus'></i>Add New Destination</a>
+                        </li>
+                    </ul>
+                </li>
 
             </ul>
             <!--end navigation-->

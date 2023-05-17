@@ -31,8 +31,8 @@
                                           </div>
                                         </div>
                                     </form>
-                                    <h3 class="lead">𝙲𝚑𝚘𝚘𝚜𝚎 𝚊 𝚟𝚎𝚑𝚒𝚌𝚕𝚎 𝚊𝚜 𝚢𝚘𝚞 𝚠𝚒𝚜𝚑 
-                                        
+                                    <h3 class="lead">𝙲𝚑𝚘𝚘𝚜𝚎 𝚊 𝚟𝚎𝚑𝚒𝚌𝚕𝚎 𝚊𝚜 𝚢𝚘𝚞 𝚠𝚒𝚜𝚑
+
                                     </h3>
                                   </div>
                                 </div>
@@ -52,19 +52,19 @@
                     <div class="item_filter_group">
                         <h4>Booking Details</h4>
                         <div class="de_form">
-                            
+
                             <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
                                 <small>Pickup Location</small>
                                 <select name="" id="picklocation"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
                                                 name="PickupLocation" onfocus="geolocate()"
-                                                placeholder="Enter your pickup location" 
+                                                placeholder="Enter your pickup location"
                                                 autocomplete="off" class="form-control">
                                                 <option selected value="">Select Location</option>
                                                 <option  value="kef_airport">KEF Airport</option>
                                                 <option value="reykjavik">Reykjavik</option>
                                             </select>
-                                
+
                             </div>
 
                             <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
@@ -72,7 +72,7 @@
                                 <select name="" id="droplocation"
                                 style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
                                                 name="PickupLocation" onfocus="geolocate()"
-                                                placeholder="Enter your pickup location" 
+                                                placeholder="Enter your pickup location"
                                                 autocomplete="off" class="form-control" >
                                                 <option selected value="">Select Location</option>
                                                 <option  value="reykjavik">Reykjavik</option>
@@ -84,24 +84,24 @@
                             <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
                                 <small>Pickup Date</small>
                                 <input id="pickdate" name="car_engine_3" type="date" style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-                           
+
                             </div>
 
                             <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
                                 <small>Drop-off Date</small>
                                 <input id="dropdate" name="car_engine_4" type="date" style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-                              
+
                             </div>
                             <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
                                 <small>Pickup Time</small>
                                 <input id="pickup_time" name="car_engine_3" type="time" style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-                           
+
                             </div>
 
                             <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
                                 <small>Drop-off Time</small>
                                 <input id="droptime" name="car_engine_4" type="time"  style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-                              
+
                             </div>
 
                         </div>
@@ -216,7 +216,7 @@
                         </div>
                     </div>
 
-                   
+
 
                     {{-- <div class="item_filter_group">
                         <h4>Price ($)</h4>
@@ -554,7 +554,7 @@
                             </div>
                         </div> --}}
 
-                       
+
 
                     </div>
                     <div class="pagination" id="pagination">
@@ -569,9 +569,9 @@
                     </div>
                 </div>
                 {{-- <div id="pagination"></div> --}}
-                
+
             </div>
-          
+
         </div>
     </section>
 
@@ -592,16 +592,16 @@
 
 //     if(pickupLocation!=null && dropoffLocation!=null && pickupDate!=null ){
 //         for (var i = 0; i < pickupLocationSelect.options.length; i++) {
- 
+
 //          if (pickupLocationSelect.options[i].value === pickupLocation) {
-    
+
 //             pickupLocationSelect.options[i].selected = true;
 //             break; // Exit the loop once the option is found
 //         }
 //     }
 // }
 
-   
+
 // });
 
 
