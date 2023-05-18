@@ -63,4 +63,26 @@ class AuthController extends Controller
         session()->flush();
         return redirect()->route('home.index');
     }
+
+    public function updateUser(UserRequest $request, $id)
+    {
+        $inputs = $request->validated();
+        $role = "user";
+
+        $user = User::findOrFail($id);
+        $user->fullname = $inputs['fullname'];
+        $user->email = $inputs['email'];
+        $user->address = $inputs['address'];
+        $user->city = $inputs['city'];
+        $user->phone1 = $inputs['phone1'];
+        $user->phone2 = $inputs['phone2'];
+        $user->dob = $inputs['dob'];
+        $user->license_no = $inputs['license_no'];
+        $user->role = $role;
+        $user->password = bcrypt($inputs['password']);
+        $user->update();
+
+        $request->session()->regenerate();
+        return redirect()->back();
+    }
 }

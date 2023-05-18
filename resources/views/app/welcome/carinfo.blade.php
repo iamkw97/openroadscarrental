@@ -5,14 +5,13 @@
 @endsection
 
 @section('welcomebody')
+    <!-- content begin -->
+    <div class="no-bottom no-top zebra" id="content">
+        <div id="top"></div>
 
-<!-- content begin -->
-<div class="no-bottom no-top zebra" id="content">
-    <div id="top"></div>
-
-    <!-- section begin -->
-    <section id="subheader" class="jarallax text-light">
-        <img src="{{ asset('welcome/images/background/2.jpg')}}" class="jarallax-img" alt="">
+        <!-- section begin -->
+        <section id="subheader" class="jarallax text-light">
+            <img src="{{ asset('welcome/images/background/2.jpg') }}" class="jarallax-img" alt="">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -23,34 +22,34 @@
                     </div>
                 </div>
             </div>
-    </section>
-    <!-- section close -->
+        </section>
+        <!-- section close -->
 
-    <section id="section-car-details">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <div id="slider-carousel" class="owl-carousel">
-                        <div class="item">
-                            <img src="{{ asset('welcome/images/car-single/1.jpg')}}" alt="">
-                        </div>
-                        <div class="item">
-                            <img src="{{ asset('welcome/images/car-single/2.jpg')}}" alt="">
-                        </div>
-                        <div class="item">
-                            <img src="{{ asset('welcome/images/car-single/3.jpg')}}" alt="">
-                        </div>
-                        <div class="item">
-                            <img src="{{ asset('welcome/images/car-single/4.jpg')}}" alt="">
+        <section id="section-car-details">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <div id="slider-carousel" class="owl-carousel">
+                            <div class="item">
+                                <img src="{{ asset('welcome/images/car-single/1.jpg') }}" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('welcome/images/car-single/2.jpg') }}" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('welcome/images/car-single/3.jpg') }}" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('welcome/images/car-single/4.jpg') }}" alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 <div class="col-lg-3">
                     <h3 id="vehicle_description"></h3>
                     <p>The BMW M2 is the high-performance version of the 2 Series 2-door coupé. The first generation of the M2 is the F87 coupé and is powered by turbocharged.</p>
 
-                    <div class="spacer-10"></div>
+                        <div class="spacer-10"></div>
 
                     <h4>Specifications</h4>
                     <div class="de-spec">
@@ -86,28 +85,28 @@
                        
                     </div>
 
-                    <div class="spacer-single"></div>
+                        <div class="spacer-single"></div>
 
-                    <h4>Features</h4>
-                    <ul class="ul-style-2">
-                        <li>Bluetooth</li>
-                        <li>Multimedia Player</li>
-                        <li>Central Lock</li>
-                        <li>Sunroof</li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="de-price text-center">
-                        Daily rate
-                        <h3>$265</h3>
+                        <h4>Features</h4>
+                        <ul class="ul-style-2">
+                            <li>Bluetooth</li>
+                            <li>Multimedia Player</li>
+                            <li>Central Lock</li>
+                            <li>Sunroof</li>
+                        </ul>
                     </div>
-                    <div class="spacer-30"></div>
-                    <div class="de-box mb25">
-                        <form name="contactForm" id='contact_form' method="post">
-                            <h4>Booking this car</h4>
 
-                            <div class="spacer-20"></div>
+                    <div class="col-lg-3">
+                        <div class="de-price text-center">
+                            Daily rate
+                            <h3>$265</h3>
+                        </div>
+                        <div class="spacer-30"></div>
+                        <div class="de-box mb25">
+                            <form name="contactForm" id='contact_form' method="post">
+                                <h4>Booking this car</h4>
+
+                                <div class="spacer-20"></div>
 
                             <div class="row">
                                 <div class="col-lg-12 mb20">
@@ -173,32 +172,32 @@
 
                             <input type='submit' id='send_message' value='Book Now' class="btn-main btn-fullwidth">
 
-                            <div class="clearfix"></div>
+                                <div class="clearfix"></div>
 
-                        </form>
-                    </div>
+                            </form>
+                        </div>
 
-                    <div class="de-box">
-                        <h4>Share</h4>
-                        <div class="de-color-icons">
-                            <span><i class="fa fa-twitter fa-lg"></i></span>
-                            <span><i class="fa fa-facebook fa-lg"></i></span>
-                            <span><i class="fa fa-reddit fa-lg"></i></span>
-                            <span><i class="fa fa-linkedin fa-lg"></i></span>
-                            <span><i class="fa fa-pinterest fa-lg"></i></span>
-                            <span><i class="fa fa-stumbleupon fa-lg"></i></span>
-                            <span><i class="fa fa-delicious fa-lg"></i></span>
-                            <span><i class="fa fa-envelope fa-lg"></i></span>
+                        <div class="de-box">
+                            <h4>Share</h4>
+                            <div class="de-color-icons">
+                                <span><i class="fa fa-twitter fa-lg"></i></span>
+                                <span><i class="fa fa-facebook fa-lg"></i></span>
+                                <span><i class="fa fa-reddit fa-lg"></i></span>
+                                <span><i class="fa fa-linkedin fa-lg"></i></span>
+                                <span><i class="fa fa-pinterest fa-lg"></i></span>
+                                <span><i class="fa fa-stumbleupon fa-lg"></i></span>
+                                <span><i class="fa fa-delicious fa-lg"></i></span>
+                                <span><i class="fa fa-envelope fa-lg"></i></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-</div>
-<!-- content close -->
+    </div>
+    <!-- content close -->
 
 <a href="#" id="back-to-top"></a>
 

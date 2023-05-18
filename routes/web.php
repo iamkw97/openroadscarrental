@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\BookingController;
 use App\Http\Controllers\admin\CarController;
+use App\Http\Controllers\admin\DestinationController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\user\UserController;
@@ -29,6 +30,7 @@ Route::get('/cars', [BaseController::class, 'cars'])->name('cars.index');
 Route::get('/cars/view/{id}', [BaseController::class, 'carInfo'])->name('cars.show');
 Route::get('/booking/step2', [BaseController::class, 'bookingStep2'])->name('cars.bookingstep2');
 Route::get('/booking', [BaseController::class, 'booking'])->name('booking.index');
+Route::get('/userdetails', [BaseController::class, 'personalInfo'])->name('personal.index');
 Route::get('/aboutus', [BaseController::class, 'about'])->name('about.index');
 Route::get('/contactus', [BaseController::class, 'contact'])->name('contact.index');
 Route::get('/destinations', [BaseController::class, 'destinationInfo'])->name('destinationinfo.index');
@@ -46,6 +48,7 @@ Route::middleware(['web'])->group(function () {
     Route::post('/register/store', [AuthController::class, 'registerStore'])->name('register.store');
     Route::post('/login/store', [AuthController::class, 'loginAuthenticated'])->name('login.authenticate');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::post('/update/{id}', [AuthController::class, 'updateUser'])->name('user.update');
 
     /*
     |--------------------------------------------------------------------------
@@ -58,6 +61,8 @@ Route::middleware(['web'])->group(function () {
         Route::get('/admin/cars/new', [CarController::class, 'create'])->name('admin.cars.create');
         Route::post('/admin/cars/store', [CarController::class, 'store'])->name('admin.cars.store');
         Route::get('/admin/cars/store', [BookingController::class, 'index'])->name('admin.bookings.index');
+        Route::get('/admin/destinations', [DestinationController::class, 'index'])->name('admin.destinations.index');
+        Route::get('/admin/destinations/new', [DestinationController::class, 'create'])->name('admin.destinations.create');
     });
 
     /*

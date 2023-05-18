@@ -7,5 +7,10 @@ use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
-    //
+    public function store(Request $request)
+    {
+        $data = $request->all();
+
+
+    }
 }

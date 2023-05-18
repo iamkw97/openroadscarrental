@@ -13,8 +13,7 @@
         <form action="{{ route('logout') }}" method="post">
             @csrf
             @method('post')
-            <button class="frmbtnlgout"> <i
-                    class="fa fa-sign-out"></i>Sign Out</button>
+            <button class="frmbtnlgout"> <i class="fa fa-sign-out"></i>Sign Out</button>
         </form>
     </li>
 @endsection
@@ -28,125 +27,126 @@
         <div class="card p-4  rounded-5">
             <div class="row">
                 <div class="col-lg-12">
-                    <form id="form-create-item" class="form-border" method="post" action="email.php">
-                        <div class="de_tab tab_simple">
+                    {{-- {{route('user.update', auth()->user()->id)}} --}}
+                    <form name="editUserDetailsForm" id='editUserDetailsForm' action="{{route('user.update', auth()->user()->id)}}" class="form-border" method="post">
+                        @csrf
+                        @method('post')
+                        <div class="row">
 
-                            <ul class="de_nav">
-                                <li class="active"><span>Profile</span></li>
-                                <li><span>Notifications</span></li>
-                            </ul>
-
-                            <div class="de_tab_content">
-                                <div class="tab-1">
-                                    <div class="row">
-                                        <div class="col-lg-6 mb20">
-                                            <h5>Username</h5>
-                                            <input type="text" name="username" id="username" class="form-control"
-                                                placeholder="Enter username" />
-                                        </div>
-                                        <div class="col-lg-6 mb20">
-                                            <h5>Email Address</h5>
-                                            <input type="text" name="email_address" id="email_address"
-                                                class="form-control" placeholder="Enter email" />
-                                        </div>
-                                        <div class="col-lg-6 mb20">
-                                            <h5>New Password</h5>
-                                            <input type="Password" name="user_password" id="user_password"
-                                                class="form-control" placeholder="********" />
-                                        </div>
-                                        <div class="col-lg-6 mb20">
-                                            <h5>Re-enter Password</h5>
-                                            <input type="Password" name="user_password_re-enter" id="user_password_re-enter"
-                                                class="form-control" placeholder="********" />
-                                        </div>
-                                        <div class="col-md-6 mb20">
-                                            <h5>Language</h5>
-                                            <p class="p-info">Select your prefered language.</p>
-                                            <div id="select_lang" class="dropdown fullwidth">
-                                                <a href="#" class="btn-selector">English</a>
-                                                <ul>
-                                                    <li class="active"><span>English</span></li>
-                                                    <li><span>France</span></li>
-                                                    <li><span>German</span></li>
-                                                    <li><span>Japan</span></li>
-                                                    <li><span>Italy</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb20">
-                                            <h5>Hour Format</h5>
-                                            <p class="p-info">Select your prefered language.</p>
-                                            <div id="select_hour_format" class="dropdown fullwidth">
-                                                <a href="#" class="btn-selector">24-hour</a>
-                                                <ul>
-                                                    <li class="active"><span>24-hour</span></li>
-                                                    <li><span>12-hour</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="col-md-6">
+                                <div class="field-set">
+                                    <label for='fullname'>Full Name<span style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                    <input type='text' name='fullname' id='fullname' class="form-control" value="{{auth()->user()->fullname}}">
+                                    @error('fullname')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
-
-                                <div class="tab-2">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-sm-20">
-                                            <div class="switch-with-title s2">
-                                                <h5>Discount Notifications</h5>
-                                                <div class="de-switch">
-                                                    <input type="checkbox" id="notif-item-sold" class="checkbox">
-                                                    <label for="notif-item-sold"></label>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                                <p class="p-info">You'll get notification while new discount available.</p>
-                                            </div>
-
-                                            <div class="spacer-20"></div>
-
-                                            <div class="switch-with-title s2">
-                                                <h5>New Product Notification</h5>
-                                                <div class="de-switch">
-                                                    <input type="checkbox" id="notif-bid-activity" class="checkbox">
-                                                    <label for="notif-bid-activity"></label>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                                <p class="p-info">You'll get notification while new product available.</p>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="switch-with-title s2">
-                                                <h5>Daily Reports</h5>
-                                                <div class="de-switch">
-                                                    <input type="checkbox" id="notif-auction-expiration" class="checkbox">
-                                                    <label for="notif-auction-expiration"></label>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                                <p class="p-info">We will send you a report everyday.</p>
-                                            </div>
-
-                                            <div class="spacer-20"></div>
-
-                                            <div class="switch-with-title s2">
-                                                <h5>Monthly Reports</h5>
-                                                <div class="de-switch">
-                                                    <input type="checkbox" id="notif-outbid" class="checkbox">
-                                                    <label for="notif-outbid"></label>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                                <p class="p-info">We will send you a report each month.</p>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="spacer-20"></div>
-                                    </div>
-                                </div>
-
                             </div>
-                        </div>
 
-                        <input type="button" id="submit" class="btn-main" value="Update profile">
+                            <div class="col-md-6">
+                                <div class="field-set">
+                                    <label for='email'>Email Address<span
+                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                    <input type='text' name='email' id='email' class="form-control" value="{{auth()->user()->email}}">
+                                    @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="field-set">
+                                    <label for='address'>Address<span style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                    <input type='text' name='address' id='address' class="form-control" value="{{auth()->user()->address}}">
+                                    @error('address')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="field-set">
+                                    <label for='city'>City<span style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                    <input type='text' name='city' id='city' class="form-control" value="{{auth()->user()->city}}">
+                                    @error('city')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="field-set">
+                                    <label for='phone1'>Phone 1<span style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                    <input type='text' name='phone1' id='phone1' class="form-control" value="{{auth()->user()->phone1}}">
+                                    @error('phone1')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="field-set">
+                                    <label for='phone2'>Phone 2</label>
+                                    <input type='text' name='phone2' id='phone2' class="form-control" value="{{auth()->user()->phone2}}">
+                                    @error('phone2')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="field-set">
+                                    <label for='dob'>Date of Birth<span
+                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                    <input type='date' name='dob' id='dob' class="form-control" value="{{auth()->user()->dob}}">
+                                    @error('dob')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="field-set">
+                                    <label for='license_no'>Personal ID/Driving License<span
+                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                    <input type='text' name='license_no' id='license_no' class="form-control" value="{{auth()->user()->license_no}}">
+                                    @error('license_no')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="field-set">
+                                    <label for='password'>New Password<span style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                    <input type='password' name='password' id='password' class="form-control" placeholder="Enter new password">
+                                    @error('password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="field-set">
+                                    <label for='repassword'>Re-enter New Password<span
+                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                    <input type='password' name='repassword' id='repassword' class="form-control" placeholder="Re enter new password">
+                                    @error('repassword')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 mt-3">
+                                <div id='submit' class="pull-right">
+                                    <button type='submit' id='submiteditUserDetailsForm'
+                                        class="btn-main color-2">Update</button>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
                     </form>
                 </div>
             </div>

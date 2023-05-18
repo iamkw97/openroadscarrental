@@ -214,8 +214,9 @@ Booking | Open Roads Car Rental
                                     </div>
 
                                     <div class="col-lg-12">
-                                        <input type='submit' id='send_message' value='Find a Vehicle'
-                                            class="btn-main pull-right">
+                                        {{-- <input type='submit' id='send_message' value='Find a Vehicle'
+                                            class="btn-main pull-right"> --}}
+                                            <a href="{{route('booking.create')}}" class="btn-main pull-right">Find a Vehicle</a>
                                     </div>
 
                                 </div>
