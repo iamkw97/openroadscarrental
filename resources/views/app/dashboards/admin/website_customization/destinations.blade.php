@@ -23,7 +23,7 @@
                 </div>
                 <div class="ms-auto">
                     <a href="{{ route('admin.destinations.create') }}" class="btn btn-primary mb-3 mb-lg-0"><i
-                        class='bx bxs-plus-square'></i>New Destination</a>
+                            class='bx bxs-plus-square'></i>New Destination</a>
                 </div>
             </div>
             <!--end breadcrumb-->
@@ -33,35 +33,46 @@
                     <h5 class="card-title">Bookings</h5>
                     <hr />
                     <div class="table-responsive">
-                        <table id="booking_list_all" class="table table-striped table-bordered">
-                            <thead>
+                        <table id="booking_list_all" class="table align-middle">
+                            <thead class="table-light">
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th>Published Date</th>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                </tr>
+                                @forelse ($destinations as $item)
+                                    <tr>
+                                        <td>{{ $item->published_date }}</td>
+                                        <td>
+                                            <img style="width: 120px; height: 90px; border-radius: 10%; overflow: hidden;"
+                                                src="{{ asset('img/destinations/' . $item->destination_image) }}"
+                                                alt="Destination Image">
+                                        </td>
+                                        <td>{{ $item->destination_title }}</td>
+                                        <td>{{ $item->destination_description }}</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-danger" disabled><i class="bi bi-trash"></i> Delete</button>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="5">
+                                            No destination is found!
+                                        </td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th>Published Date</th>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
                                 </tr>
                             </tfoot>
                         </table>

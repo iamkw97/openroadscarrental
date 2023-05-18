@@ -20,6 +20,10 @@
     <link href="{{ asset('welcome/css/coloring.css') }}" rel="stylesheet" type="text/css">
     <!-- color scheme -->
     <link id="colors" href="{{ asset('welcome/css/colors/scheme-08.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+        integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
 </head>
 
 <body onload="initialize()">
@@ -45,15 +49,16 @@
                                     <i class="fa fa-envelope"></i>
                                     openroadscarrental@gmail.com</a>
                             </div>
-                            <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>24/7 Customer Service</a></div>
+                            <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>24/7 Customer
+                                    Service</a></div>
                         </div>
                     </div>
 
                     <div class="topbar-right">
                         <div class="social-icons">
                             <a href="https://wa.me/003547737904"><i class="fa fa-whatsapp fa-lg"></i></a>
-                                <a href="https://www.facebook.com/openroadscarrental"><i
-                                        class="fa fa-facebook fa-lg"></i></a>
+                            <a href="https://www.facebook.com/openroadscarrental"><i
+                                    class="fa fa-facebook fa-lg"></i></a>
                             {{-- <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
                             <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
                             <a href="#"><i class="fa fa-youtube fa-lg"></i></a>
@@ -71,7 +76,7 @@
                                 <div class="de-flex-col">
                                     <!-- logo begin -->
                                     <div id="logo">
-                                        <a href="{{route('home.index')}}">
+                                        <a href="{{ route('home.index') }}">
                                             <img class="logo-1" src="{{ asset('welcome/images/orcr-logo.png') }}"
                                                 alt="">
                                             <img class="logo-2" src="{{ asset('welcome/images/orcr-logo.png') }}"
@@ -205,434 +210,457 @@
     ================================================== -->
     <script src="{{ asset('welcome/js/plugins.js') }}"></script>
     <script src="{{ asset('welcome/js/designesia.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=insert_your_api_key_here&amp;libraries=places&amp;callback=initPlaces"
         async="" defer=""></script>
-        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
-        
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
 
-        <!-- Include jQuery Pagination plugin -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-pagination/1.2.7/jquery.pagination.min.js"></script>
-        
+
+    <!-- Include jQuery Pagination plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-pagination/1.2.7/jquery.pagination.min.js"></script>
+
 </html>
 <script type="text/javascript">
-// $(document).ready(function() {
+    // $(document).ready(function() {
 
-//     function getPageList(totalPages, page, maxLength){
-//       function range(start, end){
-//         return Array.from(Array(end - start + 1), (_, i) => i + start);
-//       }
-    
-//       var sideWidth = maxLength < 9 ? 1 : 2;
-//       var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1;
-//       var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1;
-    
-//       if(totalPages <= maxLength){
-//         return range(1, totalPages);
-//       }
-    
-//       if(page <= maxLength - sideWidth - 1 - rightWidth){
-//         return range(1, maxLength - sideWidth - 1).concat(0, range(totalPages - sideWidth + 1, totalPages));
-//       }
-    
-//       if(page >= totalPages - sideWidth - 1 - rightWidth){
-//         return range(1, sideWidth).concat(0, range(totalPages- sideWidth - 1 - rightWidth - leftWidth, totalPages));
-//       }
-    
-//       return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
-//     }
-    
-//     $(function(){
-//       var numberOfItems = $(".pagi .cart").length;
-//       var limitPerPage = 9; //How many card items visible per a page
-//       var totalPages = Math.ceil(numberOfItems / limitPerPage);
-//       var paginationSize = 7; //How many page elements visible in the pagination
-//       var currentPage;
-    
-//       function showPage(whichPage){
-//         if(whichPage < 1 || whichPage > totalPages) return false;
-    
-//         currentPage = whichPage;
-    
-//         $(".pagi .cart").hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
-    
-//         $(".pagination li").slice(1, -1).remove();
-    
-//         getPageList(totalPages, currentPage, paginationSize).forEach(item => {
-//           $("<li>").addClass("page-item").addClass(item ? "current-page" : "dots")
-//           .toggleClass("active", item === currentPage).append($("<a>").addClass("page-link")
-//           .attr({href: "javascript:void(0)"}).text(item || "...")).insertBefore(".next-page");
-//         });
-    
-//         $(".previous-page").toggleClass("disable", currentPage === 1);
-//         $(".next-page").toggleClass("disable", currentPage === totalPages);
-//         return true;
-//       }
-    
-//       $(".pagination").append(
-//         $("<li>").addClass("page-item").addClass("previous-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Prev")),
-//         $("<li>").addClass("page-item").addClass("next-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Next"))
-//       );
-    
-//       $(".pagi").show();
-//       showPage(1);
-    
-//       $(document).on("click", ".pagination li.current-page:not(.active)", function(){
-//         return showPage(+$(this).text());
-//       });
-    
-//       $(".next-page").on("click", function(){
-//         return showPage(currentPage + 1);
-//       });
-    
-//       $(".previous-page").on("click", function(){
-//         return showPage(currentPage - 1);
-//       });
-//     });
+    //     function getPageList(totalPages, page, maxLength){
+    //       function range(start, end){
+    //         return Array.from(Array(end - start + 1), (_, i) => i + start);
+    //       }
 
-// });
+    //       var sideWidth = maxLength < 9 ? 1 : 2;
+    //       var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1;
+    //       var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1;
 
- function validateForm() {
-    var pickupLocation = document.getElementById("pickup-location");
-    var dropoffLocation = document.getElementById("dropoff-location");
-    var pickupDate = document.getElementById("pickup-date");
-    var returnDate = document.getElementById("return-date");
-    var pickupTime = document.getElementById("pickup-time");
-    var returnTime = document.getElementById("return-time");
+    //       if(totalPages <= maxLength){
+    //         return range(1, totalPages);
+    //       }
 
-    var isValid = true;
+    //       if(page <= maxLength - sideWidth - 1 - rightWidth){
+    //         return range(1, maxLength - sideWidth - 1).concat(0, range(totalPages - sideWidth + 1, totalPages));
+    //       }
 
-    // Resetting previous validation state
-    pickupLocation.style.outline = "none";
-    dropoffLocation.style.outline = "none";
-    pickupDate.style.outline = "none";
-    returnDate.style.outline = "none";
-    pickupTime.style.outline = "none";
-    returnTime.style.outline = "none";
+    //       if(page >= totalPages - sideWidth - 1 - rightWidth){
+    //         return range(1, sideWidth).concat(0, range(totalPages- sideWidth - 1 - rightWidth - leftWidth, totalPages));
+    //       }
 
-    // Checking pickup location
-    if (pickupLocation.value.trim() === "") {
-        pickupLocation.style.outline = "2px solid red";
-        isValid = false;
-        document.getElementById("PickupLocation_error").innerHTML = "𝘗𝘪𝘤𝘬 𝘜𝘱 𝘓𝘰𝘤𝘢𝘵𝘪𝘰𝘯 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
-        document.getElementById("PickupLocation_error").style.color = "red";
-    }
+    //       return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
+    //     }
 
-    // Checking dropoff location
-    if (dropoffLocation.value.trim() === "") {
-        dropoffLocation.style.outline = "2px solid red";
-        isValid = false;
-        document.getElementById("dropoff-location_error").innerHTML = "𝘋𝘳𝘰𝘱𝘰𝘧𝘧 𝘓𝘰𝘤𝘢𝘵𝘪𝘰𝘯 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
-        document.getElementById("dropoff-location_error").style.color = "red";
-    }
+    //     $(function(){
+    //       var numberOfItems = $(".pagi .cart").length;
+    //       var limitPerPage = 9; //How many card items visible per a page
+    //       var totalPages = Math.ceil(numberOfItems / limitPerPage);
+    //       var paginationSize = 7; //How many page elements visible in the pagination
+    //       var currentPage;
 
-    // Checking pickup date
-    if (pickupDate.value.trim() === "") {
-        pickupDate.style.outline = "2px solid red";
-        isValid = false;
-        document.getElementById("pickup_date_error").innerHTML = "𝘗𝘪𝘤𝘬 𝘜𝘱 𝘋𝘢𝘵𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬";
-        document.getElementById("pickup_date_error").style.color = "red";
-    }
+    //       function showPage(whichPage){
+    //         if(whichPage < 1 || whichPage > totalPages) return false;
 
-    // Checking return date
-    if (returnDate.value.trim() === "") {
-        returnDate.style.outline = "2px solid red";
-        isValid = false;
-        document.getElementById("return-date-error").innerHTML = "𝘙𝘦𝘵𝘶𝘳𝘯 𝘋𝘢𝘵𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬";
-        document.getElementById("return-date-error").style.color = "red";
-        
-    }
+    //         currentPage = whichPage;
 
-    // Checking pickup time
-    if (pickupTime.value.trim() === "") {
-        pickupTime.style.outline = "2px solid red";
-        isValid = false;
-        document.getElementById("pickup-time-error").innerHTML = "𝘗𝘪𝘤𝘬𝘶𝘱 𝘵𝘪𝘮𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
-        document.getElementById("pickup-time-error").style.color = "red";
-    }
-    
-    // Checking return time
-    if (returnTime.value.trim() === "") {
-        returnTime.style.outline = "2px solid red";
-        isValid = false;
-        document.getElementById("return-time-error").innerHTML = "𝘙𝘦𝘵𝘶𝘳𝘯 𝘵𝘪𝘮𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
-        document.getElementById("return-time-error").style.color = "red";
-    }
+    //         $(".pagi .cart").hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
 
-    // Displaying error message
-    if (isValid) {
-        // alert(pickupLocation)
-        // window.location.href = "{{ route('cars.index') }}";
-        window.location.href = "{{ route('cars.index') }}?pickupLocation=" + encodeURIComponent(pickupLocation.value) + "&dropoffLocation=" + encodeURIComponent(dropoffLocation.value) + "&pickupDate=" + encodeURIComponent(pickupDate.value)
-        + "&dropoffDate=" + encodeURIComponent(returnDate.value)
-        + "&pickupTime=" + encodeURIComponent(pickupTime.value)
-        + "&returnTime=" + encodeURIComponent(returnTime.value);
-  
-    }
-    
+    //         $(".pagination li").slice(1, -1).remove();
 
-    return isValid;
-}
+    //         getPageList(totalPages, currentPage, paginationSize).forEach(item => {
+    //           $("<li>").addClass("page-item").addClass(item ? "current-page" : "dots")
+    //           .toggleClass("active", item === currentPage).append($("<a>").addClass("page-link")
+    //           .attr({href: "javascript:void(0)"}).text(item || "...")).insertBefore(".next-page");
+    //         });
 
-$(document).ready(function() {
-  var pickupLocationSelect = $("#picklocation");
-  var droplocationSelect = $("#droplocation");
-  var pickdate = $("#pickdate");
-  var dropoff_date = $("#dropdate");
+    //         $(".previous-page").toggleClass("disable", currentPage === 1);
+    //         $(".next-page").toggleClass("disable", currentPage === totalPages);
+    //         return true;
+    //       }
 
-  var pickupTime = $("#pickup_time");
-  var dropoff_time = $("#droptime");
+    //       $(".pagination").append(
+    //         $("<li>").addClass("page-item").addClass("previous-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Prev")),
+    //         $("<li>").addClass("page-item").addClass("next-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Next"))
+    //       );
 
+    //       $(".pagi").show();
+    //       showPage(1);
 
+    //       $(document).on("click", ".pagination li.current-page:not(.active)", function(){
+    //         return showPage(+$(this).text());
+    //       });
 
-  var queryString = window.location.search;
-  var urlParams = new URLSearchParams(queryString);
-  var pickupLocation = urlParams.get("pickupLocation");
-  var dropoffLocation = urlParams.get("dropoffLocation");
-  var pickupDate = urlParams.get("pickupDate");
-  var dropoffDate = urlParams.get("dropoffDate");
+    //       $(".next-page").on("click", function(){
+    //         return showPage(currentPage + 1);
+    //       });
 
-  var pickTime = urlParams.get("pickupTime");
-  var dropTime = urlParams.get("returnTime");
+    //       $(".previous-page").on("click", function(){
+    //         return showPage(currentPage - 1);
+    //       });
+    //     });
 
+    // });
 
-  if (pickupLocation != null && dropoffLocation != null && pickupDate != null) {
-    pickupLocationSelect.val(pickupLocation);
-    droplocationSelect.val(dropoffLocation);
-    pickdate.val(pickupDate);
-    dropoff_date.val(dropoffDate);
-    pickupTime.val(pickTime);
-    dropoff_time.val(dropTime);
-  }
-});
+    function validateForm() {
+        var pickupLocation = document.getElementById("pickup-location");
+        var dropoffLocation = document.getElementById("dropoff-location");
+        var pickupDate = document.getElementById("pickup-date");
+        var returnDate = document.getElementById("return-date");
+        var pickupTime = document.getElementById("pickup-time");
+        var returnTime = document.getElementById("return-time");
 
+        var isValid = true;
 
+        // Resetting previous validation state
+        pickupLocation.style.outline = "none";
+        dropoffLocation.style.outline = "none";
+        pickupDate.style.outline = "none";
+        returnDate.style.outline = "none";
+        pickupTime.style.outline = "none";
+        returnTime.style.outline = "none";
 
-$(document).ready(function() {
-
-    $.ajax({
-  url: '/getcars',
-  method: 'GET',
-  success: function(response) {
-    var data = response.data;
-    console.log(data);
-    var inputFields = '';
-    var currentPage = 1;
-    var itemsPerPage = 9;
-
-    renderItems(); // Initial render
-
-    function renderItems() {
-      var startIndex = (currentPage - 1) * itemsPerPage;
-      var endIndex = startIndex + itemsPerPage;
-
-      inputFields = ''; // Reset inputFields
-
-      $.each(data, function(index, item) {
-        var category = item.category;
-        var vehicle_make = item.vehicle_make;
-        var vehicle_model = item.vehicle_model;
-        var no_of_seats = item.no_of_seats;
-        var no_of_seats = item.no_of_seats;
-        
-        var images=item.images; // Access the images array
-          var vehicle_image = ''; // Variable to store the vehicle image URL
-
-          if (images && images.length > 0) {
-            vehicle_image = images[0].vehicle_image; // Access the first image's vehicle_image property
-          }
-
-        var count = 0;
-     
-        if (item.category == 'Sedan') {
-          if (index >= startIndex && index < endIndex) {
-            inputFields += '<div class="col-xl-4 col-lg-6 cart Car Sedan">' +
-              '<div class="de-item mb30">' +
-              '<div class="d-img">' +
-                '<img src="img/cars/'+ vehicle_image +'" class="img-fluid" alt="">' + 
-              '</div>' +
-              '<div class="d-info">' +
-              '<div class="d-text">' +
-              '<h4>' + category + '</h4>' +
-              '<div class="d-item_like">' +
-              '<i class="fa fa-heart"></i><span>23</span>' +
-              '</div>' +
-              '<div class="d-atr-group">' +
-              '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
-              '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
-              '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
-              '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">' + item.category + '</span>' +
-              '</div>' +
-              '<div class="d-price">' +
-              'Daily rate from <span>$191</span>' +
-              '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
-              '</div>' +
-              '</div>' +
-              '</div>' +
-              '</div>' +
-              '</div>';
-          }
+        // Checking pickup location
+        if (pickupLocation.value.trim() === "") {
+            pickupLocation.style.outline = "2px solid red";
+            isValid = false;
+            document.getElementById("PickupLocation_error").innerHTML =
+                "𝘗𝘪𝘤𝘬 𝘜𝘱 𝘓𝘰𝘤𝘢𝘵𝘪𝘰𝘯 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+            document.getElementById("PickupLocation_error").style.color = "red";
         }
 
-        if (item.category == 'SUV' ) {
-            if (index >= startIndex && index < endIndex) {
-          var SUVInputFields =
-          '<div class="col-xl-4 col-lg-6 cart Car SUV">'+
-          '<div class="de-item mb30">'+
-          '<div class="d-img">'+
-            '<img src="img/cars/'+ vehicle_image +'" class="img-fluid" alt="">' + 
-          '</div>'+
-          '<div class="d-info">' + 
-          '<div class="d-text">' +
-          '<h4>' + item.vehicle_model + '</h4>'+
-          '<div class="d-item_like">' +
-          '<i class="fa fa-heart"></i><span>23</span>' +
-          '</div>' +
-          '<div class="d-atr-group">' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">'+ item.category + '</span>' +
-          '</div>' +
-          '<div class="d-price">' +
-          'Daily rate from <span>$191</span>' +
-          '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
-          '</div>' +
-          '</div>' +
-          '</div>' +
-          '</div>' +
-          '</div>';
-
-        inputFields += SUVInputFields;
-      }
-      
-    }
-    if (item.category == 'HatchBack' ) {
-            if (index >= startIndex && index < endIndex) {
-          var HatchBackInputFields =
-          '<div class="col-xl-4 col-lg-6 cart Car HatchBack ">'+
-          '<div class="de-item mb30">'+
-          '<div class="d-img">'+
-            '<img src="img/cars/'+ vehicle_image +'" class="img-fluid" alt="">' + 
-          '</div>'+
-          '<div class="d-info">' + 
-          '<div class="d-text">' +
-          '<h4>' + item.vehicle_model + '</h4>'+
-          '<div class="d-item_like">' +
-          '<i class="fa fa-heart"></i><span>23</span>' +
-          '</div>' +
-          '<div class="d-atr-group">' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
-          '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">'+ item.category + '</span>' +
-          '</div>' +
-          '<div class="d-price">' +
-          'Daily rate from <span>$191</span>' +
-          '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
-          '</div>' +
-          '</div>' +
-          '</div>' +
-          '</div>' +
-          '</div>';
-
-        inputFields += HatchBackInputFields;
-      }
-      
-    }
-        
-        if (item.category == 'Van' ) {
-            if (item.no_of_seats == '8' || item.no_of_seats == '10' || item.no_of_seats == '12') {
-        if (index >= startIndex && index < endIndex) {
-            var vanInputFields =
-                '<div class="col-xl-4 col-lg-6 cart Van set'+item.no_of_seats+'">' +
-                '<div class="de-item mb30">' +
-                '<div class="d-img">' +
-                '<img src="img/cars/' + vehicle_image + '" class="img-fluid" alt="">' +
-                '</div>' +
-                '<div class="d-info">' +
-                '<div class="d-text">' +
-                '<h4>' + item.vehicle_model + '</h4>' +
-                '<div class="d-item_like">' +
-                '<i class="fa fa-heart"></i><span>23</span>' +
-                '</div>' +
-                '<div class="d-atr-group">' +
-                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg')}}" alt="">5</span>' +
-                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg')}}" alt="">2</span>' +
-                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg')}}" alt="">4</span>' +
-                '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg')}}" alt="">' + item.category + '</span>' +
-                '</div>' +
-                '<div class="d-price">' +
-                'Daily rate from <span>$191</span>' +
-                '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>';
-
-            inputFields += vanInputFields;
+        // Checking dropoff location
+        if (dropoffLocation.value.trim() === "") {
+            dropoffLocation.style.outline = "2px solid red";
+            isValid = false;
+            document.getElementById("dropoff-location_error").innerHTML =
+                "𝘋𝘳𝘰𝘱𝘰𝘧𝘧 𝘓𝘰𝘤𝘢𝘵𝘪𝘰𝘯 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+            document.getElementById("dropoff-location_error").style.color = "red";
         }
+
+        // Checking pickup date
+        if (pickupDate.value.trim() === "") {
+            pickupDate.style.outline = "2px solid red";
+            isValid = false;
+            document.getElementById("pickup_date_error").innerHTML =
+                "𝘗𝘪𝘤𝘬 𝘜𝘱 𝘋𝘢𝘵𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬";
+            document.getElementById("pickup_date_error").style.color = "red";
+        }
+
+        // Checking return date
+        if (returnDate.value.trim() === "") {
+            returnDate.style.outline = "2px solid red";
+            isValid = false;
+            document.getElementById("return-date-error").innerHTML =
+                "𝘙𝘦𝘵𝘶𝘳𝘯 𝘋𝘢𝘵𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬";
+            document.getElementById("return-date-error").style.color = "red";
+
+        }
+
+        // Checking pickup time
+        if (pickupTime.value.trim() === "") {
+            pickupTime.style.outline = "2px solid red";
+            isValid = false;
+            document.getElementById("pickup-time-error").innerHTML =
+                "𝘗𝘪𝘤𝘬𝘶𝘱 𝘵𝘪𝘮𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+            document.getElementById("pickup-time-error").style.color = "red";
+        }
+
+        // Checking return time
+        if (returnTime.value.trim() === "") {
+            returnTime.style.outline = "2px solid red";
+            isValid = false;
+            document.getElementById("return-time-error").innerHTML =
+                "𝘙𝘦𝘵𝘶𝘳𝘯 𝘵𝘪𝘮𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+            document.getElementById("return-time-error").style.color = "red";
+        }
+
+        // Displaying error message
+        if (isValid) {
+            // alert(pickupLocation)
+            // window.location.href = "{{ route('cars.index') }}";
+            window.location.href = "{{ route('cars.index') }}?pickupLocation=" + encodeURIComponent(pickupLocation
+                    .value) + "&dropoffLocation=" + encodeURIComponent(dropoffLocation.value) + "&pickupDate=" +
+                encodeURIComponent(pickupDate.value) +
+                "&dropoffDate=" + encodeURIComponent(returnDate.value) +
+                "&pickupTime=" + encodeURIComponent(pickupTime.value) +
+                "&returnTime=" + encodeURIComponent(returnTime.value);
+
+        }
+
+
+        return isValid;
     }
-      
-    }
-});
-    $('#pagi').html(inputFields);
-    setupPagination();
 
-  }
+    $(document).ready(function() {
+        var pickupLocationSelect = $("#picklocation");
+        var droplocationSelect = $("#droplocation");
+        var pickdate = $("#pickdate");
+        var dropoff_date = $("#dropdate");
 
- 
-function setupPagination() {
-  var totalPages = Math.ceil(data.length / itemsPerPage);
-  var paginationHTML = '';
+        var pickupTime = $("#pickup_time");
+        var dropoff_time = $("#droptime");
 
-  if (totalPages > 1) {
-    paginationHTML += '<ul class="pagination">';
-    for (var i = 1; i <= totalPages; i++) {
-      paginationHTML += '<li class="page-item"><a class="page-link" href="#" data-page="' + i + '">' + i + '</a></li>';
-    }
-    paginationHTML += '</ul>';
-  }
-  
-  $('#pagination').html(paginationHTML);
 
-  $('.page-link').on('click', function(e) {
-        e.preventDefault();
-        currentPage = parseInt($(this).data('page'));
-        renderItems();
-      });
-}
-},
-error: function(xhr, status, error) {
-  console.error(xhr.responseText);
-}
-});
-    
-var data; // Placeholder for the data retrieved from the server
 
-// ...
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var pickupLocation = urlParams.get("pickupLocation");
+        var dropoffLocation = urlParams.get("dropoffLocation");
+        var pickupDate = urlParams.get("pickupDate");
+        var dropoffDate = urlParams.get("dropoffDate");
 
-// Click event listener for checkboxes in item_filter_group
-$('.de_checkbox input[type="checkbox"]').on('click', function() {
-  var checkboxValue = $(this).val();
-  
-  if (checkboxValue === 'vehicle_type_1') {
-    $('.cart.Van').toggle();
-  } else if (checkboxValue === 'vehicle_type_2') {
-    $('.cart.Car').toggle();
-  } 
-  
-  // Add condition for both checkboxes selected
-  var checkbox1Checked = $('#vehicle_type_1').prop('checked');
-  var checkbox2Checked = $('#vehicle_type_2').prop('checked');
-  
-  if (checkbox1Checked && checkbox2Checked) {
-    $('.cart.Van, .cart.Car').toggle();
-  } 
-});
+        var pickTime = urlParams.get("pickupTime");
+        var dropTime = urlParams.get("returnTime");
 
-});
 
-    </script>
+        if (pickupLocation != null && dropoffLocation != null && pickupDate != null) {
+            pickupLocationSelect.val(pickupLocation);
+            droplocationSelect.val(dropoffLocation);
+            pickdate.val(pickupDate);
+            dropoff_date.val(dropoffDate);
+            pickupTime.val(pickTime);
+            dropoff_time.val(dropTime);
+        }
+    });
 
+
+
+    $(document).ready(function() {
+
+        $.ajax({
+            url: '/getcars',
+            method: 'GET',
+            success: function(response) {
+                var data = response.data;
+                console.log(data);
+                var inputFields = '';
+                var currentPage = 1;
+                var itemsPerPage = 9;
+
+                renderItems(); // Initial render
+
+                function renderItems() {
+                    var startIndex = (currentPage - 1) * itemsPerPage;
+                    var endIndex = startIndex + itemsPerPage;
+
+                    inputFields = ''; // Reset inputFields
+
+                    $.each(data, function(index, item) {
+                        var category = item.category;
+                        var vehicle_make = item.vehicle_make;
+                        var vehicle_model = item.vehicle_model;
+                        var no_of_seats = item.no_of_seats;
+                        var no_of_seats = item.no_of_seats;
+
+                        var images = item.images; // Access the images array
+                        var vehicle_image = ''; // Variable to store the vehicle image URL
+
+                        if (images && images.length > 0) {
+                            vehicle_image = images[0]
+                            .vehicle_image; // Access the first image's vehicle_image property
+                        }
+
+                        var count = 0;
+
+                        if (item.category == 'Sedan') {
+                            if (index >= startIndex && index < endIndex) {
+                                inputFields +=
+                                    '<div class="col-xl-4 col-lg-6 cart Car Sedan">' +
+                                    '<div class="de-item mb30">' +
+                                    '<div class="d-img">' +
+                                    '<img src="img/cars/' + vehicle_image +
+                                    '" class="img-fluid" alt="">' +
+                                    '</div>' +
+                                    '<div class="d-info">' +
+                                    '<div class="d-text">' +
+                                    '<h4>' + category + '</h4>' +
+                                    '<div class="d-item_like">' +
+                                    '<i class="fa fa-heart"></i><span>23</span>' +
+                                    '</div>' +
+                                    '<div class="d-atr-group">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">5</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">2</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}" alt="">4</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
+                                    item.category + '</span>' +
+                                    '</div>' +
+                                    '<div class="d-price">' +
+                                    'Daily rate from <span>$191</span>' +
+                                    '<a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>';
+                            }
+                        }
+
+                        if (item.category == 'SUV') {
+                            if (index >= startIndex && index < endIndex) {
+                                var SUVInputFields =
+                                    '<div class="col-xl-4 col-lg-6 cart Car SUV">' +
+                                    '<div class="de-item mb30">' +
+                                    '<div class="d-img">' +
+                                    '<img src="img/cars/' + vehicle_image +
+                                    '" class="img-fluid" alt="">' +
+                                    '</div>' +
+                                    '<div class="d-info">' +
+                                    '<div class="d-text">' +
+                                    '<h4>' + item.vehicle_model + '</h4>' +
+                                    '<div class="d-item_like">' +
+                                    '<i class="fa fa-heart"></i><span>23</span>' +
+                                    '</div>' +
+                                    '<div class="d-atr-group">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">5</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">2</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}" alt="">4</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
+                                    item.category + '</span>' +
+                                    '</div>' +
+                                    '<div class="d-price">' +
+                                    'Daily rate from <span>$191</span>' +
+                                    '<a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>';
+
+                                inputFields += SUVInputFields;
+                            }
+
+                        }
+                        if (item.category == 'HatchBack') {
+                            if (index >= startIndex && index < endIndex) {
+                                var HatchBackInputFields =
+                                    '<div class="col-xl-4 col-lg-6 cart Car HatchBack ">' +
+                                    '<div class="de-item mb30">' +
+                                    '<div class="d-img">' +
+                                    '<img src="img/cars/' + vehicle_image +
+                                    '" class="img-fluid" alt="">' +
+                                    '</div>' +
+                                    '<div class="d-info">' +
+                                    '<div class="d-text">' +
+                                    '<h4>' + item.vehicle_model + '</h4>' +
+                                    '<div class="d-item_like">' +
+                                    '<i class="fa fa-heart"></i><span>23</span>' +
+                                    '</div>' +
+                                    '<div class="d-atr-group">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">5</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">2</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}" alt="">4</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
+                                    item.category + '</span>' +
+                                    '</div>' +
+                                    '<div class="d-price">' +
+                                    'Daily rate from <span>$191</span>' +
+                                    '<a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>';
+
+                                inputFields += HatchBackInputFields;
+                            }
+
+                        }
+
+                        if (item.category == 'Van') {
+                            if (item.no_of_seats == '8' || item.no_of_seats == '10' || item
+                                .no_of_seats == '12') {
+                                if (index >= startIndex && index < endIndex) {
+                                    var vanInputFields =
+                                        '<div class="col-xl-4 col-lg-6 cart Van set' + item
+                                        .no_of_seats + '">' +
+                                        '<div class="de-item mb30">' +
+                                        '<div class="d-img">' +
+                                        '<img src="img/cars/' + vehicle_image +
+                                        '" class="img-fluid" alt="">' +
+                                        '</div>' +
+                                        '<div class="d-info">' +
+                                        '<div class="d-text">' +
+                                        '<h4>' + item.vehicle_model + '</h4>' +
+                                        '<div class="d-item_like">' +
+                                        '<i class="fa fa-heart"></i><span>23</span>' +
+                                        '</div>' +
+                                        '<div class="d-atr-group">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">5</span>' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">2</span>' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}" alt="">4</span>' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
+                                        item.category + '</span>' +
+                                        '</div>' +
+                                        '<div class="d-price">' +
+                                        'Daily rate from <span>$191</span>' +
+                                        '<a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>' +
+                                        '</div>' +
+                                        '</div>' +
+                                        '</div>' +
+                                        '</div>' +
+                                        '</div>';
+
+                                    inputFields += vanInputFields;
+                                }
+                            }
+
+                        }
+                    });
+                    $('#pagi').html(inputFields);
+                    setupPagination();
+
+                }
+
+
+                function setupPagination() {
+                    var totalPages = Math.ceil(data.length / itemsPerPage);
+                    var paginationHTML = '';
+
+                    if (totalPages > 1) {
+                        paginationHTML += '<ul class="pagination">';
+                        for (var i = 1; i <= totalPages; i++) {
+                            paginationHTML +=
+                                '<li class="page-item"><a class="page-link" href="#" data-page="' +
+                                i + '">' + i + '</a></li>';
+                        }
+                        paginationHTML += '</ul>';
+                    }
+
+                    $('#pagination').html(paginationHTML);
+
+                    $('.page-link').on('click', function(e) {
+                        e.preventDefault();
+                        currentPage = parseInt($(this).data('page'));
+                        renderItems();
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+
+        var data; // Placeholder for the data retrieved from the server
+
+        // ...
+
+        // Click event listener for checkboxes in item_filter_group
+        $('.de_checkbox input[type="checkbox"]').on('click', function() {
+            var checkboxValue = $(this).val();
+
+            if (checkboxValue === 'vehicle_type_1') {
+                $('.cart.Van').toggle();
+            } else if (checkboxValue === 'vehicle_type_2') {
+                $('.cart.Car').toggle();
+            }
+
+            // Add condition for both checkboxes selected
+            var checkbox1Checked = $('#vehicle_type_1').prop('checked');
+            var checkbox2Checked = $('#vehicle_type_2').prop('checked');
+
+            if (checkbox1Checked && checkbox2Checked) {
+                $('.cart.Van, .cart.Car').toggle();
+            }
+        });
+
+    });
+</script>

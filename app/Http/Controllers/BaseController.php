@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\Destination;
 use Illuminate\Http\Request;
 
 class BaseController extends Controller
@@ -10,14 +11,16 @@ class BaseController extends Controller
     public function home()
     {
         $cars_for_gallery = Car::join('car_images', 'cars.id', '=', 'car_images.car_id')
-            ->select('cars.id','cars.displaying_name', 'cars.no_of_seats', 'cars.no_of_suitcases', 'cars.category', 'car_images.vehicle_image')
+            ->select('cars.id', 'cars.displaying_name', 'cars.no_of_seats', 'cars.no_of_suitcases', 'cars.category', 'car_images.vehicle_image')
             ->get();
-        return view('app.welcome.home', compact('cars_for_gallery'));
+        $destinations_for_gallery = Destination::all();
+
+        return view('app.welcome.home', compact('cars_for_gallery', 'destinations_for_gallery'));
     }
     public function cars()
     {
         $cars_for_gallery = Car::join('car_images', 'cars.id', '=', 'car_images.car_id')
-            ->select('cars.id','cars.displaying_name', 'cars.no_of_seats', 'cars.no_of_suitcases', 'cars.category', 'car_images.vehicle_image')
+            ->select('cars.id', 'cars.displaying_name', 'cars.no_of_seats', 'cars.no_of_suitcases', 'cars.category', 'car_images.vehicle_image')
             ->get();
         return view('app.welcome.cars', compact('cars_for_gallery'));
     }
