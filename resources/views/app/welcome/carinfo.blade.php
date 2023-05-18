@@ -61,7 +61,7 @@
                             <span class="d-title">Vehicle Make</span>
                             <spam class="d-value" id="VehicleMake"></spam>
                         </div>
-            
+
                         <div class="d-row">
                             <span class="d-title">Vehicle Model</span>
                             <spam class="d-value" id="VehicleModel"></spam>
@@ -82,7 +82,7 @@
                             <span class="d-title">Fuel State</span>
                             <spam class="d-value" id="FuelState"></spam>
                         </div>
-                       
+
                     </div>
 
                         <div class="spacer-single"></div>
@@ -110,19 +110,19 @@
 
                             <div class="row">
                                 <div class="col-lg-12 mb20">
-                                  
+
                                     <input id="car_id"  name="car_engine_3" type="hidden" >
-                                    
+
                                         {{-- <input type="text"   id="pickup-timefinal" name="Pick Up Date" value=""> --}}
-                                    
+
                                 </div>
                                 <div class="col-lg-12 mb20">
                                     <h5>Pick Up Location</h5>
                                     {{-- <input type="text" name="PickupLocationfinal"  placeholder="Enter your pickup location" id="PickupLocationfinal"  class="form-control"> --}}
                                     <select name="" id="PickupLocationfinal"
                                     style="border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
-                                    name="PickupLocation" 
-                                    placeholder="Enter your pickup location" 
+                                    name="PickupLocation"
+                                    placeholder="Enter your pickup location"
                                     autocomplete="off" class="form-control">
                                     <option selected value="">Select Location</option>
                                     <option  value="kef_airport">KEF Airport</option>
@@ -140,7 +140,7 @@
                                     <select name="" id="DropoffLocationfinal"
                                     style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
                                                     name="PickupLocation"
-                                                    placeholder="Enter your pickup location" 
+                                                    placeholder="Enter your pickup location"
                                                     autocomplete="off" class="form-control" >
                                                     <option selected value="">Select Location</option>
                                                     <option  value="reykjavik">Reykjavik</option>
@@ -158,7 +158,7 @@
                                     <input id="date-pickerfinal"  name="car_engine_3" type="date" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
                                     <input id="pickup-timefinal"  name="car_engine_3" type="time" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9; margin-top:10px;">
                                         {{-- <input type="text"   id="pickup-timefinal" name="Pick Up Date" value=""> --}}
-                                    
+
                                 </div>
 
                                 <div class="col-lg-12 mb20">
