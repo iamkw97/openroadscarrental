@@ -24,10 +24,33 @@ class BaseController extends Controller
             ->get();
         return view('app.welcome.cars', compact('cars_for_gallery'));
     }
-    public function carInfo()
+
+    public function carInfo(Request $request, $id)
+    {
+
+        $cars = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
+        ->leftJoin('car_availabilities', 'cars.id', '=', 'car_availabilities.car_id')
+            ->select('cars.*', 'car_prices.cost_rental_per_day', 'car_prices.cost_rental_per_hour')
+            ->where('cars.id', $id)
+            ->get();
+
+        foreach ($cars as $car) {
+            $carImages = CarImage::where('car_id', $car->id)->get();
+            $car->images = $carImages;
+        }
+
+        $response['data'] = $cars;
+        return response()->json($response);
+    }
+
+
+
+    public function bookingStep2()
     {
         return view('app.welcome.carinfo');
     }
+
+
     public function booking()
     {
         return view('app.welcome.booking');

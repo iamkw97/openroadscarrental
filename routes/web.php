@@ -27,7 +27,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BaseController::class, 'home'])->name('home.index');
 Route::get('/cars', [BaseController::class, 'cars'])->name('cars.index');
-Route::get('/cars/view', [BaseController::class, 'carInfo'])->name('cars.show');
+Route::get('/cars/view/{id}', [BaseController::class, 'carInfo'])->name('cars.show');
+Route::get('/booking/step2', [BaseController::class, 'bookingStep2'])->name('cars.bookingstep2');
 Route::get('/booking', [BaseController::class, 'booking'])->name('booking.index');
 Route::get('/userdetails', [BaseController::class, 'personalInfo'])->name('personal.index');
 Route::get('/aboutus', [BaseController::class, 'about'])->name('about.index');
