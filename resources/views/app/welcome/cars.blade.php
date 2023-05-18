@@ -57,7 +57,7 @@
                                 <small>Pickup Location</small>
                                 <select name="" id="picklocation"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
-                                                name="PickupLocation" onfocus="geolocate()"
+                                                name="PickupLocation" 
                                                 placeholder="Enter your pickup location" 
                                                 autocomplete="off" class="form-control">
                                                 <option selected value="">Select Location</option>
@@ -71,7 +71,7 @@
                                 <small>Return Location</small>
                                 <select name="" id="droplocation"
                                 style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
-                                                name="PickupLocation" onfocus="geolocate()"
+                                                name="PickupLocation"
                                                 placeholder="Enter your pickup location" 
                                                 autocomplete="off" class="form-control" >
                                                 <option selected value="">Select Location</option>

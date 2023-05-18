@@ -9,6 +9,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Rentaly - Multipurpose Vehicle Car Rental Website Template" name="description">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="" name="keywords">
     <meta content="" name="author">
     <!-- CSS Files
@@ -213,7 +214,7 @@
 
         <!-- Include jQuery Pagination plugin -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-pagination/1.2.7/jquery.pagination.min.js"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>
 <script type="text/javascript">
 // $(document).ready(function() {
@@ -374,7 +375,15 @@
     return isValid;
 }
 
+// $(document).ready(function() {
+ 
+// });
+
+
+
 $(document).ready(function() {
+
+
   var pickupLocationSelect = $("#picklocation");
   var droplocationSelect = $("#droplocation");
   var pickdate = $("#pickdate");
@@ -403,17 +412,8 @@ $(document).ready(function() {
     dropoff_date.val(dropoffDate);
     pickupTime.val(pickTime);
     dropoff_time.val(dropTime);
+  
   }
-
-
-  $("#RentNow").click(function() {
-    alert("click");
-});
-});
-
-
-
-$(document).ready(function() {
 
     $.ajax({
   url: '/getcars',
@@ -470,7 +470,7 @@ $(document).ready(function() {
               '</div>' +
               '<div class="d-price">' +
               'Daily rate from <span>$191</span>' +
-              '<a class="btn-main" id="RentNow">Rent Now</a>' +
+              '<a class="btn-main RentNow" id="' + item.id + '" >Rent Now</a>' +
               '</div>' +
               '</div>' +
               '</div>' +
@@ -483,7 +483,7 @@ $(document).ready(function() {
             if (item.no_of_seats == '5' || item.no_of_seats == '7' ) {
              if (index >= startIndex && index < endIndex) {
             var SUVInputFields =
-                '<div class="col-xl-4 col-lg-6 cart Van seat'+item.no_of_seats+'">' +
+                '<div class="col-xl-4 col-lg-6 cart Car seat'+item.no_of_seats+'">' +
                 '<div class="de-item mb30">' +
                 '<div class="d-img">' +
                 '<img src="img/cars/' + vehicle_image + '" class="img-fluid" alt="">' +
@@ -502,7 +502,7 @@ $(document).ready(function() {
                 '</div>' +
                 '<div class="d-price">' +
                 'Daily rate from <span>$191</span>' +
-                '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
+                '<a class="btn-main RentNow" id="' + item.id + '" >Rent Now</a>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
@@ -536,7 +536,7 @@ $(document).ready(function() {
           '</div>' +
           '<div class="d-price">' +
           'Daily rate from <span>$191</span>' +
-          '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
+          '<a class="btn-main RentNow" id="' + item.id + '" >Rent Now</a>' +
           '</div>' +
           '</div>' +
           '</div>' +
@@ -571,7 +571,7 @@ $(document).ready(function() {
                 '</div>' +
                 '<div class="d-price">' +
                 'Daily rate from <span>$191</span>' +
-                '<a class="btn-main" href="{{route('cars.show')}}">Rent Now</a>' +
+                '<a class="btn-main RentNow" id="' + item.id + '" >Rent Now</a>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
@@ -583,12 +583,43 @@ $(document).ready(function() {
     }
       
     }
-});
+    });
     $('#pagi').html(inputFields);
     setupPagination();
 
   }
 
+
+
+  $('.RentNow').on('click', function() {
+  var id = $(this).attr('id');
+  var pickLocation = pickupLocationSelect.val();
+  var dropofflocation = droplocationSelect.val();
+  var pick_d = pickdate.val();
+  var dropoff_d = dropoff_date.val();
+  var pickup_t = pickupTime.val();
+  var dropOff_t = dropoff_time.val();
+ 
+
+
+  var url = "{{ route('cars.bookingstep2') }}";
+  url += "?pickupLocationf=" + encodeURIComponent(pickLocation);
+  url += "&dropoffLocationf=" + encodeURIComponent(dropofflocation);
+  url += "&pickupDatef=" + encodeURIComponent(pick_d);
+  url += "&dropoffDatef=" + encodeURIComponent(dropoff_d);
+  url += "&pickupTimef=" + encodeURIComponent(pickup_t);
+  url += "&returnTimef=" + encodeURIComponent(dropOff_t);
+  url += "&id=" + encodeURIComponent(id);
+  window.location.href = url;
+
+
+//   if (pickupLocationf != null && dropoffLocationf != null && pickupDatef != null) {
+    
+  
+//   }
+
+
+});
  
 function setupPagination() {
   var totalPages = Math.ceil(data.length / itemsPerPage);
@@ -669,9 +700,79 @@ $('.seatCount input[type="checkbox"]').on('click', function() {
 //   if (checkbox1Checked && checkbox2Checked) {
 //     $('.cart.Van, .cart.Car').toggle();
 //   } 
+ });
+
+
+});
+
+
+$(document).ready(function(){
+
+
+    var PickupLocationfinal = $("#PickupLocationfinal");
+    var DropoffLocationfinal = $("#DropoffLocationfinal");
+    var datepickerfinal = $("#date-pickerfinal");
+    var pickuptimefinal = $("#pickup-timefinal");
+    var datedropfinal = $("#date-dropfinal");
+    var dropofftimefinal = $("#dropoff-timefinal");
+    var car_id = $("#car_id");
+
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var pickupLocationf = urlParams.get("pickupLocationf");
+    var dropoffLocationf = urlParams.get("dropoffLocationf");
+    var pickupDatef = urlParams.get("pickupDatef");
+    var dropoffDatef = urlParams.get("dropoffDatef");
+    var pickupTimef = urlParams.get("pickupTimef");
+    var returnTimef = urlParams.get("returnTimef");
+    var id = urlParams.get("id");
+
+
+    PickupLocationfinal.val(pickupLocationf);
+    DropoffLocationfinal.val(dropoffLocationf);
+    datepickerfinal.val(pickupDatef);
+    pickuptimefinal.val(pickupTimef);
+    datedropfinal.val(dropoffDatef);
+    dropofftimefinal.val(returnTimef);
+    car_id.val(id)
+
+    var Car_details = $("#car_id").val();
+
+
+
+    $.ajax({
+    url: "/cars/view/" + Car_details,
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    type: "GET",
+    
+    contentType: false,
+    processData: false,
+    success: function(response) {
+        var data = response.data;
+        console.log(data)
+        $.each(data, function(index, item) {
+            
+            $('#VehicleCategory').html(item.category);
+            $('#VehicleMake').html(item.vehicle_make);
+            $('#VehicleModel').html(item.vehicle_model);
+            $('#NumberofSeats').html(item.no_of_seats);
+            $('#NumberofSuitcases').html(item.no_of_suitcases);
+            $('#condition').html(item.gear_box_type);
+            $('#FuelState').html(item.fuel_state);
+            $('#vehicle_description').html(item.vehicle_description);
+            
+            
+
+        });
+        
+    }
 });
 
 });
+
+
 
     </script>
 
