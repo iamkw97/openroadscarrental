@@ -832,6 +832,9 @@ $("#submit_btn").on("click", function(){
     var datedrop_Off =  datedropfinal.val();
     var drop_T = dropofftimefinal.val();
     var cardetails_id = car_id.val()
+    var cardetails_id = car_id.val()
+    var cardetails_id = car_id.val()
+    var cardetails_id = car_id.val()
 
           var url = "{{ route('personal.index') }}";
   url += "?Pickup_loc=" + encodeURIComponent(Pickup_l);
@@ -850,7 +853,28 @@ $("#submit_btn").on("click", function(){
 
 });
 
-// $(document).ready(function(){
-//   alert('hi')
-// });
+$(document).ready(function(){
+
+
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var finalpickupLocationf = urlParams.get("Pickup_loc");
+        var finaldropoffLocationf = urlParams.get("Drop_off_loc");
+        var pickupDateifo = urlParams.get("date_picker");
+        var dropoffDatef = urlParams.get("date_drop");
+        var pickupTimef = urlParams.get("drop_Timeinfo");
+        var returnTimef = urlParams.get("pickup_Tinmeinfo");
+        var id = urlParams.get("id");
+alert(finalpickupLocationf )
+        $("#finalpicklocation").val(finalpickupLocationf);
+        $("#finaldroplocation").val(finaldropoffLocationf);
+        $("#finalpickdateinfo").val(pickupDateifo);
+        $("#finalpicktimeinfo").val(pickupTimef);
+        $("#finaldropdateinfo").val(dropoffDatef);
+        $("#finaldroptimeinfo").val(returnTimef);
+        // car_id.val(id)
+  
+});
+
+
     </script>

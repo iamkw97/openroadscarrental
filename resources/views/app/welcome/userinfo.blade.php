@@ -190,9 +190,9 @@
                                 <div class="row">
                                     <div class="col-lg-12 mb20">
                                         <h5>Pick Up Location</h5>
-                                        <input type="text" name="PickupLocation" onfocus="geolocate()"
-                                            placeholder="Enter your pickup location" id="autocomplete" autocomplete="off"
-                                            class="form-control">
+                                        <input type="text" name="PickupLocation" 
+                                            placeholder="Enter your pickup location" id="finalpicklocation" autocomplete="off"
+                                            class="form-control" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; ">
 
                                         <div class="jls-address-preview jls-address-preview--hidden">
                                             <div class="jls-address-preview__header">
@@ -202,9 +202,9 @@
 
                                     <div class="col-lg-12 mb20">
                                         <h5>Drop Off Location</h5>
-                                        <input type="text" name="DropoffLocation" onfocus="geolocate()"
-                                            placeholder="Enter your dropoff location" id="autocomplete2"
-                                            autocomplete="off" class="form-control">
+                                        <input type="text" name="finaldroplocation"
+                                            placeholder="Enter your dropoff location" id="finaldroplocation"
+                                            autocomplete="off" class="form-control" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; ">
 
                                         <div class="jls-address-preview jls-address-preview--hidden">
                                             <div class="jls-address-preview__header">
@@ -214,22 +214,17 @@
 
                                     <div class="col-lg-12 mb20">
                                         <h5>Pick Up Date & Time</h5>
-                                        <div class="date-time-field">
-                                            <input type="text" id="date-picker" name="Pick Up Date" value="">
-                                            <select name="Pick Up Time" id="pickup-time">
-                                                <option selected disabled value="Select time">Time</option>
-                                            </select>
-                                        </div>
+                                        <input id="finalpickdateinfo"  name="car_engine_3" type="date" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; ">
+                                        <input id="finalpicktimeinfo"  name="car_engine_3" type="time" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none;  margin-top:10px;">
+                                            {{-- <input type="text"   id="pickup-timefinal" name="Pick Up Date" value=""> --}}
+    
                                     </div>
-
+    
                                     <div class="col-lg-12 mb20">
                                         <h5>Return Date & Time</h5>
                                         <div class="date-time-field">
-                                            <input type="text" id="date-picker-2" name="Collection Date"
-                                                value="">
-                                            <select name="Collection Time" id="collection-time">
-                                                <option selected disabled value="Select time">Time</option>
-                                            </select>
+                                            <input id="finaldropdateinfo"  name="car_engine_3" type="date" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; ">
+                                            <input id="finaldroptimeinfo"  name="car_engine_3" type="time" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none;  margin-top:10px;">
                                         </div>
                                     </div>
                                 </div>
@@ -247,6 +242,6 @@
 
     <a href="#" id="back-to-top"></a>
     <script>
-        
+
     </script>
 @endsection
