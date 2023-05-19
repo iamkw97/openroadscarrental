@@ -918,7 +918,6 @@
                 formData.append('avalable_start_date', $('#avalable_start_date').val());
                 formData.append('avalable_end_date', $('#avalable_end_date').val());
 
-
                 $.ajax({
                     type: 'POST',
                     url: '{{ route('admin.cars.store') }}',

@@ -205,8 +205,6 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=insert_your_api_key_here&amp;libraries=places&amp;callback=initPlaces"
         async="" defer=""></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
-
 
     <!-- Include jQuery Pagination plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-pagination/1.2.7/jquery.pagination.min.js"></script>
@@ -216,82 +214,6 @@
 
 </html>
 <script type="text/javascript">
-    // $(document).ready(function() {
-
-    //     function getPageList(totalPages, page, maxLength){
-    //       function range(start, end){
-    //         return Array.from(Array(end - start + 1), (_, i) => i + start);
-    //       }
-
-    //       var sideWidth = maxLength < 9 ? 1 : 2;
-    //       var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1;
-    //       var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1;
-
-    //       if(totalPages <= maxLength){
-    //         return range(1, totalPages);
-    //       }
-
-    //       if(page <= maxLength - sideWidth - 1 - rightWidth){
-    //         return range(1, maxLength - sideWidth - 1).concat(0, range(totalPages - sideWidth + 1, totalPages));
-    //       }
-
-    //       if(page >= totalPages - sideWidth - 1 - rightWidth){
-    //         return range(1, sideWidth).concat(0, range(totalPages- sideWidth - 1 - rightWidth - leftWidth, totalPages));
-    //       }
-
-    //       return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
-    //     }
-
-    //     $(function(){
-    //       var numberOfItems = $(".pagi .cart").length;
-    //       var limitPerPage = 9; //How many card items visible per a page
-    //       var totalPages = Math.ceil(numberOfItems / limitPerPage);
-    //       var paginationSize = 7; //How many page elements visible in the pagination
-    //       var currentPage;
-
-    //       function showPage(whichPage){
-    //         if(whichPage < 1 || whichPage > totalPages) return false;
-
-    //         currentPage = whichPage;
-
-    //         $(".pagi .cart").hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
-
-    //         $(".pagination li").slice(1, -1).remove();
-
-    //         getPageList(totalPages, currentPage, paginationSize).forEach(item => {
-    //           $("<li>").addClass("page-item").addClass(item ? "current-page" : "dots")
-    //           .toggleClass("active", item === currentPage).append($("<a>").addClass("page-link")
-    //           .attr({href: "javascript:void(0)"}).text(item || "...")).insertBefore(".next-page");
-    //         });
-
-    //         $(".previous-page").toggleClass("disable", currentPage === 1);
-    //         $(".next-page").toggleClass("disable", currentPage === totalPages);
-    //         return true;
-    //       }
-
-    //       $(".pagination").append(
-    //         $("<li>").addClass("page-item").addClass("previous-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Prev")),
-    //         $("<li>").addClass("page-item").addClass("next-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Next"))
-    //       );
-
-    //       $(".pagi").show();
-    //       showPage(1);
-
-    //       $(document).on("click", ".pagination li.current-page:not(.active)", function(){
-    //         return showPage(+$(this).text());
-    //       });
-
-    //       $(".next-page").on("click", function(){
-    //         return showPage(currentPage + 1);
-    //       });
-
-    //       $(".previous-page").on("click", function(){
-    //         return showPage(currentPage - 1);
-    //       });
-    //     });
-
-    // });
-
     function validateForm() {
         var pickupLocation = document.getElementById("pickup-location");
         var dropoffLocation = document.getElementById("dropoff-location");
@@ -299,10 +221,8 @@
         var returnDate = document.getElementById("return-date");
         var pickupTime = document.getElementById("pickup-time");
         var returnTime = document.getElementById("return-time");
-
         var isValid = true;
 
-        // Resetting previous validation state
         pickupLocation.style.outline = "none";
         dropoffLocation.style.outline = "none";
         pickupDate.style.outline = "none";
@@ -310,7 +230,6 @@
         pickupTime.style.outline = "none";
         returnTime.style.outline = "none";
 
-        // Checking pickup location
         if (pickupLocation.value.trim() === "") {
             pickupLocation.style.outline = "2px solid red";
             isValid = false;
@@ -319,7 +238,6 @@
             document.getElementById("PickupLocation_error").style.color = "red";
         }
 
-        // Checking dropoff location
         if (dropoffLocation.value.trim() === "") {
             dropoffLocation.style.outline = "2px solid red";
             isValid = false;
@@ -328,7 +246,6 @@
             document.getElementById("dropoff-location_error").style.color = "red";
         }
 
-        // Checking pickup date
         if (pickupDate.value.trim() === "") {
             pickupDate.style.outline = "2px solid red";
             isValid = false;
@@ -337,17 +254,14 @@
             document.getElementById("pickup_date_error").style.color = "red";
         }
 
-        // Checking return date
         if (returnDate.value.trim() === "") {
             returnDate.style.outline = "2px solid red";
             isValid = false;
             document.getElementById("return-date-error").innerHTML =
                 "𝘙𝘦𝘵𝘶𝘳𝘯 𝘋𝘢𝘵𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬";
             document.getElementById("return-date-error").style.color = "red";
-
         }
 
-        // Checking pickup time
         if (pickupTime.value.trim() === "") {
             pickupTime.style.outline = "2px solid red";
             isValid = false;
@@ -356,7 +270,6 @@
             document.getElementById("pickup-time-error").style.color = "red";
         }
 
-        // Checking return time
         if (returnTime.value.trim() === "") {
             returnTime.style.outline = "2px solid red";
             isValid = false;
@@ -365,52 +278,32 @@
             document.getElementById("return-time-error").style.color = "red";
         }
 
-        // Displaying error message
         if (isValid) {
-            // alert(pickupLocation)
-            // window.location.href = "{{ route('cars.index') }}";
             window.location.href = "{{ route('cars.index') }}?pickupLocation=" + encodeURIComponent(pickupLocation
                     .value) + "&dropoffLocation=" + encodeURIComponent(dropoffLocation.value) + "&pickupDate=" +
                 encodeURIComponent(pickupDate.value) +
                 "&dropoffDate=" + encodeURIComponent(returnDate.value) +
                 "&pickupTime=" + encodeURIComponent(pickupTime.value) +
                 "&returnTime=" + encodeURIComponent(returnTime.value);
-
         }
-
-
         return isValid;
     }
 
-    // $(document).ready(function() {
-
-    // });
-
-
-
     $(document).ready(function() {
-
-
         var pickupLocationSelect = $("#picklocation");
         var droplocationSelect = $("#droplocation");
         var pickdate = $("#pickdate");
         var dropoff_date = $("#dropdate");
-
         var pickupTime = $("#pickup_time");
         var dropoff_time = $("#droptime");
-
-
-
         var queryString = window.location.search;
         var urlParams = new URLSearchParams(queryString);
         var pickupLocation = urlParams.get("pickupLocation");
         var dropoffLocation = urlParams.get("dropoffLocation");
         var pickupDate = urlParams.get("pickupDate");
         var dropoffDate = urlParams.get("dropoffDate");
-
         var pickTime = urlParams.get("pickupTime");
         var dropTime = urlParams.get("returnTime");
-
 
         if (pickupLocation != null && dropoffLocation != null && pickupDate != null) {
             pickupLocationSelect.val(pickupLocation);
@@ -419,7 +312,6 @@
             dropoff_date.val(dropoffDate);
             pickupTime.val(pickTime);
             dropoff_time.val(dropTime);
-
         }
 
         $.ajax({
@@ -431,22 +323,18 @@
                 var inputFields = '';
                 var currentPage = 1;
                 var itemsPerPage = 9;
-
                 renderItems(); // Initial render
 
                 function renderItems() {
                     var startIndex = (currentPage - 1) * itemsPerPage;
                     var endIndex = startIndex + itemsPerPage;
-
                     inputFields = ''; // Reset inputFields
-
                     $.each(data, function(index, item) {
                         var category = item.category;
                         var vehicle_make = item.vehicle_make;
                         var vehicle_model = item.vehicle_model;
                         var no_of_seats = item.no_of_seats;
                         var no_of_seats = item.no_of_seats;
-
                         var images = item.images; // Access the images array
                         var vehicle_image = ''; // Variable to store the vehicle image URL
 
@@ -456,7 +344,6 @@
                         }
 
                         var count = 0;
-
                         if (item.category == 'Sedan') {
                             if (index >= startIndex && index < endIndex) {
                                 inputFields +=
@@ -524,12 +411,11 @@
                                         '</div>' +
                                         '</div>' +
                                         '</div>';
-
                                     inputFields += SUVInputFields;
                                 }
                             }
-
                         }
+
                         if (item.category == 'HatchBack') {
                             if (index >= startIndex && index < endIndex) {
                                 var HatchBackInputFields =
@@ -561,10 +447,8 @@
                                     '</div>' +
                                     '</div>' +
                                     '</div>';
-
                                 inputFields += HatchBackInputFields;
                             }
-
                         }
 
                         if (item.category == 'Van') {
@@ -601,19 +485,14 @@
                                         '</div>' +
                                         '</div>' +
                                         '</div>';
-
                                     inputFields += vanInputFields;
                                 }
                             }
-
                         }
                     });
                     $('#pagi').html(inputFields);
                     setupPagination();
-
                 }
-
-
 
                 $('.RentNow').on('click', function() {
                     var id = $(this).attr('id');
@@ -624,8 +503,6 @@
                     var pickup_t = pickupTime.val();
                     var dropOff_t = dropoff_time.val();
 
-
-
                     var url = "{{ route('cars.bookingstep2') }}";
                     url += "?pickupLocationf=" + encodeURIComponent(pickLocation);
                     url += "&dropoffLocationf=" + encodeURIComponent(dropofflocation);
@@ -635,14 +512,6 @@
                     url += "&returnTimef=" + encodeURIComponent(dropOff_t);
                     url += "&id=" + encodeURIComponent(id);
                     window.location.href = url;
-
-
-                    //   if (pickupLocationf != null && dropoffLocationf != null && pickupDatef != null) {
-
-
-                    //   }
-
-
                 });
 
                 function setupPagination() {
@@ -658,7 +527,6 @@
                         }
                         paginationHTML += '</ul>';
                     }
-
                     $('#pagination').html(paginationHTML);
 
                     $('.page-link').on('click', function(e) {
@@ -673,24 +541,17 @@
             }
         });
 
-        var data; // Placeholder for the data retrieved from the server
-
-        // ...
-
-        // Click event listener for checkboxes in item_filter_group
+        var data;
         $('.VehicleCategory input[type="checkbox"]').on('click', function() {
             var checkboxValue = $(this).val();
-
             if (checkboxValue === 'vehicle_type_1') {
                 $('.cart.Van').toggle();
             } else if (checkboxValue === 'vehicle_type_2') {
                 $('.cart.Car').toggle();
             }
-
             // Add condition for both checkboxes selected
             var checkbox1Checked = $('#vehicle_type_1').prop('checked');
             var checkbox2Checked = $('#vehicle_type_2').prop('checked');
-
             if (checkbox1Checked && checkbox2Checked) {
                 $('.cart.Van, .cart.Car').toggle();
             }
@@ -698,7 +559,6 @@
 
         $('.seatCount input[type="checkbox"]').on('click', function() {
             var checkboxValue = $(this).val();
-
             if (checkboxValue === 'car_seat_3') {
                 $('.seat8, .seat10, .seat5 , .seat7, .seat12').toggle();
             } else if (checkboxValue === 'car_seat_4') {
@@ -714,22 +574,10 @@
             } else if (checkboxValue === 'car_seat_10+') {
                 $('.seat8, .seat10, .seat5 , .seat7').toggle();
             }
-            // Add condition for both checkboxes selected
-            //   var checkbox1Checked = $('#vehicle_type_1').prop('checked');
-            //   var checkbox2Checked = $('#vehicle_type_2').prop('checked');
-
-            //   if (checkbox1Checked && checkbox2Checked) {
-            //     $('.cart.Van, .cart.Car').toggle();
-            //   }
         });
-
-
     });
 
-
     $(document).ready(function() {
-
-
         var PickupLocationfinal = $("#PickupLocationfinal");
         var DropoffLocationfinal = $("#DropoffLocationfinal");
         var datepickerfinal = $("#date-pickerfinal");
@@ -748,7 +596,6 @@
         var returnTimef = urlParams.get("returnTimef");
         var id = urlParams.get("id");
 
-
         PickupLocationfinal.val(pickupLocationf);
         DropoffLocationfinal.val(dropoffLocationf);
         datepickerfinal.val(pickupDatef);
@@ -759,118 +606,90 @@
 
         var Car_details = $("#car_id").val();
 
+        $.ajax({
+            url: "/cars/view/" + Car_details,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: "GET",
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                var data = response.data;
+                console.log(data)
+                $.each(data, function(index, item) {
+                    $('#VehicleCategory').html(item.category);
+                    $('#VehicleMake').html(item.vehicle_make);
+                    $('#VehicleModel').html(item.vehicle_model);
+                    $('#NumberofSeats').html(item.no_of_seats);
+                    $('#NumberofSuitcases').html(item.no_of_suitcases);
+                    $('#condition').html(item.gear_box_type);
+                    $('#FuelState').html(item.fuel_state);
+                    $('#vehicle_description').html(item.displaying_name);
+                    $('#vehicleMoreinf').html(item.vehicle_description);
 
-
-    $.ajax({
-    url: "/cars/view/" + Car_details,
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    },
-    type: "GET",
-
-    contentType: false,
-    processData: false,
-    success: function(response) {
-        var data = response.data;
-        console.log(data)
-        $.each(data, function(index, item) {
-
-            $('#VehicleCategory').html(item.category);
-            $('#VehicleMake').html(item.vehicle_make);
-            $('#VehicleModel').html(item.vehicle_model);
-            $('#NumberofSeats').html(item.no_of_seats);
-            $('#NumberofSuitcases').html(item.no_of_suitcases);
-            $('#condition').html(item.gear_box_type);
-            $('#FuelState').html(item.fuel_state);
-            $('#vehicle_description').html(item.displaying_name);
-            $('#vehicleMoreinf').html(item.vehicle_description);
-
-
-            var carImages = item.images;
-
+                    var carImages = item.images;
                     var carousel = $('#slider-carousel');
                     carousel.empty();
+                    $.each(carImages, function(i, image) {
+                        var vehicleImage = '<div class="item"><img src="img/cars/' +
+                            image.vehicle_image + '"alt=""></div>';
 
-            $.each(carImages, function(i, image) {
-                var vehicleImage = '<div class="item"><img src="img/cars/'+image.vehicle_image+'"alt=""></div>';
-
-                carousel.append(vehicleImage);
-            });
-
-
-
-
-
-
-
-
-
-
-
-// Initialize Owl Carousel
-            carousel.owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            dots: true,
-            responsive: {
-            0: {
-            items: 1
-            },
-            600: {
-            items: 3
-            },
-            1000: {
-            items: 5
-            }
-        }
-        });
-
+                        carousel.append(vehicleImage);
+                    });
+                    carousel.owlCarousel({
+                        loop: true,
+                        margin: 10,
+                        nav: true,
+                        dots: true,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 3
+                            },
+                            1000: {
+                                items: 5
+                            }
+                        }
+                    });
                 });
-
             }
         });
 
-$("#submit_btn").on("click", function(){
-    var Pickup_l = PickupLocationfinal.val();
-    var Drop_off_l = DropoffLocationfinal.val();
-    var date_pick = datepickerfinal.val();
-    var pickup_T = pickuptimefinal.val();
-    var datedrop_Off =  datedropfinal.val();
-    var drop_T = dropofftimefinal.val();
-    var cardetails_id = car_id.val()
+        $("#submit_btn").on("click", function() {
+            var Pickup_l = PickupLocationfinal.val();
+            var Drop_off_l = DropoffLocationfinal.val();
+            var date_pick = datepickerfinal.val();
+            var pickup_T = pickuptimefinal.val();
+            var datedrop_Off = datedropfinal.val();
+            var drop_T = dropofftimefinal.val();
+            var cardetails_id = car_id.val()
 
-    var vehicle_description = $("#vehicle_description").html()
-    var VehicleCategory = $("#VehicleCategory").html()
-    var NumberofSeats = $("#NumberofSeats").html()
-    var NumberofSuitcases = $("#NumberofSuitcases").html()
+            var vehicle_description = $("#vehicle_description").html()
+            var VehicleCategory = $("#VehicleCategory").html()
+            var NumberofSeats = $("#NumberofSeats").html()
+            var NumberofSuitcases = $("#NumberofSuitcases").html()
 
-          var url = "{{ route('personal.index') }}";
-  url += "?Pickup_loc=" + encodeURIComponent(Pickup_l);
-  url += "&Drop_off_loc=" + encodeURIComponent(Drop_off_l);
-  url += "&date_picker=" + encodeURIComponent(date_pick);
-  url += "&date_drop=" + encodeURIComponent(datedrop_Off);
-  url += "&drop_Timeinfo=" + encodeURIComponent(drop_T);
-  url += "&pickup_Tinmeinfo=" + encodeURIComponent(pickup_T);
-  url += "&card_id=" + encodeURIComponent(cardetails_id);
-  url += "&vehicle_des=" + encodeURIComponent(vehicle_description);
-  url += "&VehicleCategory=" + encodeURIComponent(VehicleCategory);
-  url += "&NumberofSeats=" + encodeURIComponent(NumberofSeats);
-  url += "&NumberofSuitcases=" + encodeURIComponent(NumberofSuitcases);
-//   url += "&vehicleImageName=" + encodeURIComponent(vehicleImageName);
+            var url = "{{ route('personal.index') }}";
+            url += "?Pickup_loc=" + encodeURIComponent(Pickup_l);
+            url += "&Drop_off_loc=" + encodeURIComponent(Drop_off_l);
+            url += "&date_picker=" + encodeURIComponent(date_pick);
+            url += "&date_drop=" + encodeURIComponent(datedrop_Off);
+            url += "&drop_Timeinfo=" + encodeURIComponent(drop_T);
+            url += "&pickup_Tinmeinfo=" + encodeURIComponent(pickup_T);
+            url += "&card_id=" + encodeURIComponent(cardetails_id);
+            url += "&vehicle_des=" + encodeURIComponent(vehicle_description);
+            url += "&VehicleCategory=" + encodeURIComponent(VehicleCategory);
+            url += "&NumberofSeats=" + encodeURIComponent(NumberofSeats);
+            url += "&NumberofSuitcases=" + encodeURIComponent(NumberofSuitcases);
 
-  window.location.href = url;
-
-      });
-
-
-
-
+            window.location.href = url;
+        });
     });
 
     $(document).ready(function() {
-
-
         var queryString = window.location.search;
         var urlParams = new URLSearchParams(queryString);
         var finalpickupLocationf = urlParams.get("Pickup_loc");
@@ -879,12 +698,11 @@ $("#submit_btn").on("click", function(){
         var dropoffDatef = urlParams.get("date_drop");
         var pickupTimef = urlParams.get("drop_Timeinfo");
         var returnTimef = urlParams.get("pickup_Tinmeinfo");
-        var id = urlParams.get("id");
+        var id = urlParams.get("card_id");
         var vehicle_d = urlParams.get("vehicle_des");
         var VehicleCategoryinfo = urlParams.get("VehicleCategory");
         var SeatsCount = urlParams.get("NumberofSeats");
         var SuitcasesCount = urlParams.get("NumberofSuitcases");
-
 
         $("#finalpicklocation").val(finalpickupLocationf);
         $("#finaldroplocation").val(finaldropoffLocationf);
@@ -897,14 +715,15 @@ $("#submit_btn").on("click", function(){
         $("#bagscount").html(SuitcasesCount);
         $("#VehicleCategoryinfomation").html(VehicleCategoryinfo);
 
-
-        $("#submitRegister").on("click", function() {
+        $("#submitRegister").on("click", function(e) {
+            e.preventDefault();
             var fullname = $("#fullname").val();
             var email = $("#email").val();
             var address = $("#address").val();
             var city = $("#city").val();
             var phone1 = $("#phone1").val();
             var phone2 = $("#phone2").val();
+            var dob = $("#dob").val();
             var license_no = $("#license_no").val();
             var password = $("#password").val();
             var repassword = $("#repassword").val();
@@ -914,7 +733,7 @@ $("#submit_btn").on("click", function(){
             var finaldropdateinfomation = $("#finaldropdateinfo").val();
             var finalpicktimeinformation = $("#finalpicktimeinfo").val();
             var finaldroptimeinformation = $("#finaldroptimeinfo").val();
-
+            var total_cost = 200;
 
             var formData = new FormData();
             formData.append('fullname', fullname);
@@ -923,38 +742,43 @@ $("#submit_btn").on("click", function(){
             formData.append('city', city);
             formData.append('phone1', phone1);
             formData.append('phone2', phone2);
+            formData.append('dob', dob);
             formData.append('license_no', license_no);
             formData.append('password', password);
             formData.append('repassword', repassword);
             formData.append('finalpickupLionformation', finalpickupLionformation);
             formData.append('finaldroplocationinformation', finaldroplocationinformation);
+            formData.append('finalpickdateinfomation', finalpickdateinfomation);
+            formData.append('finaldropdateinfomation', finaldropdateinfomation);
+            formData.append('finalpicktimeinformation', finalpicktimeinformation);
+            formData.append('finaldroptimeinformation', finaldroptimeinformation);
+            formData.append('car_id', id);
+            formData.append('total_cost', total_cost);
 
             $.ajax({
-                url: "{{ route('proceed.booking') }}",
+                type: 'POST',
+                url: '{{ route('booking.store') }}',
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                type: "POST",
                 data: formData,
                 contentType: false,
                 processData: false,
                 success: function(data, status, xhr) {
-                    if (data.status == 'Success') {
+                    var statusCode = xhr.status;
+                    if (statusCode === 200) {
                         // Do something with success message here
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: data.status,
-                            text: data.message,
+                            title: "Success",
+                            text: "Car Registered Successfully!",
                             showConfirmButton: false,
-
-                        })
-                    } else if (xhr.status == 422) {
-                        // handle the validation errors
-                        // ----------------------------------------------------------------------------------
-                        // var errors = data.errors;
-                        // loop through the errors and show them
-                        // for (var key in errors) {
+                            timer: 1500
+                        }).then(function() {
+                            window.location.href = '/login';
+                        });
+                    } else if (statusCode === 422) {
                         Swal.fire({
                             position: 'center',
                             icon: 'error',
@@ -971,21 +795,15 @@ $("#submit_btn").on("click", function(){
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: data.status,
-                            text: data.message,
+                            title: "Error",
+                            text: "Car Registration Failed!",
                             showConfirmButton: false,
-
+                            timer: 1500
                         })
                     }
-                    location.reload();
                 },
-                });
+
+            });
         });
-        // car_id.val(id)
-
-});
-
-// $(document).ready(function(){
-//
-// });
-    </script>
+    });
+</script>

@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\CarController;
 use App\Http\Controllers\admin\DestinationController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BaseController;
+use App\Http\Controllers\user\BookingController as UserBookingController;
 use App\Http\Controllers\user\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,17 +29,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BaseController::class, 'home'])->name('home.index');
 Route::get('/cars', [BaseController::class, 'cars'])->name('cars.index');
 Route::get('/cars/view/{id}', [BaseController::class, 'carInfo'])->name('cars.show');
-
-
-Route::get('/booking/step2', [BaseController::class, 'bookingStep2'])->name('cars.bookingstep2');
 Route::get('/booking', [BaseController::class, 'booking'])->name('booking.index');
+Route::get('/booking/step2', [BaseController::class, 'bookingStep2'])->name('cars.bookingstep2');
 Route::get('/userdetails', [BaseController::class, 'personalInfo'])->name('personal.index');
 Route::get('/aboutus', [BaseController::class, 'about'])->name('about.index');
 Route::get('/contactus', [BaseController::class, 'contact'])->name('contact.index');
 Route::get('/destinations', [BaseController::class, 'destinationInfo'])->name('destinationinfo.index');
-Route::post('/proceed/booking', [BaseController::class, 'proceedBooking'])->name('proceed.booking');
-
-
 
 Route::get('/getcars', [CarController::class, 'getcar'])->name('getcars.details');
 
@@ -54,6 +50,7 @@ Route::middleware(['web'])->group(function () {
     Route::post('/login/store', [AuthController::class, 'loginAuthenticated'])->name('login.authenticate');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::post('/update/{id}', [AuthController::class, 'updateUser'])->name('user.update');
+    Route::post('/booking/complete', [UserBookingController::class, 'store'])->name('booking.store');
 
     /*
     |--------------------------------------------------------------------------

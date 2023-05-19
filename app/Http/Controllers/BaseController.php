@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Models\Car;
-use App\Models\CarAvailability;
 use App\Models\CarImage;
-use App\Models\CarPrice;
 use App\Models\Destination;
 use Illuminate\Http\Request;
 
@@ -41,18 +40,6 @@ class BaseController extends Controller
         $response['data'] = $cars;
         return response()->json($response);
     }
-
-    public function proceedBooking(Request $request)
-    {
-
-       
-    }
-
-
-
-
-
- 
 
     public function bookingStep2()
     {
