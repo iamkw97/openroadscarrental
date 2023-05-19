@@ -57,7 +57,7 @@
                                     <div class="row mt-2">
                                         <div class="col-md-8 my-1">
                                             <label for="destination_title" class="form-label">Title<span
-                                                style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                             <input type="text" class="form-control" id="destination_title"
                                                 name="destination_title" placeholder="Enter displaying title">
                                         </div>
@@ -69,15 +69,16 @@
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col-md-12 my-1">
-                                            <label for="destination_description" class="form-label">Content<span
-                                                style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                            <label for="destination_description" class="form-label">Description<span
+                                                    style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                             <textarea class="form-control" id="destination_description" name="destination_description" rows="5"></textarea>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col-md-12 my-1">
                                             <label for="destination_image" class="form-label">Destination Image</label>
-                                            <input id="destination_image" name="destination_image" type="file" accept="image/*">
+                                            <input id="destination_image" name="destination_image" type="file"
+                                                accept="image/*">
                                         </div>
                                         <div id="destination_preview"></div>
                                     </div>
@@ -125,6 +126,7 @@
                 reader.readAsDataURL(file);
             }
         }
+
         function removeImage(index) {
             var filesInput = document.getElementById("destination_image");
             var files = Array.from(filesInput.files);
@@ -134,7 +136,7 @@
         }
         document.getElementById("destination_image").addEventListener("change", previewImages);
 
-        //store vehicle info----------------------------------------------
+        //store booking info----------------------------------------------
         $(document).ready(function() {
             $('#btn_submit_destination').click(function(e) {
                 e.preventDefault();
@@ -143,11 +145,11 @@
                 formData.append('destination_title', $('#destination_title').val());
                 formData.append('published_date', $('#published_date').val());
                 formData.append('destination_description', $('#destination_description').val());
-                destination_images = $('input[id="destination_image"]').prop('files');
+                formData.append('destination_image', $('#destination_image')[0].files[0]);
 
                 $.ajax({
                     type: 'POST',
-                    url: '{{ route('admin.cars.store') }}',
+                    url: '{{ route('admin.destinations.store') }}',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },

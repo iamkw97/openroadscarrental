@@ -356,128 +356,129 @@
 
                     <div id="items-carousel" class="owl-carousel wow fadeIn">
                         @forelse ($cars_for_gallery as $item)
-                        <div class="col-lg-12">
-                            <div class="de-item mb30">
-                                <div class="d-img">
-                                    <img src="{{ asset('img/cars/' . $item->vehicle_image) }}" class="img-fluid" alt="">
-                                </div>
-                                <div class="d-info">
-                                    <div class="d-text">
-                                        <h4>{{$item->displaying_name}}</h4>
-                                        <div class="d-item_like">
-                                            <i class="fa fa-heart"></i><span>74</span>
-                                        </div>
-                                        <div class="d-atr-group">
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
-                                                    alt="">{{{$item->no_of_seats}}}</span>
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
-                                                    alt="">{{{$item->no_of_suitcases}}}</span>
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
-                                                    alt="">{{{$item->category}}}</span>
-                                        </div>
-                                        <div class="d-price">
-                                            Daily rate from <span>$265</span>
-                                            <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                            <div class="col-lg-12">
+                                <div class="de-item mb30">
+                                    <div class="d-img">
+                                        <img src="{{ asset('img/cars/' . $item->vehicle_image) }}" class="img-fluid"
+                                            alt="">
+                                    </div>
+                                    <div class="d-info">
+                                        <div class="d-text">
+                                            <h4>{{ $item->displaying_name }}</h4>
+                                            <div class="d-item_like">
+                                                <i class="fa fa-heart"></i><span>74</span>
+                                            </div>
+                                            <div class="d-atr-group">
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
+                                                        alt="">{{ $item->no_of_seats }}</span>
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
+                                                        alt="">{{ $item->no_of_suitcases }}</span>
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
+                                                        alt="">{{ $item->category }}</span>
+                                            </div>
+                                            <div class="d-price">
+                                                Daily rate from <span>$265</span>
+                                                <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @empty
-                        <div class="col-lg-12">
-                            <div class="de-item mb30">
-                                <div class="d-img">
-                                    <img src="{{ asset('welcome/images/cars/bmw-m5.jpg') }}" class="img-fluid"
-                                        alt="">
-                                </div>
-                                <div class="d-info">
-                                    <div class="d-text">
-                                        <h4>BMW M2</h4>
-                                        <div class="d-item_like">
-                                            <i class="fa fa-heart"></i><span>36</span>
-                                        </div>
-                                        <div class="d-atr-group">
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
-                                                    alt="">5</span>
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
-                                                    alt="">2</span>
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}"
-                                                    alt="">4</span>
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
-                                                    alt="">Sedan</span>
-                                        </div>
-                                        <div class="d-price">
-                                            Daily rate from <span>$244</span>
-                                            <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                            <div class="col-lg-12">
+                                <div class="de-item mb30">
+                                    <div class="d-img">
+                                        <img src="{{ asset('welcome/images/cars/bmw-m5.jpg') }}" class="img-fluid"
+                                            alt="">
+                                    </div>
+                                    <div class="d-info">
+                                        <div class="d-text">
+                                            <h4>BMW M2</h4>
+                                            <div class="d-item_like">
+                                                <i class="fa fa-heart"></i><span>36</span>
+                                            </div>
+                                            <div class="d-atr-group">
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
+                                                        alt="">5</span>
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
+                                                        alt="">2</span>
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}"
+                                                        alt="">4</span>
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
+                                                        alt="">Sedan</span>
+                                            </div>
+                                            <div class="d-price">
+                                                Daily rate from <span>$244</span>
+                                                <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-lg-12">
-                            <div class="de-item mb30">
-                                <div class="d-img">
-                                    <img src="{{ asset('welcome/images/cars/ferrari-enzo.jpg') }}" class="img-fluid"
-                                        alt="">
-                                </div>
-                                <div class="d-info">
-                                    <div class="d-text">
-                                        <h4>Ferarri Enzo</h4>
-                                        <div class="d-item_like">
-                                            <i class="fa fa-heart"></i><span>85</span>
-                                        </div>
-                                        <div class="d-atr-group">
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
-                                                    alt="">5</span>
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
-                                                    alt="">2</span>
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}"
-                                                    alt="">4</span>
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
-                                                    alt="">Exotic
-                                                Car</span>
-                                        </div>
-                                        <div class="d-price">
-                                            Daily rate from <span>$167</span>
-                                            <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                            <div class="col-lg-12">
+                                <div class="de-item mb30">
+                                    <div class="d-img">
+                                        <img src="{{ asset('welcome/images/cars/ferrari-enzo.jpg') }}" class="img-fluid"
+                                            alt="">
+                                    </div>
+                                    <div class="d-info">
+                                        <div class="d-text">
+                                            <h4>Ferarri Enzo</h4>
+                                            <div class="d-item_like">
+                                                <i class="fa fa-heart"></i><span>85</span>
+                                            </div>
+                                            <div class="d-atr-group">
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
+                                                        alt="">5</span>
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
+                                                        alt="">2</span>
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}"
+                                                        alt="">4</span>
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
+                                                        alt="">Exotic
+                                                    Car</span>
+                                            </div>
+                                            <div class="d-price">
+                                                Daily rate from <span>$167</span>
+                                                <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-lg-12">
-                            <div class="de-item mb30">
-                                <div class="d-img">
-                                    <img src="{{ asset('welcome/images/cars/ford-raptor.jpg') }}" class="img-fluid"
-                                        alt="">
-                                </div>
-                                <div class="d-info">
-                                    <div class="d-text">
-                                        <h4>Ford Raptor</h4>
-                                        <div class="d-item_like">
-                                            <i class="fa fa-heart"></i><span>59</span>
-                                        </div>
-                                        <div class="d-atr-group">
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
-                                                    alt="">5</span>
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
-                                                    alt="">2</span>
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}"
-                                                    alt="">4</span>
-                                            <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
-                                                    alt="">Pickup
-                                                Truck</span>
-                                        </div>
-                                        <div class="d-price">
-                                            Daily rate from <span>$147</span>
-                                            <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                            <div class="col-lg-12">
+                                <div class="de-item mb30">
+                                    <div class="d-img">
+                                        <img src="{{ asset('welcome/images/cars/ford-raptor.jpg') }}" class="img-fluid"
+                                            alt="">
+                                    </div>
+                                    <div class="d-info">
+                                        <div class="d-text">
+                                            <h4>Ford Raptor</h4>
+                                            <div class="d-item_like">
+                                                <i class="fa fa-heart"></i><span>59</span>
+                                            </div>
+                                            <div class="d-atr-group">
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
+                                                        alt="">5</span>
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
+                                                        alt="">2</span>
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}"
+                                                        alt="">4</span>
+                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
+                                                        alt="">Pickup
+                                                    Truck</span>
+                                            </div>
+                                            <div class="d-price">
+                                                Daily rate from <span>$147</span>
+                                                <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @endforelse
                     </div>
 
@@ -529,67 +530,66 @@
                             et ut anim.</p>
                         <div class="spacer-20"></div>
                     </div>
-
-                    <div class="col-lg-4 mb10">
-                        <div class="bloglist s2 item">
-                            <div class="post-content">
-                                <div class="post-image">
-                                    <div class="date-box">
-                                        <div class="m">10</div>
-                                        <div class="d">MAR</div>
+                    <div class="destination_slider-container">
+                        <div class="destination_slider" id="destination_slider">
+                            {{-- slider items --}}
+                            @forelse ($destinations_for_gallery as $item)
+                                <div class="col-lg-4 mb10 px-2">
+                                    <div class="bloglist s2 item">
+                                        <div class="post-content">
+                                            <div class="post-image">
+                                                <div class="date-box">
+                                                    @php
+                                                        $month = \Carbon\Carbon::createFromFormat('Y-m-d', $item->published_date)->format('M');
+                                                        $day = \Carbon\Carbon::createFromFormat('Y-m-d', $item->published_date)->format('d');
+                                                    @endphp
+                                                    <div class="m">{{ $month }}</div>
+                                                    <div class="d">{{ $day }}</div>
+                                                </div>
+                                                <img alt=""
+                                                    src="{{ asset('img/destinations/' . $item->destination_image) }}"
+                                                    class="lazy">
+                                            </div>
+                                            <div class="post-text">
+                                                <h4>
+                                                    <a href="">{{ $item->destination_title }}
+                                                        <span><i class="bi bi-bookmark-fill"></i></span>
+                                                    </a>
+                                                </h4>
+                                                <p>{{ $item->destination_description }}</p>
+                                                <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                                    More</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <img alt="" src="{{ asset('welcome/images/news/pic-blog-1.jpg') }}"
-                                        class="lazy">
                                 </div>
-                                <div class="post-text">
-                                    <h4><a href="news-single.html">Enjoy Best Travel Experience<span></span></a></h4>
-                                    <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit
-                                        cupidatat labore ad laborum consectetur.</p>
-                                    <a class="btn-main" href="{{route('destinationinfo.index')}}">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mb10">
-                        <div class="bloglist s2 item">
-                            <div class="post-content">
-                                <div class="post-image">
-                                    <div class="date-box">
-                                        <div class="m">12</div>
-                                        <div class="d">MAR</div>
+                            @empty
+                                <div class="col-lg-4 mb10 px-2">
+                                    <div class="bloglist s2 item">
+                                        <div class="post-content">
+                                            <div class="post-image">
+                                                <div class="date-box">
+                                                    <div class="m">10</div>
+                                                    <div class="d">MAR</div>
+                                                </div>
+                                                <img alt=""
+                                                    src="{{ asset('welcome/images/news/pic-blog-1.jpg') }}"
+                                                    class="lazy">
+                                            </div>
+                                            <div class="post-text">
+                                                <h4><a href="news-single.html">Enjoy Best Travel
+                                                        Experience<span></span></a>
+                                                </h4>
+                                                <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim
+                                                    reprehenderit cupidatat labore ad laborum consectetur.</p>
+                                                <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                                    More</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <img alt="" src="{{ asset('welcome/images/news/pic-blog-2.jpg') }}"
-                                        class="lazy">
                                 </div>
-                                <div class="post-text">
-                                    <h4><a href="news-single.html">The Future of Car Rent<span></span></a></h4>
-                                    <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit
-                                        cupidatat labore ad laborum consectetur.</p>
-                                    <a class="btn-main" href="{{route('destinationinfo.index')}}">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mb10">
-                        <div class="bloglist s2 item">
-                            <div class="post-content">
-                                <div class="post-image">
-                                    <div class="date-box">
-                                        <div class="m">14</div>
-                                        <div class="d">MAR</div>
-                                    </div>
-                                    <img alt="" src="{{ asset('welcome/images/news/pic-blog-3.jpg') }}"
-                                        class="lazy">
-                                </div>
-                                <div class="post-text">
-                                    <h4><a href="news-single.html">Holiday Tips For Backpacker<span></span></a></h4>
-                                    <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit
-                                        cupidatat labore ad laborum consectetur.</p>
-                                    <a class="btn-main" href="{{route('destinationinfo.index')}}">Read More</a>
-                                </div>
-                            </div>
+                            @endforelse
+                            <!-- Add more slide items here -->
                         </div>
                     </div>
                 </div>
@@ -752,5 +752,32 @@
         </section>
 
     </div>
+    {{-- destination_slider to view destinations --}}
+    <script>
+        $(document).ready(function() {
+            $('#destination_slider').slick({
+                dotsspeed: 500,
+                arrows: false, // Transition speed in milliseconds
+                slidesToShow: 3, // Number of slides to show at a time
+                slidesToScroll: 1, // Number of slides to scroll at a time
+                responsive: [{
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ],
+            });
+        });
+    </script>
+
     <!-- content close -->
 @endsection
