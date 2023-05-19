@@ -25,11 +25,6 @@
 
 <body onload="initialize()">
     <div id="wrapper">
-
-        <!-- page preloader begin -->
-        <div id="de-preloader"></div>
-        <!-- page preloader close -->
-
         <!-- header begin -->
         <header class="transparent scroll-light has-topbar">
             <div id="topbar" class="topbar-dark text-light">
@@ -457,7 +452,7 @@
 
                         if (images && images.length > 0) {
                             vehicle_image = images[0]
-                            .vehicle_image; // Access the first image's vehicle_image property
+                                .vehicle_image; // Access the first image's vehicle_image property
                         }
 
                         var count = 0;
@@ -766,94 +761,95 @@
 
 
 
-    $.ajax({
-    url: "/cars/view/" + Car_details,
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    },
-    type: "GET",
-    
-    contentType: false,
-    processData: false,
-    success: function(response) {
-        var data = response.data;
-        console.log(data)
-        $.each(data, function(index, item) {
-            
-            $('#VehicleCategory').html(item.category);
-            $('#VehicleMake').html(item.vehicle_make);
-            $('#VehicleModel').html(item.vehicle_model);
-            $('#NumberofSeats').html(item.no_of_seats);
-            $('#NumberofSuitcases').html(item.no_of_suitcases);
-            $('#condition').html(item.gear_box_type);
-            $('#FuelState').html(item.fuel_state);
-            $('#vehicle_description').html(item.displaying_name);
-            $('#vehicleMoreinf').html(item.vehicle_description);
-            
-            
-
-            var carousel = $('#slider-carousel');
-            carousel.empty();
-
-            $.each(item.images, function(i, image) {
-                var vehicleImage = '<div class="item"><img src="img/cars/'+image.vehicle_image+'"alt=""></div>';
-                carousel.append(vehicleImage);
-            });
-
-// Initialize Owl Carousel
-            carousel.owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            dots: true,
-            responsive: {
-            0: {
-            items: 1
+        $.ajax({
+            url: "/cars/view/" + Car_details,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            600: {
-            items: 3
-            },
-            1000: {
-            items: 5
+            type: "GET",
+
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                var data = response.data;
+                console.log(data)
+                $.each(data, function(index, item) {
+
+                    $('#VehicleCategory').html(item.category);
+                    $('#VehicleMake').html(item.vehicle_make);
+                    $('#VehicleModel').html(item.vehicle_model);
+                    $('#NumberofSeats').html(item.no_of_seats);
+                    $('#NumberofSuitcases').html(item.no_of_suitcases);
+                    $('#condition').html(item.gear_box_type);
+                    $('#FuelState').html(item.fuel_state);
+                    $('#vehicle_description').html(item.displaying_name);
+                    $('#vehicleMoreinf').html(item.vehicle_description);
+
+
+
+                    var carousel = $('#slider-carousel');
+                    carousel.empty();
+
+                    $.each(item.images, function(i, image) {
+                        var vehicleImage = '<div class="item"><img src="img/cars/' +
+                            image.vehicle_image + '"alt=""></div>';
+                        carousel.append(vehicleImage);
+                    });
+
+                    // Initialize Owl Carousel
+                    carousel.owlCarousel({
+                        loop: true,
+                        margin: 10,
+                        nav: true,
+                        dots: true,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 3
+                            },
+                            1000: {
+                                items: 5
+                            }
+                        }
+                    });
+
+                });
+
             }
-        }
         });
 
+        $("#submit_btn").on("click", function() {
+            var Pickup_l = PickupLocationfinal.val();
+            var Drop_off_l = DropoffLocationfinal.val();
+            var date_pick = datepickerfinal.val();
+            var pickup_T = pickuptimefinal.val();
+            var datedrop_Off = datedropfinal.val();
+            var drop_T = dropofftimefinal.val();
+            var cardetails_id = car_id.val()
+            var cardetails_id = car_id.val()
+            var cardetails_id = car_id.val()
+            var cardetails_id = car_id.val()
+
+            var url = "{{ route('personal.index') }}";
+            url += "?Pickup_loc=" + encodeURIComponent(Pickup_l);
+            url += "&Drop_off_loc=" + encodeURIComponent(Drop_off_l);
+            url += "&date_picker=" + encodeURIComponent(date_pick);
+            url += "&date_drop=" + encodeURIComponent(datedrop_Off);
+            url += "&drop_Timeinfo=" + encodeURIComponent(drop_T);
+            url += "&pickup_Tinmeinfo=" + encodeURIComponent(pickup_T);
+            url += "&card_id=" + encodeURIComponent(cardetails_id);
+            window.location.href = url;
+
         });
-        
-    }
-});
-
-$("#submit_btn").on("click", function(){
-    var Pickup_l = PickupLocationfinal.val();
-    var Drop_off_l = DropoffLocationfinal.val();
-    var date_pick = datepickerfinal.val();
-    var pickup_T = pickuptimefinal.val();
-    var datedrop_Off =  datedropfinal.val();
-    var drop_T = dropofftimefinal.val();
-    var cardetails_id = car_id.val()
-    var cardetails_id = car_id.val()
-    var cardetails_id = car_id.val()
-    var cardetails_id = car_id.val()
-
-          var url = "{{ route('personal.index') }}";
-  url += "?Pickup_loc=" + encodeURIComponent(Pickup_l);
-  url += "&Drop_off_loc=" + encodeURIComponent(Drop_off_l);
-  url += "&date_picker=" + encodeURIComponent(date_pick);
-  url += "&date_drop=" + encodeURIComponent(datedrop_Off);
-  url += "&drop_Timeinfo=" + encodeURIComponent(drop_T);
-  url += "&pickup_Tinmeinfo=" + encodeURIComponent(pickup_T);
-  url += "&card_id=" + encodeURIComponent(cardetails_id);
-  window.location.href = url;
-    
-      });
 
 
 
 
-});
+    });
 
-$(document).ready(function(){
+    $(document).ready(function() {
 
 
         var queryString = window.location.search;
@@ -865,7 +861,7 @@ $(document).ready(function(){
         var pickupTimef = urlParams.get("drop_Timeinfo");
         var returnTimef = urlParams.get("pickup_Tinmeinfo");
         var id = urlParams.get("id");
-alert(finalpickupLocationf )
+        alert(finalpickupLocationf)
         $("#finalpicklocation").val(finalpickupLocationf);
         $("#finaldroplocation").val(finaldropoffLocationf);
         $("#finalpickdateinfo").val(pickupDateifo);
@@ -873,8 +869,6 @@ alert(finalpickupLocationf )
         $("#finaldropdateinfo").val(dropoffDatef);
         $("#finaldroptimeinfo").val(returnTimef);
         // car_id.val(id)
-  
-});
 
-
-    </script>
+    });
+</script>

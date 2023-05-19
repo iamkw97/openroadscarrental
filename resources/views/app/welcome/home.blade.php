@@ -52,7 +52,7 @@
         <div id="top"></div>
         <section id="section-hero" aria-label="section" class="jarallax full-height vertical-center">
             <div class="hero-overlay"></div>
-            <img src="{{ asset('welcome/images/background/iceland taxi.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/6.jpg') }}" class="jarallax-img" alt="">
             <div class="container position-relative z1000" style="position: relative; top:70px;">
                 <div class="row align-items-center">
                     <div class="col-lg-5 text-light">
@@ -304,13 +304,12 @@
                                 class="id-color">ride.</span></h2>
                     </div>
                     <div class="col-lg-6 wow fadeInLeft">
-                        At <span class="id-color">Open Roads Car Rental</span>, we know that choosing the right car for
-                        your travel needs is crucial.
-                        That's why we offer a wide selection of commercial and luxury cars to suit any occasion, from
-                        compact cars for solo travelers to spacious SUVs for family road trips. Our cars are meticulously
-                        maintained and regularly serviced to ensure a safe and enjoyable driving experience. With our
-                        competitive pricing and exceptional customer service, renting a car with us is the perfect way to
-                        elevate your travel game.
+                        Iceland: A land of dramatic landscapes, geothermal wonders, and captivating culture. From cascading
+                        waterfalls to black sand beaches, the country's natural beauty is awe-inspiring. Explore glaciers,
+                        soak in geothermal hot springs, and witness the mesmerizing Northern Lights. Immerse yourself in
+                        Reykjavik's vibrant arts scene, indulge in delicious cuisine, and delve into Icelandic folklore.
+                        With its compact size and well-developed infrastructure, Iceland offers a unique and unforgettable
+                        travel experience for all adventurers.
                     </div>
                 </div>
                 <div class="spacer-double"></div>
