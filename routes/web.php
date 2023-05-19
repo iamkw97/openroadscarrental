@@ -36,6 +36,9 @@ Route::get('/userdetails', [BaseController::class, 'personalInfo'])->name('perso
 Route::get('/aboutus', [BaseController::class, 'about'])->name('about.index');
 Route::get('/contactus', [BaseController::class, 'contact'])->name('contact.index');
 Route::get('/destinations', [BaseController::class, 'destinationInfo'])->name('destinationinfo.index');
+Route::post('/proceed/booking', [BaseController::class, 'proceedBooking'])->name('proceed.booking');
+
+
 
 Route::get('/getcars', [CarController::class, 'getcar'])->name('getcars.details');
 
