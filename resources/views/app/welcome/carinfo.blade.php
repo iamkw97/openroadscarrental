@@ -30,24 +30,16 @@
                 <div class="row g-5">
                     <div class="col-lg-6">
                         <div id="slider-carousel" class="owl-carousel">
-                            <div class="item">
+                            {{-- <div class="item">
                                 <img src="{{ asset('welcome/images/car-single/1.jpg') }}" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="{{ asset('welcome/images/car-single/2.jpg') }}" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="{{ asset('welcome/images/car-single/3.jpg') }}" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="{{ asset('welcome/images/car-single/4.jpg') }}" alt="">
-                            </div>
+                            </div> --}}
+                            
                         </div>
                     </div>
 
                 <div class="col-lg-3">
                     <h3 id="vehicle_description"></h3>
-                    <p>The BMW M2 is the high-performance version of the 2 Series 2-door coupé. The first generation of the M2 is the F87 coupé and is powered by turbocharged.</p>
+                    <p id="vehicleMoreinf"></p>
 
                         <div class="spacer-10"></div>
 
@@ -170,8 +162,8 @@
                                 </div>
                             </div>
 
-                            <input type='submit' id='send_message' value='Book Now' class="btn-main btn-fullwidth">
-
+                            {{-- <input type='submit' id='send_message' value='Book Now' class="btn-main btn-fullwidth"> --}}
+                            <button type="button" class="btn btn-primary" id="submit_btn">Book Now</button>
                                 <div class="clearfix"></div>
 
                             </form>

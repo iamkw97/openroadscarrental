@@ -246,4 +246,7 @@
     <!-- content close -->
 
     <a href="#" id="back-to-top"></a>
+    <script>
+        
+    </script>
 @endsection

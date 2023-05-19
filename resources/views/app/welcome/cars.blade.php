@@ -56,7 +56,7 @@
                             <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
                                 <small>Pickup Location</small>
                                 <select name="" id="picklocation"
-                                                style="border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
+                                                style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
                                                 name="PickupLocation" 
                                                 placeholder="Enter your pickup location" 
                                                 autocomplete="off" class="form-control">

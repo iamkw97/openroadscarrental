@@ -761,18 +761,71 @@ $(document).ready(function(){
             $('#NumberofSuitcases').html(item.no_of_suitcases);
             $('#condition').html(item.gear_box_type);
             $('#FuelState').html(item.fuel_state);
-            $('#vehicle_description').html(item.vehicle_description);
+            $('#vehicle_description').html(item.displaying_name);
+            $('#vehicleMoreinf').html(item.vehicle_description);
             
             
+
+            var carousel = $('#slider-carousel');
+            carousel.empty();
+
+            $.each(item.images, function(i, image) {
+                var vehicleImage = '<div class="item"><img src="img/cars/'+image.vehicle_image+'"alt=""></div>';
+                carousel.append(vehicleImage);
+            });
+
+// Initialize Owl Carousel
+            carousel.owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: true,
+            responsive: {
+            0: {
+            items: 1
+            },
+            600: {
+            items: 3
+            },
+            1000: {
+            items: 5
+            }
+        }
+        });
 
         });
         
     }
 });
 
+$("#submit_btn").on("click", function(){
+    var Pickup_l = PickupLocationfinal.val();
+    var Drop_off_l = DropoffLocationfinal.val();
+    var date_pick = datepickerfinal.val();
+    var pickup_T = pickuptimefinal.val();
+    var datedrop_Off =  datedropfinal.val();
+    var drop_T = dropofftimefinal.val();
+    var cardetails_id = car_id.val()
+
+          var url = "{{ route('personal.index') }}";
+  url += "?Pickup_loc=" + encodeURIComponent(Pickup_l);
+  url += "&Drop_off_loc=" + encodeURIComponent(Drop_off_l);
+  url += "&date_picker=" + encodeURIComponent(date_pick);
+  url += "&date_drop=" + encodeURIComponent(datedrop_Off);
+  url += "&drop_Timeinfo=" + encodeURIComponent(drop_T);
+  url += "&pickup_Tinmeinfo=" + encodeURIComponent(pickup_T);
+  url += "&card_id=" + encodeURIComponent(cardetails_id);
+  window.location.href = url;
+    
+      });
+
+
+
+
 });
 
-
-
+// $(document).ready(function(){
+//   alert('hi')
+// });
     </script>
 
