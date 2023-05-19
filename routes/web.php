@@ -25,7 +25,6 @@ use Illuminate\Support\Facades\Route;
 | Welcome Routes
 |--------------------------------------------------------------------------
 */
-
 Route::get('/', [BaseController::class, 'home'])->name('home.index');
 Route::get('/cars', [BaseController::class, 'cars'])->name('cars.index');
 Route::get('/cars/view/{id}', [BaseController::class, 'carInfo'])->name('cars.show');

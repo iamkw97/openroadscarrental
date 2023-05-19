@@ -82,7 +82,12 @@ class CarController extends Controller
         $car = CarPrice::create([
             'cost_initial' => $data['cost_initial'],
             'tax_initial' => $data['tax_initial'],
-            'cost_rental_per_day' => $data['cost_rental_per_day'],
+            'apr2sep_isk_cost_rental_per_day' => $data['apr2sep_isk_cost_rental_per_day'],
+            'apr2sep_usd_cost_rental_per_day' => $data['apr2sep_usd_cost_rental_per_day'],
+            'apr2sep_gbp_cost_rental_per_day' => $data['apr2sep_gbp_cost_rental_per_day'],
+            'sep2apr_isk_cost_rental_per_day' => $data['sep2apr_isk_cost_rental_per_day'],
+            'sep2apr_usd_cost_rental_per_day' => $data['sep2apr_usd_cost_rental_per_day'],
+            'sep2apr_gbp_cost_rental_per_day' => $data['sep2apr_gbp_cost_rental_per_day'],
             'tax_rental_per_day' => $data['tax_rental_per_day'],
             'cost_rental_per_hour' => $data['cost_rental_per_hour'],
             'tax_rental_per_hour' => $data['tax_rental_per_hour'],

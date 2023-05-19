@@ -634,7 +634,6 @@
                     $.each(carImages, function(i, image) {
                         var vehicleImage = '<div class="item"><img src="img/cars/' +
                             image.vehicle_image + '"alt=""></div>';
-
                         carousel.append(vehicleImage);
                     });
                     carousel.owlCarousel({
