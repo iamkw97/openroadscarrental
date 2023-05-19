@@ -378,7 +378,7 @@
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$265</span>
-                                                <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                                                <a class="btn-main" href="">Rent Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -409,7 +409,8 @@
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$244</span>
-                                                <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                                                <a class="btn-main" href="">Rent Now</a>
+                                                {{-- {{ route('cars.show') }} --}}
                                             </div>
                                         </div>
                                     </div>
@@ -441,7 +442,7 @@
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$167</span>
-                                                <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                                                <a class="btn-main" href="">Rent Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -473,7 +474,7 @@
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$147</span>
-                                                <a class="btn-main" href="{{ route('cars.show') }}">Rent Now</a>
+                                                <a class="btn-main" href="">Rent Now</a>
                                             </div>
                                         </div>
                                     </div>

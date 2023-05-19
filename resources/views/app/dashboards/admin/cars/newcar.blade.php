@@ -253,7 +253,8 @@
                                                     <label for="displaying_name" class="form-label">Displaying
                                                         Name</label>
                                                     <input type="text" class="form-control" id="displaying_name"
-                                                        name="displaying_name" placeholder="Enter an unique name for the vehicle">
+                                                        name="displaying_name"
+                                                        placeholder="Enter an unique name for the vehicle">
                                                 </div>
                                             </div>
                                             <div class="row mt-2">
@@ -303,15 +304,64 @@
                                                         </select>
                                                     </td>
                                                 </tr>
+                                                <tr aria-rowspan="2">
+                                                    <td>Rental per Day</td>
+                                                    <td>Price for a car rent per day <br>
+                                                        <strong>from April 14 to September 15</strong></td>
+                                                    <td>
+                                                        <div class="input-group mb-1">
+                                                            <span class="input-group-text" id="basic-addon1">ISK</span>
+                                                            <input type="number" class="form-control"
+                                                                id="apr2sep_isk_cost_rental_per_day"
+                                                                name="apr2sep_isk_cost_rental_per_day" placeholder="0.00">
+                                                        </div>
+                                                        <div class="input-group mb-1">
+                                                            <span class="input-group-text" id="basic-addon1">USD</span>
+                                                            <input type="number" class="form-control"
+                                                                id="apr2sep_usd_cost_rental_per_day"
+                                                                name="apr2sep_usd_cost_rental_per_day" placeholder="0.00">
+                                                        </div>
+                                                        <div class="input-group mb-1">
+                                                            <span class="input-group-text" id="basic-addon1">GBP</span>
+                                                            <input type="number" class="form-control"
+                                                                id="apr2sep_gbp_cost_rental_per_day"
+                                                                name="apr2sep_gbp_cost_rental_per_day" placeholder="0.00">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <select type="number" class="form-select"
+                                                            id="tax_rental_per_day" name="tax_rental_per_day">
+                                                            <option value="no" selected>- Not set -</option>
+                                                            <option value="0">0%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="8">8%</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
                                                 <tr>
                                                     <td>Rental per Day</td>
-                                                    <td>Price for a car rent per day.
-                                                        This price applies for "Daily" and "Daily and Hourly" billing type
-                                                        only.</td>
+                                                    <td>Price for a car rent per day <br>
+                                                        <strong>from September 15 to April 14</strong></td>
                                                     <td>
-                                                        <input type="number" class="form-control"
-                                                            id="cost_rental_per_day" name="cost_rental_per_day"
-                                                            placeholder="0.00">
+                                                        <div class="input-group mb-1">
+                                                            <span class="input-group-text" id="basic-addon1">ISK</span>
+                                                            <input type="number" class="form-control"
+                                                                id="sep2apr_isk_cost_rental_per_day"
+                                                                name="sep2apr_isk_cost_rental_per_day" placeholder="0.00">
+                                                        </div>
+                                                        <div class="input-group mb-1">
+                                                            <span class="input-group-text" id="basic-addon1">USD</span>
+                                                            <input type="number" class="form-control"
+                                                                id="sep2apr_usd_cost_rental_per_day"
+                                                                name="sep2apr_usd_cost_rental_per_day" placeholder="0.00">
+                                                        </div>
+                                                        <div class="input-group mb-1">
+                                                            <span class="input-group-text" id="basic-addon1">GBP</span>
+                                                            <input type="number" class="form-control"
+                                                                id="sep2apr_gbp_cost_rental_per_day"
+                                                                name="sep2apr_gbp_cost_rental_per_day" placeholder="0.00">
+                                                        </div>
                                                     </td>
                                                     <td>
                                                         <select type="number" class="form-select"
@@ -821,7 +871,12 @@
 
                 formData.append('cost_initial', $('#cost_initial').val());
                 formData.append('tax_initial', $('#tax_initial').val());
-                formData.append('cost_rental_per_day', $('#cost_rental_per_day').val());
+                formData.append('apr2sep_isk_cost_rental_per_day', $('#apr2sep_isk_cost_rental_per_day').val());
+                formData.append('apr2sep_usd_cost_rental_per_day', $('#apr2sep_usd_cost_rental_per_day').val());
+                formData.append('apr2sep_gbp_cost_rental_per_day', $('#apr2sep_gbp_cost_rental_per_day').val());
+                formData.append('sep2apr_isk_cost_rental_per_day', $('#sep2apr_isk_cost_rental_per_day').val());
+                formData.append('sep2apr_usd_cost_rental_per_day', $('#sep2apr_usd_cost_rental_per_day').val());
+                formData.append('sep2apr_gbp_cost_rental_per_day', $('#sep2apr_gbp_cost_rental_per_day').val());
                 formData.append('tax_rental_per_day', $('#tax_rental_per_day').val());
                 formData.append('cost_rental_per_hour', $('#cost_rental_per_hour').val());
                 formData.append('tax_rental_per_hour', $('#tax_rental_per_hour').val());
