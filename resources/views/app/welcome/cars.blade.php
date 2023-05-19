@@ -5,14 +5,13 @@
 @endsection
 
 @section('welcomebody')
+    <!-- content begin -->
+    <div class="no-bottom no-top zebra" id="content">
+        <div id="top"></div>
 
-<!-- content begin -->
-<div class="no-bottom no-top zebra" id="content">
-    <div id="top"></div>
-
-    <!-- section begin -->
-    <section id="subheader" class="jarallax text-light">
-        <img src="{{ asset('welcome/images/background/2.jpg')}}" class="jarallax-img" alt="">
+        <!-- section begin -->
+        <section id="subheader" class="jarallax text-light">
+            <img src="{{ asset('welcome/images/background/2.jpg') }}" class="jarallax-img" alt="">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -20,217 +19,108 @@
                             <div class="container" style="position: relative; top:150px;">
                                 <!-- For demo purpose -->
                                 <div class="row py-5">
-                                  <div class="col-lg-9 mx-auto text-white text-center">
-                                    <form action="">
-                                        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4" style="opacity: 0.9;">
-                                          <div class="input-group" >
-                                            <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light" >
-                                            <div class="input-group-append">
-                                              <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                                    <div class="col-lg-9 mx-auto text-white text-center">
+                                        <form action="">
+                                            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4"
+                                                style="opacity: 0.9;">
+                                                <div class="input-group">
+                                                    <input type="search" placeholder="What're you searching for?"
+                                                        aria-describedby="button-addon1"
+                                                        class="form-control border-0 bg-light">
+                                                    <div class="input-group-append">
+                                                        <button id="button-addon1" type="submit"
+                                                            class="btn btn-link text-primary"><i
+                                                                class="fa fa-search"></i></button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                          </div>
-                                        </div>
-                                    </form>
-                                    <h3 class="lead">𝙲𝚑𝚘𝚘𝚜𝚎 𝚊 𝚟𝚎𝚑𝚒𝚌𝚕𝚎 𝚊𝚜 𝚢𝚘𝚞 𝚠𝚒𝚜𝚑
+                                        </form>
+                                        <h3 class="lead">𝙲𝚑𝚘𝚘𝚜𝚎 𝚊 𝚟𝚎𝚑𝚒𝚌𝚕𝚎 𝚊𝚜 𝚢𝚘𝚞 𝚠𝚒𝚜𝚑
 
-                                    </h3>
-                                  </div>
+                                        </h3>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="clearfix"></div>
                         </div>
-                        <div class="clearfix"></div>
                     </div>
                 </div>
-            </div>
-    </section>
-    <!-- section close -->
+        </section>
+        <!-- section close -->
 
-    <section id="section-cars">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
+        <section id="section-cars">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="item_filter_group">
+                            <h4>Vehicle Type</h4>
+                            <div class="de_form">
+                                <div class="de_checkbox VehicleCategory">
+                                    <input id="vehicle_type_1" name="vehicle_type_1" type="checkbox" value="vehicle_type_1">
+                                    <label for="vehicle_type_1">Car</label>
+                                </div>
 
-                    <div class="item_filter_group">
-                        <h4>Booking Details</h4>
-                        <div class="de_form">
+                                <div class="de_checkbox VehicleCategory">
+                                    <input id="vehicle_type_2" name="vehicle_type_2" type="checkbox" value="vehicle_type_2">
+                                    <label for="vehicle_type_2">Van</label>
+                                </div>
 
-                            <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
-                                <small>Pickup Location</small>
-                                <select name="" id="picklocation"
-                                                style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
-                                                name="PickupLocation" 
-                                                placeholder="Enter your pickup location" 
-                                                autocomplete="off" class="form-control">
-                                                <option selected value="">Select Location</option>
-                                                <option  value="kef_airport">KEF Airport</option>
-                                                <option value="reykjavik">Reykjavik</option>
-                                            </select>
+                                <div class="de_checkbox VehicleCategory">
+                                    <input id="vehicle_type_3" name="vehicle_type_3" type="checkbox"
+                                        value="vehicle_type_3">
+                                    <label for="vehicle_type_3">Minibus</label>
+                                </div>
 
-                            </div>
-
-                            <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
-                                <small>Return Location</small>
-                                <select name="" id="droplocation"
-                                style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
-                                                name="PickupLocation"
-                                                placeholder="Enter your pickup location" 
-                                                autocomplete="off" class="form-control" >
-                                                <option selected value="">Select Location</option>
-                                                <option  value="reykjavik">Reykjavik</option>
-                                                <option value="kef_airport">KEF Airport</option>
-                                                <option value="same_location">[Return to the same location]</option>
-                                            </select>
-                            </div>
-
-                            <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
-                                <small>Pickup Date</small>
-                                <input id="pickdate" name="car_engine_3" type="date" style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+                                <div class="de_checkbox VehicleCategory">
+                                    <input id="vehicle_type_4" name="vehicle_type_4" type="checkbox"
+                                        value="vehicle_type_4">
+                                    <label for="vehicle_type_4">Prestige</label>
+                                </div>
 
                             </div>
-
-                            <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
-                                <small>Drop-off Date</small>
-                                <input id="dropdate" name="car_engine_4" type="date" style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-
-                            </div>
-                            <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
-                                <small>Pickup Time</small>
-                                <input id="pickup_time" name="car_engine_3" type="time" style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-
-                            </div>
-
-                            <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
-                                <small>Drop-off Time</small>
-                                <input id="droptime" name="car_engine_4" type="time"  style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-
-                            </div>
-
                         </div>
-                    </div>
 
+                        <div class="item_filter_group seatCount">
+                            <h4>Car Seats</h4>
+                            <div class="de_form">
+                                <div class="de_checkbox">
+                                    <input id="car_seat_3" name="car_seat_3" type="checkbox" value="car_seat_3">
+                                    <label for="car_seat_3">3 seats</label>
+                                </div>
+                                <div class="de_checkbox">
+                                    <input id="car_seat_4" name="car_seat_4" type="checkbox" value="car_seat_4">
+                                    <label for="car_seat_4">4 seats</label>
+                                </div>
 
-                    <div class="item_filter_group">
-                        <h4>Vehicle Type</h4>
-                        <div class="de_form">
-                            <div class="de_checkbox VehicleCategory">
-                                <input id="vehicle_type_1" name="vehicle_type_1" type="checkbox" value="vehicle_type_1">
-                                <label for="vehicle_type_1">Car</label>
+                                <div class="de_checkbox">
+                                    <input id="car_seat_5" name="car_seat_5" type="checkbox" value="car_seat_5">
+                                    <label for="car_seat_5">5 seats</label>
+                                </div>
+
+                                <div class="de_checkbox">
+                                    <input id="car_seat_6" name="car_seat_6" type="checkbox" value="car_seat_6">
+                                    <label for="car_seat_6">7 seats</label>
+                                </div>
+
+                                <div class="de_checkbox">
+                                    <input id="car_seat_8" name="car_seat_8" type="checkbox" value="car_seat_8">
+                                    <label for="car_seat_8">8 seats</label>
+                                </div>
+                                <div class="de_checkbox">
+                                    <input id="car_seat_10" name="car_seat_10" type="checkbox" value="car_seat_10">
+                                    <label for="car_seat_10">10 seats</label>
+                                </div>
+                                <div class="de_checkbox">
+                                    <input id="car_seat_10+" name="car_seat_10+" type="checkbox" value="car_seat_10+">
+                                    <label for="car_seat_10+">10+ seats</label>
+                                </div>
+
                             </div>
-
-                            <div class="de_checkbox VehicleCategory">
-                                <input id="vehicle_type_2" name="vehicle_type_2" type="checkbox" value="vehicle_type_2">
-                                <label for="vehicle_type_2">Van</label>
-                            </div>
-
-                            <div class="de_checkbox VehicleCategory">
-                                <input id="vehicle_type_3" name="vehicle_type_3" type="checkbox" value="vehicle_type_3">
-                                <label for="vehicle_type_3">Minibus</label>
-                            </div>
-
-                            <div class="de_checkbox VehicleCategory">
-                                <input id="vehicle_type_4" name="vehicle_type_4" type="checkbox" value="vehicle_type_4">
-                                <label for="vehicle_type_4">Prestige</label>
-                            </div>
-
                         </div>
-                    </div>
-
-                    {{-- <div class="item_filter_group">
-                        <h4>Car Body Type</h4>
-                        <div class="de_form">
-                            <div class="de_checkbox">
-                                <input id="car_body_type_1" name="car_body_type_1" type="checkbox" value="car_body_type_1">
-                                <label for="car_body_type_1">Convertible</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_body_type_2" name="car_body_type_2" type="checkbox" value="car_body_type_2">
-                                <label for="car_body_type_2">Coupe</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_body_type_3" name="car_body_type_3" type="checkbox" value="car_body_type_3">
-                                <label for="car_body_type_3">Exotic Cars</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_body_type_4" name="car_body_type_4" type="checkbox" value="car_body_type_4">
-                                <label for="car_body_type_4">Hatchback</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_body_type_5" name="car_body_type_5" type="checkbox" value="car_body_type_5">
-                                <label for="car_body_type_5">Minivan</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_body_type_6" name="car_body_type_6" type="checkbox" value="car_body_type_6">
-                                <label for="car_body_type_6">Pickup Truck</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_body_type_7" name="car_body_type_7" type="checkbox" value="car_body_type_7">
-                                <label for="car_body_type_7">Sedan</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_body_type_8" name="car_body_type_8" type="checkbox" value="car_body_type_8">
-                                <label for="car_body_type_8">Sports Car</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_body_type_9" name="car_body_type_9" type="checkbox" value="car_body_type_9">
-                                <label for="car_body_type_9">Station Wagon</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_body_type_10" name="car_body_type_10" type="checkbox" value="car_body_type_10">
-                                <label for="car_body_type_10">SUV</label>
-                            </div>
-
-                        </div>
-                    </div> --}}
-
-                    <div class="item_filter_group seatCount">
-                        <h4>Car Seats</h4>
-                        <div class="de_form">
-                            <div class="de_checkbox">
-                                <input id="car_seat_3" name="car_seat_3" type="checkbox" value="car_seat_3">
-                                <label for="car_seat_3">3 seats</label>
-                            </div>
-                            <div class="de_checkbox">
-                                <input id="car_seat_4" name="car_seat_4" type="checkbox" value="car_seat_4">
-                                <label for="car_seat_4">4 seats</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_seat_5" name="car_seat_5" type="checkbox" value="car_seat_5">
-                                <label for="car_seat_5">5 seats</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_seat_6" name="car_seat_6" type="checkbox" value="car_seat_6">
-                                <label for="car_seat_6">7 seats</label>
-                            </div>
-
-                            <div class="de_checkbox">
-                                <input id="car_seat_8" name="car_seat_8" type="checkbox" value="car_seat_8">
-                                <label for="car_seat_8">8 seats</label>
-                            </div>
-                            <div class="de_checkbox">
-                                <input id="car_seat_10" name="car_seat_10" type="checkbox" value="car_seat_10">
-                                <label for="car_seat_10">10 seats</label>
-                            </div>
-                            <div class="de_checkbox">
-                                <input id="car_seat_10+" name="car_seat_10+" type="checkbox" value="car_seat_10+">
-                                <label for="car_seat_10+">10+ seats</label>
-                            </div>
-
-                        </div>
-                    </div>
 
 
 
-                    {{-- <div class="item_filter_group">
+                        {{-- <div class="item_filter_group">
                         <h4>Price ($)</h4>
                           <div class="price-input">
                             <div class="field">
@@ -250,12 +140,12 @@
                             <input type="range" class="range-max" min="0" max="2000" value="2000" step="1">
                           </div>
                     </div> --}}
-                </div>
+                    </div>
 
-                <div class="col-lg-9" id="car-list">
-                    <div class="row pagi" id="pagi" >
-                        {{-- <div class="row pagi" id="pagi" style="display: none"> --}}
-                        {{-- <div class="col-xl-4 col-lg-6 cart">
+                    <div class="col-lg-7" id="car-list">
+                        <div class="row pagi" id="pagi">
+                            {{-- <div class="row pagi" id="pagi" style="display: none"> --}}
+                            {{-- <div class="col-xl-4 col-lg-6 cart">
                             <div class="de-item mb30">
                                 <div class="d-img">
                                     <img src="{{ asset('welcome/images/cars/jeep-renegade.jpg')}}" class="img-fluid" alt="">
@@ -568,9 +458,9 @@
 
 
 
-                    </div>
-                    <div class="pagination" id="pagination">
-                        {{-- <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
+                        </div>
+                        <div class="pagination" id="pagination">
+                            {{-- <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
                         <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>
                         <li class="page-item dots"><a class="page-link" href="#">...</a></li>
                         <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
@@ -578,46 +468,99 @@
                         <li class="page-item dots"><a class="page-link" href="#">...</a></li>
                         <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
                         <li class="page-item next-page"><a class="page-link" href="#">Next</a></li> --}}
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="item_filter_group">
+                            <h4>Booking Details</h4>
+                            <div class="de_form">
+
+                                <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
+                                    <small>Pickup Location</small>
+                                    <select name="" id="picklocation"
+                                        style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
+                                        name="PickupLocation" placeholder="Enter your pickup location" autocomplete="off"
+                                        class="form-control">
+                                        <option selected value="">Select Location</option>
+                                        <option value="kef_airport">KEF Airport</option>
+                                        <option value="reykjavik">Reykjavik</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
+                                    <small>Return Location</small>
+                                    <select name="" id="droplocation"
+                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
+                                        name="PickupLocation" placeholder="Enter your pickup location" autocomplete="off"
+                                        class="form-control">
+                                        <option selected value="">Select Location</option>
+                                        <option value="reykjavik">Reykjavik</option>
+                                        <option value="kef_airport">KEF Airport</option>
+                                        <option value="same_location">[Return to the same location]</option>
+                                    </select>
+                                </div>
+
+                                <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
+                                    <small>Pickup Date</small>
+                                    <input id="pickdate" name="car_engine_3" type="date"
+                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+
+                                </div>
+
+                                <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <small>Drop-off Date</small>
+                                    <input id="dropdate" name="car_engine_4" type="date"
+                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+
+                                </div>
+                                <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <small>Pickup Time</small>
+                                    <input id="pickup_time" name="car_engine_3" type="time"
+                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+
+                                </div>
+
+                                <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <small>Drop-off Time</small>
+                                    <input id="droptime" name="car_engine_4" type="time"
+                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                {{-- <div id="pagination"></div> --}}
-
             </div>
-
-        </div>
-    </section>
+        </section>
 
 
-</div>
-<!-- content close -->
-<script>
-
-// var pickupLocationSelect = document.getElementById("picklocation");
-
-
-//     document.addEventListener("DOMContentLoaded", function() {
-//     var queryString = window.location.search;
-//     var urlParams = new URLSearchParams(queryString);
-//     var pickupLocation = urlParams.get("pickupLocation");
-//     var dropoffLocation = urlParams.get("dropoffLocation");
-//     var pickupDate = urlParams.get("pickupDate");
-
-//     if(pickupLocation!=null && dropoffLocation!=null && pickupDate!=null ){
-//         for (var i = 0; i < pickupLocationSelect.options.length; i++) {
-
-//          if (pickupLocationSelect.options[i].value === pickupLocation) {
-
-//             pickupLocationSelect.options[i].selected = true;
-//             break; // Exit the loop once the option is found
-//         }
-//     }
-// }
+    </div>
+    <!-- content close -->
+    <script>
+        // var pickupLocationSelect = document.getElementById("picklocation");
 
 
-// });
+        //     document.addEventListener("DOMContentLoaded", function() {
+        //     var queryString = window.location.search;
+        //     var urlParams = new URLSearchParams(queryString);
+        //     var pickupLocation = urlParams.get("pickupLocation");
+        //     var dropoffLocation = urlParams.get("dropoffLocation");
+        //     var pickupDate = urlParams.get("pickupDate");
+
+        //     if(pickupLocation!=null && dropoffLocation!=null && pickupDate!=null ){
+        //         for (var i = 0; i < pickupLocationSelect.options.length; i++) {
+
+        //          if (pickupLocationSelect.options[i].value === pickupLocation) {
+
+        //             pickupLocationSelect.options[i].selected = true;
+        //             break; // Exit the loop once the option is found
+        //         }
+        //     }
+        // }
 
 
-
-</script>
-
+        // });
+    </script>
 @endsection

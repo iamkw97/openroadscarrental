@@ -15,7 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('cost_initial')->nullable();
             $table->string('tax_initial')->nullable();
-            $table->string('cost_rental_per_day')->nullable();
+            $table->string('apr2sep_isk_cost_rental_per_day');
+            $table->string('apr2sep_usd_cost_rental_per_day');
+            $table->string('apr2sep_gbp_cost_rental_per_day');
+            $table->string('sep2apr_isk_cost_rental_per_day');
+            $table->string('sep2apr_usd_cost_rental_per_day');
+            $table->string('sep2apr_gbp_cost_rental_per_day');
             $table->string('tax_rental_per_day')->nullable();
             $table->string('cost_rental_per_hour')->nullable();
             $table->string('tax_rental_per_hour')->nullable();

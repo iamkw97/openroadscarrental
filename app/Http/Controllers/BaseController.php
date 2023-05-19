@@ -6,6 +6,7 @@ use App\Models\Car;
 use App\Models\CarAvailability;
 use App\Models\CarImage;
 use App\Models\CarPrice;
+use App\Models\Destination;
 use Illuminate\Http\Request;
 
 class BaseController extends Controller
@@ -15,19 +16,17 @@ class BaseController extends Controller
         $cars_for_gallery = Car::join('car_images', 'cars.id', '=', 'car_images.car_id')
             ->select('cars.id', 'cars.displaying_name', 'cars.no_of_seats', 'cars.no_of_suitcases', 'cars.category', 'car_images.vehicle_image')
             ->get();
-        return view('app.welcome.home', compact('cars_for_gallery'));
+        $destinations_for_gallery = Destination::all();
+
+        return view('app.welcome.home', compact('cars_for_gallery', 'destinations_for_gallery'));
     }
     public function cars()
     {
-        $cars_for_gallery = Car::join('car_images', 'cars.id', '=', 'car_images.car_id')
-            ->select('cars.id', 'cars.displaying_name', 'cars.no_of_seats', 'cars.no_of_suitcases', 'cars.category', 'car_images.vehicle_image')
-            ->get();
-        return view('app.welcome.cars', compact('cars_for_gallery'));
+        return view('app.welcome.cars');
     }
 
     public function carInfo(Request $request, $id)
     {
-
         $cars = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
             ->leftJoin('car_availabilities', 'cars.id', '=', 'car_availabilities.car_id')
             ->select('cars.*', 'car_prices.cost_rental_per_day', 'car_prices.cost_rental_per_hour')
