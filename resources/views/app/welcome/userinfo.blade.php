@@ -146,8 +146,10 @@
 
 
                                 <div class="col-md-12 mt-3">
-                                    <div id='submit' class="pull-right">
-                                        <button type='submit' id='submitRegisterForm' class="btn-main color-2">Proceed</button>
+                                    <div id='' class="pull-right">
+                                        {{-- <button type='submit' id='submitRegister' class="btn-main color-2">Proceed</button> --}}
+                                        {{-- <button  id='submitRegister' class="btn-main color-2">Proceed</button> --}}
+                                        <button   id='submitRegister' type="button" class="btn btn-primary">Proceed</button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -165,19 +167,18 @@
                             </div>
                             <div class="d-info">
                                 <div class="d-text">
-                                    <h4>BMW M2</h4>
+                                    <h4 id="vehicleDisplayName"></h4>
                                     <div class="d-item_like">
                                         <i class="fa fa-heart"></i><span>36</span>
                                     </div>
                                     <div class="d-atr-group">
-                                        <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
-                                                alt="">5</span>
+                                        <span class="d-atr" ><img src="{{ asset('welcome/images/icons/1.svg') }}"
+                                                alt=""><h5 id="seatcounts"></h5></span>
                                         <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
-                                                alt="">2</span>
-                                        <span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}"
-                                                alt="">4</span>
+                                                alt=""><h5 id="bagscount"></h5></span>
+                                       
                                         <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
-                                                alt="">Sedan</span>
+                                                alt=""><h5 id="VehicleCategoryinfomation"></h5></span>
                                     </div>
                                     <div class="de-price text-center">
                                         Total<h4>$265</h4>

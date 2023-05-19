@@ -43,6 +43,18 @@ class BaseController extends Controller
         return response()->json($response);
     }
 
+    public function proceedBooking(Request $request)
+    {
+
+       
+    }
+
+
+
+
+
+ 
+
     public function bookingStep2()
     {
         return view('app.welcome.carinfo');

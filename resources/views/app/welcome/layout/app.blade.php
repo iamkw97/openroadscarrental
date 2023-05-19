@@ -791,15 +791,27 @@
             $('#vehicleMoreinf').html(item.vehicle_description);
             
             
+            var carImages = item.images; 
 
             var carousel = $('#slider-carousel');
             carousel.empty();
 
-            $.each(item.images, function(i, image) {
+            $.each(carImages, function(i, image) {
                 var vehicleImage = '<div class="item"><img src="img/cars/'+image.vehicle_image+'"alt=""></div>';
+
                 carousel.append(vehicleImage);
             });
 
+            
+
+
+
+
+
+
+
+
+            
 // Initialize Owl Carousel
             carousel.owlCarousel({
             loop: true,
@@ -832,9 +844,11 @@ $("#submit_btn").on("click", function(){
     var datedrop_Off =  datedropfinal.val();
     var drop_T = dropofftimefinal.val();
     var cardetails_id = car_id.val()
-    var cardetails_id = car_id.val()
-    var cardetails_id = car_id.val()
-    var cardetails_id = car_id.val()
+
+    var vehicle_description = $("#vehicle_description").html()
+    var VehicleCategory = $("#VehicleCategory").html()
+    var NumberofSeats = $("#NumberofSeats").html()
+    var NumberofSuitcases = $("#NumberofSuitcases").html()
 
           var url = "{{ route('personal.index') }}";
   url += "?Pickup_loc=" + encodeURIComponent(Pickup_l);
@@ -844,6 +858,12 @@ $("#submit_btn").on("click", function(){
   url += "&drop_Timeinfo=" + encodeURIComponent(drop_T);
   url += "&pickup_Tinmeinfo=" + encodeURIComponent(pickup_T);
   url += "&card_id=" + encodeURIComponent(cardetails_id);
+  url += "&vehicle_des=" + encodeURIComponent(vehicle_description);
+  url += "&VehicleCategory=" + encodeURIComponent(VehicleCategory);
+  url += "&NumberofSeats=" + encodeURIComponent(NumberofSeats);
+  url += "&NumberofSuitcases=" + encodeURIComponent(NumberofSuitcases);
+//   url += "&vehicleImageName=" + encodeURIComponent(vehicleImageName);
+  
   window.location.href = url;
     
       });
@@ -865,16 +885,112 @@ $(document).ready(function(){
         var pickupTimef = urlParams.get("drop_Timeinfo");
         var returnTimef = urlParams.get("pickup_Tinmeinfo");
         var id = urlParams.get("id");
-alert(finalpickupLocationf )
+        var vehicle_d = urlParams.get("vehicle_des");
+        var VehicleCategoryinfo = urlParams.get("VehicleCategory");
+        var SeatsCount = urlParams.get("NumberofSeats");
+        var SuitcasesCount = urlParams.get("NumberofSuitcases");
+
+
         $("#finalpicklocation").val(finalpickupLocationf);
         $("#finaldroplocation").val(finaldropoffLocationf);
         $("#finalpickdateinfo").val(pickupDateifo);
         $("#finalpicktimeinfo").val(pickupTimef);
         $("#finaldropdateinfo").val(dropoffDatef);
         $("#finaldroptimeinfo").val(returnTimef);
+        $("#vehicleDisplayName").html(vehicle_d);
+        $("#seatcounts").html(SeatsCount);
+        $("#bagscount").html(SuitcasesCount);
+        $("#VehicleCategoryinfomation").html(VehicleCategoryinfo);
+        
+        
+        $("#submitRegister").on("click", function() {
+            var fullname = $("#fullname").val();
+            var email = $("#email").val();
+            var address = $("#address").val();
+            var city = $("#city").val();
+            var phone1 = $("#phone1").val();
+            var phone2 = $("#phone2").val();
+            var license_no = $("#license_no").val();
+            var password = $("#password").val();
+            var repassword = $("#repassword").val();
+            var finalpickupLionformation = $("#finalpicklocation").val();
+            var finaldroplocationinformation = $("#finaldroplocation").val();
+            var finalpickdateinfomation = $("#finalpickdateinfo").val();
+            var finaldropdateinfomation = $("#finaldropdateinfo").val();
+            var finalpicktimeinformation = $("#finalpicktimeinfo").val();
+            var finaldroptimeinformation = $("#finaldroptimeinfo").val();
+
+
+            var formData = new FormData();
+            formData.append('fullname', fullname);
+            formData.append('email', email);
+            formData.append('address', address);
+            formData.append('city', city);
+            formData.append('phone1', phone1);
+            formData.append('phone2', phone2);
+            formData.append('license_no', license_no);
+            formData.append('password', password);
+            formData.append('repassword', repassword);
+            formData.append('finalpickupLionformation', finalpickupLionformation);
+            formData.append('finaldroplocationinformation', finaldroplocationinformation);
+
+            $.ajax({
+                url: "{{ route('proceed.booking') }}",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(data, status, xhr) {
+                    if (data.status == 'Success') {
+                        // Do something with success message here
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: data.status,
+                            text: data.message,
+                            showConfirmButton: false,
+                            
+                        })
+                    } else if (xhr.status == 422) {
+                        // handle the validation errors
+                        // ----------------------------------------------------------------------------------
+                        // var errors = data.errors;
+                        // loop through the errors and show them
+                        // for (var key in errors) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Input Valid Data!',
+                            // title: key,
+                            // text: errors[key][0],
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        // }
+                    } else {
+                        // Do something with failure message here
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: data.status,
+                            text: data.message,
+                            showConfirmButton: false,
+                          
+                        })
+                    }
+                    location.reload();
+                },
+                });
+        });
         // car_id.val(id)
   
 });
 
-
+// $(document).ready(function(){
+//    
+// });
     </script>

@@ -65,14 +65,18 @@
                         <div class="d-row">
                             <span class="d-title">Number of Suitcases</span>
                             <spam class="d-value" id="NumberofSuitcases"></spam>
-                        </div>
+                        </div> 
                         <div class="d-row">
                             <span class="d-title">Condition</span>
-                            <spam class="d-value" id="condition">2020</spam>
+                            <spam class="d-value" id="condition"></spam>
                         </div>
                         <div class="d-row">
                             <span class="d-title">Fuel State</span>
                             <spam class="d-value" id="FuelState"></spam>
+                        </div>
+                        <div class="d-row">
+                            <span class="d-title">Fuel State</span>
+                            <spam class="d-value" id="imageVehicle"></spam>
                         </div>
 
                     </div>
