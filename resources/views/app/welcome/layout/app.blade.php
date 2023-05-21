@@ -202,9 +202,9 @@
     ================================================== -->
     <script src="{{ asset('welcome/js/plugins.js') }}"></script>
     <script src="{{ asset('welcome/js/designesia.js') }}"></script>
-    <script
+    {{-- <script
         src="https://maps.googleapis.com/maps/api/js?key=insert_your_api_key_here&amp;libraries=places&amp;callback=initPlaces"
-        async="" defer=""></script>
+        async="" defer=""></script> --}}
 
     <!-- Include jQuery Pagination plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-pagination/1.2.7/jquery.pagination.min.js"></script>

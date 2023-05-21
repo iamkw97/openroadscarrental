@@ -18,7 +18,8 @@
     <link href="{{ asset('welcome/css/plugins.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('welcome/css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('welcome/css/coloring.css') }}" rel="stylesheet" type="text/css">
-    <!-- color scheme -->
+    <link href="{{ asset('admin/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+	<!-- color scheme -->
     <link id="colors" href="{{ asset('welcome/css/colors/scheme-08.css') }}" rel="stylesheet" type="text/css">
     <style>
         .frmbtnlgout {
@@ -314,6 +315,8 @@
     ================================================== -->
     <script src="{{ asset('welcome/js/plugins.js') }}"></script>
     <script src="{{ asset('welcome/js/designesia.js') }}"></script>
+    <script src="{{ asset('admin/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+	<script src="{{ asset('admin/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
 
 </body>
 
