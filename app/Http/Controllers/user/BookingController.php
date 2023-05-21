@@ -51,17 +51,12 @@ class BookingController extends Controller
             'user_id' => $user->id,
         ]);
 
+        // Mail::to($user->email)->send(new OrderConfirmationEmail($user, $booking));
+
         if ($user && $booking) {
             return response('Success', 200);
         } else {
             return response('Error', 400);
         }
-
-        // Send the welcome email to the user
-        // Mail::to($user->email)->send(new OrderConfirmationEmail($user, $booking));
-
-        // $request->session()->regenerate();
-        // // return Redirect::route('login.index');
-        // return redirect()->route('user.home');
     }
 }

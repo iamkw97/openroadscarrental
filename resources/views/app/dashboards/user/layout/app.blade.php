@@ -89,9 +89,9 @@
                                     <!-- logo begin -->
                                     <div id="logo">
                                         <a href="{{ route('home.index') }}">
-                                            <img class="logo-1" src="{{ asset('welcome/images/orcr-logo.png') }}"
+                                            <img class="logo-1" src="{{ asset('welcome/images/logo.png') }}"
                                                 alt="">
-                                            <img class="logo-2" src="{{ asset('welcome/images/orcr-logo.png') }}"
+                                            <img class="logo-2" src="{{ asset('welcome/images/logo.png') }}"
                                                 alt="">
                                         </a>
                                     </div>

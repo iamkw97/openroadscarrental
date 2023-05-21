@@ -222,8 +222,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/cars/homebgvehicle.png') }}" alt=""
-                            class="img-fluid wow fadeInUp">
+                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}" alt="" class="img-fluid wow fadeInUp">
                     </div>
 
                     <div class="col-lg-3">
@@ -249,13 +248,11 @@
         </section>
 
         <section class="text-light jarallax">
-            <img src="{{ asset('welcome/images/background/back3.jpg') }}" class="jarallax-img dark-image" alt="">
+            <img src="{{ asset('welcome/images/background/back0.jpg') }}" class="jarallax-img dark-image" alt="">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInRight">
-                        <h2>Ready for <span class="id-color">adventure? </span> We've got
-                            you <span class="id-color">covered</span> for any occasion that you need a <span
-                                class="id-color">ride.</span></h2>
+                        <h2>Just tell us <span class="id-color">where you need to go,</span> and we'll take care of the rest!</h2>
                     </div>
                     <div class="col-lg-6 wow fadeInLeft">
                         Iceland: A land of dramatic landscapes, geothermal wonders, and captivating culture. From cascading
@@ -489,8 +486,9 @@
                                         Indulge in pure bliss at Iceland's ultimate relaxation haven, the enchanting
                                         Blue Lagoon. A serendipitous marvel born from the geothermal power plant,...
                                     </p>
-                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                        More...</a>
+                                    <p><span class="id-color">Read More</span></p>
+                                    {{-- <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                        More...</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -512,8 +510,9 @@
                                         Embark on a captivating journey along the mesmerizing southern coast of
                                         Iceland, where you'll encounter the picturesque town of Vík. Prepare...
                                     </p>
-                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                        More...</a>
+                                    <p><span class="id-color">Read More</span></p>
+                                    {{-- <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                        More...</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -561,8 +560,9 @@
                                         Prepare to be spellbound by the majestic allure of Mt. Kirkjufell, the
                                         legendary 'Church Mountain' nestled along the picturesque north coast...
                                     </p>
-                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                        More...</a>
+                                    <p><span class="id-color">Read More</span></p>
+                                    {{-- <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                        More...</a> --}}
                                 </div>
                             </div>
                         </div>

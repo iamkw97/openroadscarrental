@@ -217,7 +217,7 @@
                                         </span>
                                     </div>
                                     <div class="de-price text-center">
-                                        Total<h4 id="total_cost">ISK</h4>
+                                        Total<h4>ISK <span id="total_cost"></span></h4>
                                     </div>
                                 </div>
                             </div>

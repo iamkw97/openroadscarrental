@@ -29,21 +29,18 @@
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInRight">
-                        <h2>Ready for <span class="id-color">adventure? </span> We've got
-                            you <span class="id-color">covered</span> for any occasion that you need a <span
-                                class="id-color">ride.</span></h2>
+                        <h2>Just tell us <span class="id-color">where you need to go,</span> and we'll take care of the rest!</h2>
                     </div>
                     <div class="col-lg-6 wow fadeInLeft">
-                        At <span class="id-color">Open Roads Car Rental</span>, we know that choosing the right car for your
-                        travel needs is crucial.
-                        That's why we offer a wide selection of commercial and luxury cars to suit any occasion, from
-                        compact cars for solo travelers to spacious SUVs for family road trips. Our cars are meticulously
-                        maintained and regularly serviced to ensure a safe and enjoyable driving experience. With our
-                        competitive pricing and exceptional customer service, renting a car with us is the perfect way to
-                        elevate your travel game.
+                        <span class="id-color"> Iceland:</span> A land of dramatic landscapes, geothermal wonders, and captivating culture. From cascading
+                        waterfalls to black sand beaches, the country's natural beauty is awe-inspiring. Explore glaciers,
+                        soak in geothermal hot springs, and witness the mesmerizing Northern Lights. Immerse yourself in
+                        Reykjavik's vibrant arts scene, indulge in delicious cuisine, and delve into Icelandic folklore.
+                        With its compact size and well-developed infrastructure, Iceland offers a unique and unforgettable
+                        travel experience for all adventurers.
                     </div>
                 </div>
-                <div class="spacer-double"></div>
+                {{-- <div class="spacer-double"></div>
                 <div class="row text-center">
                     <div class="col-md-3 col-sm-6 mb-sm-30">
                         <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
@@ -69,112 +66,7 @@
                             Years Experience
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section aria-label="section" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/8.jpg') }}" class="jarallax-img" alt="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h2>Board of Directors</h2>
-                        <div class="spacer-20"></div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 mb30">
-                        <div class="f-profile text-center">
-                            <div class="fp-wrap f-invert">
-                                <div class="fpw-overlay">
-                                    <div class="fpwo-wrap">
-                                        <div class="fpwow-icons">
-                                            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="fpw-overlay-btm"></div>
-                                <img src="{{ asset('welcome/images/team/1.jpg') }}" class="fp-image img-fluid"
-                                    alt="">
-                            </div>
-
-                            <h4>Fynley Wilkinson</h4>
-                            Chief Creative Officer
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 mb30">
-                        <div class="f-profile text-center">
-                            <div class="fp-wrap f-invert">
-                                <div class="fpw-overlay">
-                                    <div class="fpwo-wrap">
-                                        <div class="fpwow-icons">
-                                            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="fpw-overlay-btm"></div>
-                                <img src="{{ asset('welcome/images/team/2.jpg') }}" class="fp-image img-fluid"
-                                    alt="">
-                            </div>
-
-                            <h4>Peter Welsh</h4>
-                            Chief Technology Officer
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 mb30">
-                        <div class="f-profile text-center">
-                            <div class="fp-wrap f-invert">
-                                <div class="fpw-overlay">
-                                    <div class="fpwo-wrap">
-                                        <div class="fpwow-icons">
-                                            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="fpw-overlay-btm"></div>
-                                <img src="{{ asset('welcome/images/team/3.jpg') }}" class="fp-image img-fluid"
-                                    alt="">
-                            </div>
-
-                            <h4>John Shepard</h4>
-                            Chief Executive Officer
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 mb30">
-                        <div class="f-profile text-center">
-                            <div class="fp-wrap f-invert">
-                                <div class="fpw-overlay">
-                                    <div class="fpwo-wrap">
-                                        <div class="fpwow-icons">
-                                            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="fpw-overlay-btm"></div>
-                                <img src="{{ asset('welcome/images/team/4.jpg') }}" class="fp-image img-fluid"
-                                    alt="">
-                            </div>
-
-                            <h4>Robyn Peel</h4>
-                            Director of Finance
-                        </div>
-                    </div>
-
-                </div>
+                </div> --}}
             </div>
         </section>
 
@@ -205,8 +97,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/misc/car.png') }}" alt=""
-                            class="img-fluid wow fadeInUp">
+                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}" alt="" class="img-fluid wow fadeInUp">
                     </div>
 
                     <div class="col-lg-3">
@@ -279,7 +170,7 @@
             </div>
         </section>
 
-        <section id="section-call-to-action" class="bg-color-2 pt60 pb60 text-light">
+        <section id="section-call-to-action" class="bg-color-2 pt60 pb60 text-light" style="background-color: #0066FF;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-8">

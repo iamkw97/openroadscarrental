@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Order Confirmation Email</h1>
-    <p>Dear {{ $user->fullname }},</p>
+    {{-- <p>Dear {{ $user->fullname }},</p>
     <p>Thank you for placing an order with us.</p>
 
     <h2>Booking Details:</h2>
@@ -19,6 +19,6 @@
     <p>Pickup Time: {{ $booking->pickup_time }}</p>
     <p>Return Time: {{ $booking->return_time }}</p>
     <p>Total Cost: {{ $booking->total_cost }}</p>
-    <p>Car ID: {{ $booking->car_id }}</p>
+    <p>Car ID: {{ $booking->car_id }}</p> --}}
 </body>
 </html>
