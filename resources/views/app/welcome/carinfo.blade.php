@@ -16,7 +16,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <h1>BMW M2 2020</h1>
+                            <h1 id="vehicle_header_name"></h1>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -94,8 +94,8 @@
 
                     <div class="col-lg-3">
                         <div class="de-price text-center">
-                            Daily rate
-                            <h3>$265</h3>
+                            Total Cost
+                            <h4 id="total_cost">ISK </h4>
                         </div>
                         <div class="spacer-30"></div>
                         <div class="de-box mb25">

@@ -62,7 +62,7 @@
         <div id="top"></div>
         <section id="section-hero" aria-label="section" class="jarallax full-height vertical-center">
             <div class="hero-overlay"></div>
-            <img src="{{ asset('welcome/images/background/back4.jpg') }}" class="jarallax-img dark-image" alt="">
+            <img src="{{ asset('welcome/images/background/icelandbg.jpg') }}" class="jarallax-img dark-image" alt="">
             <div class="container position-relative z1000" style="position: relative; top:70px;">
                 <div class="row align-items-center">
                     <div class="col-lg-5 text-light">
@@ -222,7 +222,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/misc/car-2.png') }}" alt=""
+                        <img src="{{ asset('welcome/images/cars/homebgvehicle.png') }}" alt=""
                             class="img-fluid wow fadeInUp">
                     </div>
 
@@ -309,9 +309,9 @@
                                                 <span>{{ str_replace(',', '.', number_format($item->apr2sep_isk_cost_rental_per_day)) }}
                                                     ISK</span>
                                                 Approximately<H4>USD
-                                                    &nbsp;{{ $item->apr2sep_usd_cost_rental_per_day }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GBP
-                                                    &nbsp;{{ $item->apr2sep_gbp_cost_rental_per_day }} </H4>
-
+                                                    &nbsp;{{ $item->apr2sep_usd_cost_rental_per_day }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    EUR
+                                                    &nbsp;{{ $item->apr2sep_eur_cost_rental_per_day }} </H4>
                                                 <a class="btn-main" href="">Rent Now</a>
                                             </div>
                                         </div>
@@ -467,67 +467,66 @@
                         <div class="spacer-20"></div>
                     </div>
                     {{-- <div class="destination_slider-container"> --}}
-                        {{-- <div class="destination_slider" id="destination_slider"> --}}
-                            {{-- @forelse ($destinations_for_gallery as $item) --}}
-                            {{-- slider items --}}
-                            <div class="col-lg-4 mb10 px-2">
-                                <div class="bloglist s2 item">
-                                    <div class="post-content">
-                                        <div class="post-image">
-                                            {{-- <div class="date-box">
+                    {{-- <div class="destination_slider" id="destination_slider"> --}}
+                    {{-- @forelse ($destinations_for_gallery as $item) --}}
+                    {{-- slider items --}}
+                    <div class="col-lg-4 mb10 px-2">
+                        <div class="bloglist s2 item">
+                            <div class="post-content">
+                                <div class="post-image">
+                                    {{-- <div class="date-box">
                                                 <div class="m">10</div>
                                                 <div class="d">MAR</div>
                                             </div> --}}
-                                            <img alt="" src="{{ asset('img/destinations/blue_lagoon.jpg') }}"
-                                                class="lazy">
-                                        </div>
-                                        <div class="post-text">
-                                            <h4><a href="{{ route('destinationinfo.index') }}">The Blue
-                                                    Lagoon<span></span></a>
-                                            </h4>
-                                            <p>
-                                                Indulge in pure bliss at Iceland's ultimate relaxation haven, the enchanting
-                                                Blue Lagoon. A serendipitous marvel born from the geothermal power plant,...
-                                            </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                                More...</a>
-                                        </div>
-                                    </div>
+                                    <img alt="" src="{{ asset('img/destinations/blue_lagoon.jpg') }}"
+                                        class="lazy">
+                                </div>
+                                <div class="post-text">
+                                    <h4><a href="{{ route('destinationinfo.index') }}">The Blue
+                                            Lagoon<span></span></a>
+                                    </h4>
+                                    <p>
+                                        Indulge in pure bliss at Iceland's ultimate relaxation haven, the enchanting
+                                        Blue Lagoon. A serendipitous marvel born from the geothermal power plant,...
+                                    </p>
+                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                        More...</a>
                                 </div>
                             </div>
-                            <div class="col-lg-4 mb10 px-2">
-                                <div class="bloglist s2 item">
-                                    <div class="post-content">
-                                        <div class="post-image">
-                                            {{-- <div class="date-box">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb10 px-2">
+                        <div class="bloglist s2 item">
+                            <div class="post-content">
+                                <div class="post-image">
+                                    {{-- <div class="date-box">
                                                 <div class="m">10</div>
                                                 <div class="d">MAR</div>
                                             </div> --}}
-                                            <img alt="" src="{{ asset('img/destinations/vik.jpg') }}"
-                                                class="lazy">
-                                        </div>
-                                        <div class="post-text">
-                                            <h4><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
-                                            </h4>
-                                            <p>
-                                                Embark on a captivating journey along the mesmerizing southern coast of
-                                                Iceland, where you'll encounter the picturesque town of Vík. Prepare...
-                                            </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                                More...</a>
-                                        </div>
-                                    </div>
+                                    <img alt="" src="{{ asset('img/destinations/vik.jpg') }}" class="lazy">
+                                </div>
+                                <div class="post-text">
+                                    <h4><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
+                                    </h4>
+                                    <p>
+                                        Embark on a captivating journey along the mesmerizing southern coast of
+                                        Iceland, where you'll encounter the picturesque town of Vík. Prepare...
+                                    </p>
+                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                        More...</a>
                                 </div>
                             </div>
-                            {{-- <div class="col-lg-4 mb10 px-2">
+                        </div>
+                    </div>
+                    {{-- <div class="col-lg-4 mb10 px-2">
                                 <div class="bloglist s2 item">
                                     <div class="post-content">
                                         <div class="post-image"> --}}
-                                            {{-- <div class="date-box">
+                    {{-- <div class="date-box">
                                                 <div class="m">10</div>
                                                 <div class="d">MAR</div>
                                             </div> --}}
-                                            {{-- <img alt="" src="{{ asset('img/destinations/akureyri.jpg') }}"
+                    {{-- <img alt="" src="{{ asset('img/destinations/akureyri.jpg') }}"
                                                 class="lazy">
                                         </div>
                                         <div class="post-text">
@@ -543,33 +542,33 @@
                                     </div>
                                 </div>
                             </div> --}}
-                            <div class="col-lg-4 mb10 px-2">
-                                <div class="bloglist s2 item">
-                                    <div class="post-content">
-                                        <div class="post-image">
-                                            {{-- <div class="date-box">
+                    <div class="col-lg-4 mb10 px-2">
+                        <div class="bloglist s2 item">
+                            <div class="post-content">
+                                <div class="post-image">
+                                    {{-- <div class="date-box">
                                                 <div class="m">10</div>
                                                 <div class="d">MAR</div>
                                             </div> --}}
-                                            <img alt="" src="{{ asset('img/destinations/kirkjufell.jpg') }}"
-                                                class="lazy">
-                                        </div>
-                                        <div class="post-text">
-                                            <h4><a href="{{ route('destinationinfo.index') }}">Mt.
-                                                    Kirkjufell<span></span></a>
-                                            </h4>
-                                            <p>
-                                                Prepare to be spellbound by the majestic allure of Mt. Kirkjufell, the
-                                                legendary 'Church Mountain' nestled along the picturesque north coast...
-                                            </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                                More...</a>
-                                        </div>
-                                    </div>
+                                    <img alt="" src="{{ asset('img/destinations/kirkjufell.jpg') }}"
+                                        class="lazy">
+                                </div>
+                                <div class="post-text">
+                                    <h4><a href="{{ route('destinationinfo.index') }}">Mt.
+                                            Kirkjufell<span></span></a>
+                                    </h4>
+                                    <p>
+                                        Prepare to be spellbound by the majestic allure of Mt. Kirkjufell, the
+                                        legendary 'Church Mountain' nestled along the picturesque north coast...
+                                    </p>
+                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                        More...</a>
                                 </div>
                             </div>
-                            {{-- -------------- --}}
-                            {{-- <div class="col-lg-4 mb10 px-2">
+                        </div>
+                    </div>
+                    {{-- -------------- --}}
+                    {{-- <div class="col-lg-4 mb10 px-2">
                                     <div class="bloglist s2 item">
                                         <div class="post-content">
                                             <div class="post-image">
@@ -598,11 +597,11 @@
                                         </div>
                                     </div>
                                 </div> --}}
-                            {{-- ------------------ --}}
-                            {{-- @empty --}}
+                    {{-- ------------------ --}}
+                    {{-- @empty --}}
 
-                            {{-- @endforelse --}}
-                        {{-- </div> --}}
+                    {{-- @endforelse --}}
+                    {{-- </div> --}}
                     {{-- </div> --}}
                 </div>
             </div>

@@ -85,10 +85,10 @@ class CarController extends Controller
             'tax_initial' => $data['tax_initial'],
             'apr2sep_isk_cost_rental_per_day' => $data['apr2sep_isk_cost_rental_per_day'],
             'apr2sep_usd_cost_rental_per_day' => $data['apr2sep_usd_cost_rental_per_day'],
-            'apr2sep_gbp_cost_rental_per_day' => $data['apr2sep_gbp_cost_rental_per_day'],
+            'apr2sep_eur_cost_rental_per_day' => $data['apr2sep_eur_cost_rental_per_day'],
             'sep2apr_isk_cost_rental_per_day' => $data['sep2apr_isk_cost_rental_per_day'],
             'sep2apr_usd_cost_rental_per_day' => $data['sep2apr_usd_cost_rental_per_day'],
-            'sep2apr_gbp_cost_rental_per_day' => $data['sep2apr_gbp_cost_rental_per_day'],
+            'sep2apr_eur_cost_rental_per_day' => $data['sep2apr_eur_cost_rental_per_day'],
             'tax_rental_per_day' => $data['tax_rental_per_day'],
             'cost_rental_per_hour' => $data['cost_rental_per_hour'],
             'tax_rental_per_hour' => $data['tax_rental_per_hour'],
@@ -131,11 +131,11 @@ class CarController extends Controller
     {
         $cars = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
             ->select('cars.*', 'car_prices.apr2sep_isk_cost_rental_per_day', 'car_prices.apr2sep_isk_cost_rental_per_day'
-            , 'car_prices.apr2sep_gbp_cost_rental_per_day'
+            , 'car_prices.apr2sep_eur_cost_rental_per_day'
             , 'car_prices.sep2apr_isk_cost_rental_per_day'
             , 'car_prices.sep2apr_isk_cost_rental_per_day'
             , 'car_prices.sep2apr_usd_cost_rental_per_day'
-            , 'car_prices.sep2apr_gbp_cost_rental_per_day'
+            , 'car_prices.sep2apr_eur_cost_rental_per_day'
             )
             ->get();
 

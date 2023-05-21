@@ -329,8 +329,8 @@
                                                         <div class="input-group mb-1">
                                                             <span class="input-group-text" id="basic-addon1">GBP</span>
                                                             <input type="number" class="form-control"
-                                                                id="apr2sep_gbp_cost_rental_per_day"
-                                                                name="apr2sep_gbp_cost_rental_per_day" placeholder="0.00">
+                                                                id="apr2sep_eur_cost_rental_per_day"
+                                                                name="apr2sep_eur_cost_rental_per_day" placeholder="0.00">
                                                         </div>
                                                     </td>
                                                     <td>
@@ -364,8 +364,8 @@
                                                         <div class="input-group mb-1">
                                                             <span class="input-group-text" id="basic-addon1">GBP</span>
                                                             <input type="number" class="form-control"
-                                                                id="sep2apr_gbp_cost_rental_per_day"
-                                                                name="sep2apr_gbp_cost_rental_per_day" placeholder="0.00">
+                                                                id="sep2apr_eur_cost_rental_per_day"
+                                                                name="sep2apr_eur_cost_rental_per_day" placeholder="0.00">
                                                         </div>
                                                     </td>
                                                     <td>
@@ -880,13 +880,13 @@
                     .val());
                 formData.append('apr2sep_usd_cost_rental_per_day', $('#apr2sep_usd_cost_rental_per_day')
                     .val());
-                formData.append('apr2sep_gbp_cost_rental_per_day', $('#apr2sep_gbp_cost_rental_per_day')
+                formData.append('apr2sep_eur_cost_rental_per_day', $('#apr2sep_eur_cost_rental_per_day')
                     .val());
                 formData.append('sep2apr_isk_cost_rental_per_day', $('#sep2apr_isk_cost_rental_per_day')
                     .val());
                 formData.append('sep2apr_usd_cost_rental_per_day', $('#sep2apr_usd_cost_rental_per_day')
                     .val());
-                formData.append('sep2apr_gbp_cost_rental_per_day', $('#sep2apr_gbp_cost_rental_per_day')
+                formData.append('sep2apr_eur_cost_rental_per_day', $('#sep2apr_eur_cost_rental_per_day')
                     .val());
                 formData.append('tax_rental_per_day', $('#tax_rental_per_day').val());
                 formData.append('cost_rental_per_hour', $('#cost_rental_per_hour').val());
