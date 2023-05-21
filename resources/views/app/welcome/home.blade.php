@@ -47,12 +47,22 @@
             transition: transform .2s;
             transform: scale(1.2);
         }
+
+        .dark-image {
+            filter: brightness(70%);
+        }
+
+        @media (max-width: 767px) {
+            .de_form {
+                display: none;
+            }
+        }
     </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
         <section id="section-hero" aria-label="section" class="jarallax full-height vertical-center">
             <div class="hero-overlay"></div>
-            <img src="{{ asset('welcome/images/background/6.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back4.jpg') }}" class="jarallax-img dark-image" alt="">
             <div class="container position-relative z1000" style="position: relative; top:70px;">
                 <div class="row align-items-center">
                     <div class="col-lg-5 text-light">
@@ -164,68 +174,12 @@
                                     </div>
                                 </div>
 
-                                <div class="row  mt-2">
-                                    <div class="col-md-12">
-                                        {{-- <div class="p-2 rounded-3 shadow-soft" data-bgcolor="#fff"> --}}
-                                        {{-- <h6 style="color:#fff">What is your vehicle type?</h6> --}}
-
-                                        <div class="de_form de_radio row g-3">
-                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
-                                                <input id="radio-1a" name="Car_Type" type="radio" value="Residential"
-                                                    checked="checked">
-                                                <label for="radio-1a"><img
-                                                        src="{{ asset('welcome/images/select-form/car.png') }}"
-                                                        alt="">SUV</label>
-                                            </div>
-
-                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
-                                                <input id="radio-1b" name="Car_Type" type="radio" value="Office">
-                                                <label for="radio-1b"><img
-                                                        src="{{ asset('welcome/images/select-form/sportscar.png') }}"
-                                                        alt="">Coupe</label>
-                                            </div>
-
-                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
-                                                <input id="radio-1c" name="Car_Type" type="radio" value="Commercial">
-                                                <label for="radio-1c"><img
-                                                        src="{{ asset('welcome/images/select-form/minibus.png') }}"
-                                                        alt="">Hback</label>
-                                            </div>
-
-                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
-                                                <input id="radio-1d" name="Car_Type" type="radio" value="Retail">
-                                                <label for="radio-1d"><img
-                                                        src="{{ asset('welcome/images/select-form/minibus.png') }}"
-                                                        alt="">SWgon</label>
-                                            </div>
-
-                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
-                                                <input id="radio-1e" name="Car_Type" type="radio" value="Commercial">
-                                                <label for="radio-1e"><img
-                                                        src="{{ asset('welcome/images/select-form/sportscar.png') }}"
-                                                        alt="">Convertible</label>
-                                            </div>
-
-                                            <div class="radio-img col-lg-2 col-sm-2 col-2">
-                                                <input id="radio-1f" name="Car_Type" type="radio" value="Retail">
-                                                <label for="radio-1f"><img
-                                                        src="{{ asset('welcome/images/select-form/van.png') }}"
-                                                        alt="">Minivan</label>
-                                            </div>
-                                        </div>
-                                        {{-- </div> --}}
-                                    </div>
-                                </div>
                                 <div class="row mt-3">
                                     <div class="col-md-12">
                                         <a href="#" type='' id='' onclick="validateForm()"
                                             class="btn-main pull-right">
                                             Find a Vehicle
                                         </a>
-                                        {{-- <a href="{{ route('booking.index') }}" type='' id=''
-                                            class="btn-main pull-right">
-                                            Find a Vehicle
-                                        </a> --}}
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -268,7 +222,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/misc/car.png') }}" alt=""
+                        <img src="{{ asset('welcome/images/misc/car-2.png') }}" alt=""
                             class="img-fluid wow fadeInUp">
                     </div>
 
@@ -295,7 +249,7 @@
         </section>
 
         <section class="text-light jarallax">
-            <img src="{{ asset('welcome/images/background/2.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back3.jpg') }}" class="jarallax-img dark-image" alt="">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInRight">
@@ -313,32 +267,7 @@
                     </div>
                 </div>
                 <div class="spacer-double"></div>
-                <div class="row text-center">
-                    <div class="col-md-3 col-sm-6 mb-sm-30">
-                        <div class="de_count transparent text-light wow fadeInUp">
-                            <h3 class="timer" data-to="15425" data-speed="3000">0</h3>
-                            Hours of Work
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-sm-30">
-                        <div class="de_count transparent text-light wow fadeInUp">
-                            <h3 class="timer" data-to="8745" data-speed="3000">0</h3>
-                            Clients Supported
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-sm-30">
-                        <div class="de_count transparent text-light wow fadeInUp">
-                            <h3 class="timer" data-to="235" data-speed="3000">0</h3>
-                            Awards Winning
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-sm-30">
-                        <div class="de_count transparent text-light wow fadeInUp">
-                            <h3 class="timer" data-to="15" data-speed="3000">0</h3>
-                            Years Experience
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </section>
 
@@ -359,7 +288,7 @@
                                 <div class="de-item mb30">
                                     <div class="d-img">
                                         <img src="{{ asset('img/cars/' . $item->vehicle_image) }}" class="img-fluid"
-                                            alt="">
+                                            alt="" style="width: 387px; height: 271px;">
                                     </div>
                                     <div class="d-info">
                                         <div class="d-text">
@@ -376,7 +305,13 @@
                                                         alt="">{{ $item->category }}</span>
                                             </div>
                                             <div class="d-price">
-                                                Daily rate from <span>$265</span>
+                                                Daily rate from
+                                                <span>{{ str_replace(',', '.', number_format($item->apr2sep_isk_cost_rental_per_day)) }}
+                                                    ISK</span>
+                                                Approximately<H4>USD
+                                                    &nbsp;{{ $item->apr2sep_usd_cost_rental_per_day }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GBP
+                                                    &nbsp;{{ $item->apr2sep_gbp_cost_rental_per_day }} </H4>
+
                                                 <a class="btn-main" href="">Rent Now</a>
                                             </div>
                                         </div>
@@ -487,7 +422,7 @@
         </section>
 
         <section class="text-light jarallax" aria-label="section">
-            <img src="{{ asset('welcome/images/background/3.jpg') }}" alt="" class="jarallax-img">
+            <img src="{{ asset('welcome/images/background/back1.jpg') }}" alt="" class="jarallax-img">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-light">
@@ -525,16 +460,116 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 offset-lg-3 text-center">
-                        <h2>Latest News</h2>
-                        <p>Sit labore et officia eiusmod tempor officia eiusmod dolor exercitation nulla dolore ut id velit
-                            et ut anim.</p>
+                        <h2>Destinations</h2>
+                        <p>Discover the untamed beauty of Iceland's most famous places, where fire and ice collide in a
+                            mesmerizing dance. Iceland awaits, ready to awaken your wanderlust and leave you spellbound.
+                        </p>
                         <div class="spacer-20"></div>
                     </div>
-                    <div class="destination_slider-container">
-                        <div class="destination_slider" id="destination_slider">
+                    {{-- <div class="destination_slider-container"> --}}
+                        {{-- <div class="destination_slider" id="destination_slider"> --}}
+                            {{-- @forelse ($destinations_for_gallery as $item) --}}
                             {{-- slider items --}}
-                            @forelse ($destinations_for_gallery as $item)
-                                <div class="col-lg-4 mb10 px-2">
+                            <div class="col-lg-4 mb10 px-2">
+                                <div class="bloglist s2 item">
+                                    <div class="post-content">
+                                        <div class="post-image">
+                                            {{-- <div class="date-box">
+                                                <div class="m">10</div>
+                                                <div class="d">MAR</div>
+                                            </div> --}}
+                                            <img alt="" src="{{ asset('img/destinations/blue_lagoon.jpg') }}"
+                                                class="lazy">
+                                        </div>
+                                        <div class="post-text">
+                                            <h4><a href="{{ route('destinationinfo.index') }}">The Blue
+                                                    Lagoon<span></span></a>
+                                            </h4>
+                                            <p>
+                                                Indulge in pure bliss at Iceland's ultimate relaxation haven, the enchanting
+                                                Blue Lagoon. A serendipitous marvel born from the geothermal power plant,...
+                                            </p>
+                                            <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                                More...</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb10 px-2">
+                                <div class="bloglist s2 item">
+                                    <div class="post-content">
+                                        <div class="post-image">
+                                            {{-- <div class="date-box">
+                                                <div class="m">10</div>
+                                                <div class="d">MAR</div>
+                                            </div> --}}
+                                            <img alt="" src="{{ asset('img/destinations/vik.jpg') }}"
+                                                class="lazy">
+                                        </div>
+                                        <div class="post-text">
+                                            <h4><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
+                                            </h4>
+                                            <p>
+                                                Embark on a captivating journey along the mesmerizing southern coast of
+                                                Iceland, where you'll encounter the picturesque town of Vík. Prepare...
+                                            </p>
+                                            <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                                More...</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <div class="col-lg-4 mb10 px-2">
+                                <div class="bloglist s2 item">
+                                    <div class="post-content">
+                                        <div class="post-image"> --}}
+                                            {{-- <div class="date-box">
+                                                <div class="m">10</div>
+                                                <div class="d">MAR</div>
+                                            </div> --}}
+                                            {{-- <img alt="" src="{{ asset('img/destinations/akureyri.jpg') }}"
+                                                class="lazy">
+                                        </div>
+                                        <div class="post-text">
+                                            <h4><a href="{{ route('destinationinfo.index') }}">Akureyri<span></span></a>
+                                            </h4>
+                                            <p>
+                                                Welcome to the vibrant gem of North Iceland, the captivating city of
+                                                Akureyri. Boasting the title of Iceland's second largest city and hailed...
+                                            </p>
+                                            <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                                More...</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
+                            <div class="col-lg-4 mb10 px-2">
+                                <div class="bloglist s2 item">
+                                    <div class="post-content">
+                                        <div class="post-image">
+                                            {{-- <div class="date-box">
+                                                <div class="m">10</div>
+                                                <div class="d">MAR</div>
+                                            </div> --}}
+                                            <img alt="" src="{{ asset('img/destinations/kirkjufell.jpg') }}"
+                                                class="lazy">
+                                        </div>
+                                        <div class="post-text">
+                                            <h4><a href="{{ route('destinationinfo.index') }}">Mt.
+                                                    Kirkjufell<span></span></a>
+                                            </h4>
+                                            <p>
+                                                Prepare to be spellbound by the majestic allure of Mt. Kirkjufell, the
+                                                legendary 'Church Mountain' nestled along the picturesque north coast...
+                                            </p>
+                                            <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                                More...</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- -------------- --}}
+                            {{-- <div class="col-lg-4 mb10 px-2">
                                     <div class="bloglist s2 item">
                                         <div class="post-content">
                                             <div class="post-image">
@@ -562,36 +597,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @empty
-                                <div class="col-lg-4 mb10 px-2">
-                                    <div class="bloglist s2 item">
-                                        <div class="post-content">
-                                            <div class="post-image">
-                                                <div class="date-box">
-                                                    <div class="m">10</div>
-                                                    <div class="d">MAR</div>
-                                                </div>
-                                                <img alt=""
-                                                    src="{{ asset('welcome/images/news/pic-blog-1.jpg') }}"
-                                                    class="lazy">
-                                            </div>
-                                            <div class="post-text">
-                                                <h4><a href="news-single.html">Enjoy Best Travel
-                                                        Experience<span></span></a>
-                                                </h4>
-                                                <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim
-                                                    reprehenderit cupidatat labore ad laborum consectetur.</p>
-                                                <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                                    More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforelse
-                            <!-- Add more slide items here -->
-                        </div>
-                    </div>
+                                </div> --}}
+                            {{-- ------------------ --}}
+                            {{-- @empty --}}
+
+                            {{-- @endforelse --}}
+                        {{-- </div> --}}
+                    {{-- </div> --}}
                 </div>
             </div>
         </section>
@@ -599,65 +611,64 @@
         <section id="section-testimonials" class="no-top no-bottom">
             <div class="container-fluid">
                 <div class="row g-0 align-items-center">
-
                     <div class="col-md-4">
                         <div class="de-image-text">
                             <div class="d-text">
-
-                                <h4>Vatnajökull National Park</h4>
                                 <blockquote>
-                                    Iceland is a country that is known for its natural beauty and unique geological
-                                    features, drawing visitors from all over the world. However, despite its popularity as a
-                                    tourist destination, many visitors often stick to the well-trodden path, missing out on
-                                    the many hidden gems that Iceland has to offer. In this article, we will explore why
-                                    Iceland has so many hidden gems, provide an overview of lesser-known destinations, and
-                                    offer tips for finding and visiting these hidden gems, including car rental services.
-                                    <span class="by">read more.....</span>
+                                    ประทับใจการเช่ารถกับ Open Roads car rental รถใหม่สะอาด ราคาเช่าถูกกว่าหลายๆ
+                                    ที่ที่เคยสอบถาม ให้คำแนะนำข้อมูลการขับรถในไอซ์แลนด์ คืนรถง่ายสะดวก ไม่มีค่าใช้จ่ายแอบแฝง
+                                    ⭐⭐⭐⭐⭐.
+                                    <span class="by">
+                                        <h4>Phanidaporn Jaisaen</h4>
+                                    </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('welcome/images/destination/Vatnajökull National Park.jpg') }}"
-                                class="img-fluid" alt="">
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-4">
-                        <div class="de-image-text">
-                            <div class="d-text">
-
-                                <h4>Midnight Sun in Iceland</h4>
-                                <blockquote>
-                                    The Midnight Sun is a natural phenomenon that occurs during the summer months in
-                                    Iceland, where the sun remains visible at all hours of the day and night. This is due to
-                                    Iceland's location just south of the Arctic Circle, which means that the country
-                                    experiences long days and short nights during the summer months. The best time to visit
-                                    Iceland to experience the Midnight Sun is typically between late May and early August,
-                                    with the longest days of the year occurring in June. During this time, the sun remains
-                                    visible for 24 hours a day in some parts of the country, providing ample opportunity to
-                                    experience the Midnight Sun.
-                                    <span class="by">read more.....</span>
-                                </blockquote>
-                            </div>
-                            <img src="{{ asset('welcome/images/destination/Midnight Sun in Iceland.jpg') }}"
-                                class="img-fluid" alt="">
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="de-image-text">
-                            <div class="d-text">
-
-                                <h4>Gullfoss Waterfall</h4>
-                                <blockquote>
-                                    Iceland is a country known for its unique and beautiful landscapes, making it a popular
-                                    destination for road trips. The rugged terrain, dramatic cliffs, and natural wonders
-                                    that can be found throughout the country make it a paradise for nature lovers and
-                                    adventure seekers alike.
-                                    <span class="by">read more.....</span>
-                                </blockquote>
-                            </div>
-                            <img src="{{ asset('welcome/images/destination/Gullfoss Waterfall.jpg') }}" class="img-fluid"
+                            <img src="{{ asset('img/testimonials/phanidaporn_jaisaen.jpg') }}" class="img-fluid"
                                 alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="de-image-text">
+                            <div class="d-text">
+                                <blockquote>
+                                    I highly recommend this company. The pick up process was very efficient (it only took
+                                    around 15 mins or less); they were waiting for us at the airport on time.
+                                    Car was in good condition. We took the Toyota rav4 AWD, which was an excellent option
+                                    for our trip through the ring road in winter time. Everything ran super smoothly.
+                                    On the top of that they include wireless internet, so no need to get an additional SIM
+                                    card. We had a power bank for our cellphones and also helped with the provided internet
+                                    devices in our hiking activities.
+                                    The delivery process also was super simple at the airport, which make it very efficient
+                                    for the customers.
+                                    Last, but not least, service was excellent. They reply in within minutes.
+                                    <span class="by">
+                                        <h4>Flavio Rodriguez</h4>
+                                    </span>
+                                </blockquote>
+                            </div>
+                            <img src="{{ asset('img/testimonials/flavio_rodriguez.jpg') }}" class="img-fluid"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="de-image-text">
+                            <div class="d-text">
+                                <blockquote>
+                                    We picked Open Roads Car Rental after comparing their service against some of the larger
+                                    providers. We were a little unsure but I am so glad we did. The personal service offered
+                                    by the team was excellent. No hidden charges or longs waits to collect your car. We were
+                                    greeted at the airport on time and taken to our vehicle. We were also provided lots of
+                                    useful local information on roads and directed to services that supported our self drive
+                                    trip. The car was in good condition - no issues at all. Drop off was smooth and without
+                                    issue. Communications were instant before and after our trip. Based on my experience I
+                                    would not hesitate to recommend them for your rental needs. Thank you to the Open Roads
+                                    Team for making our trip hassle free.
+                                    <span class="by">
+                                        <h4>Kam Bains</h4>
+                                    </span>
+                                </blockquote>
+                            </div>
+                            <img src="{{ asset('img/testimonials/kam_bains.jpg') }}" class="img-fluid" alt="">
                         </div>
                     </div>
 

@@ -80,6 +80,7 @@ class CarController extends Controller
 
         // store data into Car prices
         $car = CarPrice::create([
+
             'cost_initial' => $data['cost_initial'],
             'tax_initial' => $data['tax_initial'],
             'apr2sep_isk_cost_rental_per_day' => $data['apr2sep_isk_cost_rental_per_day'],
@@ -129,7 +130,13 @@ class CarController extends Controller
     public function getcar()
     {
         $cars = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
-            ->select('cars.*', 'car_prices.cost_rental_per_day', 'car_prices.cost_rental_per_hour')
+            ->select('cars.*', 'car_prices.apr2sep_isk_cost_rental_per_day', 'car_prices.apr2sep_isk_cost_rental_per_day'
+            , 'car_prices.apr2sep_gbp_cost_rental_per_day'
+            , 'car_prices.sep2apr_isk_cost_rental_per_day'
+            , 'car_prices.sep2apr_isk_cost_rental_per_day'
+            , 'car_prices.sep2apr_usd_cost_rental_per_day'
+            , 'car_prices.sep2apr_gbp_cost_rental_per_day'
+            )
             ->get();
 
         foreach ($cars as $car) {

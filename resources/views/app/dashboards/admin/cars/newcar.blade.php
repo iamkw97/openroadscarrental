@@ -130,7 +130,8 @@
                                                         name="vehicle_id" placeholder="00.00">
                                                 </div> --}}
                                                 <div class="col-md-6 my-1">
-                                                    <label for="category" class="form-label">Vehicle Category</label>
+                                                    <label for="category" class="form-label">Vehicle Category<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <select type="text" class="form-control" id="category"
                                                         name="category">
                                                         <option value="Micro">Micro</option>
@@ -145,7 +146,8 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 my-1">
-                                                    <label for="vehicle_make" class="form-label">Vehicle Make</label>
+                                                    <label for="vehicle_make" class="form-label">Vehicle Make<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type="text" class="form-control" id="vehicle_make"
                                                         name="vehicle_make" placeholder="Enter vehicle make">
                                                 </div>
@@ -153,13 +155,13 @@
                                             <div class="row mt-2">
                                                 <div class="col-md-4 my-1">
                                                     <label for="vehicle_model" class="form-label">Vehicle
-                                                        Model</label>
+                                                        Model<span style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type="text" class="form-control" id="vehicle_model"
                                                         name="vehicle_model" placeholder="Enter vehicle model">
                                                 </div>
                                                 <div class="col-md-4 my-1">
                                                     <label for="no_of_seats" class="form-label">Number of
-                                                        Seats</label>
+                                                        Seats<span style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <select type="text" class="form-control" id="no_of_seats"
                                                         name="no_of_seats">
                                                         <option value="12">12</option>
@@ -167,14 +169,14 @@
                                                         <option value="8">8</option>
                                                         <option value="7">7</option>
                                                         <option value="6">6</option>
-                                                        <option value="5">5</option>
+                                                        <option value="5" selected>5</option>
                                                         <option value="4">4</option>
                                                         <option value="2">2</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-4 my-1">
                                                     <label for="no_of_suitcases" class="form-label">Number of
-                                                        Suitcases</label>
+                                                        Suitcases<span style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type="number" class="form-control" id="no_of_suitcases"
                                                         name="no_of_suitcases" placeholder="Enter suitcases count">
                                                 </div>
@@ -186,7 +188,8 @@
                                                         name="gear_box_type" placeholder="Enter gear box type">
                                                 </div>
                                                 <div class="col-md-4 my-1">
-                                                    <label for="fuel_state" class="form-label">Fuel State</label>
+                                                    <label for="fuel_state" class="form-label">Fuel State<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type="text" class="form-control" id="fuel_state"
                                                         name="fuel_state" placeholder="Enter fuel state">
                                                 </div>
@@ -251,7 +254,7 @@
                                             <div class="row mt-2">
                                                 <div class="col-md-12 my-1">
                                                     <label for="displaying_name" class="form-label">Displaying
-                                                        Name</label>
+                                                        Name<span style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type="text" class="form-control" id="displaying_name"
                                                         name="displaying_name"
                                                         placeholder="Enter an unique name for the vehicle">
@@ -304,10 +307,12 @@
                                                         </select>
                                                     </td>
                                                 </tr>
-                                                <tr aria-rowspan="2">
-                                                    <td>Rental per Day</td>
+                                                <tr>
+                                                    <td rowspan="2">Rental per Day<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></td>
                                                     <td>Price for a car rent per day <br>
-                                                        <strong>from April 14 to September 15</strong></td>
+                                                        <strong>from April 14 to September 15</strong>
+                                                    </td>
                                                     <td>
                                                         <div class="input-group mb-1">
                                                             <span class="input-group-text" id="basic-addon1">ISK</span>
@@ -340,9 +345,9 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Rental per Day</td>
                                                     <td>Price for a car rent per day <br>
-                                                        <strong>from September 15 to April 14</strong></td>
+                                                        <strong>from September 15 to April 14</strong>
+                                                    </td>
                                                     <td>
                                                         <div class="input-group mb-1">
                                                             <span class="input-group-text" id="basic-addon1">ISK</span>
@@ -871,12 +876,18 @@
 
                 formData.append('cost_initial', $('#cost_initial').val());
                 formData.append('tax_initial', $('#tax_initial').val());
-                formData.append('apr2sep_isk_cost_rental_per_day', $('#apr2sep_isk_cost_rental_per_day').val());
-                formData.append('apr2sep_usd_cost_rental_per_day', $('#apr2sep_usd_cost_rental_per_day').val());
-                formData.append('apr2sep_gbp_cost_rental_per_day', $('#apr2sep_gbp_cost_rental_per_day').val());
-                formData.append('sep2apr_isk_cost_rental_per_day', $('#sep2apr_isk_cost_rental_per_day').val());
-                formData.append('sep2apr_usd_cost_rental_per_day', $('#sep2apr_usd_cost_rental_per_day').val());
-                formData.append('sep2apr_gbp_cost_rental_per_day', $('#sep2apr_gbp_cost_rental_per_day').val());
+                formData.append('apr2sep_isk_cost_rental_per_day', $('#apr2sep_isk_cost_rental_per_day')
+                    .val());
+                formData.append('apr2sep_usd_cost_rental_per_day', $('#apr2sep_usd_cost_rental_per_day')
+                    .val());
+                formData.append('apr2sep_gbp_cost_rental_per_day', $('#apr2sep_gbp_cost_rental_per_day')
+                    .val());
+                formData.append('sep2apr_isk_cost_rental_per_day', $('#sep2apr_isk_cost_rental_per_day')
+                    .val());
+                formData.append('sep2apr_usd_cost_rental_per_day', $('#sep2apr_usd_cost_rental_per_day')
+                    .val());
+                formData.append('sep2apr_gbp_cost_rental_per_day', $('#sep2apr_gbp_cost_rental_per_day')
+                    .val());
                 formData.append('tax_rental_per_day', $('#tax_rental_per_day').val());
                 formData.append('cost_rental_per_hour', $('#cost_rental_per_hour').val());
                 formData.append('tax_rental_per_hour', $('#tax_rental_per_hour').val());

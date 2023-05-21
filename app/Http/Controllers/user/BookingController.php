@@ -4,9 +4,11 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
+use App\Mail\OrderConfirmationEmail;
 use App\Models\Booking;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 class BookingController extends Controller
@@ -43,8 +45,17 @@ class BookingController extends Controller
             'user_id' => $user->id,
         ]);
 
-        $request->session()->regenerate();
-        // return Redirect::route('login.index');
-        return redirect()->route('user.home');
+        if ($user && $booking) {
+            return response('Success', 200);
+        } else {
+            return response('Error', 400);
+        }
+
+        // Send the welcome email to the user
+        // Mail::to($user->email)->send(new OrderConfirmationEmail($user, $booking));
+
+        // $request->session()->regenerate();
+        // // return Redirect::route('login.index');
+        // return redirect()->route('user.home');
     }
 }

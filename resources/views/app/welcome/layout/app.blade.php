@@ -766,36 +766,22 @@
                 success: function(data, status, xhr) {
                     var statusCode = xhr.status;
                     if (statusCode === 200) {
-                        // Do something with success message here
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: "Success",
-                            text: "Car Registered Successfully!",
-                            showConfirmButton: false,
-                            timer: 1500
-                        }).then(function() {
-                            window.location.href = '/login';
-                        });
-                    } else if (statusCode === 422) {
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'error',
-                            title: 'Error',
-                            text: 'Input Valid Data!',
-                            // title: key,
-                            // text: errors[key][0],
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        // }
+                        // Swal.fire({
+                        //     position: 'center',
+                        //     icon: 'success',
+                        //     title: "Success",
+                        //     text: "Your order has been successfully placed!",
+                        //     showConfirmButton: false,
+                        //     timer: 1500
+                        // });
+                        window.location.href = '/login';
                     } else {
                         // Do something with failure message here
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
                             title: "Error",
-                            text: "Car Registration Failed!",
+                            text: "Booking Failed!",
                             showConfirmButton: false,
                             timer: 1500
                         })

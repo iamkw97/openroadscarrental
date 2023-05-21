@@ -11,7 +11,7 @@
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/2.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -33,7 +33,7 @@
                             {{-- <div class="item">
                                 <img src="{{ asset('welcome/images/car-single/1.jpg') }}" alt="">
                             </div> --}}
-                            
+
                         </div>
                     </div>
 
@@ -65,7 +65,7 @@
                         <div class="d-row">
                             <span class="d-title">Number of Suitcases</span>
                             <spam class="d-value" id="NumberofSuitcases"></spam>
-                        </div> 
+                        </div>
                         <div class="d-row">
                             <span class="d-title">Condition</span>
                             <spam class="d-value" id="condition"></spam>

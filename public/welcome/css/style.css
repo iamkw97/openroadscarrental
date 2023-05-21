@@ -2444,7 +2444,9 @@ header.header-light .logo-2 {
 }
 
 .post-image img {
-    width: 100%;
+    width: 600px;
+    height: 300px;
+    object-fit: cover;
     margin-bottom: 0px;
 }
 
@@ -10427,7 +10429,9 @@ a.de-card:hover {
 }
 
 .de-image-text img {
-    width: 100%;
+    width: 500px;
+    height: 750px;
+    object-fit: cover;
     position: relative;
 }
 

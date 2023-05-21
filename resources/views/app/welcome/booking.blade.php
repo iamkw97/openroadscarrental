@@ -11,7 +11,7 @@ Booking | Open Roads Car Rental
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/subheader.jpg')}}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back1.jpg')}}" class="jarallax-img" alt="">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -216,7 +216,7 @@ Booking | Open Roads Car Rental
                                     <div class="col-lg-12">
                                         {{-- <input type='submit' id='send_message' value='Find a Vehicle'
                                             class="btn-main pull-right"> --}}
-                                            <a href="{{route('booking.create')}}" class="btn-main pull-right">Find a Vehicle</a>
+                                            <a href="{{route('cars.index')}}" class="btn-main pull-right">Find a Vehicle</a>
                                     </div>
 
                                 </div>
@@ -286,7 +286,7 @@ Booking | Open Roads Car Rental
         </section>
 
         <section class="text-light jarallax">
-            <img src="{{ asset('welcome/images/background/3.jpg')}}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back3.jpg')}}" class="jarallax-img" alt="">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInRight">

@@ -11,7 +11,7 @@
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/2.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -51,7 +51,67 @@
         <section id="section-cars">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
+
+                        <div class="item_filter_group">
+                            <h4>Booking Details</h4>
+                            <div class="de_form">
+
+                                <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
+                                    <small>Pickup Location</small>
+                                    <select name="" id="picklocation"
+                                        style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
+                                        name="PickupLocation" placeholder="Enter your pickup location" autocomplete="off"
+                                        class="form-control">
+                                        <option selected value="">Select Location</option>
+                                        <option value="kef_airport">KEF Airport</option>
+                                        <option value="reykjavik">Reykjavik</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
+                                    <small>Return Location</small>
+                                    <select name="" id="droplocation"
+                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
+                                        name="PickupLocation" placeholder="Enter your pickup location" autocomplete="off"
+                                        class="form-control">
+                                        <option selected value="">Select Location</option>
+                                        <option value="reykjavik">Reykjavik</option>
+                                        <option value="kef_airport">KEF Airport</option>
+                                        <option value="same_location">[Return to the same location]</option>
+                                    </select>
+                                </div>
+
+                                <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
+                                    <small>Pickup Date</small>
+                                    <input id="pickdate" name="car_engine_3" type="date"
+                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+
+                                </div>
+
+                                <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <small>Drop-off Date</small>
+                                    <input id="dropdate" name="car_engine_4" type="date"
+                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+
+                                </div>
+                                <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <small>Pickup Time</small>
+                                    <input id="pickup_time" name="car_engine_3" type="time"
+                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+
+                                </div>
+
+                                <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <small>Drop-off Time</small>
+                                    <input id="droptime" name="car_engine_4" type="time"
+                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+
+                                </div>
+
+                            </div>
+                        </div>
                         <div class="item_filter_group">
                             <h4>Vehicle Type</h4>
                             <div class="de_form">
@@ -142,7 +202,7 @@
                     </div> --}}
                     </div>
 
-                    <div class="col-lg-7" id="car-list">
+                    <div class="col-lg-9" id="car-list">
                         <div class="row pagi" id="pagi">
                             {{-- <div class="row pagi" id="pagi" style="display: none"> --}}
                             {{-- <div class="col-xl-4 col-lg-6 cart">
@@ -470,67 +530,9 @@
                         <li class="page-item next-page"><a class="page-link" href="#">Next</a></li> --}}
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="item_filter_group">
-                            <h4>Booking Details</h4>
-                            <div class="de_form">
+                    <!--<div class="col-lg-3">-->
 
-                                <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
-                                    <small>Pickup Location</small>
-                                    <select name="" id="picklocation"
-                                        style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
-                                        name="PickupLocation" placeholder="Enter your pickup location" autocomplete="off"
-                                        class="form-control">
-                                        <option selected value="">Select Location</option>
-                                        <option value="kef_airport">KEF Airport</option>
-                                        <option value="reykjavik">Reykjavik</option>
-                                    </select>
-
-                                </div>
-
-                                <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
-                                    <small>Return Location</small>
-                                    <select name="" id="droplocation"
-                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
-                                        name="PickupLocation" placeholder="Enter your pickup location" autocomplete="off"
-                                        class="form-control">
-                                        <option selected value="">Select Location</option>
-                                        <option value="reykjavik">Reykjavik</option>
-                                        <option value="kef_airport">KEF Airport</option>
-                                        <option value="same_location">[Return to the same location]</option>
-                                    </select>
-                                </div>
-
-                                <div class="de_checkbox" style=" margin-top:5px; margin-bottom:5px;">
-                                    <small>Pickup Date</small>
-                                    <input id="pickdate" name="car_engine_3" type="date"
-                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-
-                                </div>
-
-                                <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
-                                    <small>Drop-off Date</small>
-                                    <input id="dropdate" name="car_engine_4" type="date"
-                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-
-                                </div>
-                                <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
-                                    <small>Pickup Time</small>
-                                    <input id="pickup_time" name="car_engine_3" type="time"
-                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-
-                                </div>
-
-                                <div class="de_checkbox" style="margin-top:5px; margin-bottom:5px;">
-                                    <small>Drop-off Time</small>
-                                    <input id="droptime" name="car_engine_4" type="time"
-                                        style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                    <!--</div>-->
                 </div>
             </div>
         </section>
