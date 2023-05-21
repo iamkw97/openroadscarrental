@@ -16,6 +16,7 @@ class Booking extends Model
         'pickup_time',
         'return_time',
         'total_cost',
+        'booking_status',
         'car_id',
         'user_id'
     ];

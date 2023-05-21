@@ -271,7 +271,7 @@
                                                 <div class="col-md-12 my-1">
                                                     <label for="vehicle_image" class="form-label">Vehicle Image</label>
                                                     <input id="vehicle_image" name="vehicle_image[]" type="file"
-                                                        accept="image/*" multiple data-max_length="5">
+                                                        accept="image/*" data-max_length="1">
                                                 </div>
                                                 <div id="vehicle_preview"></div>
                                             </div>

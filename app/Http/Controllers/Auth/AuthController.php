@@ -27,7 +27,10 @@ class AuthController extends Controller
             'phone1' => $inputs['phone1'],
             'phone2' => $inputs['phone2'],
             'dob' => $inputs['dob'],
+            'flight_no' => $inputs['flight_no'],
+            'driver_name' => $inputs['driver_name'],
             'license_no' => $inputs['license_no'],
+            'license_valid_date' => $inputs['license_valid_date'],
             'role' => $role,
             'password' => bcrypt($inputs['password']),
         ]);

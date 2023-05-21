@@ -29,7 +29,10 @@ class UserRequest extends FormRequest
             'phone1' => 'required|string',
             'phone2' => 'string',
             'dob' => 'required|date',
+            'flight_no' => 'required|string',
+            'driver_name' => 'required|string',
             'license_no' => 'required|string',
+            'license_valid_date' => 'required|date',
             'password' => 'required|string',
             'repassword' => 'required|string|same:password',
         ];

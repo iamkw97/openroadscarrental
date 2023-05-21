@@ -26,6 +26,9 @@ class User extends Authenticatable
         'phone1',
         'phone2',
         'dob',
+        'flight_no',
+        'driver_name',
+        'license_valid_date',
         'license_no',
         'role',
         'password'

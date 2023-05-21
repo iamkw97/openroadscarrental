@@ -21,7 +21,10 @@ return new class extends Migration
             $table->string('phone1');
             $table->string('phone2')->nullable();
             $table->date('dob');
+            $table->string('flight_no');
+            $table->string('driver_name');
             $table->string('license_no');
+            $table->date('license_valid_date');
             $table->string('role')->default('user');
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();

@@ -234,7 +234,7 @@
             pickupLocation.style.outline = "2px solid red";
             isValid = false;
             document.getElementById("PickupLocation_error").innerHTML =
-                "𝘗𝘪𝘤𝘬 𝘜𝘱 𝘓𝘰𝘤𝘢𝘵𝘪𝘰𝘯 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+                "pickup location required";
             document.getElementById("PickupLocation_error").style.color = "red";
         }
 
@@ -242,7 +242,7 @@
             dropoffLocation.style.outline = "2px solid red";
             isValid = false;
             document.getElementById("dropoff-location_error").innerHTML =
-                "𝘋𝘳𝘰𝘱𝘰𝘧𝘧 𝘓𝘰𝘤𝘢𝘵𝘪𝘰𝘯 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+                "drop-off location required";
             document.getElementById("dropoff-location_error").style.color = "red";
         }
 
@@ -250,7 +250,7 @@
             pickupDate.style.outline = "2px solid red";
             isValid = false;
             document.getElementById("pickup_date_error").innerHTML =
-                "𝘗𝘪𝘤𝘬 𝘜𝘱 𝘋𝘢𝘵𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬";
+                "pickup date required";
             document.getElementById("pickup_date_error").style.color = "red";
         }
 
@@ -258,7 +258,7 @@
             returnDate.style.outline = "2px solid red";
             isValid = false;
             document.getElementById("return-date-error").innerHTML =
-                "𝘙𝘦𝘵𝘶𝘳𝘯 𝘋𝘢𝘵𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬";
+                "return date required";
             document.getElementById("return-date-error").style.color = "red";
         }
 
@@ -266,7 +266,7 @@
             pickupTime.style.outline = "2px solid red";
             isValid = false;
             document.getElementById("pickup-time-error").innerHTML =
-                "𝘗𝘪𝘤𝘬𝘶𝘱 𝘵𝘪𝘮𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+                "pickup time required";
             document.getElementById("pickup-time-error").style.color = "red";
         }
 
@@ -274,7 +274,7 @@
             returnTime.style.outline = "2px solid red";
             isValid = false;
             document.getElementById("return-time-error").innerHTML =
-                "𝘙𝘦𝘵𝘶𝘳𝘯 𝘵𝘪𝘮𝘦 𝘤𝘢𝘯𝘯𝘰𝘵 𝘣𝘦 𝘣𝘭𝘢𝘯𝘬.";
+                "return date required";
             document.getElementById("return-time-error").style.color = "red";
         }
 
@@ -723,6 +723,9 @@
             var phone1 = $("#phone1").val();
             var phone2 = $("#phone2").val();
             var dob = $("#dob").val();
+            var flight_no = $("#flight_no").val();
+            var driver_name = $("#driver_name").val();
+            var license_valid_date = $("#license_valid_date").val();
             var license_no = $("#license_no").val();
             var password = $("#password").val();
             var repassword = $("#repassword").val();
@@ -742,6 +745,9 @@
             formData.append('phone1', phone1);
             formData.append('phone2', phone2);
             formData.append('dob', dob);
+            formData.append('flight_no', flight_no);
+            formData.append('driver_name', driver_name);
+            formData.append('license_valid_date', license_valid_date);
             formData.append('license_no', license_no);
             formData.append('password', password);
             formData.append('repassword', repassword);

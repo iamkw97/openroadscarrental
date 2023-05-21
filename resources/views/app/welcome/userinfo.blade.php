@@ -35,7 +35,7 @@
                             @method('post')
                             <div class="row">
 
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="field-set">
                                         <label for='fullname'>Full Name<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -80,9 +80,9 @@
 
                                 <div class="col-md-6">
                                     <div class="field-set">
-                                        <label for='phone1'>Phone 1<span
+                                        <label for='phone1'>Phone 1 (with country code)<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                        <input type='text' name='phone1' id='phone1' class="form-control">
+                                        <input type='text' name='phone1' id='phone1' class="form-control" placeholder="+354">
                                         @error('phone1')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -91,8 +91,8 @@
 
                                 <div class="col-md-6">
                                     <div class="field-set">
-                                        <label for='phone2'>Phone 2</label>
-                                        <input type='text' name='phone2' id='phone2' class="form-control">
+                                        <label for='phone2'>Phone 2 (with country code)</label>
+                                        <input type='text' name='phone2' id='phone2' class="form-control" placeholder="+354">
                                         @error('phone2')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -112,10 +112,42 @@
 
                                 <div class="col-md-6">
                                     <div class="field-set">
-                                        <label for='license_no'>Personal ID/Driving License<span
+                                        <label for='flight_no'>Flight Number<span
+                                                style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                        <input type='text' name='flight_no' id='flight_no' class="form-control">
+                                        @error('flight_no')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="field-set">
+                                        <label for='driver_name'>Driver's Name<span
+                                                style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                        <input type='text' name='driver_name' id='driver_name' class="form-control">
+                                        @error('driver_name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="field-set">
+                                        <label for='license_no'>Driving License<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                         <input type='text' name='license_no' id='license_no' class="form-control">
                                         @error('license_no')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="field-set">
+                                        <label for='license_valid_date'>License Valid Date<span
+                                                style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                        <input type='date' name='license_valid_date' id='license_valid_date' class="form-control">
+                                        @error('license_valid_date')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -144,13 +176,11 @@
                                 </div>
 
 
-                                <div class="col-md-12 mt-3">
-                                    <div id='' class="pull-right">
-                                        {{-- <button type='submit' id='submitRegister' class="btn-main color-2">Proceed</button> --}}
-                                        {{-- <button  id='submitRegister' class="btn-main color-2">Proceed</button> --}}
-                                        <button id='submitRegister' type="button"
-                                            class="btn btn-primary">Proceed</button>
+                                <div class="col-md-12">
+                                    <div id='submit' class="pull-right">
+                                        <button type='button' id='submitRegister' class="btn-main color-2">Proceed</button>
                                     </div>
+
                                     <div class="clearfix"></div>
                                 </div>
 
