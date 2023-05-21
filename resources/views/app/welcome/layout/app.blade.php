@@ -19,6 +19,9 @@
     <link href="{{ asset('welcome/css/plugins.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('welcome/css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('welcome/css/coloring.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.min.css"
+        integrity="sha512-InYSgxgTnnt8BG3Yy0GcpSnorz5gxHvT6OEoRWj91Gg+RvNdCiAharnBe+XFIDS754Kd9TekdjXw3V7TAgh6Vw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- color scheme -->
     <link id="colors" href="{{ asset('welcome/css/colors/scheme-08.css') }}" rel="stylesheet" type="text/css">
 </head>
@@ -208,8 +211,8 @@
 
     <!-- Include jQuery Pagination plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-pagination/1.2.7/jquery.pagination.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
-        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.all.min.js"
+        integrity="sha512-2JsZvEefv9GpLmJNnSW3w/hYlXEdvCCfDc+Rv7ExMFHV9JNlJ2jaM+uVVlCI1MAQMkUG8K83LhsHYx1Fr2+MuA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </html>
@@ -347,39 +350,39 @@
                         if (item.category == 'Sedan') {
                             if (index >= startIndex && index < endIndex) {
                                 inputFields +=
-                                '<div class="col-xl-4 col-lg-6 cart Car HatchBack seat5">' +
-                                        '<div class="de-item mb30">' +
-                                        '<div class="d-img">' +
-                                        '<img src="img/cars/' + vehicle_image +
-                                        '" class="img-fluid" alt="">' +
-                                        '</div>' +
-                                        '<div class="d-info">' +
-                                        '<div class="d-text">' +
-                                        '<h4>' + item.vehicle_model + '</h4>' +
-                                        '<div class="d-item_like">' +
-                                        '</div>' +
-                                        '<div class="d-atr-group">' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">5</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">2</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}" alt="">4</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
-                                        item.category + '</span>' +
-                                        '</div>' +
-                                        '<div class="d-price">' +
-                                        'Daily rate from <span>ISK' + item
-                                        .apr2sep_isk_cost_rental_per_day + '</span>' +
-                                        ' Approximately' +
-                                        '<h4>USD&nbsp;' + item
-                                        .apr2sep_usd_cost_rental_per_day +
-                                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EUR&nbsp;' +
-                                        item.apr2sep_eur_cost_rental_per_day + '</h4>' +
-                                        '</div>' +
-                                        '<div class="mt-3"><a class="btn-main RentNow" id="' +
-                                        item.id + '">Rent Now</a></div>' +
-                                        '</div>' +
-                                        '</div>' +
-                                        '</div>' +
-                                        '</div>';
+                                    '<div class="col-xl-4 col-lg-6 cart Car HatchBack seat5">' +
+                                    '<div class="de-item mb30">' +
+                                    '<div class="d-img">' +
+                                    '<img src="img/cars/' + vehicle_image +
+                                    '" class="img-fluid" alt="">' +
+                                    '</div>' +
+                                    '<div class="d-info">' +
+                                    '<div class="d-text">' +
+                                    '<h4>' + item.vehicle_model + '</h4>' +
+                                    '<div class="d-item_like">' +
+                                    '</div>' +
+                                    '<div class="d-atr-group">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">5</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">2</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}" alt="">4</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
+                                    item.category + '</span>' +
+                                    '</div>' +
+                                    '<div class="d-price">' +
+                                    'Daily rate from <span>ISK' + item
+                                    .apr2sep_isk_cost_rental_per_day + '</span>' +
+                                    ' Approximately' +
+                                    '<h4>USD&nbsp;' + item
+                                    .apr2sep_usd_cost_rental_per_day +
+                                    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EUR&nbsp;' +
+                                    item.apr2sep_eur_cost_rental_per_day + '</h4>' +
+                                    '</div>' +
+                                    '<div class="mt-3"><a class="btn-main RentNow" id="' +
+                                    item.id + '">Rent Now</a></div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>';
                             }
                         }
 
@@ -428,7 +431,49 @@
                         if (item.category == 'HatchBack') {
                             if (index >= startIndex && index < endIndex) {
                                 var HatchBackInputFields =
-                                '<div class="col-xl-4 col-lg-6 cart Car HatchBack seat5">' +
+                                    '<div class="col-xl-4 col-lg-6 cart Car HatchBack seat5">' +
+                                    '<div class="de-item mb30">' +
+                                    '<div class="d-img">' +
+                                    '<img src="img/cars/' + vehicle_image +
+                                    '" class="img-fluid" alt="">' +
+                                    '</div>' +
+                                    '<div class="d-info">' +
+                                    '<div class="d-text">' +
+                                    '<h4>' + item.vehicle_model + '</h4>' +
+                                    '<div class="d-item_like">' +
+                                    '</div>' +
+                                    '<div class="d-atr-group">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">5</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">2</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}" alt="">4</span>' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
+                                    item.category + '</span>' +
+                                    '</div>' +
+                                    '<div class="d-price">' +
+                                    'Daily rate from <span>ISK' + item
+                                    .apr2sep_isk_cost_rental_per_day + '</span>' +
+                                    ' Approximately' +
+                                    '<h4>USD&nbsp;' + item
+                                    .apr2sep_usd_cost_rental_per_day +
+                                    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EUR&nbsp;' +
+                                    item.apr2sep_eur_cost_rental_per_day + '</h4>' +
+                                    '</div>' +
+                                    '<div class="mt-3"><a class="btn-main RentNow" id="' +
+                                    item.id + '">Rent Now</a></div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>';
+                                inputFields += HatchBackInputFields;
+                            }
+                        }
+
+                        if (item.category == 'Van') {
+                            if (item.no_of_seats == '8' || item.no_of_seats == '10' || item
+                                .no_of_seats == '12') {
+                                if (index >= startIndex && index < endIndex) {
+                                    var vanInputFields =
+                                        '<div class="col-xl-4 col-lg-6 cart Car HatchBack seat5">' +
                                         '<div class="de-item mb30">' +
                                         '<div class="d-img">' +
                                         '<img src="img/cars/' + vehicle_image +
@@ -452,47 +497,6 @@
                                         ' Approximately' +
                                         '<h4>USD&nbsp;' + item
                                         .apr2sep_usd_cost_rental_per_day +
-                                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EUR&nbsp;' +
-                                        item.apr2sep_eur_cost_rental_per_day + '</h4>' +
-                                        '</div>' +
-                                        '<div class="mt-3"><a class="btn-main RentNow" id="' +
-                                        item.id + '">Rent Now</a></div>' +
-                                        '</div>' +
-                                        '</div>' +
-                                        '</div>' +
-                                        '</div>';
-                                inputFields += HatchBackInputFields;
-                            }
-                        }
-
-                        if (item.category == 'Van') {
-                            if (item.no_of_seats == '8' || item.no_of_seats == '10' || item
-                                .no_of_seats == '12') {
-                                if (index >= startIndex && index < endIndex) {
-                                    var vanInputFields =
-                                    '<div class="col-xl-4 col-lg-6 cart Car HatchBack seat5">' +
-                                        '<div class="de-item mb30">' +
-                                        '<div class="d-img">' +
-                                        '<img src="img/cars/' + vehicle_image +
-                                        '" class="img-fluid" alt="">' +
-                                        '</div>' +
-                                        '<div class="d-info">' +
-                                        '<div class="d-text">' +
-                                        '<h4>' + item.vehicle_model + '</h4>' +
-                                        '<div class="d-item_like">' +
-                                        '</div>' +
-                                        '<div class="d-atr-group">' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">5</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">2</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}" alt="">4</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
-                                        item.category + '</span>' +
-                                        '</div>' +
-                                        '<div class="d-price">' +
-                                        'Daily rate from <span>ISK' + item
-                                        .apr2sep_isk_cost_rental_per_day + '</span>' +
-                                        ' Approximately' +
-                                        '<h4>USD&nbsp;' + item.apr2sep_usd_cost_rental_per_day +
                                         '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EUR&nbsp;' +
                                         item.apr2sep_eur_cost_rental_per_day + '</h4>' +
                                         '</div>' +
@@ -795,7 +799,19 @@
                 success: function(data, status, xhr) {
                     var statusCode = xhr.status;
                     if (statusCode === 200) {
-                        window.location.href = '/login';
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: "Your booking has been successfully added!",
+                            text: "Use your given email & password to login.",
+                            showConfirmButton: true
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                // Redirect to another page
+                                window.location.href =
+                                    "/login";
+                            }
+                        });
                     } else {
                         // Do something with failure message here
                         Swal.fire({
