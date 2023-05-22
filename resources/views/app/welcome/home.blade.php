@@ -309,7 +309,7 @@
                                                     &nbsp;{{ $item->apr2sep_usd_cost_rental_per_day }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                     EUR
                                                     &nbsp;{{ $item->apr2sep_eur_cost_rental_per_day }} </H4>
-                                                <a class="btn-main" href="">Rent Now</a>
+                                                <a class="btn-main" href="{{ route('cars.show', $item->id) }}">Rent Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -486,9 +486,8 @@
                                         Indulge in pure bliss at Iceland's ultimate relaxation haven, the enchanting
                                         Blue Lagoon. A serendipitous marvel born from the geothermal power plant,...
                                     </p>
-                                    <p><span class="id-color">Read More</span></p>
-                                    {{-- <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                        More...</a> --}}
+                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                        More...</a>
                                 </div>
                             </div>
                         </div>
@@ -510,9 +509,8 @@
                                         Embark on a captivating journey along the mesmerizing southern coast of
                                         Iceland, where you'll encounter the picturesque town of Vík. Prepare...
                                     </p>
-                                    <p><span class="id-color">Read More</span></p>
-                                    {{-- <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                        More...</a> --}}
+                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                        More...</a>
                                 </div>
                             </div>
                         </div>
@@ -560,9 +558,9 @@
                                         Prepare to be spellbound by the majestic allure of Mt. Kirkjufell, the
                                         legendary 'Church Mountain' nestled along the picturesque north coast...
                                     </p>
-                                    <p><span class="id-color">Read More</span></p>
-                                    {{-- <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                        More...</a> --}}
+
+                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                        More...</a>
                                 </div>
                             </div>
                         </div>
