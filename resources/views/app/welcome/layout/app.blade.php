@@ -762,7 +762,7 @@
             var finaldropdateinfomation = $("#finaldropdateinfo").val();
             var finalpicktimeinformation = $("#finalpicktimeinfo").val();
             var finaldroptimeinformation = $("#finaldroptimeinfo").val();
-            var total_cost = 300;
+            var total_cost = $("#total_cost").text();
 
             var formData = new FormData();
             formData.append('fullname', fullname);

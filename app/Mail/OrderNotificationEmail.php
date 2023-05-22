@@ -12,7 +12,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class OrderConfirmationEmail extends Mailable
+class OrderNotificationEmail extends Mailable
 {
     public $user;
     public $booking;
@@ -28,6 +28,6 @@ class OrderConfirmationEmail extends Mailable
 
     public function build()
     {
-        return $this->view('app.emails.orderconfirmationemail');
+        return $this->view('app.emails.orderconfirmationemailadmin');
     }
 }

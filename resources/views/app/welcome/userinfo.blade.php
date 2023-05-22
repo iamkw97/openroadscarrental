@@ -192,15 +192,12 @@
                     <div class="col-lg-3">
                         <div class="de-item mb10">
                             <div class="d-img">
-                                <img src="{{ asset('welcome/images/cars/bmw-m5.jpg') }}" class="img-fluid"
+                                <img id="car_image" src="{{ asset('') }}" class="img-fluid"
                                     alt="">
                             </div>
                             <div class="d-info">
                                 <div class="d-text">
                                     <h4 id="vehicleDisplayName"></h4>
-                                    <div class="d-item_like">
-                                        <i class="fa fa-heart"></i><span>36</span>
-                                    </div>
                                     <div class="d-atr-group">
                                         <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
                                                 alt="">

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('return_date');
             $table->time('pickup_time');
             $table->time('return_time');
-            $table->time('total_cost');
+            $table->integer('total_cost');
             $table->string('booking_status');
             $table->unsignedBigInteger('car_id');
             $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');

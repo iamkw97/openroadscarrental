@@ -290,9 +290,7 @@
                                     <div class="d-info">
                                         <div class="d-text">
                                             <h4>{{ $item->displaying_name }}</h4>
-                                            <div class="d-item_like">
-                                                <i class="fa fa-heart"></i><span>74</span>
-                                            </div>
+
                                             <div class="d-atr-group">
                                                 <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
                                                         alt="">{{ $item->no_of_seats }}</span>

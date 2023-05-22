@@ -5,7 +5,9 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Mail\OrderConfirmationEmail;
+use App\Mail\OrderNotificationEmail;
 use App\Models\Booking;
+use App\Models\Car;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -38,6 +40,8 @@ class BookingController extends Controller
 
         $booking_status = "scheduled";
 
+        $car = Car::findOrFail($data['car_id']);
+
         $booking = Booking::create([
             'pickup_location' => $data['finalpickupLionformation'],
             'dropoff_location' => $data['finaldroplocationinformation'],
@@ -51,7 +55,8 @@ class BookingController extends Controller
             'user_id' => $user->id,
         ]);
 
-        // Mail::to($user->email)->send(new OrderConfirmationEmail($user, $booking));
+        Mail::to($inputs['email'])->send(new OrderConfirmationEmail($user, $booking, $car));
+        Mail::to('openroadscarrental@gmail.com')->send(new OrderNotificationEmail($user, $booking, $car));
 
         if ($user && $booking) {
             return response('Success', 200);
