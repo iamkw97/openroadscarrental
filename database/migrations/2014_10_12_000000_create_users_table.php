@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('phone1');
             $table->string('phone2')->nullable();
-            $table->date('dob');
+            $table->date('dob')->nullable();
             $table->string('flight_no');
             $table->string('driver_name');
             $table->string('license_no');

@@ -30,11 +30,11 @@
                 <div class="row g-5">
                     <div class="col-lg-5">
                         <div id="slider-carousel" class="owl-carousel">
-                            {{-- <div class="item">
-                                <img src="{{ asset('welcome/images/car-single/1.jpg') }}" alt="">
-                            </div> --}}
-
+                            <div class="item">
+                                <img src="" alt="">
+                            </div>
                         </div>
+                        <p>Please Note<span style="color: red">*</span><br><strong>ALL our prices include CDW, SCDW,TP,GP, SAAP Insurances, unlimited mileage,GPS and studded tires during winter.</strong></p>
                     </div>
 
                     <div class="col-lg-4">

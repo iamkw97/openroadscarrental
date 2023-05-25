@@ -72,6 +72,7 @@
             <li>Car Chosen: <strong>{{ $car->displaying_name }}</strong></li>
             <li>Total: <strong>ISK{{ $booking->total_cost }}</strong></li>
         </ul>
+        <p><strong>ALL our prices include CDW, SCDW,TP,GP, SAAP Insurances, unlimited mileage,GPS and studded tires during winter</strong></p>
         <p>Use your email & password to customize or view your bookings.</p>
         <p>Thank you for choosing <a href="www.openroadscarrental.com"><strong>OPEN ROADS CAR RENTAL</strong></a></p>
         <p>Best Regards</p>

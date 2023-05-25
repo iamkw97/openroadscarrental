@@ -22,43 +22,68 @@ class BookingController extends Controller
         $data = $request->all();
         $role = "user";
 
-        $user = User::create([
-            'fullname' => $inputs['fullname'],
-            'email' => $inputs['email'],
-            'address' => $inputs['address'],
-            'city' => $inputs['city'],
-            'phone1' => $inputs['phone1'],
-            'phone2' => $inputs['phone2'],
-            'dob' => $inputs['dob'],
-            'flight_no' => $inputs['flight_no'],
-            'driver_name' => $inputs['driver_name'],
-            'license_no' => $inputs['license_no'],
-            'license_valid_date' => $inputs['license_valid_date'],
-            'role' => $role,
-            'password' => bcrypt($inputs['password']),
-        ]);
+        $user_email_input = $inputs['email'];
 
-        $booking_status = "scheduled";
+        // Check if the email already exists
+        $user = User::where('email', $user_email_input)->first();
 
-        $car = Car::findOrFail($data['car_id']);
+        // dd($user);
 
-        $booking = Booking::create([
-            'pickup_location' => $data['finalpickupLionformation'],
-            'dropoff_location' => $data['finaldroplocationinformation'],
-            'pickup_date' => $data['finalpickdateinfomation'],
-            'return_date' => $data['finaldropdateinfomation'],
-            'pickup_time' => $data['finalpicktimeinformation'],
-            'return_time' => $data['finaldroptimeinformation'],
-            'booking_status' => $booking_status,
-            'total_cost' => $data['total_cost'],
-            'car_id' => $data['car_id'],
-            'user_id' => $user->id,
-        ]);
+        if ($user) {
+            $booking_status = "scheduled";
+            $car = Car::findOrFail($data['car_id']);
+
+            $booking = Booking::create([
+                'pickup_location' => $data['finalpickupLionformation'],
+                'dropoff_location' => $data['finaldroplocationinformation'],
+                'pickup_date' => $data['finalpickdateinfomation'],
+                'return_date' => $data['finaldropdateinfomation'],
+                'pickup_time' => $data['finalpicktimeinformation'],
+                'return_time' => $data['finaldroptimeinformation'],
+                'booking_status' => $booking_status,
+                'total_cost' => $data['total_cost'],
+                'car_id' => $data['car_id'],
+                'user_id' => $user->id,
+            ]);
+        } else {
+            $user = User::create([
+                'fullname' => $inputs['fullname'],
+                'email' => $inputs['email'],
+                'address' => $inputs['address'],
+                'city' => $inputs['city'],
+                'phone1' => $inputs['phone1'],
+                'phone2' => $inputs['phone2'],
+                'dob' => $inputs['dob'],
+                'flight_no' => $inputs['flight_no'],
+                'driver_name' => $inputs['driver_name'],
+                'license_no' => $inputs['license_no'],
+                'license_valid_date' => $inputs['license_valid_date'],
+                'role' => $role,
+                'password' => bcrypt($inputs['password']),
+            ]);
+
+            $booking_status = "scheduled";
+            $car = Car::findOrFail($data['car_id']);
+
+            $booking = Booking::create([
+                'pickup_location' => $data['finalpickupLionformation'],
+                'dropoff_location' => $data['finaldroplocationinformation'],
+                'pickup_date' => $data['finalpickdateinfomation'],
+                'return_date' => $data['finaldropdateinfomation'],
+                'pickup_time' => $data['finalpicktimeinformation'],
+                'return_time' => $data['finaldroptimeinformation'],
+                'booking_status' => $booking_status,
+                'total_cost' => $data['total_cost'],
+                'car_id' => $data['car_id'],
+                'user_id' => $user->id,
+            ]);
+        }
+
 
         Mail::to($inputs['email'])->send(new OrderConfirmationEmail($user, $booking, $car));
-        Mail::to('openroadscarrental@gmail.com')->send(new OrderNotificationEmail($user, $booking, $car));
+        Mail::to('iamkusalwijekoon625l@gmail.com')->send(new OrderNotificationEmail($user, $booking, $car));
 
-        if ($user && $booking) {
+        if ($booking) {
             return response('Success', 200);
         } else {
             return response('Error', 400);

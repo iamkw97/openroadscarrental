@@ -23,12 +23,12 @@ class UserRequest extends FormRequest
     {
         return [
             'fullname' => 'required|string|min:3|max:100',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email',
             'address' => 'required|string',
             'city' => 'required|string',
             'phone1' => 'required|string',
             'phone2' => 'string',
-            'dob' => 'required|date',
+            'dob' => 'string',
             'flight_no' => 'required|string',
             'driver_name' => 'required|string',
             'license_no' => 'required|string',

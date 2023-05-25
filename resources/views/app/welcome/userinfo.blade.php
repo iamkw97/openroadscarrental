@@ -82,7 +82,8 @@
                                     <div class="field-set">
                                         <label for='phone1'>Phone 1 (with country code)<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                        <input type='text' name='phone1' id='phone1' class="form-control" placeholder="+354">
+                                        <input type='text' name='phone1' id='phone1' class="form-control"
+                                            placeholder="+354">
                                         @error('phone1')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -92,7 +93,8 @@
                                 <div class="col-md-6">
                                     <div class="field-set">
                                         <label for='phone2'>Phone 2 (with country code)</label>
-                                        <input type='text' name='phone2' id='phone2' class="form-control" placeholder="+354">
+                                        <input type='text' name='phone2' id='phone2' class="form-control"
+                                            placeholder="+354">
                                         @error('phone2')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -100,13 +102,14 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <div class="field-set">
-                                        <label for='dob'>Date of Birth<span
-                                                style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                        <input type='date' name='dob' id='dob' class="form-control">
-                                        @error('dob')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                    <div class="col-md-6">
+                                        <div class="field-set">
+                                            <label for='dob'>Date of Birth</label>
+                                            <input type='text' name='dob' id='dob' class="form-control">
+                                            @error('dob')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
 
@@ -146,7 +149,8 @@
                                     <div class="field-set">
                                         <label for='license_valid_date'>License Valid Date<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                        <input type='date' name='license_valid_date' id='license_valid_date' class="form-control">
+                                        <input type='date' name='license_valid_date' id='license_valid_date'
+                                            class="form-control">
                                         @error('license_valid_date')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -178,7 +182,8 @@
 
                                 <div class="col-md-12">
                                     <div id='submit' class="pull-right">
-                                        <button type='button' id='submitRegister' class="btn-main color-2">Proceed</button>
+                                        <button type='button' id='submitRegister'
+                                            class="btn-main color-2">Proceed</button>
                                     </div>
 
                                     <div class="clearfix"></div>
@@ -192,8 +197,7 @@
                     <div class="col-lg-3">
                         <div class="de-item mb10">
                             <div class="d-img">
-                                <img id="car_image" src="{{ asset('') }}" class="img-fluid"
-                                    alt="">
+                                <img id="car_image" src="{{ asset('') }}" class="img-fluid" alt="">
                             </div>
                             <div class="d-info">
                                 <div class="d-text">

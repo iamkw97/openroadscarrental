@@ -130,12 +130,14 @@ class CarController extends Controller
     public function getcar()
     {
         $cars = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
-            ->select('cars.*', 'car_prices.apr2sep_isk_cost_rental_per_day', 'car_prices.apr2sep_isk_cost_rental_per_day'
-            , 'car_prices.apr2sep_eur_cost_rental_per_day'
-            , 'car_prices.sep2apr_isk_cost_rental_per_day'
-            , 'car_prices.sep2apr_isk_cost_rental_per_day'
-            , 'car_prices.sep2apr_usd_cost_rental_per_day'
-            , 'car_prices.sep2apr_eur_cost_rental_per_day'
+            ->select(
+                'cars.*',
+                'car_prices.apr2sep_isk_cost_rental_per_day',
+                'car_prices.apr2sep_usd_cost_rental_per_day',
+                'car_prices.apr2sep_eur_cost_rental_per_day',
+                'car_prices.sep2apr_isk_cost_rental_per_day',
+                'car_prices.sep2apr_usd_cost_rental_per_day',
+                'car_prices.sep2apr_eur_cost_rental_per_day',
             )
             ->get();
 

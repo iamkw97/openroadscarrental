@@ -651,32 +651,7 @@
                     $('#vehicleMoreinf').html(item.vehicle_description);
                     $('#total_cost').html(item.apr2sep_isk_cost_rental_per_day);
 
-                    var carImages = item.images;
-                    var carousel = $('#slider-carousel');
-                    carousel.empty();
-                    $.each(carImages, function(i, image) {
-                        var vehicleImage = '<div class="item"><img src="img/cars/' +
-                            image.vehicle_image + '"alt=""></div>';
-                        carousel.append(vehicleImage);
-                    });
-                    carousel.owlCarousel({
-                        loop: true,
-                        margin: 10,
-                        nav: true,
-                        dots: true,
-                        responsive: {
-                            0: {
-                                items: 1
-                            },
-                            600: {
-                                items: 3
-                            },
-                            1000: {
-                                items: 5
-                            }
-                        }
-                    });
-
+                    // total calculation
                     var babySeatCheckbox = document.getElementById('additional_baby_seat');
                     var wifiCheckbox = document.getElementById('additional_wifi');
                     var driverCheckbox = document.getElementById('additional_driver');
