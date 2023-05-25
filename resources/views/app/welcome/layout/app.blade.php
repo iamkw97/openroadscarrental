@@ -623,7 +623,7 @@
         pickuptimefinal.val(pickupTimef);
         datedropfinal.val(dropoffDatef);
         dropofftimefinal.val(returnTimef);
-        car_id.val(id)
+        car_id.val(id);
 
         var Car_details = $("#car_id").val();
 
@@ -637,7 +637,7 @@
             processData: false,
             success: function(response) {
                 var data = response.data;
-                console.log(data)
+                console.log(data);
                 $.each(data, function(index, item) {
                     $('#VehicleCategory').html(item.category);
                     $('#VehicleMake').html(item.vehicle_make);
@@ -676,10 +676,37 @@
                             }
                         }
                     });
+
+                    var babySeatCheckbox = document.getElementById('additional_baby_seat');
+                    var wifiCheckbox = document.getElementById('additional_wifi');
+                    var driverCheckbox = document.getElementById('additional_driver');
+                    var totalCostElement = document.getElementById('total_cost');
+                    var babySeatCost = 1000;
+                    var wifiCost = 1300;
+                    var driverCost = 0;
+                    var initialTotalCost = parseFloat($('#total_cost').html());
+
+                    function updateTotalCost() {
+                        var totalCost = initialTotalCost;
+                        if (babySeatCheckbox.checked) {
+                            totalCost += babySeatCost;
+                        }
+                        if (wifiCheckbox.checked) {
+                            totalCost += wifiCost;
+                        }
+                        if (driverCheckbox.checked) {
+                            totalCost += driverCost;
+                        }
+                        totalCostElement.innerText = totalCost;
+                    }
+
+                    babySeatCheckbox.addEventListener('change', updateTotalCost);
+                    wifiCheckbox.addEventListener('change', updateTotalCost);
+                    driverCheckbox.addEventListener('change', updateTotalCost);
+                    updateTotalCost();
                 });
             }
         });
-
         $("#submit_btn").on("click", function() {
             var Pickup_l = PickupLocationfinal.val();
             var Drop_off_l = DropoffLocationfinal.val();
@@ -714,8 +741,11 @@
     });
 
     $(document).ready(function() {
+        // Get the query parameters from the URL
         var queryString = window.location.search;
         var urlParams = new URLSearchParams(queryString);
+
+        // Get the values from the query parameters
         var finalpickupLocationf = urlParams.get("Pickup_loc");
         var finaldropoffLocationf = urlParams.get("Drop_off_loc");
         var pickupDateifo = urlParams.get("date_picker");
@@ -729,6 +759,17 @@
         var SuitcasesCount = urlParams.get("NumberofSuitcases");
         var total_cost = urlParams.get("total_cost");
 
+        // Parse the pickup and dropoff dates
+        var pickupDate = new Date(pickupDateifo);
+        var dropoffDate = new Date(dropoffDatef);
+        // Calculate the date difference in milliseconds
+        var dateDifference = dropoffDate - pickupDate;
+        // Convert the date difference to days
+        var dateDifferenceInDays = Math.ceil(dateDifference / (1000 * 60 * 60 * 24));
+        // Calculate the total cost
+        var totalCost = total_cost * dateDifferenceInDays;
+
+        // Update the values in the HTML elements
         $("#finalpicklocation").val(finalpickupLocationf);
         $("#finaldroplocation").val(finaldropoffLocationf);
         $("#finalpickdateinfo").val(pickupDateifo);
@@ -739,7 +780,7 @@
         $("#seatcounts").html(SeatsCount);
         $("#bagscount").html(SuitcasesCount);
         $("#VehicleCategoryinfomation").html(VehicleCategoryinfo);
-        $("#total_cost").html(total_cost);
+        $("#total_cost").html(totalCost);
 
         $("#submitRegister").on("click", function(e) {
             e.preventDefault();

@@ -74,6 +74,9 @@
                         <p class="lead">Whether you're planning a weekend getaway, a business trip, or simply need a car
                             for everyday use, we've got you covered. Our wide range of vehicles suits every occasion and
                             budget.</p>
+                        <h4>ALL our prices include
+                                CDW, SCDW,TP,GP, SAAP Insurances, unlimited mileage,GPS and studded tires during
+                                winter</h4>
                     </div>
 
                     <div class="col-lg-7">
@@ -222,7 +225,8 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}" alt="" class="img-fluid wow fadeInUp">
+                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}" alt=""
+                            class="img-fluid wow fadeInUp">
                     </div>
 
                     <div class="col-lg-3">
@@ -252,7 +256,8 @@
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInRight">
-                        <h2>Just tell us <span class="id-color">where you need to go,</span> and we'll take care of the rest!</h2>
+                        <h2>Just tell us <span class="id-color">where you need to go,</span> and we'll take care of the
+                            rest!</h2>
                     </div>
                     <div class="col-lg-6 wow fadeInLeft">
                         Iceland: A land of dramatic landscapes, geothermal wonders, and captivating culture. From cascading
@@ -307,7 +312,8 @@
                                                     &nbsp;{{ $item->apr2sep_usd_cost_rental_per_day }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                     EUR
                                                     &nbsp;{{ $item->apr2sep_eur_cost_rental_per_day }} </H4>
-                                                <a class="btn-main" href="{{ route('cars.show', $item->id) }}">Rent Now</a>
+                                                <a class="btn-main" href="{{ route('cars.show', $item->id) }}">Rent
+                                                    Now</a>
                                             </div>
                                         </div>
                                     </div>

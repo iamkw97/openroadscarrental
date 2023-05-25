@@ -28,7 +28,7 @@
         <section id="section-car-details">
             <div class="container">
                 <div class="row g-5">
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         <div id="slider-carousel" class="owl-carousel">
                             {{-- <div class="item">
                                 <img src="{{ asset('welcome/images/car-single/1.jpg') }}" alt="">
@@ -37,153 +37,131 @@
                         </div>
                     </div>
 
-                <div class="col-lg-3">
-                    <h3 id="vehicle_description"></h3>
-                    <p id="vehicleMoreinf"></p>
+                    <div class="col-lg-4">
+                        <h3 id="vehicle_description"></h3>
+                        <p id="vehicleMoreinf"></p>
 
                         <div class="spacer-10"></div>
 
-                    <h4>Specifications</h4>
-                    <div class="de-spec">
-                        <div class="d-row">
-                            <span class="d-title">Vehicle Category</span>
-                            <spam class="d-value" id="VehicleCategory"></spam>
-                        </div>
-                        <div class="d-row">
-                            <span class="d-title">Vehicle Make</span>
-                            <spam class="d-value" id="VehicleMake"></spam>
-                        </div>
+                        <h4>Specifications</h4>
+                        <div class="de-spec">
+                            <div class="d-row">
+                                <span class="d-title">Vehicle Category</span>
+                                <spam class="d-value" id="VehicleCategory"></spam>
+                            </div>
+                            <div class="d-row">
+                                <span class="d-title">Vehicle Make</span>
+                                <spam class="d-value" id="VehicleMake"></spam>
+                            </div>
 
-                        <div class="d-row">
-                            <span class="d-title">Vehicle Model</span>
-                            <spam class="d-value" id="VehicleModel"></spam>
+                            <div class="d-row">
+                                <span class="d-title">Vehicle Model</span>
+                                <spam class="d-value" id="VehicleModel"></spam>
+                            </div>
+                            <div class="d-row">
+                                <span class="d-title">Passengers</span>
+                                <spam class="d-value" id="NumberofSeats"></spam>
+                            </div>
+                            <div class="d-row">
+                                <span class="d-title">Suitcases</span>
+                                <spam class="d-value" id="NumberofSuitcases"></spam>
+                            </div>
+                            <div class="d-row">
+                                <span class="d-title">Condition</span>
+                                <spam class="d-value" id="condition"></spam>
+                            </div>
+                            <div class="d-row">
+                                <span class="d-title">Fuel State</span>
+                                <spam class="d-value" id="FuelState"></spam>
+                            </div>
                         </div>
-                        <div class="d-row">
-                            <span class="d-title">Number of Seats</span>
-                            <spam class="d-value" id="NumberofSeats"></spam>
-                        </div>
-                        <div class="d-row">
-                            <span class="d-title">Number of Suitcases</span>
-                            <spam class="d-value" id="NumberofSuitcases"></spam>
-                        </div>
-                        <div class="d-row">
-                            <span class="d-title">Condition</span>
-                            <spam class="d-value" id="condition"></spam>
-                        </div>
-                        <div class="d-row">
-                            <span class="d-title">Fuel State</span>
-                            <spam class="d-value" id="FuelState"></spam>
-                        </div>
-                        <div class="d-row">
-                            <span class="d-title">Fuel State</span>
-                            <spam class="d-value" id="imageVehicle"></spam>
-                        </div>
-
-                    </div>
 
                         <div class="spacer-single"></div>
 
-                        <h4>Features</h4>
-                        <ul class="ul-style-2">
-                            <li>Bluetooth</li>
-                            <li>Multimedia Player</li>
-                            <li>Central Lock</li>
-                            <li>Sunroof</li>
-                        </ul>
+                        <h4>Additional Features</h4>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="additional_baby_seat"
+                                name="additional_baby_seat" onchange="updateTotalCost()">
+                            <label class="form-check-label" for="additional_baby_seat"><strong>Baby Seat</strong> <span>/ISK
+                                    1000 per day</span></label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="additional_wifi"
+                                name="additional_wifi" onchange="updateTotalCost()">
+                            <label class="form-check-label" for="additional_wifi"><strong>WIFI (Unlimited)</strong><span>/ISK 1300 per
+                                    day</span></label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="additional_driver"
+                                name="additional_driver" onchange="updateTotalCost()">
+                            <label class="form-check-label" for="additional_driver"><strong>Extra Driver</strong><span>/FREE</span></label>
+                        </div>
                     </div>
 
                     <div class="col-lg-3">
                         <div class="de-price text-center">
-                            Total<h4>ISK <span id="total_cost"></span></h4>
+                            Daily Rate<h4>ISK <span id="total_cost"></span></h4>
                         </div>
                         <div class="spacer-30"></div>
-                        <div class="de-box mb25">
+                        <div class="de-box mb10">
                             <form name="contactForm" id='contact_form' method="post">
-                                <h4>Booking this car</h4>
+                                <div class="row">
+                                    <div class="col-lg-12 mb20">
+                                        <input id="car_id" name="car_engine_3" type="hidden">
+                                    </div>
+                                    <div class="col-lg-12 mb20">
+                                        <h5>Pick Up Location</h5><select name="" id="PickupLocationfinal"
+                                            style="border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
+                                            name="PickupLocation" placeholder="Enter your pickup location"
+                                            autocomplete="off" class="form-control">
+                                            <option selected value="">Select Location</option>
+                                            <option value="kef_airport">KEF Airport</option>
+                                            <option value="reykjavik">Reykjavik</option>
+                                        </select>
+                                        <div class="jls-address-preview jls-address-preview--hidden">
+                                            <div class="jls-address-preview__header">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div class="spacer-20"></div>
+                                    <div class="col-lg-12 mb20">
+                                        <h5>Drop Off Location</h5><select name="" id="DropoffLocationfinal"
+                                            style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
+                                            name="PickupLocation" placeholder="Enter your pickup location"
+                                            autocomplete="off" class="form-control">
+                                            <option selected value="">Select Location</option>
+                                            <option value="reykjavik">Reykjavik</option>
+                                            <option value="kef_airport">KEF Airport</option>
+                                            <option value="same_location">[Return to the same location]</option>
+                                        </select>
+                                        <div class="jls-address-preview jls-address-preview--hidden">
+                                            <div class="jls-address-preview__header">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <div class="row">
-                                <div class="col-lg-12 mb20">
+                                    <div class="col-lg-12 mb20">
+                                        <h5>Pick Up Date & Time</h5>
+                                        <input id="date-pickerfinal" name="car_engine_3" type="date"
+                                            style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+                                        <input id="pickup-timefinal" name="car_engine_3" type="time"
+                                            style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9; margin-top:10px;">
+                                    </div>
 
-                                    <input id="car_id"  name="car_engine_3" type="hidden" >
-
-                                        {{-- <input type="text"   id="pickup-timefinal" name="Pick Up Date" value=""> --}}
-
-                                </div>
-                                <div class="col-lg-12 mb20">
-                                    <h5>Pick Up Location</h5>
-                                    {{-- <input type="text" name="PickupLocationfinal"  placeholder="Enter your pickup location" id="PickupLocationfinal"  class="form-control"> --}}
-                                    <select name="" id="PickupLocationfinal"
-                                    style="border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
-                                    name="PickupLocation"
-                                    placeholder="Enter your pickup location"
-                                    autocomplete="off" class="form-control">
-                                    <option selected value="">Select Location</option>
-                                    <option  value="kef_airport">KEF Airport</option>
-                                    <option value="reykjavik">Reykjavik</option>
-                                </select>
-                                    <div class="jls-address-preview jls-address-preview--hidden">
-                                        <div class="jls-address-preview__header">
+                                    <div class="col-lg-12 mb20">
+                                        <h5>Return Date & Time</h5>
+                                        <div class="date-time-field">
+                                            <input id="date-dropfinal" name="car_engine_3" type="date"
+                                                style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+                                            <input id="dropoff-timefinal" name="car_engine_3" type="time"
+                                                style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9; margin-top:10px;">
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-lg-12 mb20">
-                                    <h5>Drop Off Location</h5>
-                                    {{-- <input type="text" name="DropoffLocationfinal"  placeholder="Enter your dropoff location" id="DropoffLocationfinal"  class="form-control"> --}}
-                                    <select name="" id="DropoffLocationfinal"
-                                    style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
-                                                    name="PickupLocation"
-                                                    placeholder="Enter your pickup location"
-                                                    autocomplete="off" class="form-control" >
-                                                    <option selected value="">Select Location</option>
-                                                    <option  value="reykjavik">Reykjavik</option>
-                                                    <option value="kef_airport">KEF Airport</option>
-                                                    <option value="same_location">[Return to the same location]</option>
-                                                </select>
-                                    <div class="jls-address-preview jls-address-preview--hidden">
-                                        <div class="jls-address-preview__header">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12 mb20">
-                                    <h5>Pick Up Date & Time</h5>
-                                    <input id="date-pickerfinal"  name="car_engine_3" type="date" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-                                    <input id="pickup-timefinal"  name="car_engine_3" type="time" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9; margin-top:10px;">
-                                        {{-- <input type="text"   id="pickup-timefinal" name="Pick Up Date" value=""> --}}
-
-                                </div>
-
-                                <div class="col-lg-12 mb20">
-                                    <h5>Return Date & Time</h5>
-                                    <div class="date-time-field">
-                                        <input id="date-dropfinal"  name="car_engine_3" type="date" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-                                        <input id="dropoff-timefinal"  name="car_engine_3" type="time" style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9; margin-top:10px;">
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- <input type='submit' id='send_message' value='Book Now' class="btn-main btn-fullwidth"> --}}
-                            <button type="button" class="btn btn-primary" id="submit_btn">Book Now</button>
+                                <button type="button" class="btn btn-primary" id="submit_btn">Book Now</button>
                                 <div class="clearfix"></div>
 
                             </form>
-                        </div>
-
-                        <div class="de-box">
-                            <h4>Share</h4>
-                            <div class="de-color-icons">
-                                <span><i class="fa fa-twitter fa-lg"></i></span>
-                                <span><i class="fa fa-facebook fa-lg"></i></span>
-                                <span><i class="fa fa-reddit fa-lg"></i></span>
-                                <span><i class="fa fa-linkedin fa-lg"></i></span>
-                                <span><i class="fa fa-pinterest fa-lg"></i></span>
-                                <span><i class="fa fa-stumbleupon fa-lg"></i></span>
-                                <span><i class="fa fa-delicious fa-lg"></i></span>
-                                <span><i class="fa fa-envelope fa-lg"></i></span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -194,7 +172,7 @@
     </div>
     <!-- content close -->
 
-<a href="#" id="back-to-top"></a>
+    <a href="#" id="back-to-top"></a>
 
-{{-- @include('layout.footer') --}}
+    {{-- @include('layout.footer') --}}
 @endsection
