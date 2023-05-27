@@ -79,7 +79,6 @@ class BookingController extends Controller
             ]);
         }
 
-
         Mail::to($inputs['email'])->send(new OrderConfirmationEmail($user, $booking, $car));
         Mail::to('iamkusalwijekoon625l@gmail.com')->send(new OrderNotificationEmail($user, $booking, $car));
 
@@ -89,4 +88,40 @@ class BookingController extends Controller
             return response('Error', 400);
         }
     }
+
+    // ----------------------------------------------------------
+    // new booking from user panel
+    // *************************
+    // booking completion
+    public function storeNewBooking(Request $request, $id)
+    {
+        $data = $request->all();
+
+        $booking_status = "scheduled";
+        $user = User::findOrFail($id);
+        $car = Car::findOrFail($data['carID']);
+
+        $booking = Booking::create([
+            'pickup_location' => $data['pickup_location'],
+            'dropoff_location' => $data['return_location'],
+            'pickup_date' => $data['pickup_date'],
+            'return_date' => $data['pickup_date'],
+            'pickup_time' => $data['return_time'],
+            'return_time' => $data['return_time'],
+            'booking_status' => $booking_status,
+            'total_cost' => $data['total_cost'],
+            'car_id' => $data['carID'],
+            'user_id' => $id,
+        ]);
+
+        Mail::to($user->email)->send(new OrderConfirmationEmail($user, $booking, $car));
+        Mail::to('iamkusalwijekoon625l@gmail.com')->send(new OrderNotificationEmail($user, $booking, $car));
+
+        if ($booking) {
+            return response('Success', 200);
+        } else {
+            return response('Error', 400);
+        }
+    }
+    // *************************
 }

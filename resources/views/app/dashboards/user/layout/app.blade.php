@@ -9,6 +9,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Rentaly - Multipurpose Vehicle Car Rental Website Template" name="description">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="" name="keywords">
     <meta content="" name="author">
     <!-- CSS Files
@@ -19,6 +20,10 @@
     <link href="{{ asset('welcome/css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('welcome/css/coloring.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('admin/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+    <script src="{{asset('js/jquery-3.7.0.min.js')}}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.min.css"
+        integrity="sha512-InYSgxgTnnt8BG3Yy0GcpSnorz5gxHvT6OEoRWj91Gg+RvNdCiAharnBe+XFIDS754Kd9TekdjXw3V7TAgh6Vw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- color scheme -->
     <link id="colors" href="{{ asset('welcome/css/colors/scheme-08.css') }}" rel="stylesheet" type="text/css">
     <style>
@@ -317,7 +322,9 @@
     <script src="{{ asset('welcome/js/designesia.js') }}"></script>
     <script src="{{ asset('admin/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
 	<script src="{{ asset('admin/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.all.min.js"
+    integrity="sha512-2JsZvEefv9GpLmJNnSW3w/hYlXEdvCCfDc+Rv7ExMFHV9JNlJ2jaM+uVVlCI1MAQMkUG8K83LhsHYx1Fr2+MuA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

@@ -13,8 +13,7 @@
         <form action="{{ route('logout') }}" method="post">
             @csrf
             @method('post')
-            <button class="frmbtnlgout"> <i
-                    class="fa fa-sign-out"></i>Sign Out</button>
+            <button class="frmbtnlgout"> <i class="fa fa-sign-out"></i>Sign Out</button>
         </form>
     </li>
 @endsection
@@ -28,90 +27,46 @@
         <div class="card p-4 rounded-5">
             <h4>Cars</h4>
             <div class="spacer-10"></div>
-            <div class="de-item-list no-border mb30">
-                <div class="d-img">
-                    <img src="images/cars/jeep-renegade.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="d-info">
-                    <div class="d-text">
-                        <h4>Jeep Renegade</h4>
-                        <div class="d-atr-group">
-                            <ul class="d-atr">
-                                <li><span>Seats:</span>4</li>
-                                <li><span>Luggage:</span>2</li>
-                                <li><span>Doors:</span>4</li>
-                                <li><span>Fuel:</span>Petrol</li>
-                                <li><span>Horsepower:</span>500</li>
-                                <li><span>Engine:</span>3000</li>
-                                <li><span>Drive:</span>4x4</li>
-                                <li><span>Type:</span>Hatchback</li>
-                            </ul>
+            <div class="row">
+                @forelse ($cars_for_gallery as $item)
+                    <div class="col-xl-4 col-lg-6">
+                        <div class="de-item mb30">
+                            <div class="d-img">
+                                <img src="{{ asset('img/cars/' . $item->vehicle_image) }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="d-info">
+                                <div class="d-text">
+                                    <h4>{{ $item->displaying_name }}</h4>
+                                    <div class="d-atr-group">
+                                        <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
+                                                alt="">{{ $item->no_of_seats }}</span>
+                                        <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
+                                                alt="">{{ $item->no_of_suitcases }}</span>
+                                        <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
+                                                alt="">{{ $item->category }}</span>
+                                    </div>
+                                    <div class="d-price mb-5">
+                                        Daily rate from
+                                        <span>{{ str_replace(',', '.', number_format($item->apr2sep_isk_cost_rental_per_day)) }}
+                                            ISK</span>
+                                        Approximately<H4>USD
+                                            &nbsp;{{ $item->apr2sep_usd_cost_rental_per_day }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            EUR
+                                            &nbsp;{{ $item->apr2sep_eur_cost_rental_per_day }} </H4>
+                                    </div>
+                                    <a class="btn-main" href="{{ route('user.cars.show', $item->id) }}">Rent
+                                        Now</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="d-price">
-                    Daily rate from <span>$265</span>
-                    <a class="btn-main" href="car-single.html">Rent Now</a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
 
-            <div class="de-item-list no-border mb30">
-                <div class="d-img">
-                    <img src="images/cars/bmw-m5.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="d-info">
-                    <div class="d-text">
-                        <h4>BMW M2</h4>
-                        <div class="d-atr-group">
-                            <ul class="d-atr">
-                                <li><span>Seats:</span>4</li>
-                                <li><span>Luggage:</span>2</li>
-                                <li><span>Doors:</span>4</li>
-                                <li><span>Fuel:</span>Petrol</li>
-                                <li><span>Horsepower:</span>500</li>
-                                <li><span>Engine:</span>3000</li>
-                                <li><span>Drive:</span>4x4</li>
-                                <li><span>Type:</span>Hatchback</li>
-                            </ul>
-                        </div>
+                @empty
+                    <div class="col-lg-12">
+                        <h4>No cars found!</h4>
                     </div>
-                </div>
-                <div class="d-price">
-                    Daily rate from <span>$244</span>
-                    <a class="btn-main" href="car-single.html">Rent Now</a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
+                @endforelse
 
-            <div class="de-item-list no-border mb30">
-                <div class="d-img">
-                    <img src="images/cars/ferrari-enzo.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="d-info">
-                    <div class="d-text">
-                        <h4>Ferarri Enzo</h4>
-                        <div class="d-atr-group">
-                            <ul class="d-atr">
-                                <li><span>Seats:</span>4</li>
-                                <li><span>Luggage:</span>2</li>
-                                <li><span>Doors:</span>4</li>
-                                <li><span>Fuel:</span>Petrol</li>
-                                <li><span>Horsepower:</span>500</li>
-                                <li><span>Engine:</span>3000</li>
-                                <li><span>Drive:</span>4x4</li>
-                                <li><span>Type:</span>Hatchback</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-price">
-                    Daily rate from <span>$167</span>
-                    <a class="btn-main" href="car-single.html">Rent Now</a>
-                </div>
-                <div class="clearfix"></div>
             </div>
-
         </div>
-    </div>
-@endsection
+    @endsection

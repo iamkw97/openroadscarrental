@@ -76,6 +76,8 @@ Route::middleware(['web'])->group(function () {
         Route::get('/user/home', [UserController::class, 'userHome'])->name('user.home');
         Route::get('/user/bookings', [UserController::class, 'userBookings'])->name('user.bookings');
         Route::get('/user/cars/', [UserController::class, 'userCars'])->name('user.cars');
+        Route::get('/user/cars/{id}', [UserController::class, 'userCarInfo'])->name('user.cars.show');
         Route::get('/user/profile', [UserController::class, 'userProfile'])->name('user.profile');
+        Route::post('/user/booking/new/{id}', [UserBookingController::class, 'storeNewBooking'])->name('user.booking.new');
     });
 });

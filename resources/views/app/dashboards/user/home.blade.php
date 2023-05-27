@@ -24,10 +24,13 @@
 
 @section('userbody')
     <div class="col-lg-9">
-
+        {{-- add new order --}}
+        <div class="card p-4 rounded-5 mb10">
+            <a class="btn btn-main col-md-3" href="{{ route('user.cars') }}">New Booking</a>
+        </div>
+        {{-- recent bookings --}}
         <div class="card p-4 rounded-5 mb25">
-            <h4>My Recent Orders</h4>
-
+            <h4>My Recent Bookings</h4>
             <table class="table de-table">
                 <thead>
                     <tr>

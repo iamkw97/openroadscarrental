@@ -181,6 +181,8 @@
 
 
                                 <div class="col-md-12">
+                                    <p>Please Note<span style="color:red;">*</span><br><strong>The payments are done in
+                                            cash after you receive the car at the airport.</strong></p>
                                     <div id='submit' class="pull-right">
                                         <button type='button' id='submitRegister'
                                             class="btn-main color-2">Proceed</button>
