@@ -16,15 +16,13 @@
                         <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">New Car</li>
+                            <li class="breadcrumb-item active" aria-current="page">List</li>
                         </ol>
                     </nav>
                 </div>
                 <div class="ms-auto">
-                    <div class="col-lg-4 col-xl-3">
-                        <a href="{{ route('admin.cars.create') }}" class="btn btn-primary btn-sm"><i
+                        <a href="{{ route('admin.cars.create') }}" class="btn btn-primary "><i
                                 class='bx bxs-plus-square'></i>New Car</a>
-                    </div>
                 </div>
             </div>
             <!--end breadcrumb-->
