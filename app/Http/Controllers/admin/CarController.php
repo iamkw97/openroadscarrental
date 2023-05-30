@@ -14,7 +14,26 @@ class CarController extends Controller
     // view admin cars
     public function index()
     {
-        return view('app.dashboards.admin.cars.cars');
+        $cars_for_admin = Car::join('car_images', 'cars.id', '=', 'car_images.car_id')
+            ->leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
+            ->select(
+                'cars.id',
+                'cars.displaying_name',
+                'cars.no_of_seats',
+                'cars.no_of_suitcases',
+                'cars.category',
+                'car_images.vehicle_image',
+                'car_prices.apr2sep_isk_cost_rental_per_day',
+                'car_prices.apr2sep_usd_cost_rental_per_day',
+                'car_prices.apr2sep_eur_cost_rental_per_day',
+                'car_prices.sep2apr_isk_cost_rental_per_day',
+                'car_prices.sep2apr_isk_cost_rental_per_day',
+                'car_prices.sep2apr_usd_cost_rental_per_day',
+                'car_prices.sep2apr_eur_cost_rental_per_day'
+            )
+            ->get();
+
+        return view('app.dashboards.admin.cars.cars', compact('cars_for_admin'));
     }
     // view admin add new car
     public function create()

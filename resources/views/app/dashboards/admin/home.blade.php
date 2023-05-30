@@ -9,7 +9,7 @@
     <div class="page-wrapper">
         <div class="page-content">
             <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
-                <div class="col">
+                {{-- <div class="col">
                     <div class="card radius-10 border-start border-0 border-4 border-info">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
@@ -56,18 +56,19 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col">
                     <div class="card radius-10 border-start border-0 border-4 border-warning">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <p class="mb-0 text-secondary">Total Customers</p>
-                                    <h4 class="my-1 text-warning">8.4K</h4>
-                                    <p class="mb-0 font-13">+8.4% from last week</p>
+                                    <p class="mb-0 text-secondary">Total Visitors</p>
+                                    <h4 class="my-1 text-warning">{{ \App\Models\Visitor::count() }}</h4>
+                                    {{-- <p class="mb-0 font-13">+8.4% from last week</p> --}}
                                 </div>
                                 <div class="widgets-icons-2 rounded-circle bg-gradient-orange text-white ms-auto"><i
-                                        class='bx bxs-group'></i>
+                                        class='bx bxs-group'>
+                                    </i>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +78,7 @@
             <!--end row-->
 
             <div class="row">
-                <div class="col-12 col-lg-8 d-flex">
+                {{-- <div class="col-12 col-lg-8 d-flex">
                     <div class="card radius-10 w-100">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
@@ -186,12 +187,12 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <!--end row-->
 
             <div class="card radius-10">
-                <div class="card-header">
+                {{-- <div class="card-header">
                     <div class="d-flex align-items-center">
                         <div>
                             <h6 class="mb-0">Recent Orders</h6>
@@ -330,12 +331,12 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div> --}}
             </div>
 
 
             <div class="row">
-                <div class="col-12 col-lg-7 col-xl-8 d-flex">
+                {{-- <div class="col-12 col-lg-7 col-xl-8 d-flex">
                     <div class="card radius-10 w-100">
                         <div class="card-header bg-transparent">
                             <div class="d-flex align-items-center">
@@ -477,12 +478,12 @@
 
                     </div>
 
-                </div>
+                </div> --}}
             </div>
             <!--end row-->
 
             <div class="row row-cols-1 row-cols-lg-3">
-                <div class="col d-flex">
+                {{-- <div class="col d-flex">
                     <div class="card radius-10 w-100">
                         <div class="card-body">
                             <p class="font-weight-bold mb-1 text-secondary">Weekly Revenue</p>
@@ -594,7 +595,7 @@
                         </div>
                         <!--end row-->
                     </div>
-                </div>
+                </div> --}}
             </div>
             <!--end row-->
 
