@@ -105,7 +105,7 @@
                                     <div class="col-md-6">
                                         <div class="field-set">
                                             <label for='dob'>Date of Birth</label>
-                                            <input type='text' name='dob' id='dob' class="form-control">
+                                            <input type='text' name='dob' id='dob' class="form-control" placeholder="ddmmyyyy">
                                             @error('dob')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -222,7 +222,19 @@
                                     <div class="de-price text-center">
                                         Total<h4>ISK <span id="total_cost"></span></h4>
                                     </div>
+
                                 </div>
+
+                            </div>
+                            <div>
+                                <ul class="list-group list-group-flush">
+                                    <h5>Additional Features</h5>
+                                    <li class="list-group-item"><span id="additional_baby_seat_status"></span> Baby Seat
+                                    </li>
+                                    <li class="list-group-item"> <span id="additional_wifi_status"></span> WiFi(unlimited)
+                                    </li>
+                                    <li class="list-group-item"> <span id="additional_driver_status"></span> Driver</li>
+                                </ul>
                             </div>
                         </div>
                         <div class="de-box mb25">

@@ -21,6 +21,9 @@ return new class extends Migration
             $table->time('return_time');
             $table->integer('total_cost');
             $table->string('booking_status');
+            $table->string('additional_baby_seat')->nullable();
+            $table->string('additional_wifi')->nullable();
+            $table->string('additional_driver')->nullable();
             $table->unsignedBigInteger('car_id');
             $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');

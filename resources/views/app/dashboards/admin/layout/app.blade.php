@@ -2,11 +2,28 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Renting an open car road rental in Iceland allows you to experience Iceland's breathtaking landscapes in a unique way. Find the best Iceland car rental options and get tips for renting a car in Iceland.">
+    <meta name="keywords"
+        content="Iceland car rental,
+                car rental Iceland,
+                renting a car in Iceland,Iceland people,
+                Icelandic culture,
+                Icelandic people physical traits,black sand beach Iceland,
+                black beach Iceland,
+                Iceland black sand beach,lephant rock Iceland,
+                Iceland elephant rock,
+                elephant island Iceland,
+                KEF Airport,
+                Reykjavik,
+                Open Roads Car Rental">
+    <meta name="author" content="openroadscarrental.com">
+
+
     <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
     <!--favicon-->
     <link rel="icon" href="{{ asset('admin/images/favicon-32x32.png') }}" type="image/png" />

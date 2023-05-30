@@ -41,6 +41,9 @@ class BookingController extends Controller
                 'pickup_time' => $data['finalpicktimeinformation'],
                 'return_time' => $data['finaldroptimeinformation'],
                 'booking_status' => $booking_status,
+                'additional_baby_seat' => $data['additional_baby_seat'],
+                'additional_wifi' => $data['additional_wifi'],
+                'additional_driver' => $data['additional_driver'],
                 'total_cost' => $data['total_cost'],
                 'car_id' => $data['car_id'],
                 'user_id' => $user->id,
@@ -73,6 +76,9 @@ class BookingController extends Controller
                 'pickup_time' => $data['finalpicktimeinformation'],
                 'return_time' => $data['finaldroptimeinformation'],
                 'booking_status' => $booking_status,
+                'additional_baby_seat' => $data['additional_baby_seat'],
+                'additional_wifi' => $data['additional_wifi'],
+                'additional_driver' => $data['additional_driver'],
                 'total_cost' => $data['total_cost'],
                 'car_id' => $data['car_id'],
                 'user_id' => $user->id,
@@ -80,7 +86,7 @@ class BookingController extends Controller
         }
 
         Mail::to($inputs['email'])->send(new OrderConfirmationEmail($user, $booking, $car));
-        Mail::to('iamkusalwijekoon625l@gmail.com')->send(new OrderNotificationEmail($user, $booking, $car));
+        Mail::to('iamkusalwijekoon@yahoo.com')->send(new OrderNotificationEmail($user, $booking, $car));
 
         if ($booking) {
             return response('Success', 200);
@@ -96,7 +102,6 @@ class BookingController extends Controller
     public function storeNewBooking(Request $request, $id)
     {
         $data = $request->all();
-
         $booking_status = "scheduled";
         $user = User::findOrFail($id);
         $car = Car::findOrFail($data['carID']);
@@ -105,17 +110,20 @@ class BookingController extends Controller
             'pickup_location' => $data['pickup_location'],
             'dropoff_location' => $data['return_location'],
             'pickup_date' => $data['pickup_date'],
-            'return_date' => $data['pickup_date'],
-            'pickup_time' => $data['return_time'],
+            'return_date' => $data['return_date'],
+            'pickup_time' => $data['pickup_time'],
             'return_time' => $data['return_time'],
             'booking_status' => $booking_status,
+            'additional_baby_seat' => $data['additional_baby_seat'],
+            'additional_wifi' => $data['additional_wifi'],
+            'additional_driver' => $data['additional_driver'],
             'total_cost' => $data['total_cost'],
             'car_id' => $data['carID'],
             'user_id' => $id,
         ]);
 
         Mail::to($user->email)->send(new OrderConfirmationEmail($user, $booking, $car));
-        Mail::to('iamkusalwijekoon625l@gmail.com')->send(new OrderNotificationEmail($user, $booking, $car));
+        Mail::to('iamkusalwijekoon625@gmail.com')->send(new OrderNotificationEmail($user, $booking, $car));
 
         if ($booking) {
             return response('Success', 200);

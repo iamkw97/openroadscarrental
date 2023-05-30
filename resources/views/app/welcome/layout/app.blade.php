@@ -6,12 +6,28 @@
         @yield('title')
     </title>
     <link rel="icon" href="{{ asset('welcome/images/icon.png') }}" type="image/gif" sizes="16x16">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Rentaly - Multipurpose Vehicle Car Rental Website Template" name="description">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta content="" name="keywords">
-    <meta content="" name="author">
+
+    <meta name="description"
+        content="Renting an open car road rental in Iceland allows you to experience Iceland's breathtaking landscapes in a unique way. Find the best Iceland car rental options and get tips for renting a car in Iceland.">
+    <meta name="keywords"
+        content="Iceland car rental,
+                car rental Iceland,
+                renting a car in Iceland,Iceland people,
+                Icelandic culture,
+                Icelandic people physical traits,black sand beach Iceland,
+                black beach Iceland,
+                Iceland black sand beach,lephant rock Iceland,
+                Iceland elephant rock,
+                elephant island Iceland,
+                KEF Airport,
+                Reykjavik,
+                Open Roads Car Rental">
+    <meta name="author" content="openroadscarrental.com">
+
     <!-- CSS Files
     ================================================== -->
     <link href="{{ asset('welcome/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
@@ -697,6 +713,10 @@
             var NumberofSuitcases = $("#NumberofSuitcases").html()
             var total_cost = $("#total_cost").html()
 
+            var add_baby_seat = $("#additional_baby_seat").prop("checked");
+            var add_wifi = $("#additional_wifi").prop("checked");
+            var add_driver = $("#additional_driver").prop("checked");
+
             var url = "{{ route('personal.index') }}";
             url += "?Pickup_loc=" + encodeURIComponent(Pickup_l);
             url += "&Drop_off_loc=" + encodeURIComponent(Drop_off_l);
@@ -710,6 +730,9 @@
             url += "&NumberofSeats=" + encodeURIComponent(NumberofSeats);
             url += "&NumberofSuitcases=" + encodeURIComponent(NumberofSuitcases);
             url += "&total_cost=" + encodeURIComponent(total_cost);
+            url += "&add_baby_seat=" + encodeURIComponent(add_baby_seat);
+            url += "&add_wifi=" + encodeURIComponent(add_wifi);
+            url += "&add_driver=" + encodeURIComponent(add_driver);
 
             window.location.href = url;
         });
@@ -733,6 +756,9 @@
         var SeatsCount = urlParams.get("NumberofSeats");
         var SuitcasesCount = urlParams.get("NumberofSuitcases");
         var total_cost = urlParams.get("total_cost");
+        var add_baby_seat = urlParams.get("add_baby_seat");
+        var add_wifi = urlParams.get("add_wifi");
+        var add_driver = urlParams.get("add_driver");
 
         // Parse the pickup and dropoff dates
         var pickupDate = new Date(pickupDateifo);
@@ -757,6 +783,22 @@
         $("#VehicleCategoryinfomation").html(VehicleCategoryinfo);
         $("#total_cost").html(totalCost);
 
+        if (add_baby_seat === "true") {
+            $("#additional_baby_seat_status").html('<i class="fa fa-check-circle text-success"></i>');
+        } else {
+            $("#additional_baby_seat_status").html('<i class="fa fa-times-circle text-danger"></i>');
+        }
+        if (add_wifi === "true") {
+            $("#additional_wifi_status").html('<i class="fa fa-check-circle text-success"></i>');
+        } else {
+            $("#additional_wifi_status").html('<i class="fa fa-times-circle text-danger"></i>');
+        }
+        if (add_driver === "true") {
+            $("#additional_driver_status").html('<i class="fa fa-check-circle text-success"></i>');
+        } else {
+            $("#additional_driver_status").html('<i class="fa fa-times-circle text-danger"></i>');
+        }
+
         $("#submitRegister").on("click", function(e) {
             e.preventDefault();
             var fullname = $("#fullname").val();
@@ -778,6 +820,9 @@
             var finaldropdateinfomation = $("#finaldropdateinfo").val();
             var finalpicktimeinformation = $("#finalpicktimeinfo").val();
             var finaldroptimeinformation = $("#finaldroptimeinfo").val();
+            var additional_baby_seat_ = urlParams.get("add_baby_seat");
+            var additional_wifi_ = urlParams.get("add_wifi");
+            var additional_driver_ = urlParams.get("add_driver");
             var total_cost = $("#total_cost").text();
 
             var formData = new FormData();
@@ -800,6 +845,9 @@
             formData.append('finaldropdateinfomation', finaldropdateinfomation);
             formData.append('finalpicktimeinformation', finalpicktimeinformation);
             formData.append('finaldroptimeinformation', finaldroptimeinformation);
+            formData.append('additional_baby_seat', additional_baby_seat_);
+            formData.append('additional_wifi', additional_wifi_);
+            formData.append('additional_driver', additional_driver_);
             formData.append('car_id', id);
             formData.append('total_cost', total_cost);
 

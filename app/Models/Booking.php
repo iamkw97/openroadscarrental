@@ -17,6 +17,9 @@ class Booking extends Model
         'return_time',
         'total_cost',
         'booking_status',
+        'additional_baby_seat',
+        'additional_wifi',
+        'additional_driver',
         'car_id',
         'user_id'
     ];

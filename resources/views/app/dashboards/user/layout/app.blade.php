@@ -5,13 +5,29 @@
     <title>
         @yield('usertitle')
     </title>
-    <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Rentaly - Multipurpose Vehicle Car Rental Website Template" name="description">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta content="" name="keywords">
-    <meta content="" name="author">
+
+    <meta name="description"
+        content="Renting an open car road rental in Iceland allows you to experience Iceland's breathtaking landscapes in a unique way. Find the best Iceland car rental options and get tips for renting a car in Iceland.">
+    <meta name="keywords"
+        content="Iceland car rental,
+                car rental Iceland,
+                renting a car in Iceland,Iceland people,
+                Icelandic culture,
+                Icelandic people physical traits,black sand beach Iceland,
+                black beach Iceland,
+                Iceland black sand beach,lephant rock Iceland,
+                Iceland elephant rock,
+                elephant island Iceland,
+                KEF Airport,
+                Reykjavik,
+                Open Roads Car Rental">
+    <meta name="author" content="openroadscarrental.com">
+
+    <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
     <!-- CSS Files
     ================================================== -->
     <link href="{{ asset('welcome/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
