@@ -28,7 +28,7 @@ class UserRequest extends FormRequest
             'city' => 'required|string',
             'phone1' => 'required|string',
             'phone2' => 'string',
-            'dob' => 'string',
+            'dob' => 'string|nullable',
             'flight_no' => 'required|string',
             'driver_name' => 'required|string',
             'license_no' => 'required|string',
