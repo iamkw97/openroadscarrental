@@ -30,7 +30,7 @@
 
     <!-- CSS Files
     ================================================== -->
-    <link href="{{ asset('welcome/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
+    {{-- <link href="{{ asset('welcome/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap"> --}}
     <link href="{{ asset('welcome/css/mdb.min.css') }}" rel="stylesheet" type="text/css" id="mdb">
     <link href="{{ asset('welcome/css/plugins.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('welcome/css/style.css') }}" rel="stylesheet" type="text/css">

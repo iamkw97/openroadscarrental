@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 | Welcome Routes
 |--------------------------------------------------------------------------
 */
+
 Route::get('/', [BaseController::class, 'home'])->name('home.index');
 Route::get('/cars', [BaseController::class, 'cars'])->name('cars.index');
 Route::get('/cars/view/{id}', [BaseController::class, 'carInfo'])->name('cars.show');
@@ -62,6 +63,7 @@ Route::middleware(['web'])->group(function () {
         Route::get('/admin/cars/new', [CarController::class, 'create'])->name('admin.cars.create');
         Route::post('/admin/cars/store', [CarController::class, 'store'])->name('admin.cars.store');
         Route::get('/admin/bookings', [BookingController::class, 'index'])->name('admin.bookings.index');
+        Route::get('/admin/bookings/{id}', [BookingController::class, 'show'])->name('admin.bookings.show');
         Route::get('/admin/destinations', [DestinationController::class, 'index'])->name('admin.destinations.index');
         Route::get('/admin/destinations/new', [DestinationController::class, 'create'])->name('admin.destinations.create');
         Route::delete('/admin/destinations/{id}/delete', [DestinationController::class, 'delete'])->name('admin.destinations.delete');
