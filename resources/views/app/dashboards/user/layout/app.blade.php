@@ -5,7 +5,8 @@
     <title>
         @yield('usertitle')
     </title>
-
+    <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
+    
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -26,8 +27,7 @@
                 Reykjavik,
                 Open Roads Car Rental">
     <meta name="author" content="openroadscarrental.com">
-
-    <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
+    
     <!-- CSS Files
     ================================================== -->
     <link href="{{ asset('welcome/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">

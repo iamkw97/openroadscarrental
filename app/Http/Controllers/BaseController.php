@@ -13,22 +13,14 @@ class BaseController extends Controller
     public function home()
     {
         $cars_for_gallery = Car::join('car_images', 'cars.id', '=', 'car_images.car_id')
-            ->leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
-            ->select(
-                'cars.id',
-                'cars.displaying_name',
-                'cars.no_of_seats',
-                'cars.no_of_suitcases',
-                'cars.category',
-                'car_images.vehicle_image',
-                'car_prices.apr2sep_isk_cost_rental_per_day',
-                'car_prices.apr2sep_usd_cost_rental_per_day',
-                'car_prices.apr2sep_eur_cost_rental_per_day',
-                'car_prices.sep2apr_isk_cost_rental_per_day',
-                'car_prices.sep2apr_isk_cost_rental_per_day',
-                'car_prices.sep2apr_usd_cost_rental_per_day',
-                'car_prices.sep2apr_eur_cost_rental_per_day'
-            )
+        ->leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
+            ->select('cars.id', 'cars.displaying_name', 'cars.no_of_seats', 'cars.no_of_suitcases', 'cars.category', 'car_images.vehicle_image'
+            , 'car_prices.apr2sep_isk_cost_rental_per_day', 'car_prices.apr2sep_usd_cost_rental_per_day'
+            , 'car_prices.apr2sep_eur_cost_rental_per_day'
+            , 'car_prices.sep2apr_isk_cost_rental_per_day'
+            , 'car_prices.sep2apr_isk_cost_rental_per_day'
+            , 'car_prices.sep2apr_usd_cost_rental_per_day'
+            , 'car_prices.sep2apr_eur_cost_rental_per_day')
             ->get();
         $destinations_for_gallery = Destination::all();
 
@@ -38,19 +30,16 @@ class BaseController extends Controller
     {
         return view('app.welcome.cars');
     }
-    public function carShow(Request $request, $id)
+    public function carInfo(Request $request, $id)
     {
         $cars = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
             ->leftJoin('car_availabilities', 'cars.id', '=', 'car_availabilities.car_id')
-            ->select(
-                'cars.*',
-                'car_prices.apr2sep_isk_cost_rental_per_day',
-                'car_prices.apr2sep_isk_cost_rental_per_day',
-                'car_prices.apr2sep_eur_cost_rental_per_day',
-                'car_prices.sep2apr_isk_cost_rental_per_day',
-                'car_prices.sep2apr_isk_cost_rental_per_day',
-                'car_prices.sep2apr_usd_cost_rental_per_day',
-                'car_prices.sep2apr_eur_cost_rental_per_day'
+            ->select('cars.*', 'car_prices.apr2sep_isk_cost_rental_per_day', 'car_prices.apr2sep_isk_cost_rental_per_day'
+            , 'car_prices.apr2sep_eur_cost_rental_per_day'
+            , 'car_prices.sep2apr_isk_cost_rental_per_day'
+            , 'car_prices.sep2apr_isk_cost_rental_per_day'
+            , 'car_prices.sep2apr_usd_cost_rental_per_day'
+            , 'car_prices.sep2apr_eur_cost_rental_per_day'
             )
             ->where('cars.id', $id)
             ->get();
@@ -58,28 +47,6 @@ class BaseController extends Controller
             $carImages = CarImage::where('car_id', $car->id)->get();
             $car->images = $carImages;
         }
-
-        $response['data'] = $cars;
-        return response()->json($response);
-    }
-
-    public function carInfo(Request $request, $id)
-    {
-        $cars = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
-            ->leftJoin('car_images', 'cars.id', '=', 'car_images.car_id')
-            ->leftJoin('car_availabilities', 'cars.id', '=', 'car_availabilities.car_id')
-            ->select(
-                'cars.*',
-                'car_prices.apr2sep_isk_cost_rental_per_day',
-                'car_prices.apr2sep_usd_cost_rental_per_day',
-                'car_prices.apr2sep_eur_cost_rental_per_day',
-                'car_prices.sep2apr_isk_cost_rental_per_day',
-                'car_prices.sep2apr_usd_cost_rental_per_day',
-                'car_prices.sep2apr_eur_cost_rental_per_day',
-                'car_images.vehicle_image'
-            )
-            ->where('cars.id', $id)
-            ->get();
 
         $response['data'] = $cars;
         return response()->json($response);

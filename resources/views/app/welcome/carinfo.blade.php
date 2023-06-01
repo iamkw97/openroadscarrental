@@ -29,12 +29,13 @@
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-5">
+                        
                         <div id="slider-carousel" class="owl-carousel">
-                            <div class="item">
-                                <img src="" alt="">
-                            </div>
+                            
+
                         </div>
                         <p>Please Note<span style="color: red">*</span><br><strong>ALL our prices include CDW, SCDW,TP,GP, SAAP Insurances, unlimited mileage,GPS and studded tires during winter.</strong></p>
+                   
                     </div>
 
                     <div class="col-lg-4">
@@ -45,6 +46,9 @@
 
                         <h4>Specifications</h4>
                         <div class="de-spec">
+                             <div class="item" id="CarImage">
+                                
+                            </div> 
                             <div class="d-row">
                                 <span class="d-title">Vehicle Category</span>
                                 <spam class="d-value" id="VehicleCategory"></spam>
@@ -81,19 +85,19 @@
                         <h4>Additional Features</h4>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="additional_baby_seat"
-                                name="additional_baby_seat" onchange="updateTotalCost()">
+                                name="additional_baby_seat">
                             <label class="form-check-label" for="additional_baby_seat"><strong>Baby Seat</strong> <span>/ISK
                                     1000 per day</span></label>
                         </div>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="additional_wifi"
-                                name="additional_wifi" onchange="updateTotalCost()">
+                                name="additional_wifi">
                             <label class="form-check-label" for="additional_wifi"><strong>WIFI (Unlimited)</strong><span>/ISK 1300 per
                                     day</span></label>
                         </div>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="additional_driver"
-                                name="additional_driver" onchange="updateTotalCost()">
+                                name="additional_driver">
                             <label class="form-check-label" for="additional_driver"><strong>Extra Driver</strong><span>/FREE</span></label>
                         </div>
                     </div>
@@ -128,7 +132,7 @@
                                         <h5>Drop Off Location</h5><select name="" id="DropoffLocationfinal"
                                             style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
                                             name="PickupLocation" placeholder="Enter your pickup location"
-                                            autocomplete="off" class="form-control">
+                                            autocomplete="off" class="form-control" >
                                             <option selected value="">Select Location</option>
                                             <option value="reykjavik">Reykjavik</option>
                                             <option value="kef_airport">KEF Airport</option>
@@ -143,18 +147,18 @@
                                     <div class="col-lg-12 mb20">
                                         <h5>Pick Up Date & Time</h5>
                                         <input id="date-pickerfinal" name="car_engine_3" type="date"
-                                            style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+                                            style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;" >
                                         <input id="pickup-timefinal" name="car_engine_3" type="time"
-                                            style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9; margin-top:10px;">
+                                            style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9; margin-top:10px;" >
                                     </div>
 
                                     <div class="col-lg-12 mb20">
                                         <h5>Return Date & Time</h5>
                                         <div class="date-time-field">
                                             <input id="date-dropfinal" name="car_engine_3" type="date"
-                                                style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
+                                                style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;" >
                                             <input id="dropoff-timefinal" name="car_engine_3" type="time"
-                                                style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9; margin-top:10px;">
+                                                style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9; margin-top:10px;" >
                                         </div>
                                     </div>
                                 </div>

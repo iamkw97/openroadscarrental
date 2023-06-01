@@ -80,10 +80,19 @@
 
                                 <div class="col-md-6">
                                     <div class="field-set">
+                                        <label for='dob'>Date of Birth</label>
+                                        <input type='text' name='dob' id='dob' class="form-control" placeholder="ddmmyyyy">
+                                        @error('dob')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="field-set">
                                         <label for='phone1'>Phone 1 (with country code)<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                        <input type='text' name='phone1' id='phone1' class="form-control"
-                                            placeholder="+354">
+                                        <input type='text' name='phone1' id='phone1' class="form-control" placeholder="+354">
                                         @error('phone1')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -93,25 +102,14 @@
                                 <div class="col-md-6">
                                     <div class="field-set">
                                         <label for='phone2'>Phone 2 (with country code)</label>
-                                        <input type='text' name='phone2' id='phone2' class="form-control"
-                                            placeholder="+354">
+                                        <input type='text' name='phone2' pid='phone2' class="form-control" placeholder="+354">
                                         @error('phone2')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="col-md-6">
-                                        <div class="field-set">
-                                            <label for='dob'>Date of Birth</label>
-                                            <input type='text' name='dob' id='dob' class="form-control" placeholder="ddmmyyyy">
-                                            @error('dob')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
+                                
 
                                 <div class="col-md-6">
                                     <div class="field-set">
@@ -149,8 +147,7 @@
                                     <div class="field-set">
                                         <label for='license_valid_date'>License Valid Date<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                        <input type='date' name='license_valid_date' id='license_valid_date'
-                                            class="form-control">
+                                        <input type='date' name='license_valid_date' id='license_valid_date' class="form-control">
                                         @error('license_valid_date')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -181,11 +178,10 @@
 
 
                                 <div class="col-md-12">
-                                    <p>Please Note<span style="color:red;">*</span><br><strong>The payments are done in
-                                            cash after you receive the car at the airport.</strong></p>
+                                    <h4>Please Note<span style="color:red;">*</span><br><strong>The payments are done in
+                                            cash after you receive the car at the airport.</strong></h4>
                                     <div id='submit' class="pull-right">
-                                        <button type='button' id='submitRegister'
-                                            class="btn-main color-2">Proceed</button>
+                                        <button type='button' id='submitRegister' class="btn-main color-2">Proceed</button>
                                     </div>
 
                                     <div class="clearfix"></div>
@@ -199,11 +195,14 @@
                     <div class="col-lg-3">
                         <div class="de-item mb10">
                             <div class="d-img">
-                                <img id="car_image" src="{{ asset('') }}" class="img-fluid" alt="">
+                                
                             </div>
                             <div class="d-info">
                                 <div class="d-text">
                                     <h4 id="vehicleDisplayName"></h4>
+                                    <div class="d-item_like">
+                                        <i class="fa fa-heart"></i><span>36</span>
+                                    </div>
                                     <div class="d-atr-group">
                                         <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
                                                 alt="">
@@ -219,12 +218,10 @@
                                             <h5 id="VehicleCategoryinfomation"></h5>
                                         </span>
                                     </div>
-                                    <div class="de-price text-center">
-                                        Total<h4>ISK <span id="total_cost"></span></h4>
+                                    <div class="de-price text-center" id="totalPrice">
+                                          Total<h4 >ISK <span id="total_cost"></span></h4>
                                     </div>
-
                                 </div>
-
                             </div>
                             <div>
                                 <ul class="list-group list-group-flush">

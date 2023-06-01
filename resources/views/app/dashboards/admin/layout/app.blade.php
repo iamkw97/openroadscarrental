@@ -22,8 +22,7 @@
                 Reykjavik,
                 Open Roads Car Rental">
     <meta name="author" content="openroadscarrental.com">
-
-
+    
     <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
     <!--favicon-->
     <link rel="icon" href="{{ asset('admin/images/favicon-32x32.png') }}" type="image/png" />
@@ -103,22 +102,22 @@
                         </li>
                     </ul>
                 </li>
-                <li class="menu-label">Website Customization</li>
-                <li>
-                    <a href="javascript:;" class="has-arrow">
-                        <div class="parent-icon"><i class='bx bx-map-pin'></i></i>
-                        </div>
-                        <div class="menu-title">Destinations</div>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="{{ route('admin.destinations.index') }}"><i class='bx bx-list-ul'></i>List Destinations</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.destinations.create') }}"><i class='bx bx-list-plus'></i>Add New Destination</a>
-                        </li>
-                    </ul>
-                </li>
+                <!--<li class="menu-label">Website Customization</li>-->
+                <!--<li>-->
+                <!--    <a href="javascript:;" class="has-arrow">-->
+                <!--        <div class="parent-icon"><i class='bx bx-map-pin'></i></i>-->
+                <!--        </div>-->
+                <!--        <div class="menu-title">Destinations</div>-->
+                <!--    </a>-->
+                <!--    <ul>-->
+                <!--        <li>-->
+                <!--            <a href="{{ route('admin.destinations.index') }}"><i class='bx bx-list-ul'></i>List Destinations</a>-->
+                <!--        </li>-->
+                <!--        <li>-->
+                <!--            <a href="{{ route('admin.destinations.create') }}"><i class='bx bx-list-plus'></i>Add New Destination</a>-->
+                <!--        </li>-->
+                <!--    </ul>-->
+                <!--</li>-->
 
             </ul>
             <!--end navigation-->
@@ -131,13 +130,7 @@
                     <div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
                     </div>
 
-                    <div class="position-relative search-bar d-lg-block d-none" data-bs-toggle="modal"
-                        data-bs-target="#SearchModal">
-                        <input class="form-control px-5" disabled type="search" placeholder="Search">
-                        <span
-                            class="position-absolute top-50 search-show ms-3 translate-middle-y start-0 top-50 fs-5"><i
-                                class='bx bx-search'></i></span>
-                    </div>
+                    
 
 
                     <div class="top-menu ms-auto">

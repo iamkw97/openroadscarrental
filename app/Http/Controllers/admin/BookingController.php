@@ -13,17 +13,20 @@ class BookingController extends Controller
     public function index()
     {
         $bookings_list = User::join('bookings', 'users.id', '=', 'bookings.user_id')
-    ->join('cars', 'bookings.car_id', '=', 'cars.id')
-    ->select(
-        'users.fullname',
-        'users.email',
-        'bookings.*',
-        'cars.displaying_name'
-    )
-    ->orderByDesc('bookings.id')
-    ->get();
+            ->join('cars', 'bookings.car_id', '=', 'cars.id')
+            ->select(
+                'users.fullname',
+                'users.email',
+                'bookings.*',
+                'cars.displaying_name'
+            )
+            ->orderByDesc('bookings.id') // Order by descending 'id'
+            ->get();
+
+
         return view('app.dashboards.admin.bookings.bookings', compact('bookings_list'));
     }
+    
     // show admin bookings
     public function show($id)
     {

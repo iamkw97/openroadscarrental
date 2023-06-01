@@ -62,7 +62,7 @@
         <div id="top"></div>
         <section id="section-hero" aria-label="section" class="jarallax full-height vertical-center">
             <div class="hero-overlay"></div>
-            <img src="{{ asset('welcome/images/background/icelandbg.jpg') }}" class="jarallax-img dark-image" alt="">
+            <img src="{{ asset('welcome/images/background/icelandbg.webp') }}" class="jarallax-img dark-image" alt="">
             <div class="container position-relative z1000" style="position: relative; top:70px;">
                 <div class="row align-items-center">
                     <div class="col-lg-5 text-light">
@@ -225,8 +225,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}" alt=""
-                            class="img-fluid wow fadeInUp">
+                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}" alt="" class="img-fluid wow fadeInUp">
                     </div>
 
                     <div class="col-lg-3">
@@ -252,12 +251,11 @@
         </section>
 
         <section class="text-light jarallax">
-            <img src="{{ asset('welcome/images/background/back0.jpg') }}" class="jarallax-img dark-image" alt="">
+            <img src="{{ asset('welcome/images/background/back0.webp') }}" class="jarallax-img dark-image" alt="">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInRight">
-                        <h2>Just tell us <span class="id-color">where you need to go,</span> and we'll take care of the
-                            rest!</h2>
+                        <h2>Just tell us <span class="id-color">where you need to go,</span> and we'll take care of the rest!</h2>
                     </div>
                     <div class="col-lg-6 wow fadeInLeft">
                         Iceland: A land of dramatic landscapes, geothermal wonders, and captivating culture. From cascading
@@ -269,7 +267,6 @@
                     </div>
                 </div>
                 <div class="spacer-double"></div>
-
             </div>
         </section>
 
@@ -295,7 +292,7 @@
                                     <div class="d-info">
                                         <div class="d-text">
                                             <h4>{{ $item->displaying_name }}</h4>
-
+                                            
                                             <div class="d-atr-group">
                                                 <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
                                                         alt="">{{ $item->no_of_seats }}</span>
@@ -312,8 +309,7 @@
                                                     &nbsp;{{ $item->apr2sep_usd_cost_rental_per_day }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                     EUR
                                                     &nbsp;{{ $item->apr2sep_eur_cost_rental_per_day }} </H4>
-                                                <a class="btn-main" href="{{ route('cars.show', $item->id) }}">Rent
-                                                    Now</a>
+                                                 <a class="btn-main RentNowCar" id={{ $item->id }}>Rent Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -344,7 +340,7 @@
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$244</span>
-                                                <a class="btn-main" href="">Rent Now</a>
+                                                <a class="btn-main RentNowCar" >Rent Now</a>
                                                 {{-- {{ route('cars.show') }} --}}
                                             </div>
                                         </div>
@@ -353,67 +349,7 @@
                             </div>
 
                             <div class="col-lg-12">
-                                <div class="de-item mb30">
-                                    <div class="d-img">
-                                        <img src="{{ asset('welcome/images/cars/ferrari-enzo.jpg') }}" class="img-fluid"
-                                            alt="">
-                                    </div>
-                                    <div class="d-info">
-                                        <div class="d-text">
-                                            <h4>Ferarri Enzo</h4>
-                                            <div class="d-item_like">
-                                                <i class="fa fa-heart"></i><span>85</span>
-                                            </div>
-                                            <div class="d-atr-group">
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
-                                                        alt="">5</span>
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
-                                                        alt="">2</span>
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}"
-                                                        alt="">4</span>
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
-                                                        alt="">Exotic
-                                                    Car</span>
-                                            </div>
-                                            <div class="d-price">
-                                                Daily rate from <span>$167</span>
-                                                <a class="btn-main" href="">Rent Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <div class="de-item mb30">
-                                    <div class="d-img">
-                                        <img src="{{ asset('welcome/images/cars/ford-raptor.jpg') }}" class="img-fluid"
-                                            alt="">
-                                    </div>
-                                    <div class="d-info">
-                                        <div class="d-text">
-                                            <h4>Ford Raptor</h4>
-                                            <div class="d-item_like">
-                                                <i class="fa fa-heart"></i><span>59</span>
-                                            </div>
-                                            <div class="d-atr-group">
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
-                                                        alt="">5</span>
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
-                                                        alt="">2</span>
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}"
-                                                        alt="">4</span>
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
-                                                        alt="">Pickup
-                                                    Truck</span>
-                                            </div>
-                                            <div class="d-price">
-                                                Daily rate from <span>$147</span>
-                                                <a class="btn-main" href="">Rent Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                No vehicle is found!
                             </div>
                         @endforelse
                     </div>
@@ -423,7 +359,7 @@
         </section>
 
         <section class="text-light jarallax" aria-label="section">
-            <img src="{{ asset('welcome/images/background/back1.jpg') }}" alt="" class="jarallax-img">
+            <img src="{{ asset('welcome/images/background/back1.webp') }}" alt="" class="jarallax-img">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-light">
