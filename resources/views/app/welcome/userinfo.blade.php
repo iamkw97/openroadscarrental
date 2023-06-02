@@ -5,6 +5,9 @@
 @endsection
 
 @section('welcomebody')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.min.css"
+        integrity="sha512-InYSgxgTnnt8BG3Yy0GcpSnorz5gxHvT6OEoRWj91Gg+RvNdCiAharnBe+XFIDS754Kd9TekdjXw3V7TAgh6Vw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- content begin -->
     <div class="no-bottom no-top zebra" id="content">
         <div id="top"></div>
@@ -81,18 +84,20 @@
                                 <div class="col-md-6">
                                     <div class="field-set">
                                         <label for='dob'>Date of Birth</label>
-                                        <input type='text' name='dob' id='dob' class="form-control" placeholder="ddmmyyyy">
+                                        <input type='text' name='dob' id='dob' class="form-control"
+                                            placeholder="ddmmyyyy">
                                         @error('dob')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <div class="field-set">
                                         <label for='phone1'>Phone 1 (with country code)<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                        <input type='text' name='phone1' id='phone1' class="form-control" placeholder="+354">
+                                        <input type='text' name='phone1' id='phone1' class="form-control"
+                                            placeholder="+354">
                                         @error('phone1')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -102,14 +107,15 @@
                                 <div class="col-md-6">
                                     <div class="field-set">
                                         <label for='phone2'>Phone 2 (with country code)</label>
-                                        <input type='text' name='phone2' pid='phone2' class="form-control" placeholder="+354">
+                                        <input type='text' name='phone2' pid='phone2' class="form-control"
+                                            placeholder="+354">
                                         @error('phone2')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
 
-                                
+
 
                                 <div class="col-md-6">
                                     <div class="field-set">
@@ -147,14 +153,15 @@
                                     <div class="field-set">
                                         <label for='license_valid_date'>License Valid Date<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                        <input type='date' name='license_valid_date' id='license_valid_date' class="form-control">
+                                        <input type='date' name='license_valid_date' id='license_valid_date'
+                                            class="form-control">
                                         @error('license_valid_date')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 tobe_hidden">
                                     <div class="field-set">
                                         <label for='password'>Password<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -165,7 +172,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 tobe_hidden">
                                     <div class="field-set">
                                         <label for='repassword'>Re-enter Password<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -181,7 +188,8 @@
                                     <h4>Please Note<span style="color:red;">*</span><br><strong>The payments are done in
                                             cash after you receive the car at the airport.</strong></h4>
                                     <div id='submit' class="pull-right">
-                                        <button type='button' id='submitRegister' class="btn-main color-2">Proceed</button>
+                                        <button type='button' id='submitRegister'
+                                            class="btn-main color-2">Proceed</button>
                                     </div>
 
                                     <div class="clearfix"></div>
@@ -195,7 +203,7 @@
                     <div class="col-lg-3">
                         <div class="de-item mb10">
                             <div class="d-img">
-                                
+
                             </div>
                             <div class="d-info">
                                 <div class="d-text">
@@ -219,7 +227,7 @@
                                         </span>
                                     </div>
                                     <div class="de-price text-center" id="totalPrice">
-                                          Total<h4 >ISK <span id="total_cost"></span></h4>
+                                        Total<h4>ISK <span id="total_cost"></span></h4>
                                     </div>
                                 </div>
                             </div>
@@ -294,7 +302,62 @@
 
     </div>
     <!-- content close -->
+    <script>
+        $(document).ready(function() {
+            $('#email').on('input', function() {
+                var enteredEmail = $(this).val();
+                var url = '/userdetails/view'; // Replace with your Laravel backend route
 
-    <a href="#" id="back-to-top"></a>
-    <script></script>
+                // Make an AJAX request to the Laravel backend
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {
+                        email: enteredEmail
+                    },
+
+                    success: function(response) {
+                        // Populate existing emails in a dropdown or autocomplete field
+                        var emailList = response.emails; // Array of existing emails
+
+                        // Remove existing options
+                        $('#email').find('option').remove();
+
+                        // Add new options
+                        $.each(emailList, function(index, email) {
+                            var option = $('<option>').text(email).val(email);
+                            $('#email').append(option);
+                        });
+
+                        // Fill relevant data into other input fields
+                        $('#fullname').val(response.fullname);
+                        $('#address').val(response.address);
+                        $('#city').val(response.city);
+                        $('#dob').val(response.dob);
+                        $('#phone1').val(response.phone1);
+                        $('#phone2').val(response.phone2);
+                        $('#flight_no').val(response.flight_no);
+                        $('#driver_name').val(response.driver_name);
+                        $('#license_no').val(response.license_no);
+                        $('#license_valid_date').val(response.license_valid_date);
+
+                        var enteredEmailMatches = emailList.includes(enteredEmail);
+                        if (enteredEmailMatches) {
+                            $('.tobe_hidden').hide();
+                        } else {
+                            $('.tobe_hidden').show();
+                        }
+                    },
+                    $('.tobe_hidden').show();
+
+                    error: function(xhr, status, error) {
+                        console.log(error); // Handle the error gracefully
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

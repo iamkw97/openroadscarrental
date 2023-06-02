@@ -32,6 +32,7 @@ Route::get('/cars/view/{id}', [BaseController::class, 'carInfo'])->name('cars.sh
 Route::get('/booking', [BaseController::class, 'booking'])->name('booking.index');
 Route::get('/booking/step2', [BaseController::class, 'bookingStep2'])->name('cars.bookingstep2');
 Route::get('/userdetails', [BaseController::class, 'personalInfo'])->name('personal.index');
+Route::post('/userdetails/view', [BaseController::class, 'showPersonalInfo'])->name('personal.show');
 Route::get('/aboutus', [BaseController::class, 'about'])->name('about.index');
 Route::get('/contactus', [BaseController::class, 'contact'])->name('contact.index');
 Route::get('/destinations', [BaseController::class, 'destinationInfo'])->name('destinationinfo.index');

@@ -7,56 +7,7 @@
 @section('welcomebody')
     <!-- content begin -->
     <style>
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 20%;
-            z-index: 1;
-            background: linear-gradient(to bottom, rgb(255, 255, 255, 0.8) 100%, rgba(0, 0, 0, 1) 100%);
-            backdrop-filter: blur(5px);
-        }
-
-        .shadow-soft {
-            background: linear-gradient(to bottom, rgb(255, 255, 255, 0.8) 100%, rgba(0, 0, 0, 1) 100%);
-        }
-
-        #mainmenu a {
-            position: relative;
-            display: inline-block;
-            padding: 30px;
-            text-decoration: none;
-            color: #323232;
-            text-align: center;
-            outline: none;
-        }
-
-        #mainmenu a:hover {
-            position: relative;
-            display: inline-block;
-            padding: 30px;
-            text-decoration: none;
-            color: #3273ff;
-            text-align: center;
-            outline: none;
-            transform: scale(1.2);
-        }
-
-        .radio-img img:hover {
-            transition: transform .2s;
-            transform: scale(1.2);
-        }
-
-        .dark-image {
-            filter: brightness(70%);
-        }
-
-        @media (max-width: 767px) {
-            .de_form {
-                display: none;
-            }
-        }
+        .hero-overlay,.shadow-soft{background:linear-gradient(to bottom,rgb(255,255,255,.8) 100%,#000 100%)}#mainmenu a,#mainmenu a:hover{position:relative;display:inline-block;padding:30px;text-decoration:none;text-align:center;outline:0}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:20%;z-index:1;backdrop-filter:blur(5px)}#mainmenu a{color:#323232}#mainmenu a:hover{color:#3273ff;transform:scale(1.2)}.radio-img img:hover{transition:transform .2s;transform:scale(1.2)}.dark-image{filter:brightness(70%)}@media (max-width:767px){.de_form{display:none}}
     </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
@@ -75,8 +26,8 @@
                             for everyday use, we've got you covered. Our wide range of vehicles suits every occasion and
                             budget.</p>
                         <h4>ALL our prices include
-                                CDW, SCDW,TP,GP, SAAP Insurances, unlimited mileage,GPS and studded tires during
-                                winter</h4>
+                            CDW, SCDW,TP,GP, SAAP Insurances, unlimited mileage,GPS and studded tires during
+                            winter</h4>
                     </div>
 
                     <div class="col-lg-7">
@@ -225,7 +176,8 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}" alt="" class="img-fluid wow fadeInUp">
+                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}" alt=""
+                            class="img-fluid wow fadeInUp">
                     </div>
 
                     <div class="col-lg-3">
@@ -251,11 +203,13 @@
         </section>
 
         <section class="text-light jarallax">
-            <img src="{{ asset('welcome/images/background/back0.webp') }}" class="jarallax-img dark-image" alt="">
+            <img src="{{ asset('welcome/images/background/back0.webp') }}" class="jarallax-img dark-image"
+                alt="">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInRight">
-                        <h2>Just tell us <span class="id-color">where you need to go,</span> and we'll take care of the rest!</h2>
+                        <h2>Just tell us <span class="id-color">where you need to go,</span> and we'll take care of the
+                            rest!</h2>
                     </div>
                     <div class="col-lg-6 wow fadeInLeft">
                         Iceland: A land of dramatic landscapes, geothermal wonders, and captivating culture. From cascading
@@ -292,7 +246,7 @@
                                     <div class="d-info">
                                         <div class="d-text">
                                             <h4>{{ $item->displaying_name }}</h4>
-                                            
+
                                             <div class="d-atr-group">
                                                 <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
                                                         alt="">{{ $item->no_of_seats }}</span>
@@ -309,7 +263,7 @@
                                                     &nbsp;{{ $item->apr2sep_usd_cost_rental_per_day }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                     EUR
                                                     &nbsp;{{ $item->apr2sep_eur_cost_rental_per_day }} </H4>
-                                                 <a class="btn-main RentNowCar" id={{ $item->id }}>Rent Now</a>
+                                                <a class="btn-main RentNowCar" id={{ $item->id }}>Rent Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -340,7 +294,7 @@
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$244</span>
-                                                <a class="btn-main RentNowCar" >Rent Now</a>
+                                                <a class="btn-main RentNowCar">Rent Now</a>
                                                 {{-- {{ route('cars.show') }} --}}
                                             </div>
                                         </div>
@@ -547,8 +501,9 @@
 
         <section id="section-testimonials" class="no-top no-bottom">
             <div class="container-fluid">
-                <div class="row g-0 align-items-center">
-                    <div class="col-md-4">
+
+                <div class="row g-0 align-items-center t_carousel_container">
+                    <div class="col-md-4 t_carousel_slider">
                         <div class="de-image-text">
                             <div class="d-text">
                                 <blockquote>
@@ -564,7 +519,7 @@
                                 alt="">
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 t_carousel_slider">
                         <div class="de-image-text">
                             <div class="d-text">
                                 <blockquote>
@@ -587,7 +542,7 @@
                                 alt="">
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 t_carousel_slider">
                         <div class="de-image-text">
                             <div class="d-text">
                                 <blockquote>
@@ -608,12 +563,106 @@
                             <img src="{{ asset('img/testimonials/kam_bains.jpg') }}" class="img-fluid" alt="">
                         </div>
                     </div>
-
+                    <div class="col-md-4 t_carousel_slider">
+                        <div class="de-image-text">
+                            <div class="d-text">
+                                <blockquote>
+                                    Highly recommended. Good service and a nice car, good communication and handling. 👍
+                                    <span class="by">
+                                        <h4>Tryggve Kainert</h4>
+                                    </span>
+                                </blockquote>
+                            </div>
+                            <img src="{{ asset('img/testimonials/tryggve_ainert.webp') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 t_carousel_slider">
+                        <div class="de-image-text">
+                            <div class="d-text">
+                                <blockquote>
+                                    I highly recommend this company. Good car for good price. Unlimited mileage, no deposit,
+                                    no hidden fees, fuel discount prices, full insurance plus Wi-fi. Definitely will use
+                                    them next time 👍
+                                    <span class="by">
+                                        <h4>Tomas Richter</h4>
+                                    </span>
+                                </blockquote>
+                            </div>
+                            <img src="{{ asset('img/testimonials/tomas_richter.webp') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 t_carousel_slider">
+                        <div class="de-image-text">
+                            <div class="d-text">
+                                <blockquote>
+                                    I had a good trip in Iceland and was glad to have this car, a new Honda CR-V, everything
+                                    was clear and went well, also good price/quality!
+                                    <span class="by">
+                                        <h4>Jim Verschooten</h4>
+                                    </span>
+                                </blockquote>
+                            </div>
+                            <img src="{{ asset('img/testimonials/jim_verschooten.webp') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 t_carousel_slider">
+                        <div class="de-image-text">
+                            <div class="d-text">
+                                <blockquote>
+                                    Rented a car off these guys , arrived in airport, guy waiting with name board , took us
+                                    too car , handed over the money , no hassle , great car , we got snowed in outside of
+                                    Reykjavik, had too cancel flights home , text these guys , needed the car for 2 more
+                                    days , no problem, carry on .
+                                    Very good service, no hassle , top marks.
+                                    we will be using them again.
+                                    hassle free
+                                    <span class="by">
+                                        <h4>Ken Fitzgerald</h4>
+                                    </span>
+                                </blockquote>
+                            </div>
+                            <img src="{{ asset('img/testimonials/ken_fitzgerald.webp') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 t_carousel_slider">
+                        <div class="de-image-text">
+                            <div class="d-text">
+                                <blockquote>
+                                    Two weeks ago I rented a car with Open Roads Car rental. I would recommend it to
+                                    everyone!! They answer very fast and clear on the socials and are open to help. When we
+                                    arrived in Iceland the car was there! We had a nice car, drove very good and I felt
+                                    safe. The service was so good that even when the car had a little problem. They came
+                                    immediately ( 7:00 AM) with a new car. So as you can read, the service is great, the
+                                    people are nice and the price is lower than renting it ‘official’. Thank you Open Roads
+                                    car rental for the great car!
+                                    <span class="by">
+                                        <h4>Sara Piantanida</h4>
+                                    </span>
+                                </blockquote>
+                            </div>
+                            <img src="{{ asset('img/testimonials/sara_piantanida.webp') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 t_carousel_slider">
+                        <div class="de-image-text">
+                            <div class="d-text">
+                                <blockquote>
+                                    Really satisfied with their service and cars! Easy to communicate with and very
+                                    understandable! I highly recommend! We had the Toyota Rav4, quite new with all extras.
+                                    The car was really clean and well maintained! We had no issues!
+                                    <span class="by">
+                                        <h4>Diana Kovacheva</h4>
+                                    </span>
+                                </blockquote>
+                            </div>
+                            <img src="{{ asset('img/testimonials/diana_kovacheva.webp') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="section-faq">
+        {{-- <section id="section-faq">
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
@@ -697,33 +746,41 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
     </div>
     {{-- destination_slider to view destinations --}}
     <script>
         $(document).ready(function() {
-            $('#destination_slider').slick({
+            $("#destination_slider").slick({
                 dotsspeed: 500,
-                arrows: false, // Transition speed in milliseconds
-                slidesToShow: 3, // Number of slides to show at a time
-                slidesToScroll: 1, // Number of slides to scroll at a time
+                arrows: !1,
+                slidesToShow: 3,
+                slidesToScroll: 1,
                 responsive: [{
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 576,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
                     }
-                ],
-            });
+                }, {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }]
+            })
+        }), $(document).ready(function() {
+            $(".t_carousel_container").slick({
+                dots: !1,
+                infinite: !0,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                prevArrow: !1,
+                nextArrow: !1
+            })
         });
     </script>
 
