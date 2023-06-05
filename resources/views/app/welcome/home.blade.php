@@ -7,12 +7,11 @@
 @section('welcomebody')
     <!-- content begin -->
     <style>
-        .hero-overlay,.shadow-soft{background:linear-gradient(to bottom,rgb(255,255,255,.8) 100%,#000 100%)}#mainmenu a,#mainmenu a:hover{position:relative;display:inline-block;padding:30px;text-decoration:none;text-align:center;outline:0}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:20%;z-index:1;backdrop-filter:blur(5px)}#mainmenu a{color:#323232}#mainmenu a:hover{color:#3273ff;transform:scale(1.2)}.radio-img img:hover{transition:transform .2s;transform:scale(1.2)}.dark-image{filter:brightness(70%)}@media (max-width:767px){.de_form{display:none}}
+        #mainmenu a:hover{color:#3273ff;transform:scale(1.2)}.shadow-soft{background:linear-gradient(to bottom,rgb(255,255,255,.8) 100%,#000 100%)}.radio-img img:hover{transition:transform .2s;transform:scale(1.2)}.dark-image{filter:brightness(70%)}@media (max-width:767px){.de_form{display:none}}
     </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
         <section id="section-hero" aria-label="section" class="jarallax full-height vertical-center">
-            <div class="hero-overlay"></div>
             <img src="{{ asset('welcome/images/background/icelandbg.webp') }}" class="jarallax-img dark-image" alt="">
             <div class="container position-relative z1000" style="position: relative; top:70px;">
                 <div class="row align-items-center">
@@ -271,38 +270,6 @@
                             </div>
                         @empty
                             <div class="col-lg-12">
-                                <div class="de-item mb30">
-                                    <div class="d-img">
-                                        <img src="{{ asset('welcome/images/cars/bmw-m5.jpg') }}" class="img-fluid"
-                                            alt="">
-                                    </div>
-                                    <div class="d-info">
-                                        <div class="d-text">
-                                            <h4>BMW M2</h4>
-                                            <div class="d-item_like">
-                                                <i class="fa fa-heart"></i><span>36</span>
-                                            </div>
-                                            <div class="d-atr-group">
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
-                                                        alt="">5</span>
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
-                                                        alt="">2</span>
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/3.svg') }}"
-                                                        alt="">4</span>
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
-                                                        alt="">Sedan</span>
-                                            </div>
-                                            <div class="d-price">
-                                                Daily rate from <span>$244</span>
-                                                <a class="btn-main RentNowCar">Rent Now</a>
-                                                {{-- {{ route('cars.show') }} --}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
                                 No vehicle is found!
                             </div>
                         @endforelse
@@ -357,144 +324,108 @@
                         </p>
                         <div class="spacer-20"></div>
                     </div>
-                    {{-- <div class="destination_slider-container"> --}}
-                    {{-- <div class="destination_slider" id="destination_slider"> --}}
-                    {{-- @forelse ($destinations_for_gallery as $item) --}}
-                    {{-- slider items --}}
-                    <div class="col-lg-4 mb10 px-2">
-                        <div class="bloglist s2 item">
-                            <div class="post-content">
-                                <div class="post-image">
-                                    {{-- <div class="date-box">
-                                                <div class="m">10</div>
-                                                <div class="d">MAR</div>
-                                            </div> --}}
-                                    <img alt="" src="{{ asset('img/destinations/blue_lagoon.jpg') }}"
-                                        class="lazy">
-                                </div>
-                                <div class="post-text">
-                                    <h4><a href="{{ route('destinationinfo.index') }}">The Blue
-                                            Lagoon<span></span></a>
-                                    </h4>
-                                    <p>
-                                        Indulge in pure bliss at Iceland's ultimate relaxation haven, the enchanting
-                                        Blue Lagoon. A serendipitous marvel born from the geothermal power plant,...
-                                    </p>
-                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                        More...</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb10 px-2">
-                        <div class="bloglist s2 item">
-                            <div class="post-content">
-                                <div class="post-image">
-                                    {{-- <div class="date-box">
-                                                <div class="m">10</div>
-                                                <div class="d">MAR</div>
-                                            </div> --}}
-                                    <img alt="" src="{{ asset('img/destinations/vik.jpg') }}" class="lazy">
-                                </div>
-                                <div class="post-text">
-                                    <h4><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
-                                    </h4>
-                                    <p>
-                                        Embark on a captivating journey along the mesmerizing southern coast of
-                                        Iceland, where you'll encounter the picturesque town of Vík. Prepare...
-                                    </p>
-                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                        More...</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- <div class="col-lg-4 mb10 px-2">
-                                <div class="bloglist s2 item">
-                                    <div class="post-content">
-                                        <div class="post-image"> --}}
-                    {{-- <div class="date-box">
-                                                <div class="m">10</div>
-                                                <div class="d">MAR</div>
-                                            </div> --}}
-                    {{-- <img alt="" src="{{ asset('img/destinations/akureyri.jpg') }}"
-                                                class="lazy">
-                                        </div>
-                                        <div class="post-text">
-                                            <h4><a href="{{ route('destinationinfo.index') }}">Akureyri<span></span></a>
-                                            </h4>
-                                            <p>
-                                                Welcome to the vibrant gem of North Iceland, the captivating city of
-                                                Akureyri. Boasting the title of Iceland's second largest city and hailed...
-                                            </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                                More...</a>
-                                        </div>
+                    <div class="d_carousel_container">
+                        <div class="col-lg-4 mb10 px-2 d_carousel_slider">
+                            <div class="bloglist s2 item">
+                                <div class="post-content">
+                                    <div class="post-image">
+                                        {{-- <div class="date-box">
+                                                    <div class="m">10</div>
+                                                    <div class="d">MAR</div>
+                                                </div> --}}
+                                        <img alt="" src="{{ asset('img/destinations/blue_lagoon.jpg') }}"
+                                            class="lazy">
+                                    </div>
+                                    <div class="post-text">
+                                        <h4><a href="{{ route('destinationinfo.index') }}">The Blue
+                                                Lagoon<span></span></a>
+                                        </h4>
+                                        <p>
+                                            Indulge in pure bliss at Iceland's ultimate relaxation haven, the enchanting
+                                            Blue Lagoon. A serendipitous marvel born from the geothermal power plant,...
+                                        </p>
+                                        <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                            More...</a>
                                     </div>
                                 </div>
-                            </div> --}}
-                    <div class="col-lg-4 mb10 px-2">
-                        <div class="bloglist s2 item">
-                            <div class="post-content">
-                                <div class="post-image">
-                                    {{-- <div class="date-box">
-                                                <div class="m">10</div>
-                                                <div class="d">MAR</div>
-                                            </div> --}}
-                                    <img alt="" src="{{ asset('img/destinations/kirkjufell.jpg') }}"
-                                        class="lazy">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb10 px-2 d_carousel_slider">
+                            <div class="bloglist s2 item">
+                                <div class="post-content">
+                                    <div class="post-image">
+                                        {{-- <div class="date-box">
+                                                    <div class="m">10</div>
+                                                    <div class="d">MAR</div>
+                                                </div> --}}
+                                        <img alt="" src="{{ asset('img/destinations/vik.jpg') }}"
+                                            class="lazy">
+                                    </div>
+                                    <div class="post-text">
+                                        <h4><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
+                                        </h4>
+                                        <p>
+                                            Embark on a captivating journey along the mesmerizing southern coast of
+                                            Iceland, where you'll encounter the picturesque town of Vík. Prepare...
+                                        </p>
+                                        <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                            More...</a>
+                                    </div>
                                 </div>
-                                <div class="post-text">
-                                    <h4><a href="{{ route('destinationinfo.index') }}">Mt.
-                                            Kirkjufell<span></span></a>
-                                    </h4>
-                                    <p>
-                                        Prepare to be spellbound by the majestic allure of Mt. Kirkjufell, the
-                                        legendary 'Church Mountain' nestled along the picturesque north coast...
-                                    </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb10 px-2 d_carousel_slider">
+                            <div class="bloglist s2 item">
+                                <div class="post-content">
+                                    <div class="post-image">
+                                        {{-- <div class="date-box">
+                                                    <div class="m">10</div>
+                                                    <div class="d">MAR</div>
+                                                </div> --}}
+                                        <img alt="" src="{{ asset('img/destinations/akureyri.jpg') }}"
+                                            class="lazy">
+                                    </div>
+                                    <div class="post-text">
+                                        <h4>
+                                            <a href="{{ route('destinationinfo.index') }}">Akureyri<span></span></a>
+                                        </h4>
+                                        <p>
+                                            Welcome to the vibrant gem of North Iceland, the captivating city of
+                                            Akureyri. Boasting the title of Iceland's second largest city and hailed...
+                                        </p>
+                                        <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                            More...</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb10 px-2 d_carousel_slider">
+                            <div class="bloglist s2 item">
+                                <div class="post-content">
+                                    <div class="post-image">
+                                        {{-- <div class="date-box">
+                                                    <div class="m">10</div>
+                                                    <div class="d">MAR</div>
+                                                </div> --}}
+                                        <img alt="" src="{{ asset('img/destinations/kirkjufell.jpg') }}"
+                                            class="lazy">
+                                    </div>
+                                    <div class="post-text">
+                                        <h4><a href="{{ route('destinationinfo.index') }}">Mt.
+                                                Kirkjufell<span></span></a>
+                                        </h4>
+                                        <p>
+                                            Prepare to be spellbound by the majestic allure of Mt. Kirkjufell, the
+                                            legendary 'Church Mountain' nestled along the picturesque north coast...
+                                        </p>
 
-                                    <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                        More...</a>
+                                        <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
+                                            More...</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {{-- -------------- --}}
-                    {{-- <div class="col-lg-4 mb10 px-2">
-                                    <div class="bloglist s2 item">
-                                        <div class="post-content">
-                                            <div class="post-image">
-                                                <div class="date-box">
-                                                    @php
-                                                        $month = \Carbon\Carbon::createFromFormat('Y-m-d', $item->published_date)->format('M');
-                                                        $day = \Carbon\Carbon::createFromFormat('Y-m-d', $item->published_date)->format('d');
-                                                    @endphp
-                                                    <div class="m">{{ $month }}</div>
-                                                    <div class="d">{{ $day }}</div>
-                                                </div>
-                                                <img alt=""
-                                                    src="{{ asset('img/destinations/' . $item->destination_image) }}"
-                                                    class="lazy">
-                                            </div>
-                                            <div class="post-text">
-                                                <h4>
-                                                    <a href="">{{ $item->destination_title }}
-                                                        <span><i class="bi bi-bookmark-fill"></i></span>
-                                                    </a>
-                                                </h4>
-                                                <p>{{ $item->destination_description }}</p>
-                                                <a class="btn-main" href="{{ route('destinationinfo.index') }}">Read
-                                                    More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                    {{-- ------------------ --}}
-                    {{-- @empty --}}
-
-                    {{-- @endforelse --}}
-                    {{-- </div> --}}
-                    {{-- </div> --}}
                 </div>
             </div>
         </section>
@@ -573,7 +504,8 @@
                                     </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('img/testimonials/tryggve_ainert.webp') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('img/testimonials/tryggve_ainert.webp') }}" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -588,7 +520,8 @@
                                     </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('img/testimonials/tomas_richter.webp') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('img/testimonials/tomas_richter.webp') }}" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -602,7 +535,8 @@
                                     </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('img/testimonials/jim_verschooten.webp') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('img/testimonials/jim_verschooten.webp') }}" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -621,7 +555,8 @@
                                     </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('img/testimonials/ken_fitzgerald.webp') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('img/testimonials/ken_fitzgerald.webp') }}" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -640,7 +575,8 @@
                                     </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('img/testimonials/sara_piantanida.webp') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('img/testimonials/sara_piantanida.webp') }}" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -655,7 +591,8 @@
                                     </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('img/testimonials/diana_kovacheva.webp') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('img/testimonials/diana_kovacheva.webp') }}" class="img-fluid"
+                                alt="">
                         </div>
                     </div>
                 </div>
@@ -752,19 +689,22 @@
     {{-- destination_slider to view destinations --}}
     <script>
         $(document).ready(function() {
-            $("#destination_slider").slick({
-                dotsspeed: 500,
-                arrows: !1,
+            $(".d_carousel_container").slick({
+                dots: !1,
+                infinite: !0,
+                speed: 200,
                 slidesToShow: 3,
-                slidesToScroll: 1,
+                slidesToScroll: 3,
+                prevArrow: !1,
+                nextArrow: !1,
                 responsive: [{
-                    breakpoint: 768,
+                    breakpoint: 600,
                     settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
+                        slidesToShow: 1,
+                        slidesToScroll: 2
                     }
                 }, {
-                    breakpoint: 576,
+                    breakpoint: 480,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1
@@ -779,7 +719,20 @@
                 slidesToShow: 3,
                 slidesToScroll: 3,
                 prevArrow: !1,
-                nextArrow: !1
+                nextArrow: !1,
+                responsive: [{
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 2
+                    }
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }]
             })
         });
     </script>
