@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
+	<loc>https://openroadscarrental.com/</loc>
+	<lastmod>2023-06-09T09:12:03+01:00</lastmod>
+	<priority>1.0</priority>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/logo.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/background/icelandbg3.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/cars/kuga_mca_sport.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/background/back0.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/cars/16846958149.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/icons/1.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/icons/2.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/icons/4.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/cars/16846961692.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/cars/16846966311.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/cars/16846969574.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/cars/16846985683.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/cars/16846989942.jpeg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/background/back1.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/destinations/blue_lagoon.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/destinations/vik.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/destinations/akureyri.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/destinations/kirkjufell.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/testimonials/phanidaporn_jaisaen.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/testimonials/flavio_rodriguez.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/testimonials/kam_bains.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/testimonials/tryggve_ainert.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/testimonials/tomas_richter.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/testimonials/jim_verschooten.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/testimonials/ken_fitzgerald.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/testimonials/sara_piantanida.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/img/testimonials/diana_kovacheva.webp</image:loc>
+	</image:image>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/cars</loc>
+	<lastmod>2023-06-09T09:12:03+01:00</lastmod>
+	<priority>1.0</priority>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/background/back1.jpg</image:loc>
+	</image:image>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/aboutus</loc>
+	<lastmod>2023-06-09T09:12:03+01:00</lastmod>
+	<priority>1.0</priority>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/cars/kuga_mca_sport.png</image:loc>
+	</image:image>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/contactus</loc>
+	<lastmod>2023-06-09T09:12:03+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/login</loc>
+	<lastmod>2023-06-09T09:12:03+01:00</lastmod>
+	<priority>1.0</priority>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/svg/user.png</image:loc>
+	</image:image>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/destinations</loc>
+	<lastmod>2023-06-09T09:12:03+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/booking</loc>
+	<lastmod>2023-06-09T09:12:03+01:00</lastmod>
+	<priority>1.0</priority>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/select-form/car.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/select-form/van.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/select-form/minibus.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/select-form/sportscar.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://openroadscarrental.com/welcome/images/background/back3.jpg</image:loc>
+	</image:image>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/register</loc>
+	<lastmod>2023-06-09T09:12:10+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+</urlset>

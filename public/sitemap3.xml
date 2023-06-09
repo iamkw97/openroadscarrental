@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://openroadscarrental.com/tel:+3547737904</loc>
+  <priority>1.0</priority>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>https://openroadscarrental.com</loc>
+  <priority>0.4</priority>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>https://openroadscarrental.com/cars</loc>
+  <priority>0.4</priority>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>https://openroadscarrental.com/aboutus</loc>
+  <priority>0.2</priority>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>https://openroadscarrental.com/contactus</loc>
+  <priority>0.4</priority>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>https://openroadscarrental.com/login</loc>
+  <priority>0.8</priority>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>https://openroadscarrental.com/destinations</loc>
+  <priority>0.4</priority>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>https://openroadscarrental.com/booking</loc>
+  <priority>0.8</priority>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>https://openroadscarrental.com/register</loc>
+  <priority>0.2</priority>
+  <changefreq>always</changefreq>
+</url>
+</urlset>

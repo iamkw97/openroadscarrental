@@ -4,6 +4,11 @@
     Destinations | Open Roads Car Rental
 @endsection
 
+@section('meta_desc')
+    <meta name="keywords"
+        content="Car rental Iceland, Car hire Iceland, Reykjavik, Blue Lagoon, Golden Circle, Seljalandsfoss, Skógafoss, Jökulsárlón Glacier Lagoon, Vik, Thingvellir National Park, Snaefellsnes Peninsula, Geysir, Gullfoss, Landmannalaugar, Myvatn, Dettifoss, Kirkjufell, Akureyri, Húsavík, Skaftafell, Vatnajökull National Park, Westfjords, Hiking in Iceland, Geysers in Iceland, Waterfalls in Iceland, Iceland attractions, Iceland tourism, Iceland travel, Explore Iceland, Must-visit places in Iceland, Iceland adventure, Iceland natural wonders">
+@endsection
+
 @section('welcomebody')
     <!-- content begin -->
     <div class="no-bottom no-top" id="content">
@@ -44,8 +49,8 @@
                             <ul class="de-bloglist-type-1 row">
                                 <li class="col-3">
                                     <div class="d-image">
-                                        <img style="width: 100%; height:40px; object-fit:fit;" src="{{ asset('img/destinations/blue_lagoon.jpg') }}"
-                                            alt="">
+                                        <img style="width: 100%; height:40px; object-fit:fit;"
+                                            src="{{ asset('img/destinations/blue_lagoon.jpg') }}" alt="">
                                     </div>
                                     <div class="d-content">
                                         <a href="#blue_lagoon">
@@ -55,8 +60,7 @@
                                 </li>
                                 <li class="col-3">
                                     <div class="d-image">
-                                        <img src="{{ asset('img/destinations/vik.jpg') }}"
-                                            alt="">
+                                        <img src="{{ asset('img/destinations/vik.jpg') }}" alt="">
                                     </div>
                                     <div class="d-content">
                                         <a href="#vik">
@@ -66,8 +70,7 @@
                                 </li>
                                 <li class="col-3">
                                     <div class="d-image">
-                                        <img src="{{ asset('img/destinations/kirkjufell.jpg') }}"
-                                            alt="">
+                                        <img src="{{ asset('img/destinations/kirkjufell.jpg') }}" alt="">
                                     </div>
                                     <div class="d-content">
                                         <a href="#kirkjufell">
@@ -77,8 +80,7 @@
                                 </li>
                                 <li class="col-3">
                                     <div class="d-image">
-                                        <img src="{{ asset('img/destinations/akureyri.jpg') }}"
-                                            alt="">
+                                        <img src="{{ asset('img/destinations/akureyri.jpg') }}" alt="">
                                     </div>
                                     <div class="d-content">
                                         <a href="#akureyri">
@@ -282,7 +284,8 @@
                                     Akureyri's vibrant cultural scene is renowned, with art galleries, museums, and music
                                     festivals that showcase the talents of local artists and performers. Immerse yourself in
                                     the rich cultural heritage of the city as you explore its captivating museums and
-                                    immerse yourself in the local art scene.Nature enthusiasts will find themselves in paradise as Akureyri is surrounded by
+                                    immerse yourself in the local art scene.Nature enthusiasts will find themselves in
+                                    paradise as Akureyri is surrounded by
                                     stunning landscapes and natural wonders. With the majestic Eyjafjörður fjord as its
                                     backdrop and snow-capped mountains in the distance, the city offers breathtaking views
                                     that will leave you in awe.

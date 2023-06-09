@@ -85,9 +85,11 @@ class BaseController extends Controller
         if ($user) {
             // Prepare the response with relevant data
             $response = [
-                'emails' => User::pluck('email')->toArray(), // Get all existing emails
+                // 'emails' => User::pluck('email')->toArray(), // Get all existing emails
                 'fullname' => $user->fullname,
+                'email' => $user->email,
                 'address' => $user->address,
+                'city' => $user->city,
                 'dob' => $user->dob,
                 'phone1' => $user->phone1,
                 'phone2' => $user->phone2,

@@ -1,7 +1,12 @@
 @extends('app.welcome.layout.app')
 
 @section('title')
-    Open Roads Car Rental
+    Car rental in Iceland | Rent a car at KEF airport or in Reykjavik Open Road Car Rental openroadscarrental.com
+@endsection
+
+@section('meta_desc')
+    <meta name="keywords"
+        content="Car rental Iceland, Car hire Iceland, Reykjavik, Blue Lagoon, Golden Circle, Seljalandsfoss, Skógafoss, Jökulsárlón Glacier Lagoon, Vik, Thingvellir National Park, Snaefellsnes Peninsula, Geysir, Gullfoss, Landmannalaugar, Myvatn, Dettifoss, Kirkjufell, Akureyri, Húsavík, Skaftafell, Vatnajökull National Park, Westfjords, Hiking in Iceland, Geysers in Iceland, Waterfalls in Iceland, Iceland attractions, Iceland tourism, Iceland travel, Explore Iceland, Must-visit places in Iceland, Iceland adventure, Iceland natural wonders">
 @endsection
 
 @section('welcomebody')
@@ -12,7 +17,7 @@
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
         <section id="section-hero" aria-label="section" class="jarallax full-height vertical-center">
-            <img src="{{ asset('welcome/images/background/icelandbg.webp') }}" class="jarallax-img dark-image" alt="">
+            <img fetchpriority="high" src="{{ asset('welcome/images/background/icelandbg3.webp') }}" class="jarallax-img dark-image" alt="">
             <div class="container position-relative z1000" style="position: relative; top:70px;">
                 <div class="row align-items-center">
                     <div class="col-lg-5 text-light">
@@ -129,10 +134,10 @@
 
                                 <div class="row mt-3">
                                     <div class="col-md-12">
-                                        <a href="#" type='' id='' onclick="validateForm()"
+                                        <button type='button' id='' onclick="validateForm()"
                                             class="btn-main pull-right">
                                             Find a Vehicle
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -175,7 +180,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}" alt=""
+                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.webp') }}" alt=""
                             class="img-fluid wow fadeInUp">
                     </div>
 
@@ -318,7 +323,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 offset-lg-3 text-center">
-                        <h2>Destinations</h2>
+                        <h1>Iceland Destinations</h1>
                         <p>Discover the untamed beauty of Iceland's most famous places, where fire and ice collide in a
                             mesmerizing dance. Iceland awaits, ready to awaken your wanderlust and leave you spellbound.
                         </p>
@@ -333,13 +338,13 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="" src="{{ asset('img/destinations/blue_lagoon.jpg') }}"
+                                        <img alt="" src="{{ asset('img/destinations/blue_lagoon.webp') }}"
                                             class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <h4><a href="{{ route('destinationinfo.index') }}">The Blue
+                                        <h3><a href="{{ route('destinationinfo.index') }}">The Blue
                                                 Lagoon<span></span></a>
-                                        </h4>
+                                        </h3>
                                         <p>
                                             Indulge in pure bliss at Iceland's ultimate relaxation haven, the enchanting
                                             Blue Lagoon. A serendipitous marvel born from the geothermal power plant,...
@@ -358,12 +363,12 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="" src="{{ asset('img/destinations/vik.jpg') }}"
+                                        <img alt="" src="{{ asset('img/destinations/vik.webp') }}"
                                             class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <h4><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
-                                        </h4>
+                                        <h3><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
+                                        </h3>
                                         <p>
                                             Embark on a captivating journey along the mesmerizing southern coast of
                                             Iceland, where you'll encounter the picturesque town of Vík. Prepare...
@@ -382,13 +387,13 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="" src="{{ asset('img/destinations/akureyri.jpg') }}"
+                                        <img alt="" src="{{ asset('img/destinations/akureyri.webp') }}"
                                             class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <h4>
+                                        <h3>
                                             <a href="{{ route('destinationinfo.index') }}">Akureyri<span></span></a>
-                                        </h4>
+                                        </h3>
                                         <p>
                                             Welcome to the vibrant gem of North Iceland, the captivating city of
                                             Akureyri. Boasting the title of Iceland's second largest city and hailed...
@@ -407,13 +412,13 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="" src="{{ asset('img/destinations/kirkjufell.jpg') }}"
+                                        <img alt="" src="{{ asset('img/destinations/kirkjufell.webp') }}"
                                             class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <h4><a href="{{ route('destinationinfo.index') }}">Mt.
+                                        <h3><a href="{{ route('destinationinfo.index') }}">Mt.
                                                 Kirkjufell<span></span></a>
-                                        </h4>
+                                        </h3>
                                         <p>
                                             Prepare to be spellbound by the majestic allure of Mt. Kirkjufell, the
                                             legendary 'Church Mountain' nestled along the picturesque north coast...
@@ -446,7 +451,7 @@
                                     </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('img/testimonials/phanidaporn_jaisaen.jpg') }}" class="img-fluid"
+                            <img src="{{ asset('img/testimonials/phanidaporn_jaisaen.webp') }}" class="img-fluid"
                                 alt="">
                         </div>
                     </div>
@@ -469,7 +474,7 @@
                                     </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('img/testimonials/flavio_rodriguez.jpg') }}" class="img-fluid"
+                            <img src="{{ asset('img/testimonials/flavio_rodriguez.webp') }}" class="img-fluid"
                                 alt="">
                         </div>
                     </div>
@@ -491,7 +496,7 @@
                                     </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('img/testimonials/kam_bains.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('img/testimonials/kam_bains.webp') }}" class="img-fluid" alt="">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -693,8 +698,10 @@
                 dots: !1,
                 infinite: !0,
                 speed: 200,
+                autoplay: true,
+                autoplaySpeed: 3000,
                 slidesToShow: 3,
-                slidesToScroll: 3,
+                slidesToScroll: 1,
                 prevArrow: !1,
                 nextArrow: !1,
                 responsive: [{
@@ -716,8 +723,10 @@
                 dots: !1,
                 infinite: !0,
                 speed: 300,
+                autoplay: true,
+                autoplaySpeed: 2500,
                 slidesToShow: 3,
-                slidesToScroll: 3,
+                slidesToScroll: 1,
                 prevArrow: !1,
                 nextArrow: !1,
                 responsive: [{
@@ -735,7 +744,7 @@
                 }]
             })
         });
-    </script>
+           </script>
 
     <!-- content close -->
 @endsection

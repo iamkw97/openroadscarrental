@@ -208,9 +208,7 @@
                             <div class="d-info">
                                 <div class="d-text">
                                     <h4 id="vehicleDisplayName"></h4>
-                                    <div class="d-item_like">
-                                        <i class="fa fa-heart"></i><span>36</span>
-                                    </div>
+
                                     <div class="d-atr-group">
                                         <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
                                                 alt="">
@@ -304,60 +302,50 @@
     <!-- content close -->
     <script>
         $(document).ready(function() {
-            $('#email').on('input', function() {
-                var enteredEmail = $(this).val();
-                var url = '/userdetails/view'; // Replace with your Laravel backend route
+    $('#email').on('input', function() {
+        var enteredEmail = $(this).val();
+        var url = '/userdetails/view';
+        $.ajax({
+            url: url,
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: {
+                email: enteredEmail
+            },
+            success: function(response) {
+                // console.log(response);
+                // var emailList = response.emails;
+                // $('#email').find('option').remove();
+                // $.each(emailList, function(index, email) {
+                //     var option = $('<option>').text(email).val(email);
+                //     $('#email').append(option);
+                // });
+                // Fill relevant data into other input fields
+                $('#fullname').val(response.fullname);
+                $('#address').val(response.address);
+                $('#city').val(response.city);
+                $('#dob').val(response.dob);
+                $('#phone1').val(response.phone1);
+                $('#phone2').val(response.phone2);
+                $('#flight_no').val(response.flight_no);
+                $('#driver_name').val(response.driver_name);
+                $('#license_no').val(response.license_no);
+                $('#license_valid_date').val(response.license_valid_date);
 
-                // Make an AJAX request to the Laravel backend
-                $.ajax({
-                    url: url,
-                    type: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    data: {
-                        email: enteredEmail
-                    },
-
-                    success: function(response) {
-                        // Populate existing emails in a dropdown or autocomplete field
-                        var emailList = response.emails; // Array of existing emails
-
-                        // Remove existing options
-                        $('#email').find('option').remove();
-
-                        // Add new options
-                        $.each(emailList, function(index, email) {
-                            var option = $('<option>').text(email).val(email);
-                            $('#email').append(option);
-                        });
-
-                        // Fill relevant data into other input fields
-                        $('#fullname').val(response.fullname);
-                        $('#address').val(response.address);
-                        $('#city').val(response.city);
-                        $('#dob').val(response.dob);
-                        $('#phone1').val(response.phone1);
-                        $('#phone2').val(response.phone2);
-                        $('#flight_no').val(response.flight_no);
-                        $('#driver_name').val(response.driver_name);
-                        $('#license_no').val(response.license_no);
-                        $('#license_valid_date').val(response.license_valid_date);
-
-                        var enteredEmailMatches = emailList.includes(enteredEmail);
-                        if (enteredEmailMatches) {
-                            $('.tobe_hidden').hide();
-                        } else {
-                            $('.tobe_hidden').show();
-                        }
-                    },
+                // Check if email exists in the database
+                if (enteredEmail == response.email) {
+                    $('.tobe_hidden').hide();
+                } else {
                     $('.tobe_hidden').show();
-
-                    error: function(xhr, status, error) {
-                        console.log(error); // Handle the error gracefully
-                    }
-                });
-            });
+                }
+            },
+            error: function(xhr, status, error) {
+            }
         });
+    });
+});
+
     </script>
 @endsection

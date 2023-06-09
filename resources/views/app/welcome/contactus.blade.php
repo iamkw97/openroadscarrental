@@ -4,6 +4,11 @@
     Contact Us | Open Roads Car Rental
 @endsection
 
+@section('meta_desc')
+    <meta name="keywords"
+        content="Car rental contact, Car hire inquiry, Contact information, Get in touch, Customer support, Reservation assistance, Booking inquiries, Car rental quote, Contact form, Email contact, Phone contact, Office location, Customer service team, Feedback and suggestions, Assistance with rental, Rental terms and conditions, Car rental policies, Rental duration and availability, Modifications and cancellations">
+@endsection
+
 @section('welcomebody')
     <!-- content begin -->
     <div class="no-bottom no-top" id="content">

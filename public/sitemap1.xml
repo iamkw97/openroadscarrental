@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://openroadscarrental.com/</loc>
+	<lastmod>2023-06-09T09:10:20+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/cars</loc>
+	<lastmod>2023-06-09T09:10:20+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/aboutus</loc>
+	<lastmod>2023-06-09T09:10:20+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/contactus</loc>
+	<lastmod>2023-06-09T09:10:20+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/login</loc>
+	<lastmod>2023-06-09T09:10:20+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/destinations</loc>
+	<lastmod>2023-06-09T09:10:20+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/booking</loc>
+	<lastmod>2023-06-09T09:10:20+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://openroadscarrental.com/register</loc>
+	<lastmod>2023-06-09T09:10:26+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+</urlset>
