@@ -1,5 +1,20 @@
 @extends('app.welcome.layout.app')
 
+@section('googletag')
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0E1P706JRR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0E1P706JRR');
+    </script>
+@endsection
+
 @section('title')
     About Us | Open Roads Car Rental in Iceland
 @endsection

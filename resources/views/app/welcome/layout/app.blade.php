@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang=en>
-
+<head>
+    @yield('googletag')
     <title>
         @yield('title')
     </title>

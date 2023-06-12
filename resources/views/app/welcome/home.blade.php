@@ -1,73 +1,33 @@
 @extends('app.welcome.layout.app')
 
+@section('googletag')
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0E1P706JRR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0E1P706JRR');
+    </script>
+@endsection
+
 @section('title')
     Car rental in Iceland | Rent a car at KEF airport or in Reykjavik
 @endsection
 
 @section('meta_desc')
     <meta name="keywords"
-        content="Car rental Iceland,
-        Car hire Iceland,
-        Reykjavik,
-        Blue Lagoon,
-        Golden Circle,
-        Vik,
-        Geysir,
-        Kirkjufell,
-        Akureyri,
-        Skaftafell,
-        Hiking in Iceland,
-        Geysers in Iceland,
-        Waterfalls in Iceland,
-        Iceland attractions,
-        Iceland tourism,
-        Iceland travel,
-        Explore Iceland,
-        Must-visit places in Iceland,
-        Iceland adventure,
-        Iceland natural wonders,
-        Renting cars in iceland,
-        Rent a car in iceland,
-        Iceland car rental,
-        Van rental Reykjavik,
-        Northmound,
-        4x4 car rental Iceland,
-        KEF Airport,
-                Reykjavik,
-                Cheap car rental Iceland,Iceland car rental,Icelandic culture,
-                Icelandic people physical traits,black sand beach Iceland,
-                black beach Iceland,
-                Iceland black sand beach,lephant rock Iceland,
-                Iceland elephant rock,
-                elephant Iceland Iceland,">
+        content="Car rental Iceland, Car hire Iceland, Reykjavik, Blue Lagoon, Golden Circle, Vik, Geysir, Kirkjufell, Akureyri, Skaftafell, Hiking in Iceland, Geysers in Iceland, Waterfalls in Iceland, Iceland attractions, Iceland tourism, Iceland travel, Explore Iceland, Must-visit places in Iceland, Iceland adventure, Iceland natural wonders, Renting cars in iceland, Rent a car in iceland, Iceland car rental, Van rental Reykjavik, Northmound, 4x4 car rental Iceland, KEF Airport, Cheap car rental Iceland, Icelandic culture, Icelandic people physical traits, black sand beach Iceland, black beach Iceland, Iceland black sand beach, elephant rock Iceland, Iceland elephant rock, elephant Island Iceland">
 @endsection
 
 @section('welcomebody')
     <!-- content begin -->
     <style>
-        #mainmenu a:hover {
-            color: #3273ff;
-            transform: scale(1.2)
-        }
-
-        .shadow-soft {
-            background: linear-gradient(to bottom, rgb(255, 255, 255, .8) 100%, #000 100%)
-        }
-
-        .radio-img img:hover {
-            transition: transform .2s;
-            transform: scale(1.2)
-        }
-
-        .dark-image {
-            filter: brightness(70%)
-        }
-
-        @media (max-width:767px) {
-            .de_form {
-                display: none
-            }
-        }
+#mainmenu a:hover{color:#3273ff;transform:scale(1.2)}.shadow-soft{background:linear-gradient(to bottom,rgb(255,255,255,.8) 100%,#000 100%)}.radio-img img:hover{transition:transform .2s;transform:scale(1.2)}.dark-image{filter:brightness(70%)}@media (max-width:767px){.de_form{display:none}}
     </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
@@ -236,8 +196,8 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.webp') }}" alt="openroadscarrental-welcome-background"
-                            class="img-fluid wow fadeInUp">
+                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.webp') }}"
+                            alt="openroadscarrental-welcome-background" class="img-fluid wow fadeInUp">
                     </div>
 
                     <div class="col-lg-3">
@@ -341,7 +301,8 @@
         </section>
 
         <section class="text-light jarallax" aria-label="section">
-            <img src="{{ asset('welcome/images/background/back1.webp') }}" alt="openroadscarrental-welcome-background" class="jarallax-img">
+            <img src="{{ asset('welcome/images/background/back1.webp') }}" alt="openroadscarrental-welcome-background"
+                class="jarallax-img">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-light">
@@ -394,8 +355,8 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="openroadscarrental-welcome-destination" src="{{ asset('img/destinations/blue_lagoon.webp') }}"
-                                            class="lazy">
+                                        <img alt="openroadscarrental-welcome-destination"
+                                            src="{{ asset('img/destinations/blue_lagoon.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
                                         <h3><a href="{{ route('destinationinfo.index') }}">The Blue
@@ -419,8 +380,8 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="openroadscarrental-welcome-destination" src="{{ asset('img/destinations/vik.webp') }}"
-                                            class="lazy">
+                                        <img alt="openroadscarrental-welcome-destination"
+                                            src="{{ asset('img/destinations/vik.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
                                         <h3><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
@@ -443,8 +404,8 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="openroadscarrental-welcome-destination" src="{{ asset('img/destinations/akureyri.webp') }}"
-                                            class="lazy">
+                                        <img alt="openroadscarrental-welcome-destination"
+                                            src="{{ asset('img/destinations/akureyri.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
                                         <h3>
@@ -468,8 +429,8 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="openroadscarrental-welcome-destination" src="{{ asset('img/destinations/kirkjufell.webp') }}"
-                                            class="lazy">
+                                        <img alt="openroadscarrental-welcome-destination"
+                                            src="{{ asset('img/destinations/kirkjufell.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
                                         <h3><a href="{{ route('destinationinfo.index') }}">Mt.
@@ -552,7 +513,8 @@
                                     </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('img/testimonials/kam_bains.webp') }}" class="img-fluid" alt="openroadscarrental-welcome-testimonial">
+                            <img src="{{ asset('img/testimonials/kam_bains.webp') }}" class="img-fluid"
+                                alt="openroadscarrental-welcome-testimonial">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
