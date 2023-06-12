@@ -1,45 +1,19 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang=en>
 
-<head>
     <title>
         @yield('title')
     </title>
-    <link rel="icon" href="{{ asset('welcome/images/icon.png') }}" type="image/gif" sizes="16x16">
-
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="{{ asset('welcome/images/icon.png') }}"rel=icon sizes=16x16 type=image/gif>
+    <meta content="{{ csrf_token() }}"name=csrf-token>
+    <meta charset=UTF-8>
+    <meta content=en http-equiv=Content-Language>
+    <meta content="width=device-width,initial-scale=1"name=viewport>
 
     <meta name="description"
-        content="Renting an open car road rental in Iceland allows you to experience Iceland's breathtaking landscapes in a unique way. Find the best Iceland car rental options and get tips for renting a car in Iceland.">
-    <meta name="keywords"
-        content="Iceland car rental,
-                car rental Iceland,
-                renting a car in Iceland,
-                Iceland people,
-                Icelandic culture,
-                Icelandic people physical traits,
-                black sand beach Iceland,
-                black beach Iceland,
-                Iceland black sand beach,lephant rock Iceland,
-                Iceland elephant rock,
-                elephant island Iceland,
-                KEF Airport,
-                Reykjavik,
-                Open Roads Car Rental,
-                Cheap car rental Iceland,
-                Last minute car rental Iceland,
-                Car hire with unlimited mileage Iceland,
-                One-way car rental Iceland,
-                Family car rental Iceland,
-                Campervan rental Iceland,
-                car rental Reykjavik
-                ">
-    <meta name="author" content="openroadscarrental.com">
-
+        content="Experience Iceland, rent a car from Open Roads Car Rental at Keflavik International Airport or in Reykjavik. We offer quality service and the best prices.">
     @yield('meta_desc')
-
+    <meta name="author" content="openroadscarrental.com">
 
     <!-- CSS Files ================================================== -->
     {{-- <link rel="stylesheet" href="{{ asset('welcome/css/bootstrap.min.css') }}"> --}}
@@ -96,6 +70,10 @@
         #btn-close-x:hover,#btn-search,#cookieConsent a.cookieConsentOK,#de-click-menu-notification .d-count,#de_modal::-webkit-scrollbar-thumb,#filters a.selected,#form_subscribe #btn-submit i,#mainmenu li li a.menu-item:hover,#mainmenu ul li b,#mainmenu ul li:hover>a.menu-item,#preloader .s1 span,#selector #dark-mode,#selector #related-items,#services-list li a:hover,#subheader .small-border-deco span,#testimonial-full,.accordion-section-title:before,.bg-color,.bg-gradient-to-right-2,.bg-id-color,.bloglist .date-box,.box-fx .info,.box-icon-simple .num,.btn-id,.btn-main,.btn-more,.btn-primary,.btn-rsvp,.circle,.custom-close:after,.custom-show:after,.d-card i,.d-card.hover i,.d-card:hover i,.d-gallery-item .dgi-1,.date-post,.de-event-item .d-date,.de-icon,.de-marquee-list .d-item-dot,.de-progress .progress-bar,.de-submenu-profile i,.de-team-list .small-border,.de_light .de_tab.tab_style_3 .de_nav li.active span,.de_pricing-table .d-list li:before,.de_tab.tab_methods.style-2 .de_nav li.active span,.de_tab.tab_style_2 .de_nav li.active span,.de_tab.tab_style_4 .de_nav li.active,.de_tab.tab_style_4 .de_nav li.active span,.de_tab.timeline li.active .dot,.dih-overlay,.dropcap,.dropdown li span:hover,.feature-box-big-icon i,.feature-box-small-icon .border,.feature-box-small-icon.style-2 .number.bg-color,.feature-box.f-boxed.invert,.feature-box.f-boxed:hover,.fp-wrap .fpwow-icons a,.fpw-overlay-btm,.fullwidthbanner-container a.btn,.icon-box:hover,.icon-deco i,.lds-roller div:after,.mask .cover,.menu-col li a.active,.nav-pills .nav-link.active,.nav-pills .show>.nav-link,.owl-arrow span,.owl-custom-nav .btn-next:before,.owl-custom-nav .btn-prev:before,.owl-item.active.center .feature-box-type-2,.owl-item.active>div blockquote:before,.price-row,.pricing-table .ribbon,.product img:hover,.ribbon,.slider .progress,.slider-info .text1,.social-icons-sm i:hover,.spinner>div,.style-2 .date-box,.switch,.team-list .small-border,.testimonial-color .item:nth-child(1n) blockquote:before,.text-light .container-timeline ul li::before,.text-light .de-marquee-list .d-item-dot,.text-light .de_countdown,.text-light .dropdown li span,.timeline .tl-block .tl-line,.timeline>li>.timeline-badge,.tiny-border,.ul-style-4 li:before,.widget .small-border,.widget-post .date,.widget_tags li a,a.btn-border:hover,a.btn-main,body::-webkit-scrollbar-thumb,h1.s2 .c1 span,h5 span.label,header,input[type=range]::-webkit-slider-thumb,section.bg-color,section.call-to-action{background:var(--primary-color)}#back-to-top:hover:before,#mainmenu li a.menu-item:after,#services-list li.active,#services-list li.active a:after,#topbar i,.accordion a:before,.blog-list .date-box .day,.btn-left:before,.btn-right:after,.countdown-s3 .countdown-period,.countdown-s4 .countdown-period,.crumb li .active,.dark .btn-line:after,.dark .btn-line:hover:after,.dark .feature-box-small-icon i,.dark a.btn-line.hover:after,.dark a.btn-line:after,.dark a.btn-line:hover:after,.date-box .day,.de_contact_info i,.de_tab .de_nav li span,.de_tab.tab_style_4 .de_nav li span,.de_testi.opt-2 blockquote:before,.de_testi.opt-2.review .p-rating,.demo-icon-wrap i,.demo-icon-wrap-s2 span,.expand-custom .toggle:before,.feature-box-small-icon-2 i,.h-phone i,.id-color,.list li:before,.mask .cover .date:before,.menu-col a i,.nav-link,.nav-link:focus,.nav-link:hover,.p-title,.post-meta span:before,.post-text h3 a:hover,.pricing-box li h1,.pricing-dark .pricing-box li.price-row,.pricing-s2 .bottom i,.pricing-table .bottom i,.profile_pic .subtitle,.ratings i,.schedule-item .sc-name,.separator span i,.sitemap.s1 li:before,.slider_text h1,.social-icons i,.social-icons i:hover,.social-icons-sm i,.team-list .social a,.testimonial-list:before,.title span,.topbar-widget a span,.widget_tags li a,.wm,.wm2,a#cookit-link,a.bc-btn,a.btn-border.light:hover,a.btn-line:after,a.btn-link,a.btn-main.btn-white,a.btn-slider:after,a.btn-text:after,address span strong,blockquote.s1:before,h1.id-color,h2.hs1 span,h2.id-color,h3.id-color,h4.id-color,h5.s2,header .info .social i:hover,header.smaller #mainmenu a.menu-item.active,i.large:hover,span.deco-big{color:var(--primary-color)}.accordion-button:not(.collapsed),.activity-filter i,.dark-scheme .demo-icon-wrap i,.dark-scheme .demo-icon-wrap-s2 span,.dark-scheme .small-border,.de_tab .de_nav li span,.de_tab.tab_methods .de_nav li.active span img,.de_table .tr .td:nth-child(2) span,.h-phone i.id-color-secondary,.icon-box i,.id-color-2,.id-color-secondary,.mask:hover .cover h3 i,.pricing-table.table-featured .bottom i,.ul-style-2 li:before,.ul-style-3 li:after,a,a:hover,address.s1 span i,footer .widget a:hover,span.id-color-2{color:var(--secondary-color)}#back-to-top,#btn_copy.clicked,#contact_form .radio-img input[type=checkbox]:checked+label,#contact_form .radio-img input[type=radio]:checked+label,#form_quick_search #btn-submit i,#form_sb #btn-submit i,#form_subscribe #btn-subscribe i.bg-color-secondary,#jpreBar,#mainmenu li li a.menu-item:hover,#mainmenu ul li:hover>a.menu-item,.accordion-section-title.active,.accordion.secondary .accordion-section-title:before .d-card i,.activity-filter li.active,.author_list_pp i,.author_list_pp img,.bg-color-2,.bg-color-secondary,.btn-line.hover,.btn-line:hover,.coll_list_pp i,.container-timeline ul li::before,.dark-scheme .de_countdown.bg-color-secondary,.de-card .de-price span,.de-circle-1,.de-color-icons i,.de-switch input[type=checkbox]:checked+label,.de_form input[type=checkbox]:checked+label:before,.de_pricing-table .d-recommend,.feature-box-group .d-card i,.icon-box.invert:hover,.owl-dot.active,.p-tagline,.p_list_pp i,.page-item.active .page-link,.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover,.pricing-table.table-featured .mid,.pricing-table.table-featured a.btn-main,.profile_avatar i,.t-circle,.testimonial-color .item:nth-child(2n) blockquote:before,.timeline h5,a.btn-line.hover,a.btn-line:hover,a.btn-main.bg-color-2,a.btn-main.invert,section.bg-color-2,section.bg-color-secondary{background:var(--secondary-color)}section.dark{background:rgba(var(--primary-color-rgb),.98)}#menu-btn,.bg-gradient-to-right,.de_table.table-style-2:not(.no-heading) .tr:first-child,.post-image .post-info .inner,.ribbon.s2,a.btn-main.secondary,h1 .label,header.header-gradient{background:var(--primary-color)}.bg-gradient-to-top-right,.table-pricing thead{background:linear-gradient(to right,var(--primary-color),var(--secondary-color))}#subheader{background:-moz-linear-gradient(180deg,rgba(var(--primary-color-rgb),.125) 0,rgba(var(--primary-color-rgb),0) 100%);background:-webkit-linear-gradient(180deg,rgba(var(--primary-color-rgb),.125) 0,rgba(var(--primary-color-rgb),0) 100%);background:linear-gradient(180deg,rgba(var(--primary-color-rgb),.125) 0,rgba(var(--primary-color-rgb),0) 100%)}.d-card i,.d-card:hover i{background:-moz-linear-gradient(180deg,rgba(var(--primary-color-rgb),1) 20%,rgba(var(--primary-color-rgb),0) 100%);background:-webkit-linear-gradient(180deg,rgba(var(--primary-color-rgb),1) 20%,rgba(var(--primary-color-rgb),0) 100%);background:linear-gradient(180deg,rgba(var(--primary-color-rgb),1) 20%,rgba(var(--primary-color-rgb),0) 100%)}#preloader{background-image:linear-gradient(to top right,var(--primary-color),var(--secondary-color))}.overlay-gradient{background:-moz-linear-gradient(45deg,rgba(var(--primary-color-rgb),.9) 0,rgba(var(--primary-color-2-rgb),.9) 100%);background:-webkit-linear-gradient(45deg,rgba(var(--primary-color-rgb),.9) 0,rgba(var(--primary-color-2-rgb),.9) 100%);background:linear-gradient(45deg,rgba(var(--primary-color-rgb),.9) 0,rgba(var(--primary-color-2-rgb),.9) 100%)}.overlay-gradient.t80{background:-moz-linear-gradient(45deg,rgba(var(--primary-color-rgb),.8) 0,rgba(var(--primary-color-2-rgb),.8) 100%);background:-webkit-linear-gradient(45deg,rgba(var(--primary-color-rgb),.8) 0,rgba(var(--primary-color-2-rgb),.8) 100%);background:linear-gradient(45deg,rgba(var(--primary-color-rgb),.8) 0,rgba(var(--primary-color-2-rgb),.8) 100%)}.overlay-gradient.t70{background:-moz-linear-gradient(45deg,rgba(var(--primary-color-rgb),.7) 0,rgba(var(--primary-color-2-rgb),.7) 100%);background:-webkit-linear-gradient(45deg,rgba(var(--primary-color-rgb),.7) 0,rgba(var(--primary-color-2-rgb),.7) 100%);background:linear-gradient(45deg,rgba(var(--primary-color-rgb),.7) 0,rgba(var(--primary-color-2-rgb),.7) 100%)}.overlay-gradient.t60{background:-moz-linear-gradient(45deg,rgba(var(--primary-color-rgb),.6) 0,rgba(var(--primary-color-2-rgb),.6) 100%);background:-webkit-linear-gradient(45deg,rgba(var(--primary-color-rgb),.6) 0,rgba(var(--primary-color-2-rgb),.6) 100%);background:linear-gradient(45deg,rgba(var(--primary-color-rgb),.6) 0,rgba(var(--primary-color-2-rgb),.6) 100%)}.overlay-gradient.t50{background:-moz-linear-gradient(45deg,rgba(var(--primary-color-rgb),.5) 0,rgba(var(--primary-color-2-rgb),.5) 100%);background:-webkit-linear-gradient(45deg,rgba(var(--primary-color-rgb),.5) 0,rgba(var(--primary-color-2-rgb),.5) 100%);background:linear-gradient(45deg,rgba(var(--primary-color-rgb),.5) 0,rgba(var(--primary-color-2-rgb),.5) 100%)}.all-timelines::before{background:rgba(var(--secondary-color-rgb),.3)}.pricing-table .bottom i{background:rgba(var(--secondary-color-rgb),.2)}#topbar,.header-light #quick_search{background:rgba(var(--primary-color-rgb),.1)}.activity-list li:after{color:rgba(var(--secondary-color-rgb),1)}.accordion-button:not(.collapsed),.activity-filter i,.de_table .tr .td:nth-child(2) span,.item_info_counts>div{background:rgba(var(--secondary-color-rgb),.1)}.activity-list li{background:rgba(var(--secondary-color-rgb),.07)}#slider-carousel .owl-thumb-item.active img,.de_form input[type=checkbox]+label:before,.icon-box,.profile_avatar img,.small-border,a.btn-border.btn-invert{border-color:var(--primary-color)}.de-grey #subheader h1,.line-preloader .p-line:first-child,header #mainmenu a.menu-item span,header.transparent #mainmenu a.menu-item span{border-bottom-color:var(--secondary-color)}.line-preloader .p-line:first-child,.line-preloader .p-line:nth-child(3){border-right-color:var(--secondary-color)}.container-timeline ul li,.line-preloader .p-line:nth-child(2),.line-preloader .p-line:nth-child(3){border-top-color:var(--secondary-color)}.container-timeline ul li::before,.dark-scheme .pagination li.active a,.de-circle-2,.de_countdown,.de_tab.tab_methods .de_nav li.active span{border-color:var(--secondary-color)}.author_list_pp:hover img{-webkit-box-shadow:0 0 0 2px rgba(var(--secondary-color-rgb),1);-moz-box-shadow:0 0 0 2px rgba(var(--secondary-color-rgb),1);box-shadow:0 0 0 2px rgba(var(--secondary-color-rgb),1)}#quick_search:hover,.form-border input[type=date]:focus,.form-border input[type=text]:focus,.form-border select:focus,.form-border textarea:focus,.form-underline input[type=email]:focus,.items_filter .dropdown:hover{webkit-box-shadow:0px 0px 0px 4px rgba(var(--primary-color-rgb),0.3);-moz-box-shadow:0 0 0 4px rgba(var(--primary-color-rgb),.3);box-shadow:0 0 0 4px rgba(var(--primary-color-rgb),.3)}.container-timeline ul lifblockquote{border-left-color:var(--primary-color)}.de_tab.tab_simple .de_nav li.active span{border-bottom-color:var(--primary-color)}.box-highlight,h5.s2{background:rgba(var(--primary-color-rgb),.2)}.line-preloader .p-line:nth-child(2){border-left-color:var(--secondary-color)}.de-event-item .d-shadow{border-color:transparent transparent transparent var(--secondary-color)}.preloader1{width:60px;border-top-color:rgba(var(--primary-color-rgb),.65);border-bottom-color:rgba(var(--primary-color-rgb),.1);border-left-color:rgba(var(--primary-color-rgb),.1);border-right-color:rgba(var(--primary-color-rgb),.1)}.color-gradient,.de_count h3{background:-webkit-linear-gradient(to right,var(--primary-color) 0,var(--secondary-color) 100%);background:-moz-linear-gradient(to right,var(--primary-color) 0,var(--secondary-color) 100%);background:linear-gradient(to right,var(--primary-color) 0,var(--secondary-color) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}@media only screen and (max-width:992px){.table-pricing tbody tr th{background:var(--primary-color)}}
     </style>
 
+
+    {{-- <link rel="stylesheet" href="{{asset('css/slick.css')}}" rel="stylesheet" type="text/css">
+        <link id="colors" href="{{ asset('welcome/css/colors/scheme-08.css') }}" rel="stylesheet" type="text/css"> --}}
+    <link href="{{ asset('welcome/css/plugins.css') }}" rel="stylesheet" type="text/css">
     {{-- <link rel="stylesheet" href="{{asset('css/slick.css')}}" rel="stylesheet" type="text/css">
         <link id="colors" href="{{ asset('welcome/css/colors/scheme-08.css') }}" rel="stylesheet" type="text/css"> --}}
     <script>
@@ -106,7 +84,7 @@
             link.media = 'all';
             document.head.appendChild(link);
         }
-        loadCSSAsync('{{ asset('welcome/css/style.css') }}');
+      loadCSSAsync('{{ asset('welcome/css/style.css') }}');
         loadCSSAsync('{{ asset('css/slick.css') }}');
         loadCSSAsync('{{ asset('welcome/css/colors/scheme-08.css') }}');
     </script>
@@ -123,22 +101,22 @@
                         <div class="topbar-widget">
                             <div class="topbar-widget">
                                 <a href="tel:+3547737904">
-                                    <i class="fa fa-phone"></i>
+                                    <i style="color: #a5cdff;" class="fa fa-phone"></i>
                                     +354 773 7904</a>
                             </div>
                             <div class="topbar-widget">
                                 <a href="mailto:openroadscarrental@gmail.com">
-                                    <i class="fa fa-envelope"></i>
+                                    <i style="color: #a5cdff;" class="fa fa-envelope"></i>
                                     openroadscarrental@gmail.com</a>
                             </div>
-                            <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>24/7 Customer
+                            <div class="topbar-widget"><a href="#"><i style="color: #a5cdff;" class="fa fa-clock-o"></i>24/7 Customer
                                     Service</a></div>
                         </div>
                     </div>
 
                     <div class="topbar-right">
                         <div class="social-icons">
-                            <a class="mb-2" href="https://wa.me/003547737904"><i class="fa fa-whatsapp fa-lg" style="color: #fff;"></i></a>
+                           <a class="mb-2" href="https://wa.me/003547737904"><i class="fa fa-whatsapp fa-lg" style="color: #fff;"></i></a>
                                 <a class="mb-2" href="https://www.facebook.com/openroadscarrental"><i
                                         class="fa fa-facebook fa-lg" style="color: #fff;"></i></a>
                                 <a class="mb-2" href="https://www.linkedin.com/in/open-roads-car-rental-793ba7278/"><i class="fa fa-linkedin fa-lg" style="color: #fff;"></i></a>
@@ -162,9 +140,9 @@
                                     <div id="logo">
                                         <a href="{{ route('home.index') }}">
                                             <img class="logo-1" src="{{ asset('welcome/images/logo.png') }}"
-                                                alt="">
+                                                alt="openroadscarrental-logo">
                                             <img class="logo-2" src="{{ asset('welcome/images/logo.png') }}"
-                                                alt="">
+                                                alt="openroadscarrental-logo">
                                         </a>
                                     </div>
                                     <!-- logo close -->
@@ -262,7 +240,7 @@
                                 <a class="mb-2" href="https://www.pinterest.com/opencarroadiceland/"><i class="fa fa-pinterest fa-lg" style="color: blue;"></i></a>
                                 <a class="mb-2" href="https://www.flickr.com/people/198434386@N03/"><i class="fa fa-flickr fa-lg" style="color: blue;"></i></a>
                                 {{-- <a class="mb-2" href="https://www.tripadvisor.com/Profile/openroadscar">
-                                    <i class="fa fa-lg"  style="color: blue;"><img class="fa icon" src="{{asset('img/ico/tripadvisor-ico.webp')}}" alt=""></i></a> --}}
+                                    <i class="fa fa-lg"  style="color: blue;"><img class="fa icon" src="{{asset('img/ico/tripadvisor-ico.webp')}}" alt="openroadscarrental-tripadvisor-icon"></i></a> --}}
                                 <a class="mb-2" href="https://www.youtube.com/channel/UC2nQtWxSglBY_TJ7A1rkUvw "><i class="fa fa-youtube fa-lg"  style="color: blue;"></i></a>
                             </div>
                         </div>
@@ -408,7 +386,7 @@
                                     '<div class="de-item mb30">' +
                                     '<div class="d-img">' +
                                     '<img src="img/cars/' + vehicle_image +
-                                    '" class="img-fluid" alt="">' +
+                                    '" class="img-fluid" alt="openroadscarrental-vehicle-image">' +
                                     '</div>' +
                                     '<div class="d-info">' +
                                     '<div class="d-text">' +
@@ -416,12 +394,12 @@
                                     '<div class="d-item_like">' +
                                     '</div>' +
                                     '<div class="d-atr-group">' +
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="openroadscarrental-vehicle-seats">' +
                                     item.no_of_seats + '</span>' +
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="openroadscarrental-vehicle-suitcases">' +
                                     item.no_of_suitcases + '</span>' +
 
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="openroadscarrental-vehicle-category">' +
                                     item.category + '</span>' +
                                     '</div>' +
                                     '<div class="d-price">' +
@@ -450,7 +428,7 @@
                                         '<div class="de-item mb30">' +
                                         '<div class="d-img">' +
                                         '<img src="img/cars/' + vehicle_image +
-                                        '" class="img-fluid" alt="">' +
+                                        '" class="img-fluid" alt="openroadscarrental-vehicle-image">' +
                                         '</div>' +
                                         '<div class="d-info">' +
                                         '<div class="d-text">' +
@@ -458,12 +436,12 @@
                                         '<div class="d-item_like">' +
                                         '</div>' +
                                         '<div class="d-atr-group">' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="openroadscarrental-vehicle-seats">' +
                                         item.no_of_seats + '</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="openroadscarrental-vehicle-suitcases">' +
                                         item.no_of_suitcases + '</span>' +
 
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="openroadscarrental-vehicle-category">' +
                                         item.category + '</span>' +
                                         '</div>' +
                                         '<div class="d-price">' +
@@ -493,7 +471,7 @@
                                     '<div class="de-item mb30">' +
                                     '<div class="d-img">' +
                                     '<img src="img/cars/' + vehicle_image +
-                                    '" class="img-fluid" alt="">' +
+                                    '" class="img-fluid" alt="openroadscarrental-vehicle-image">' +
                                     '</div>' +
                                     '<div class="d-info">' +
                                     '<div class="d-text">' +
@@ -501,12 +479,12 @@
                                     '<div class="d-item_like">' +
                                     '</div>' +
                                     '<div class="d-atr-group">' +
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="openroadscarrental-seats">' +
                                     item.no_of_seats + '</span>' +
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="openroadscarrental-suitcases">' +
                                     item.no_of_suitcases + '</span>' +
 
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="openroadscarrental-category">' +
                                     item.category + '</span>' +
                                     '</div>' +
                                     '<div class="d-price">' +
@@ -537,7 +515,7 @@
                                         '<div class="de-item mb30">' +
                                         '<div class="d-img">' +
                                         '<img src="img/cars/' + vehicle_image +
-                                        '" class="img-fluid" alt="">' +
+                                        '" class="img-fluid" alt="openroadscarrental-vehicle-image">' +
                                         '</div>' +
                                         '<div class="d-info">' +
                                         '<div class="d-text">' +
@@ -545,12 +523,12 @@
                                         '<div class="d-item_like">' +
                                         '</div>' +
                                         '<div class="d-atr-group">' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="openroadscarrental-vehicle-seats">' +
                                         item.no_of_seats + '</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="openroadscarrental-vehicle-suitcases">' +
                                         item.no_of_suitcases + '</span>' +
 
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="openroadscarrental-vehicle-category">' +
                                         item.category + '</span>' +
                                         '</div>' +
                                         '<div class="d-price">' +
@@ -702,10 +680,10 @@
                         n = $("#slider-carousel");
                     n.empty(), $.each(t, function(e, a) {
                         var i = '<div class="item"><img src="img/cars/' + a
-                            .vehicle_image + '"alt=""></div>';
+                            .vehicle_image + '"alt="openroadscarrental-car-image"></div>';
                         n.append(i)
                     }), t && t.length > 0 && (e = t[0].vehicle_image);
-                    var o = '<img src="img/cars/' + e + '" class="img-fluid" alt="">';
+                    var o = '<img src="img/cars/' + e + '" class="img-fluid" alt="openroadscarrental-car-image">';
                     $("#CarImage").append(o), n.owlCarousel({
                         loop: !0,
                         margin: 10,
@@ -785,7 +763,7 @@
             h = a.get("add_wifi"),
             g = a.get("add_driver"),
             u = a.get("carimg");
-        $(".d-img").append('<img src="img/cars/' + u + '" class="img-fluid" alt="">');
+        $(".d-img").append('<img src="img/cars/' + u + '" class="img-fluid" alt="openroadscarrental-vehicle-image">');
         var k, b = new Date(n),
             y = Math.ceil((new Date(o) - b) / 864e5);
         if (y < 1) var w = 1 * m;

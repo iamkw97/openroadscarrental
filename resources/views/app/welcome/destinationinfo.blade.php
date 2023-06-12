@@ -1,7 +1,7 @@
 @extends('app.welcome.layout.app')
 
 @section('title')
-    Destinations | Open Roads Car Rental
+    Destinations | Tours & Places in Iceland
 @endsection
 
 @section('meta_desc')
@@ -16,7 +16,7 @@
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="openroadscarrental-welcome-background">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -50,7 +50,7 @@
                                 <li class="col-3">
                                     <div class="d-image">
                                         <img style="width: 100%; height:40px; object-fit:fit;"
-                                            src="{{ asset('img/destinations/blue_lagoon.jpg') }}" alt="">
+                                            src="{{ asset('img/destinations/blue_lagoon.jpg') }}" alt="openroadscarrental-destination-blue lagoon">
                                     </div>
                                     <div class="d-content">
                                         <a href="#blue_lagoon">
@@ -60,7 +60,7 @@
                                 </li>
                                 <li class="col-3">
                                     <div class="d-image">
-                                        <img src="{{ asset('img/destinations/vik.jpg') }}" alt="">
+                                        <img src="{{ asset('img/destinations/vik.jpg') }}" alt="openroadscarrental-destination-vik">
                                     </div>
                                     <div class="d-content">
                                         <a href="#vik">
@@ -70,7 +70,7 @@
                                 </li>
                                 <li class="col-3">
                                     <div class="d-image">
-                                        <img src="{{ asset('img/destinations/kirkjufell.jpg') }}" alt="">
+                                        <img src="{{ asset('img/destinations/kirkjufell.jpg') }}" alt="openroadscarrental-destination-kirkjufell">
                                     </div>
                                     <div class="d-content">
                                         <a href="#kirkjufell">
@@ -80,7 +80,7 @@
                                 </li>
                                 <li class="col-3">
                                     <div class="d-image">
-                                        <img src="{{ asset('img/destinations/akureyri.jpg') }}" alt="">
+                                        <img src="{{ asset('img/destinations/akureyri.jpg') }}" alt="openroadscarrental-destination-akureyri">
                                     </div>
                                     <div class="d-content">
                                         <a href="#akureyri">
@@ -134,7 +134,7 @@
                     </div>
                     <div class="col-md-7">
                         <div class="blog-read">
-                            <img alt="" src="{{ asset('img/destinations/blue_lagoon.jpg') }}"
+                            <img alt="openroadscarrental-destination-blue lagoon" src="{{ asset('img/destinations/blue_lagoon.jpg') }}"
                                 class="img-fullwidth mb30">
                         </div>
                         <div class="spacer-single"></div>
@@ -144,7 +144,7 @@
                 <div class="row">
                     <div class="col-md-7">
                         <div class="blog-read">
-                            <img alt="" src="{{ asset('img/destinations/vik.jpg') }}" class="img-fullwidth mb30">
+                            <img alt="openroadscarrental-destination-vik" src="{{ asset('img/destinations/vik.jpg') }}" class="img-fullwidth mb30">
                         </div>
                         <div class="spacer-single"></div>
                     </div>
@@ -232,7 +232,7 @@
                     </div>
                     <div class="col-md-7">
                         <div class="blog-read">
-                            <img alt="" src="{{ asset('img/destinations/kirkjufell.jpg') }}"
+                            <img alt="openroadscarrental-destination-kirkjufell" src="{{ asset('img/destinations/kirkjufell.jpg') }}"
                                 class="img-fullwidth mb30">
                         </div>
                     </div>
@@ -262,7 +262,7 @@
                 <div class="row">
                     <div class="col-md-7">
                         <div class="blog-read">
-                            <img alt="" src="{{ asset('img/destinations/akureyri.jpg') }}"
+                            <img alt="openroadscarrental-destination-akureyri" src="{{ asset('img/destinations/akureyri.jpg') }}"
                                 class="img-fullwidth mb30">
                         </div>
                         <div class="spacer-single"></div>
@@ -329,5 +329,5 @@
     </div>
     <!-- content close -->
 
-    <a href="#" id="back-to-top"></a>
+
 @endsection

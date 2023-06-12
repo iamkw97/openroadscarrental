@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <title>
         @yield('usertitle')
     </title>
     <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
-    
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="en">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <meta name="description"
@@ -22,12 +23,12 @@
                 black beach Iceland,
                 Iceland black sand beach,lephant rock Iceland,
                 Iceland elephant rock,
-                elephant island Iceland,
+                elephant Iceland Iceland,
                 KEF Airport,
                 Reykjavik,
                 Open Roads Car Rental">
     <meta name="author" content="openroadscarrental.com">
-    
+
     <!-- CSS Files
     ================================================== -->
     <link href="{{ asset('welcome/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
@@ -243,7 +244,7 @@
         </div>
         <!-- content close -->
 
-        <a href="#" id="back-to-top"></a>
+
 
         <!-- footer begin -->
         <footer class="text-light">

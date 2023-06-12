@@ -1,23 +1,79 @@
 @extends('app.welcome.layout.app')
 
 @section('title')
-    Car rental in Iceland | Rent a car at KEF airport or in Reykjavik Open Road Car Rental openroadscarrental.com
+    Car rental in Iceland | Rent a car at KEF airport or in Reykjavik
 @endsection
 
 @section('meta_desc')
     <meta name="keywords"
-        content="Car rental Iceland, Car hire Iceland, Reykjavik, Blue Lagoon, Golden Circle, Seljalandsfoss, Skógafoss, Jökulsárlón Glacier Lagoon, Vik, Thingvellir National Park, Snaefellsnes Peninsula, Geysir, Gullfoss, Landmannalaugar, Myvatn, Dettifoss, Kirkjufell, Akureyri, Húsavík, Skaftafell, Vatnajökull National Park, Westfjords, Hiking in Iceland, Geysers in Iceland, Waterfalls in Iceland, Iceland attractions, Iceland tourism, Iceland travel, Explore Iceland, Must-visit places in Iceland, Iceland adventure, Iceland natural wonders">
+        content="Car rental Iceland,
+        Car hire Iceland,
+        Reykjavik,
+        Blue Lagoon,
+        Golden Circle,
+        Vik,
+        Geysir,
+        Kirkjufell,
+        Akureyri,
+        Skaftafell,
+        Hiking in Iceland,
+        Geysers in Iceland,
+        Waterfalls in Iceland,
+        Iceland attractions,
+        Iceland tourism,
+        Iceland travel,
+        Explore Iceland,
+        Must-visit places in Iceland,
+        Iceland adventure,
+        Iceland natural wonders,
+        Renting cars in iceland,
+        Rent a car in iceland,
+        Iceland car rental,
+        Van rental Reykjavik,
+        Northmound,
+        4x4 car rental Iceland,
+        KEF Airport,
+                Reykjavik,
+                Cheap car rental Iceland,Iceland car rental,Icelandic culture,
+                Icelandic people physical traits,black sand beach Iceland,
+                black beach Iceland,
+                Iceland black sand beach,lephant rock Iceland,
+                Iceland elephant rock,
+                elephant Iceland Iceland,">
 @endsection
 
 @section('welcomebody')
     <!-- content begin -->
     <style>
-        #mainmenu a:hover{color:#3273ff;transform:scale(1.2)}.shadow-soft{background:linear-gradient(to bottom,rgb(255,255,255,.8) 100%,#000 100%)}.radio-img img:hover{transition:transform .2s;transform:scale(1.2)}.dark-image{filter:brightness(70%)}@media (max-width:767px){.de_form{display:none}}
+        #mainmenu a:hover {
+            color: #3273ff;
+            transform: scale(1.2)
+        }
+
+        .shadow-soft {
+            background: linear-gradient(to bottom, rgb(255, 255, 255, .8) 100%, #000 100%)
+        }
+
+        .radio-img img:hover {
+            transition: transform .2s;
+            transform: scale(1.2)
+        }
+
+        .dark-image {
+            filter: brightness(70%)
+        }
+
+        @media (max-width:767px) {
+            .de_form {
+                display: none
+            }
+        }
     </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
         <section id="section-hero" aria-label="section" class="jarallax full-height vertical-center">
-            <img fetchpriority="high" src="{{ asset('welcome/images/background/icelandbg3.webp') }}" class="jarallax-img dark-image" alt="">
+            <img fetchpriority="high" src="{{ asset('welcome/images/background/icelandbg3.webp') }}"
+                class="jarallax-img dark-image" alt="openroadscarrental-welcome-background">
             <div class="container position-relative z1000" style="position: relative; top:70px;">
                 <div class="row align-items-center">
                     <div class="col-lg-5 text-light">
@@ -180,7 +236,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.webp') }}" alt=""
+                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.webp') }}" alt="openroadscarrental-welcome-background"
                             class="img-fluid wow fadeInUp">
                     </div>
 
@@ -208,7 +264,7 @@
 
         <section class="text-light jarallax">
             <img src="{{ asset('welcome/images/background/back0.webp') }}" class="jarallax-img dark-image"
-                alt="">
+                alt="openroadscarrental-welcome-background">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInRight">
@@ -245,7 +301,7 @@
                                 <div class="de-item mb30">
                                     <div class="d-img">
                                         <img src="{{ asset('img/cars/' . $item->vehicle_image) }}" class="img-fluid"
-                                            alt="" style="width: 387px; height: 271px;">
+                                            alt="openroadscarrental-welcome-vehicle" style="width: 387px; height: 271px;">
                                     </div>
                                     <div class="d-info">
                                         <div class="d-text">
@@ -253,11 +309,11 @@
 
                                             <div class="d-atr-group">
                                                 <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
-                                                        alt="">{{ $item->no_of_seats }}</span>
+                                                        alt="openroadscarrental-welcome-background">{{ $item->no_of_seats }}</span>
                                                 <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
-                                                        alt="">{{ $item->no_of_suitcases }}</span>
+                                                        alt="openroadscarrental-welcome-background">{{ $item->no_of_suitcases }}</span>
                                                 <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
-                                                        alt="">{{ $item->category }}</span>
+                                                        alt="openroadscarrental-welcome-background">{{ $item->category }}</span>
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from
@@ -285,7 +341,7 @@
         </section>
 
         <section class="text-light jarallax" aria-label="section">
-            <img src="{{ asset('welcome/images/background/back1.webp') }}" alt="" class="jarallax-img">
+            <img src="{{ asset('welcome/images/background/back1.webp') }}" alt="openroadscarrental-welcome-background" class="jarallax-img">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-light">
@@ -338,7 +394,7 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="" src="{{ asset('img/destinations/blue_lagoon.webp') }}"
+                                        <img alt="openroadscarrental-welcome-destination" src="{{ asset('img/destinations/blue_lagoon.webp') }}"
                                             class="lazy">
                                     </div>
                                     <div class="post-text">
@@ -363,7 +419,7 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="" src="{{ asset('img/destinations/vik.webp') }}"
+                                        <img alt="openroadscarrental-welcome-destination" src="{{ asset('img/destinations/vik.webp') }}"
                                             class="lazy">
                                     </div>
                                     <div class="post-text">
@@ -387,7 +443,7 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="" src="{{ asset('img/destinations/akureyri.webp') }}"
+                                        <img alt="openroadscarrental-welcome-destination" src="{{ asset('img/destinations/akureyri.webp') }}"
                                             class="lazy">
                                     </div>
                                     <div class="post-text">
@@ -412,7 +468,7 @@
                                                     <div class="m">10</div>
                                                     <div class="d">MAR</div>
                                                 </div> --}}
-                                        <img alt="" src="{{ asset('img/destinations/kirkjufell.webp') }}"
+                                        <img alt="openroadscarrental-welcome-destination" src="{{ asset('img/destinations/kirkjufell.webp') }}"
                                             class="lazy">
                                     </div>
                                     <div class="post-text">
@@ -452,7 +508,7 @@
                                 </blockquote>
                             </div>
                             <img src="{{ asset('img/testimonials/phanidaporn_jaisaen.webp') }}" class="img-fluid"
-                                alt="">
+                                alt="openroadscarrental-welcome-testimonial">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -475,7 +531,7 @@
                                 </blockquote>
                             </div>
                             <img src="{{ asset('img/testimonials/flavio_rodriguez.webp') }}" class="img-fluid"
-                                alt="">
+                                alt="openroadscarrental-welcome-testimonial">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -496,7 +552,7 @@
                                     </span>
                                 </blockquote>
                             </div>
-                            <img src="{{ asset('img/testimonials/kam_bains.webp') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('img/testimonials/kam_bains.webp') }}" class="img-fluid" alt="openroadscarrental-welcome-testimonial">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -510,7 +566,7 @@
                                 </blockquote>
                             </div>
                             <img src="{{ asset('img/testimonials/tryggve_ainert.webp') }}" class="img-fluid"
-                                alt="">
+                                alt="openroadscarrental-welcome-testimonial">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -526,7 +582,7 @@
                                 </blockquote>
                             </div>
                             <img src="{{ asset('img/testimonials/tomas_richter.webp') }}" class="img-fluid"
-                                alt="">
+                                alt="openroadscarrental-welcome-testimonial">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -541,7 +597,7 @@
                                 </blockquote>
                             </div>
                             <img src="{{ asset('img/testimonials/jim_verschooten.webp') }}" class="img-fluid"
-                                alt="">
+                                alt="openroadscarrental-welcome-testimonial">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -561,7 +617,7 @@
                                 </blockquote>
                             </div>
                             <img src="{{ asset('img/testimonials/ken_fitzgerald.webp') }}" class="img-fluid"
-                                alt="">
+                                alt="openroadscarrental-welcome-testimonial">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -581,7 +637,7 @@
                                 </blockquote>
                             </div>
                             <img src="{{ asset('img/testimonials/sara_piantanida.webp') }}" class="img-fluid"
-                                alt="">
+                                alt="openroadscarrental-welcome-testimonial">
                         </div>
                     </div>
                     <div class="col-md-4 t_carousel_slider">
@@ -597,7 +653,7 @@
                                 </blockquote>
                             </div>
                             <img src="{{ asset('img/testimonials/diana_kovacheva.webp') }}" class="img-fluid"
-                                alt="">
+                                alt="openroadscarrental-welcome-testimonial">
                         </div>
                     </div>
                 </div>
@@ -744,7 +800,7 @@
                 }]
             })
         });
-           </script>
+    </script>
 
     <!-- content close -->
 @endsection

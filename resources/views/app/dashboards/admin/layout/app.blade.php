@@ -3,7 +3,8 @@
 
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="en">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <meta name="description"
@@ -17,7 +18,7 @@
                 black beach Iceland,
                 Iceland black sand beach,elephant rock Iceland,
                 Iceland elephant rock,
-                elephant island Iceland,
+                elephant Iceland Iceland,
                 KEF Airport,
                 Reykjavik,
                 Open Roads Car Rental">

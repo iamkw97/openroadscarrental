@@ -1,7 +1,7 @@
 @extends('app.welcome.layout.app')
 
 @section('title')
-    Cars | Open Roads Car Rental
+    Iceland car rental | Rent 4x4 or luxury cars in Iceland
 @endsection
 
 @section('meta_desc')
@@ -51,7 +51,7 @@
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="openroadscarrental-welcome-background">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">

@@ -1,7 +1,7 @@
 @extends('app.welcome.layout.app')
 
 @section('title')
-    Cars | Open Roads Car Rental
+    Cars | Open Roads Car Rental in Iceland
 @endsection
 
 @section('meta_desc')
@@ -56,7 +56,7 @@
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="openroadscarrental-welcome-background">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -115,7 +115,7 @@
                         <h3>GRAVEL PROTECTION (GP) (INCLUDED)</h3>
                         <p class="text_justify">
                             The gravel protection is important insurance while renting a car in Iceland. Gravel are common
-                            around the whole island. When driving on gravel roads the small stones will leave chipped paint
+                            around the whole Iceland. When driving on gravel roads the small stones will leave chipped paint
                             at the front of the bumper. Chipped paint damages are nothing to worry about and you will not be
                             charged for them.
                         </p>
@@ -151,7 +151,7 @@
                             All our customers can reduce their liability to zero by opting for our Liability Waiver. As many
                             of our customers wanted to have a carefree experience while driving around Iceland, we
                             introduced the Liability Waiver. This allows our renters to drive carefree with <strong>Open Roads Car Rental</strong>
-                            while enjoying our beautiful island.
+                            while enjoying our beautiful Iceland.
                         </P>
                         <P class="text_justify">
                             Keep in mind that the Liability Waiver is not extra insurance but an option for our renters to
@@ -320,7 +320,7 @@
     </div>
     <!-- content close -->
 
-    <a href="#" id="back-to-top"></a>
+
 
     {{-- @include('layout.footer') --}}
 @endsection

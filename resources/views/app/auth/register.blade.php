@@ -202,5 +202,5 @@
     </div>
     <!-- content close -->
 
-    <a href="#" id="back-to-top"></a>
+
 @endsection

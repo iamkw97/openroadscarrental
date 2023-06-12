@@ -1,7 +1,7 @@
 @extends('app.welcome.layout.app')
 
 @section('title')
-Booking | Open Roads Car Rental
+Booking | Open Roads Car Rental in Iceland
 @endsection
 
 @section('welcomebody')
@@ -11,7 +11,7 @@ Booking | Open Roads Car Rental
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/back1.jpg')}}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back1.jpg')}}" class="jarallax-img" alt="openroadscarrental-welcome-background">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -44,25 +44,25 @@ Booking | Open Roads Car Rental
                                                 <input id="radio-1a" name="Car_Type" type="radio" value="Residential"
                                                     checked="checked">
                                                 <label for="radio-1a"><img src="{{ asset('welcome/images/select-form/car.png')}}"
-                                                        alt="">Car</label>
+                                                        alt="openroadscarrental-welcome-car">Car</label>
                                             </div>
 
                                             <div class="radio-img col-lg-3 col-sm-3 col-6">
                                                 <input id="radio-1b" name="Car_Type" type="radio" value="Office">
                                                 <label for="radio-1b"><img src="{{ asset('welcome/images/select-form/van.png')}}"
-                                                        alt="">Van</label>
+                                                        alt="openroadscarrental-welcome-van">Van</label>
                                             </div>
 
                                             <div class="radio-img col-lg-3 col-sm-3 col-6">
                                                 <input id="radio-1c" name="Car_Type" type="radio" value="Commercial">
                                                 <label for="radio-1c"><img src="{{ asset('welcome/images/select-form/minibus.png')}}"
-                                                        alt="">Minibus</label>
+                                                        alt="openroadscarrental-welcome-minibus">Minibus</label>
                                             </div>
 
                                             <div class="radio-img col-lg-3 col-sm-3 col-6">
                                                 <input id="radio-1d" name="Car_Type" type="radio" value="Retail">
                                                 <label for="radio-1d"><img src="{{ asset('welcome/images/select-form/sportscar.png')}}"
-                                                        alt="">Prestige</label>
+                                                        alt="openroadscarrental-welcome-prestige">Prestige</label>
                                             </div>
                                         </div>
                                     </div>
@@ -286,7 +286,7 @@ Booking | Open Roads Car Rental
         </section>
 
         <section class="text-light jarallax">
-            <img src="{{ asset('welcome/images/background/back3.jpg')}}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back3.jpg')}}" class="jarallax-img" alt="openroadscarrental-welcome-background">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInRight">
@@ -447,5 +447,5 @@ Booking | Open Roads Car Rental
     </div>
     <!-- content close -->
 
-    <a href="#" id="back-to-top"></a>
+
 @endsection

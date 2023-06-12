@@ -14,7 +14,7 @@
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="openroadscarrental-welcome-background">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -211,16 +211,16 @@
 
                                     <div class="d-atr-group">
                                         <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}"
-                                                alt="">
+                                                alt="openroadscarrental-welcome-background">
                                             <h5 id="seatcounts"></h5>
                                         </span>
                                         <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}"
-                                                alt="">
+                                                alt="openroadscarrental-welcome-background">
                                             <h5 id="bagscount"></h5>
                                         </span>
 
                                         <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}"
-                                                alt="">
+                                                alt="openroadscarrental-welcome-background">
                                             <h5 id="VehicleCategoryinfomation"></h5>
                                         </span>
                                     </div>
