@@ -20,7 +20,20 @@
 @endsection
 
 @section('meta_desc')
-<meta name="keywords" content="Trustworthy car rental Iceland, Budget-friendly car rental Iceland, Convenient car rental service Iceland, Customer service Iceland, Knowledgeable car rental staff Iceland, Professional car rental service Iceland, Local car rental company Iceland, Iceland car rental agency, Family-owned car rental business Iceland, Iceland travel, Iceland tourism, Iceland vacation, Iceland adventure, Affordable car rental Iceland, Reliable car rental Iceland, Friendly car rental Iceland, Experienced car rental Iceland">
+    <meta name="keywords"
+        content="Trustworthy car rental Iceland, Budget-friendly car rental Iceland, Convenient car rental service Iceland, Customer service Iceland, Knowledgeable car rental staff Iceland, Professional car rental service Iceland, Local car rental company Iceland, Iceland car rental agency, Family-owned car rental business Iceland, Iceland travel, Iceland tourism, Iceland vacation, Iceland adventure, Affordable car rental Iceland, Reliable car rental Iceland, Friendly car rental Iceland, Experienced car rental Iceland">
+@endsection
+
+@section('fbpage_body')
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v17.0"
+        nonce="5QWrQQc3"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v17.0"
+        nonce="SAYZR9Wh"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v17.0"
+        nonce="6zyOIjSI"></script>
 @endsection
 
 @section('welcomebody')
@@ -30,7 +43,8 @@
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="openroadscarrental-welcome-background">
+            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img"
+                alt="openroadscarrental-welcome-background">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -48,10 +62,12 @@
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInRight">
-                        <h2>Just tell us <span class="id-color">where you need to go,</span> and we'll take care of the rest!</h2>
+                        <h2>Just tell us <span class="id-color">where you need to go,</span> and we'll take care of the
+                            rest!</h2>
                     </div>
                     <div class="col-lg-6 wow fadeInLeft">
-                        <span class="id-color"> Iceland:</span> A land of dramatic landscapes, geothermal wonders, and captivating culture. From cascading
+                        <span class="id-color"> Iceland:</span> A land of dramatic landscapes, geothermal wonders, and
+                        captivating culture. From cascading
                         waterfalls to black sand beaches, the country's natural beauty is awe-inspiring. Explore glaciers,
                         soak in geothermal hot springs, and witness the mesmerizing Northern Lights. Immerse yourself in
                         Reykjavik's vibrant arts scene, indulge in delicious cuisine, and delve into Icelandic folklore.
@@ -116,7 +132,8 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}" alt="openroadscarrental-welcome-car" class="img-fluid wow fadeInUp">
+                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}"
+                            alt="openroadscarrental-welcome-car" class="img-fluid wow fadeInUp">
                     </div>
 
                     <div class="col-lg-3">
@@ -189,11 +206,63 @@
             </div>
         </section>
 
+        <section aria-label="section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 offset-lg-3 text-center">
+                        <h2>We on Facebook</h2>
+                        <div class="spacer-10"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-lg-3 text-center">
+                        <div class="fb-video" data-href="https://www.facebook.com/openroadscarrental/videos/995853871773915"
+                            data-width="500" data-height="300" data-show-text="true">
+                            <blockquote cite="https://www.facebook.com/openroadscarrental/videos/995853871773915/"
+                                class="fb-xfbml-parse-ignore"><a
+                                    href="https://www.facebook.com/openroadscarrental/videos/995853871773915/"></a>
+                                <p>Get ready to travel in Iceland during the summer season😍🌤⛰
+                                    #iceland #icelandcarrentals #icelandtravel</p>Posted by <a
+                                    href="https://www.facebook.com/openroadscarrental">Open Roads car rental</a> on
+                                Wednesday, 7 June 2023
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <div class="fb-page" data-href="https://www.facebook.com/openroadscarrental" data-tabs="timeline"
+                            data-width="" data-height="" data-small-header="true" data-adapt-container-width="true"
+                            data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/openroadscarrental" class="fb-xfbml-parse-ignore"><a
+                                    href="https://www.facebook.com/openroadscarrental">Open Roads car rental</a>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <div class="fb-video" data-href="https://www.facebook.com/openroadscarrental/videos/281783694224604"
+                            data-width="500" data-height="300" data-show-text="true">
+                            <blockquote cite="https://www.facebook.com/openroadscarrental/videos/281783694224604/"
+                                class="fb-xfbml-parse-ignore"><a
+                                    href="https://www.facebook.com/openroadscarrental/videos/281783694224604/"></a>
+                                <p>Explore Iceland on Your Terms.🌎❄️😍
+                                    Whether you&#039;re planning a weekend getaway, a business trip, or simply need a car
+                                    for everyday use, we&#039;ve got you covered. Our wide range of vehicles suits every
+                                    occasion and budget
+                                    #iceland #icelandtravel #icelandcarrentals</p>Posted by <a
+                                    href="https://www.facebook.com/openroadscarrental">Open Roads car rental</a> on
+                                Wednesday, 7 June 2023
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="section-call-to-action" class="bg-color-2 pt60 pb60 text-light" style="background-color: #0066FF;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-8">
-                        <h2 class="s2">Our Rentaly customer care team is here to help you 24/7! Contact us for more
+                        <h2 class="s2">Open Roads Car Rental customer care team is here to help you 24/7! Contact us
+                            for
+                            more
                             information or assistance with your rental needs.</h2>
                     </div>
 
@@ -204,7 +273,7 @@
                                 Call Us Now
                             </span>
                             <span class="pnb-num">
-                                00354 773 7904
+                                +354 773 7904
                             </span>
                         </div>
                         <a href="{{ route('contact.index') }}" class="btn-main">Contact Us</a>
@@ -215,6 +284,4 @@
 
     </div>
     <!-- content close -->
-
-
 @endsection

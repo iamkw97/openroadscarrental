@@ -93,6 +93,7 @@
 </head>
 
 <body onload="initialize()">
+    @yield('fbpage_body')
     <div id="wrapper">
         <!-- header begin -->
         <header class="transparent scroll-light has-topbar">
@@ -244,6 +245,15 @@
                                     <i class="fa fa-lg"  style="color: blue;"><img class="fa icon" src="{{asset('img/ico/tripadvisor-ico.webp')}}" alt="openroadscarrental-tripadvisor-icon"></i></a> --}}
                                 <a class="mb-2" href="https://www.youtube.com/channel/UC2nQtWxSglBY_TJ7A1rkUvw "><i class="fa fa-youtube fa-lg"  style="color: blue;"></i></a>
                             </div>
+                        </div>
+                        <div class="widget mt-0">
+                            <div class="fb-page" data-href="https://www.facebook.com/openroadscarrental" data-tabs="timeline"
+                            data-width=""  data-height="100" data-small-header="true" data-adapt-container-width="true"
+                            data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/openroadscarrental" class="fb-xfbml-parse-ignore"><a
+                                    href="https://www.facebook.com/openroadscarrental">Open Roads car rental</a>
+                            </blockquote>
+                        </div>
                         </div>
                     </div>
                 </div>
