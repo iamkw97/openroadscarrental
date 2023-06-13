@@ -6,6 +6,7 @@
         @yield('title')
     </title>
     <link href="{{ asset('welcome/images/icon.png') }}"rel=icon sizes=16x16 type=image/gif>
+    <link rel="canonical" href="https://openroadscarrental.com/">
     <meta content="{{ csrf_token() }}"name=csrf-token>
     <meta charset=UTF-8>
     <meta content=en http-equiv=Content-Language>
