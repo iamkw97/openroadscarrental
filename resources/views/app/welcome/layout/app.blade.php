@@ -13,10 +13,11 @@
     <meta content=en http-equiv=Content-Language>
     <meta content="width=device-width,initial-scale=1"name=viewport>
 
+    <meta name="author" content="openroadscarrental.com">
     <meta name="description"
         content="Experience Iceland, rent a car from Open Roads Car Rental at Keflavik International Airport or in Reykjavik. We offer quality service and the best prices.">
     @yield('meta_desc')
-    <meta name="author" content="openroadscarrental.com">
+
 
     <!-- CSS Files ================================================== -->
     {{-- <link rel="stylesheet" href="{{ asset('welcome/css/bootstrap.min.css') }}"> --}}

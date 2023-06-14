@@ -22,10 +22,16 @@
 @section('meta_desc')
     <meta name="keywords"
         content="Car rental Iceland, Car hire Iceland, Reykjavik, Blue Lagoon, Golden Circle, Vik, Geysir, Kirkjufell, Akureyri, Skaftafell, Hiking in Iceland, Geysers in Iceland, Waterfalls in Iceland, Iceland attractions, Iceland tourism, Iceland travel, Explore Iceland, Must-visit places in Iceland, Iceland adventure, Iceland natural wonders, Renting cars in iceland, Rent a car in iceland, Iceland car rental, Van rental Reykjavik, Northmound, 4x4 car rental Iceland, KEF Airport, Cheap car rental Iceland, Icelandic culture, Icelandic people physical traits, black sand beach Iceland, black beach Iceland, Iceland black sand beach, elephant rock Iceland, Iceland elephant rock, elephant Island Iceland">
+    {{-- meta opengraph --}}
+    <meta property="og:url" content="https://openroadscarrental.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Car rental in Iceland | Rent a car at KEF airport or in Reykjavik" />
+    <meta property="og:description" content="Experience Iceland, rent a car from Open Roads Car Rental at Keflavik International Airport or in Reykjavik. We offer quality service and the best prices." />
+    <meta property="og:video" content="https://www.facebook.com/openroadscarrental/videos/281783694224604" />
 @endsection
 
 @section('fbpage_body')
-<div id="fb-root"></div>
+    <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v17.0"
         nonce="5QWrQQc3"></script>
 @endsection
@@ -33,7 +39,29 @@
 @section('welcomebody')
     <!-- content begin -->
     <style>
-#mainmenu a:hover{color:#3273ff;transform:scale(1.2)}.shadow-soft{background:linear-gradient(to bottom,rgb(255,255,255,.8) 100%,#000 100%)}.radio-img img:hover{transition:transform .2s;transform:scale(1.2)}.dark-image{filter:brightness(70%)}@media (max-width:767px){.de_form{display:none}}
+        #mainmenu a:hover {
+            color: #3273ff;
+            transform: scale(1.2)
+        }
+
+        .shadow-soft {
+            background: linear-gradient(to bottom, rgb(255, 255, 255, .8) 100%, #000 100%)
+        }
+
+        .radio-img img:hover {
+            transition: transform .2s;
+            transform: scale(1.2)
+        }
+
+        .dark-image {
+            filter: brightness(70%)
+        }
+
+        @media (max-width:767px) {
+            .de_form {
+                display: none
+            }
+        }
     </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
@@ -52,8 +80,8 @@
                             for everyday use, we've got you covered. Our wide range of vehicles suits every occasion and
                             budget.</p>
                         <p style="font-size: 120%"><strong>ALL our prices include
-                            CDW, SCDW,TP,GP, SAAP Insurances, unlimited mileage,GPS and studded tires during
-                            winter</strong></p>
+                                CDW, SCDW,TP,GP, SAAP Insurances, unlimited mileage,GPS and studded tires during
+                                winter</strong></p>
                     </div>
 
                     <div class="col-lg-7">
@@ -365,7 +393,8 @@
                                             src="{{ asset('img/destinations/blue_lagoon.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <p style="font-size: 120%; font-weight: 700;"><a href="{{ route('destinationinfo.index') }}">The Blue
+                                        <p style="font-size: 120%; font-weight: 700;"><a
+                                                href="{{ route('destinationinfo.index') }}">The Blue
                                                 Lagoon<span></span></a>
                                         </p>
                                         <p>
@@ -390,7 +419,8 @@
                                             src="{{ asset('img/destinations/vik.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <p style="font-size: 120%; font-weight: 700;"><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
+                                        <p style="font-size: 120%; font-weight: 700;"><a
+                                                href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
                                         </p>
                                         <p>
                                             Embark on a captivating journey along the mesmerizing southern coast of
@@ -439,7 +469,8 @@
                                             src="{{ asset('img/destinations/kirkjufell.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <p style="font-size: 120%; font-weight: 700;"><a href="{{ route('destinationinfo.index') }}">Mt.
+                                        <p style="font-size: 120%; font-weight: 700;"><a
+                                                href="{{ route('destinationinfo.index') }}">Mt.
                                                 Kirkjufell<span></span></a>
                                         </p>
                                         <p>
