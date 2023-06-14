@@ -132,7 +132,7 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.png') }}"
+                        <img src="{{ asset('welcome/images/cars/kuga_mca_sport.webp') }}"
                             alt="openroadscarrental-welcome-car" class="img-fluid wow fadeInUp">
                     </div>
 
@@ -256,7 +256,7 @@
             </div>
         </section>
 
-        <section id="section-call-to-action" class="bg-color-2 pt60 pb60 text-light" style="background-color: #0066FF;">
+        <section id="section-call-to-action" class="bg-color-2 pt60 pb60 text-light" style="background-color: #619FFF;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-8">

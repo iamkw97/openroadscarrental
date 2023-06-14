@@ -58,7 +58,7 @@
         }
 
         .frmbtnlgout i {
-            color: #0066FF;
+            color: #619FFF;
         }
     </style>
 </head>

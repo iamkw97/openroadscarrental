@@ -51,9 +51,9 @@
                         <p class="lead">Whether you're planning a weekend getaway, a business trip, or simply need a car
                             for everyday use, we've got you covered. Our wide range of vehicles suits every occasion and
                             budget.</p>
-                        <h4>ALL our prices include
+                        <p style="font-size: 120%"><strong>ALL our prices include
                             CDW, SCDW,TP,GP, SAAP Insurances, unlimited mileage,GPS and studded tires during
-                            winter</h4>
+                            winter</strong></p>
                     </div>
 
                     <div class="col-lg-7">
@@ -65,7 +65,7 @@
                                 <div class="row my-1">
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <h6>Pick Up Location</h6>
+                                            <p style="font-size: 90%; font-weight: 700;">Pick Up Location</p>
                                             <select name="" id="pickup-location"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
                                                 name="PickupLocation" onfocus="geolocate()"
@@ -80,7 +80,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <h6>Drop Off Location</h6>
+                                            <p style="font-size: 90%; font-weight: 700;">Drop Off Location</p>
                                             <select name="" id="dropoff-location"
                                                 style="border: none; border-bottom: 1px solid #ccc; outline: none;"
                                                 name="PickupLocation" onfocus="geolocate()"
@@ -99,7 +99,7 @@
                                 <div class="row  my-1">
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <h6>Pick Up Date</h6>
+                                            <p style="font-size: 90%; font-weight: 700;">Pick Up Date</p>
                                             <div class="date-time-field">
                                                 <input
                                                     style="width: 100%;
@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <h6>Return Date</h6>
+                                            <p style="font-size: 90%; font-weight: 700;">Return Date</p>
                                             <div class="date-time-field">
                                                 <input
                                                     style="width: 100%;
@@ -128,7 +128,7 @@
                                 <div class="row  mt-2 mb-2">
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <h6>Pick Up Time</h6>
+                                            <p style="font-size: 90%; font-weight: 700;">Pick Up Time</p>
                                             <div class="date-time-field">
                                                 <input
                                                     style="width: 100%;
@@ -141,7 +141,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <h6>Return Time</h6>
+                                            <p style="font-size: 90%; font-weight: 700;">Return Time</p>
                                             <div class="date-time-field">
                                                 <input
                                                     style="width: 100%;
@@ -315,22 +315,22 @@
                         <div class="container-timeline">
                             <ul>
                                 <li>
-                                    <h4>Choose a vehicle</h4>
+                                    <p style="font-size: 120%; font-weight: 700;">Choose a vehicle</p>
                                     <p>Browse our selection of vehicles and choose the one that suits your travel needs.</p>
                                 </li>
                                 <li>
-                                    <h4>Pick location &amp; date</h4>
+                                    <p style="font-size: 120%; font-weight: 700;">Pick location &amp; date</p>
                                     <p>Select your preferred pickup location and date to book your ride in just a few
                                         clicks.
                                     </p>
                                 </li>
                                 <li>
-                                    <h4>Make a booking</h4>
+                                    <p style="font-size: 120%; font-weight: 700;">Make a booking</p>
                                     <p> Book your ride in just a few clicks - it's that easy!
                                     </p>
                                 </li>
                                 <li>
-                                    <h4>Sit back &amp; relax</h4>
+                                    <p style="font-size: 120%; font-weight: 700;">Sit back &amp; relax</p>
                                     <p>Get ready to hit the road! Sit back and relax while we prepare your ride for the
                                         ultimate driving experience.
                                     </p>
@@ -365,9 +365,9 @@
                                             src="{{ asset('img/destinations/blue_lagoon.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <h3><a href="{{ route('destinationinfo.index') }}">The Blue
+                                        <p style="font-size: 120%; font-weight: 700;"><a href="{{ route('destinationinfo.index') }}">The Blue
                                                 Lagoon<span></span></a>
-                                        </h3>
+                                        </p>
                                         <p>
                                             Indulge in pure bliss at Iceland's ultimate relaxation haven, the enchanting
                                             Blue Lagoon. A serendipitous marvel born from the geothermal power plant,...
@@ -390,8 +390,8 @@
                                             src="{{ asset('img/destinations/vik.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <h3><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
-                                        </h3>
+                                        <p style="font-size: 120%; font-weight: 700;"><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
+                                        </p>
                                         <p>
                                             Embark on a captivating journey along the mesmerizing southern coast of
                                             Iceland, where you'll encounter the picturesque town of Vík. Prepare...
@@ -414,9 +414,9 @@
                                             src="{{ asset('img/destinations/akureyri.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <h3>
+                                        <p style="font-size: 120%; font-weight: 700;">
                                             <a href="{{ route('destinationinfo.index') }}">Akureyri<span></span></a>
-                                        </h3>
+                                        </p>
                                         <p>
                                             Welcome to the vibrant gem of North Iceland, the captivating city of
                                             Akureyri. Boasting the title of Iceland's second largest city and hailed...
@@ -439,9 +439,9 @@
                                             src="{{ asset('img/destinations/kirkjufell.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <h3><a href="{{ route('destinationinfo.index') }}">Mt.
+                                        <p style="font-size: 120%; font-weight: 700;"><a href="{{ route('destinationinfo.index') }}">Mt.
                                                 Kirkjufell<span></span></a>
-                                        </h3>
+                                        </p>
                                         <p>
                                             Prepare to be spellbound by the majestic allure of Mt. Kirkjufell, the
                                             legendary 'Church Mountain' nestled along the picturesque north coast...
@@ -470,7 +470,7 @@
                                     ที่ที่เคยสอบถาม ให้คำแนะนำข้อมูลการขับรถในไอซ์แลนด์ คืนรถง่ายสะดวก ไม่มีค่าใช้จ่ายแอบแฝง
                                     ⭐⭐⭐⭐⭐.
                                     <span class="by">
-                                        <h4>Phanidaporn Jaisaen</h4>
+                                        <p style="font-size: 120%; font-weight: 700;">Phanidaporn Jaisaen</p>
                                     </span>
                                 </blockquote>
                             </div>
@@ -493,7 +493,7 @@
                                     for the customers.
                                     Last, but not least, service was excellent. They reply in within minutes.
                                     <span class="by">
-                                        <h4>Flavio Rodriguez</h4>
+                                        <p style="font-size: 120%; font-weight: 700;">Flavio Rodriguez</p>
                                     </span>
                                 </blockquote>
                             </div>
@@ -515,7 +515,7 @@
                                     would not hesitate to recommend them for your rental needs. Thank you to the Open Roads
                                     Team for making our trip hassle free.
                                     <span class="by">
-                                        <h4>Kam Bains</h4>
+                                        <p style="font-size: 120%; font-weight: 700;">Kam Bains</p>
                                     </span>
                                 </blockquote>
                             </div>
@@ -529,7 +529,7 @@
                                 <blockquote>
                                     Highly recommended. Good service and a nice car, good communication and handling. 👍
                                     <span class="by">
-                                        <h4>Tryggve Kainert</h4>
+                                        <p style="font-size: 120%; font-weight: 700;">Tryggve Kainert</p>
                                     </span>
                                 </blockquote>
                             </div>
@@ -545,7 +545,7 @@
                                     no hidden fees, fuel discount prices, full insurance plus Wi-fi. Definitely will use
                                     them next time 👍
                                     <span class="by">
-                                        <h4>Tomas Richter</h4>
+                                        <p style="font-size: 120%; font-weight: 700;">Tomas Richter</p>
                                     </span>
                                 </blockquote>
                             </div>
@@ -560,7 +560,7 @@
                                     I had a good trip in Iceland and was glad to have this car, a new Honda CR-V, everything
                                     was clear and went well, also good price/quality!
                                     <span class="by">
-                                        <h4>Jim Verschooten</h4>
+                                        <p style="font-size: 120%; font-weight: 700;">Jim Verschooten</p>
                                     </span>
                                 </blockquote>
                             </div>
@@ -580,7 +580,7 @@
                                     we will be using them again.
                                     hassle free
                                     <span class="by">
-                                        <h4>Ken Fitzgerald</h4>
+                                        <p style="font-size: 120%; font-weight: 700;">Ken Fitzgerald</p>
                                     </span>
                                 </blockquote>
                             </div>
@@ -600,7 +600,7 @@
                                     people are nice and the price is lower than renting it ‘official’. Thank you Open Roads
                                     car rental for the great car!
                                     <span class="by">
-                                        <h4>Sara Piantanida</h4>
+                                        <p style="font-size: 120%; font-weight: 700;">Sara Piantanida</p>
                                     </span>
                                 </blockquote>
                             </div>
@@ -616,7 +616,7 @@
                                     understandable! I highly recommend! We had the Toyota Rav4, quite new with all extras.
                                     The car was really clean and well maintained! We had no issues!
                                     <span class="by">
-                                        <h4>Diana Kovacheva</h4>
+                                        <p style="font-size: 120%; font-weight: 700;">Diana Kovacheva</p>
                                     </span>
                                 </blockquote>
                             </div>

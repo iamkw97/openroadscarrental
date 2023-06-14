@@ -6,7 +6,8 @@
         @yield('title')
     </title>
     <link href="{{ asset('welcome/images/icon.png') }}"rel=icon sizes=16x16 type=image/gif>
-    <link rel="canonical" href="https://openroadscarrental.com/">
+    <!--<meta http-equiv="refresh" content="5; url=https://openroadscarrental.com">-->
+    <!--<link rel="canonical" href="https://openroadscarrental.com/">-->
     <meta content="{{ csrf_token() }}"name=csrf-token>
     <meta charset=UTF-8>
     <meta content=en http-equiv=Content-Language>
@@ -192,7 +193,7 @@
                 <div class="row g-custom-x">
                     <div class="col-lg-3">
                         <div class="widget">
-                            <h5>About<span class="id-color">&nbsp; Open Roads Car Rental</span></h5>
+                            <p style="font-size: 120%; font-weight: 700;">About<span class="id-color">&nbsp; Open Roads Car Rental</span></p>
                             <p>We're a family-based car rental company in South Iceland, providing top-quality cars at
                                 affordable prices. Enjoy a hassle-free trip with our reliable and personalized services.
                             </p>
@@ -201,7 +202,7 @@
 
                     <div class="col-lg-3">
                         <div class="widget">
-                            <h5>Contact Info</h5>
+                            <p style="font-size: 125%; font-weight: 700;">Contact Info</p>
                             <address class="s1">
                                 <span>
                                     <i class="id-color fa fa-map-marker fa-lg" ></i>
@@ -217,7 +218,7 @@
                     </div>
 
                     <div class="col-lg-3">
-                        <h5>Quick Links</h5>
+                        <p style="font-size: 125%; font-weight: 700;">Quick Links</p>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="widget">
@@ -234,7 +235,7 @@
 
                     <div class="col-lg-3">
                         <div class="widget">
-                            <h5>Social Network</h5>
+                            <p style="font-size: 125%; font-weight: 700;">Social Network</p>
                             <div class="social-icons">
                                 <a class="mb-2" href="https://wa.me/003547737904"><i class="fa fa-whatsapp fa-lg" style="color: blue;"></i></a>
                                 <a class="mb-2" href="https://www.facebook.com/openroadscarrental"><i
@@ -398,7 +399,7 @@
                                     '<div class="de-item mb30">' +
                                     '<div class="d-img">' +
                                     '<img src="img/cars/' + vehicle_image +
-                                    '" class="img-fluid" alt="openroadscarrental-vehicle-image">' +
+                                    '" class="img-fluid" alt="">' +
                                     '</div>' +
                                     '<div class="d-info">' +
                                     '<div class="d-text">' +
@@ -440,7 +441,7 @@
                                         '<div class="de-item mb30">' +
                                         '<div class="d-img">' +
                                         '<img src="img/cars/' + vehicle_image +
-                                        '" class="img-fluid" alt="openroadscarrental-vehicle-image">' +
+                                        '" class="img-fluid" alt="">' +
                                         '</div>' +
                                         '<div class="d-info">' +
                                         '<div class="d-text">' +
@@ -483,7 +484,7 @@
                                     '<div class="de-item mb30">' +
                                     '<div class="d-img">' +
                                     '<img src="img/cars/' + vehicle_image +
-                                    '" class="img-fluid" alt="openroadscarrental-vehicle-image">' +
+                                    '" class="img-fluid" alt="">' +
                                     '</div>' +
                                     '<div class="d-info">' +
                                     '<div class="d-text">' +
@@ -527,7 +528,7 @@
                                         '<div class="de-item mb30">' +
                                         '<div class="d-img">' +
                                         '<img src="img/cars/' + vehicle_image +
-                                        '" class="img-fluid" alt="openroadscarrental-vehicle-image">' +
+                                        '" class="img-fluid" alt="">' +
                                         '</div>' +
                                         '<div class="d-info">' +
                                         '<div class="d-text">' +
@@ -775,7 +776,7 @@
             h = a.get("add_wifi"),
             g = a.get("add_driver"),
             u = a.get("carimg");
-        $(".d-img").append('<img src="img/cars/' + u + '" class="img-fluid" alt="openroadscarrental-vehicle-image">');
+        $(".d-img").append('<img src="img/cars/' + u + '" class="img-fluid" alt="">');
         var k, b = new Date(n),
             y = Math.ceil((new Date(o) - b) / 864e5);
         if (y < 1) var w = 1 * m;
