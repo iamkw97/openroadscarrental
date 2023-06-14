@@ -17,8 +17,6 @@
     <meta name="description"
         content="Experience Iceland, rent a car from Open Roads Car Rental at Keflavik International Airport or in Reykjavik. We offer quality service and the best prices.">
     @yield('meta_desc')
-
-
     <!-- CSS Files ================================================== -->
     {{-- <link rel="stylesheet" href="{{ asset('welcome/css/bootstrap.min.css') }}"> --}}
     {{-- <link href="{{ asset('welcome/css/mdb.min.css') }}" rel="stylesheet" type="text/css" id="mdb"> --}}
@@ -174,7 +172,7 @@
                             </div>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
-                                    <a href="{{ route('login.index') }}" class="btn-main">Sign In</a>
+                                    <a href="{{ route('login.index') }}" class="btn-main" style="background-color:#004EC2">Sign In</a>
                                     <span id="menu-btn"></span>
                                 </div>
                             </div>

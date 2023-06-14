@@ -185,7 +185,7 @@
                                 <div class="row mt-3">
                                     <div class="col-md-12">
                                         <button type='button' id='' onclick="validateForm()"
-                                            class="btn-main pull-right">
+                                            class="btn-main pull-right" style="background-color:#004EC2">
                                             Find a Vehicle
                                         </button>
                                     </div>
@@ -344,23 +344,23 @@
                             <ul>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Choose a vehicle</p>
-                                    <p>Browse our selection of vehicles and choose the one that suits your travel needs.</p>
+                                    <p><strong>Browse our selection of vehicles and choose the one that suits your travel needs.</strong></p>
                                 </li>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Pick location &amp; date</p>
-                                    <p>Select your preferred pickup location and date to book your ride in just a few
+                                    <p><strong>Select your preferred pickup location and date to book your ride in just a few
                                         clicks.
-                                    </p>
+                                    </strong></p>
                                 </li>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Make a booking</p>
-                                    <p> Book your ride in just a few clicks - it's that easy!
+                                    <p><strong>Book your ride in just a few clicks - it's that easy!</strong>
                                     </p>
                                 </li>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Sit back &amp; relax</p>
-                                    <p>Get ready to hit the road! Sit back and relax while we prepare your ride for the
-                                        ultimate driving experience.
+                                    <p><strong>Get ready to hit the road! Sit back and relax while we prepare your ride for the
+                                        ultimate driving experience.</strong>
                                     </p>
                                 </li>
                             </ul>
