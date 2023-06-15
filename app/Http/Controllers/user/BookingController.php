@@ -22,12 +22,32 @@ class BookingController extends Controller
         $data = $request->all();
         $role = "user";
 
+        // moving image into public directory
+        if ($request->hasFile('license_img')) {
+            $image = $request->file('license_img');
+            $license_img_name = time() . rand(1, 9) . '.' . $image->getClientOriginalExtension();
+            $image->move('img/users/license_img/', $license_img_name);
+        }
+
         $user_email_input = $inputs['email'];
 
         // Check if the email already exists
         $user = User::where('email', $user_email_input)->first();
 
+        // if already registered user
         if ($user) {
+            $user->update([
+                'address' => $inputs['address'],
+                'city' => $inputs['city'],
+                'phone1' => $inputs['phone1'],
+                'phone2' => $inputs['phone2'],
+                'flight_no' => $inputs['flight_no'],
+                'driver_name' => $inputs['driver_name'],
+                'license_no' => $inputs['license_no'],
+                'license_valid_date' => $inputs['license_valid_date'],
+                'license_img' => $license_img_name,
+            ]);
+
             $booking_status = "scheduled";
             $car = Car::findOrFail($data['car_id']);
 
@@ -46,6 +66,8 @@ class BookingController extends Controller
                 'car_id' => $data['car_id'],
                 'user_id' => $user->id,
             ]);
+
+            // if newly registered user
         } else {
             $user = User::create([
                 'fullname' => $inputs['fullname'],
@@ -54,11 +76,11 @@ class BookingController extends Controller
                 'city' => $inputs['city'],
                 'phone1' => $inputs['phone1'],
                 'phone2' => $inputs['phone2'],
-                'dob' => $inputs['dob'],
                 'flight_no' => $inputs['flight_no'],
                 'driver_name' => $inputs['driver_name'],
                 'license_no' => $inputs['license_no'],
                 'license_valid_date' => $inputs['license_valid_date'],
+                'license_img' => $license_img_name,
                 'role' => $role,
                 'password' => bcrypt($inputs['password']),
             ]);

@@ -799,7 +799,7 @@
                     o = $("#city").val(),
                     l = $("#phone1").val(),
                     c = $("#phone2").val(),
-                    s = $("#dob").val(),
+                    s = $('input[name="license_img[]"]').prop('files')[0],
                     r = $("#flight_no").val(),
                     p = $("#driver_name").val(),
                     f = $("#license_valid_date").val(),
@@ -818,7 +818,7 @@
                     C = $("#total_cost").text(),
                     S = new FormData;
                 S.append("fullname", i), S.append("email", t), S.append("address", n), S.append("city", o),
-                    S.append("phone1", l), S.append("phone2", c), S.append("dob", s), S.append("flight_no",
+                    S.append("phone1", l), S.append("phone2", c), S.append("license_img", s), S.append("flight_no",
                         r), S.append("driver_name", p), S.append("license_valid_date", f), S.append(
                         "license_no", m), S.append("password", v), S.append("repassword", h), S.append(
                         "finalpickupLionformation", g), S.append("finaldroplocationinformation", u), S

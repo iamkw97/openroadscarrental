@@ -25,10 +25,10 @@ class User extends Authenticatable
         'city',
         'phone1',
         'phone2',
-        'dob',
         'flight_no',
         'driver_name',
         'license_valid_date',
+        'license_img',
         'license_no',
         'role',
         'password'

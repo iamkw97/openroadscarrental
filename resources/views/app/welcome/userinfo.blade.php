@@ -29,7 +29,8 @@
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="openroadscarrental-welcome-background">
+            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img"
+                alt="openroadscarrental-welcome-background">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
@@ -53,7 +54,7 @@
                             @method('post')
                             <div class="row">
 
-                                <div class="col-md-12">
+                                <div class="col-md-6 mb-2">
                                     <div class="field-set">
                                         <label for='fullname'>Full Name<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -64,7 +65,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-2">
                                     <div class="field-set">
                                         <label for='email'>Email Address<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -75,7 +76,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-2">
                                     <div class="field-set">
                                         <label for='address'>Address<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -86,7 +87,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-2">
                                     <div class="field-set">
                                         <label for='city'>City<span style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                         <input type='text' name='city' id='city' class="form-control">
@@ -96,18 +97,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="field-set">
-                                        <label for='dob'>Date of Birth</label>
-                                        <input type='text' name='dob' id='dob' class="form-control"
-                                            placeholder="ddmmyyyy">
-                                        @error('dob')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-2">
                                     <div class="field-set">
                                         <label for='phone1'>Phone 1 (with country code)<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -119,7 +109,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-2">
                                     <div class="field-set">
                                         <label for='phone2'>Phone 2 (with country code)</label>
                                         <input type='text' name='phone2' pid='phone2' class="form-control"
@@ -132,7 +122,7 @@
 
 
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-2">
                                     <div class="field-set">
                                         <label for='flight_no'>Flight Number<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -143,7 +133,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-2">
                                     <div class="field-set">
                                         <label for='driver_name'>Driver's Name<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -153,7 +143,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-5 mb-2">
                                     <div class="field-set">
                                         <label for='license_no'>Driving License<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -164,7 +154,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-3 mb-2">
                                     <div class="field-set">
                                         <label for='license_valid_date'>License Valid Date<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -176,7 +166,18 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 tobe_hidden">
+                                <div class="col-md-4 mb-2">
+                                    <div class="field-set">
+                                        <label for='license_img'>Upload an Image of License<span
+                                                style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                        <input type='file' name='license_img[]' id='license_img' class="form-control">
+                                        @error('license_img')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-2 tobe_hidden">
                                     <div class="field-set">
                                         <label for='password'>Password<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -187,7 +188,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 tobe_hidden">
+                                <div class="col-md-6 mb-2 tobe_hidden">
                                     <div class="field-set">
                                         <label for='repassword'>Re-enter Password<span
                                                 style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
@@ -317,50 +318,50 @@
     <!-- content close -->
     <script>
         $(document).ready(function() {
-    $('#email').on('input', function() {
-        var enteredEmail = $(this).val();
-        var url = '/userdetails/view';
-        $.ajax({
-            url: url,
-            type: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            data: {
-                email: enteredEmail
-            },
-            success: function(response) {
-                // console.log(response);
-                // var emailList = response.emails;
-                // $('#email').find('option').remove();
-                // $.each(emailList, function(index, email) {
-                //     var option = $('<option>').text(email).val(email);
-                //     $('#email').append(option);
-                // });
-                // Fill relevant data into other input fields
-                $('#fullname').val(response.fullname);
-                $('#address').val(response.address);
-                $('#city').val(response.city);
-                $('#dob').val(response.dob);
-                $('#phone1').val(response.phone1);
-                $('#phone2').val(response.phone2);
-                $('#flight_no').val(response.flight_no);
-                $('#driver_name').val(response.driver_name);
-                $('#license_no').val(response.license_no);
-                $('#license_valid_date').val(response.license_valid_date);
+            $('#email').on('input', function() {
+                var enteredEmail = $(this).val();
+                var url = '/userdetails/view';
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {
+                        email: enteredEmail
+                    },
+                    success: function(response) {
+                        // console.log(response);
+                        // var emailList = response.emails;
+                        // $('#email').find('option').remove();
+                        // $.each(emailList, function(index, email) {
+                        //     var option = $('<option>').text(email).val(email);
+                        //     $('#email').append(option);
+                        // });
+                        // Fill relevant data into other input fields
+                        $('#fullname').val(response.fullname);
+                        $('#address').val(response.address);
+                        $('#city').val(response.city);
+                        $('#phone1').val(response.phone1);
+                        $('#phone2').val(response.phone2);
+                        $('#flight_no').val(response.flight_no);
+                        $('#driver_name').val(response.driver_name);
+                        $('#license_no').val(response.license_no);
+                        $('#license_valid_date').val(response.license_valid_date);
 
-                // Check if email exists in the database
-                if (enteredEmail == response.email) {
-                    $('.tobe_hidden').hide();
-                } else {
-                    $('.tobe_hidden').show();
-                }
-            },
-            error: function(xhr, status, error) {
-            }
+                        // Check if email exists in the database
+                        if (enteredEmail == response.email) {
+                            $('.tobe_hidden').hide();
+                            $('#fullname').prop('disabled', true);
+                        } else {
+                            $('.tobe_hidden').show();
+                            $('#fullname').prop('disabled', false);
+                        }
+                    },
+                    error: function(xhr, status, error) {}
+                });
+            });
         });
-    });
-});
 
     </script>
 @endsection

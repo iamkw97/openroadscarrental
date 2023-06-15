@@ -20,11 +20,11 @@ return new class extends Migration
             $table->string('city');
             $table->string('phone1');
             $table->string('phone2')->nullable();
-            $table->date('dob')->nullable();
             $table->string('flight_no');
             $table->string('driver_name');
             $table->string('license_no');
             $table->date('license_valid_date');
+            $table->string('license_img');
             $table->string('role')->default('user');
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
