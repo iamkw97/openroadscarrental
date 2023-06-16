@@ -6,8 +6,7 @@
         @yield('title')
     </title>
     <link href="{{ asset('welcome/images/icon.png') }}"rel=icon sizes=16x16 type=image/gif>
-    <!--<meta http-equiv="refresh" content="5; url=https://openroadscarrental.com">-->
-    <!--<link rel="canonical" href="https://openroadscarrental.com/">-->
+    @yield('cananonical_tag')
     <meta content="{{ csrf_token() }}"name=csrf-token>
     <meta charset=UTF-8>
     <meta content=en http-equiv=Content-Language>
@@ -825,7 +824,9 @@
                     .append("finalpickdateinfomation", k), S.append("finaldropdateinfomation", b), S.append(
                         "finalpicktimeinformation", y), S.append("finaldroptimeinformation", w), S.append(
                         "additional_baby_seat", _), S.append("additional_wifi", x), S.append(
-                        "additional_driver", T), S.append("car_id", d), S.append("total_cost", C), $.ajax({
+                        "additional_driver", T), S.append("car_id", d), S.append("total_cost", C),
+
+                        $.ajax({
                         type: "POST",
                         url: "/booking/complete",
                         headers: {

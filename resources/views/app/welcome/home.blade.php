@@ -19,6 +19,11 @@
     Car rental in Iceland | Rent a car at KEF airport or in Reykjavik
 @endsection
 
+@section('cananonical_tag')
+    <meta http-equiv="refresh" content="5; url=https://openroadscarrental.com">
+    <link rel="canonical" href="https://openroadscarrental.com/">
+@endsection
+
 @section('meta_desc')
     <meta name="keywords"
         content="Car rental Iceland, Car hire Iceland, Reykjavik, Blue Lagoon, Golden Circle, Vik, Geysir, Kirkjufell, Akureyri, Skaftafell, Hiking in Iceland, Geysers in Iceland, Waterfalls in Iceland, Iceland attractions, Iceland tourism, Iceland travel, Explore Iceland, Must-visit places in Iceland, Iceland adventure, Iceland natural wonders, Renting cars in iceland, Rent a car in iceland, Iceland car rental, Van rental Reykjavik, Northmound, 4x4 car rental Iceland, KEF Airport, Cheap car rental Iceland, Icelandic culture, Icelandic people physical traits, black sand beach Iceland, black beach Iceland, Iceland black sand beach, elephant rock Iceland, Iceland elephant rock, elephant Island Iceland">
@@ -26,7 +31,8 @@
     <meta property="og:url" content="https://openroadscarrental.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Car rental in Iceland | Rent a car at KEF airport or in Reykjavik" />
-    <meta property="og:description" content="Experience Iceland, rent a car from Open Roads Car Rental at Keflavik International Airport or in Reykjavik. We offer quality service and the best prices." />
+    <meta property="og:description"
+        content="Experience Iceland, rent a car from Open Roads Car Rental at Keflavik International Airport or in Reykjavik. We offer quality service and the best prices." />
     <meta property="og:video" content="https://www.facebook.com/openroadscarrental/videos/281783694224604" />
 @endsection
 
@@ -344,13 +350,15 @@
                             <ul>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Choose a vehicle</p>
-                                    <p><strong>Browse our selection of vehicles and choose the one that suits your travel needs.</strong></p>
+                                    <p><strong>Browse our selection of vehicles and choose the one that suits your travel
+                                            needs.</strong></p>
                                 </li>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Pick location &amp; date</p>
-                                    <p><strong>Select your preferred pickup location and date to book your ride in just a few
-                                        clicks.
-                                    </strong></p>
+                                    <p><strong>Select your preferred pickup location and date to book your ride in just a
+                                            few
+                                            clicks.
+                                        </strong></p>
                                 </li>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Make a booking</p>
@@ -359,8 +367,9 @@
                                 </li>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Sit back &amp; relax</p>
-                                    <p><strong>Get ready to hit the road! Sit back and relax while we prepare your ride for the
-                                        ultimate driving experience.</strong>
+                                    <p><strong>Get ready to hit the road! Sit back and relax while we prepare your ride for
+                                            the
+                                            ultimate driving experience.</strong>
                                     </p>
                                 </li>
                             </ul>
