@@ -25,7 +25,6 @@ use Illuminate\Support\Facades\Route;
 | Welcome Routes
 |--------------------------------------------------------------------------
 */
-
 Route::get('/', [BaseController::class, 'home'])->name('home.index');
 Route::get('/cars', [BaseController::class, 'cars'])->name('cars.index');
 Route::get('/cars/view/{id}', [BaseController::class, 'carInfo'])->name('cars.show');
@@ -75,7 +74,7 @@ Route::middleware(['web'])->group(function () {
     | User Protected Routes
     |--------------------------------------------------------------------------
     */
-    Route::middleware(['user'])->group(function () {
+     Route::middleware(['user'])->group(function () {
         Route::get('/user/home', [UserController::class, 'userHome'])->name('user.home');
         Route::get('/user/bookings', [UserController::class, 'userBookings'])->name('user.bookings');
         Route::get('/user/cars/', [UserController::class, 'userCars'])->name('user.cars');

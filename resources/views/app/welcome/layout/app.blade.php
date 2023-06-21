@@ -16,6 +16,7 @@
     <meta name="description"
         content="Experience Iceland, rent a car from Open Roads Car Rental at Keflavik International Airport or in Reykjavik. We offer quality service and the best prices.">
     @yield('meta_desc')
+
     <!-- CSS Files ================================================== -->
     {{-- <link rel="stylesheet" href="{{ asset('welcome/css/bootstrap.min.css') }}"> --}}
     {{-- <link href="{{ asset('welcome/css/mdb.min.css') }}" rel="stylesheet" type="text/css" id="mdb"> --}}
@@ -405,12 +406,12 @@
                                     '<div class="d-item_like">' +
                                     '</div>' +
                                     '<div class="d-atr-group">' +
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="openroadscarrental-vehicle-seats">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" >' +
                                     item.no_of_seats + '</span>' +
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="openroadscarrental-vehicle-suitcases">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" >' +
                                     item.no_of_suitcases + '</span>' +
 
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="openroadscarrental-vehicle-category">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" >' +
                                     item.category + '</span>' +
                                     '</div>' +
                                     '<div class="d-price">' +
@@ -447,12 +448,12 @@
                                         '<div class="d-item_like">' +
                                         '</div>' +
                                         '<div class="d-atr-group">' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="openroadscarrental-vehicle-seats">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" >' +
                                         item.no_of_seats + '</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="openroadscarrental-vehicle-suitcases">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" >' +
                                         item.no_of_suitcases + '</span>' +
 
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="openroadscarrental-vehicle-category">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" >' +
                                         item.category + '</span>' +
                                         '</div>' +
                                         '<div class="d-price">' +
@@ -490,12 +491,12 @@
                                     '<div class="d-item_like">' +
                                     '</div>' +
                                     '<div class="d-atr-group">' +
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="openroadscarrental-seats">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" >' +
                                     item.no_of_seats + '</span>' +
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="openroadscarrental-suitcases">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" >' +
                                     item.no_of_suitcases + '</span>' +
 
-                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="openroadscarrental-category">' +
+                                    '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" >' +
                                     item.category + '</span>' +
                                     '</div>' +
                                     '<div class="d-price">' +
@@ -534,12 +535,12 @@
                                         '<div class="d-item_like">' +
                                         '</div>' +
                                         '<div class="d-atr-group">' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" alt="openroadscarrental-vehicle-seats">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" >' +
                                         item.no_of_seats + '</span>' +
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" alt="openroadscarrental-vehicle-suitcases">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}">' +
                                         item.no_of_suitcases + '</span>' +
 
-                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" alt="openroadscarrental-vehicle-category">' +
+                                        '<span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" >' +
                                         item.category + '</span>' +
                                         '</div>' +
                                         '<div class="d-price">' +
@@ -691,10 +692,10 @@
                         n = $("#slider-carousel");
                     n.empty(), $.each(t, function(e, a) {
                         var i = '<div class="item"><img src="img/cars/' + a
-                            .vehicle_image + '"alt="openroadscarrental-car-image"></div>';
+                            .vehicle_image + '"alt=""></div>';
                         n.append(i)
                     }), t && t.length > 0 && (e = t[0].vehicle_image);
-                    var o = '<img src="img/cars/' + e + '" class="img-fluid" alt="openroadscarrental-car-image">';
+                    var o = '<img src="img/cars/' + e + '" class="img-fluid" alt="">';
                     $("#CarImage").append(o), n.owlCarousel({
                         loop: !0,
                         margin: 10,
@@ -824,9 +825,7 @@
                     .append("finalpickdateinfomation", k), S.append("finaldropdateinfomation", b), S.append(
                         "finalpicktimeinformation", y), S.append("finaldroptimeinformation", w), S.append(
                         "additional_baby_seat", _), S.append("additional_wifi", x), S.append(
-                        "additional_driver", T), S.append("car_id", d), S.append("total_cost", C),
-
-                        $.ajax({
+                        "additional_driver", T), S.append("car_id", d), S.append("total_cost", C), $.ajax({
                         type: "POST",
                         url: "/booking/complete",
                         headers: {

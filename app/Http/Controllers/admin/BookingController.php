@@ -39,7 +39,7 @@ class BookingController extends Controller
                 'users.city',
                 'users.phone1',
                 'users.phone2',
-                'users.dob',
+                 'users.license_img',
                 'users.flight_no',
                 'users.driver_name',
                 'users.license_no',

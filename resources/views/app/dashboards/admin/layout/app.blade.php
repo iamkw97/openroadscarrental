@@ -3,8 +3,7 @@
 
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta charset="UTF-8">
-  <meta http-equiv="Content-Language" content="en">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <meta name="description"
@@ -16,14 +15,14 @@
                 Icelandic culture,
                 Icelandic people physical traits,black sand beach Iceland,
                 black beach Iceland,
-                Iceland black sand beach,elephant rock Iceland,
+                Iceland black sand beach,lephant rock Iceland,
                 Iceland elephant rock,
-                elephant Iceland Iceland,
+                elephant island Iceland,
                 KEF Airport,
                 Reykjavik,
                 Open Roads Car Rental">
     <meta name="author" content="openroadscarrental.com">
-
+    
     <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
     <!--favicon-->
     <link rel="icon" href="{{ asset('admin/images/favicon-32x32.png') }}" type="image/png" />
@@ -131,7 +130,7 @@
                     <div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
                     </div>
 
-
+                    
 
 
                     <div class="top-menu ms-auto">
