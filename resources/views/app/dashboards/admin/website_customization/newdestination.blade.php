@@ -78,21 +78,21 @@
                                         <div class="col-md-12 my-1">
                                             <label for="destination_description_introduction" class="form-label">Description Introduction<span
                                                     style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                            <textarea class="form-control" id="destination_description_introduction" name="destination_description_introduction" rows="5"></textarea>
+                                            <textarea class="form-control" id="destination_description_introduction" name="destination_description_introduction" rows="2"></textarea>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col-md-12 my-1">
                                             <label for="destination_description_body" class="form-label">Description Body<span
                                                     style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                            <textarea class="form-control" id="destination_description_body" name="destination_description_body" rows="5"></textarea>
+                                            <textarea class="form-control" id="destination_description_body" name="destination_description_body" rows="2"></textarea>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col-md-12 my-1">
                                             <label for="destination_description_conclusion" class="form-label">Description Conclusion<span
                                                     style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                            <textarea class="form-control" id="destination_description_conclusion" name="destination_description_conclusion" rows="5"></textarea>
+                                            <textarea class="form-control" id="destination_description_conclusion" name="destination_description_conclusion" rows="2"></textarea>
                                         </div>
                                     </div>
                                     <div class="row mt-2">

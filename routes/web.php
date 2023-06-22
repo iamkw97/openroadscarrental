@@ -36,7 +36,7 @@ Route::post('/userdetails/view', [BaseController::class, 'showPersonalInfo'])->n
 Route::get('/aboutus', [BaseController::class, 'about'])->name('about.index');
 Route::get('/contactus', [BaseController::class, 'contact'])->name('contact.index');
 Route::get('/destinations', [BaseController::class, 'destinationInfo'])->name('destinationinfo.index');
-Route::get('/destinations/view', [BaseController::class, 'destinationSingle'])->name('destinationinfo.show');
+Route::get('/destinations/{id}/view', [BaseController::class, 'destinationSingle'])->name('destinationinfo.show');
 Route::get('/blog', [BaseController::class, 'blogInfo'])->name('bloginfo.index');
 
 Route::get('/getcars', [CarController::class, 'getcar'])->name('getcars.details');

@@ -295,7 +295,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="{{ route('destinationinfo.show') }}">
+                                                <a href="/destinations/1/view">
                                                     Golden Circle
                                                     <span style="font-weight: 300;">: A Must-Visit for Any Iceland
                                                         Traveler</span></a>
@@ -304,7 +304,7 @@
                                                 Iceland is a land of natural wonders, from towering glaciers to geysers to
                                                 black sand beaches. But one of the...
                                             </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.show') }}">Read More</a>
+                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -323,7 +323,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="{{ route('destinationinfo.show') }}">
+                                                <a href="/destinations/2/view">
                                                     Jökulsárlón Glacier Lagoon
                                                     <span style="font-weight: 300;">: A Natural Wonder in
                                                         Iceland</span></a>
@@ -332,7 +332,7 @@
                                                 Jökulsárlón glacier lagoon is one of Iceland's most popular tourist
                                                 destinations. Located in the...
                                             </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.show') }}">Read More</a>
+                                            <a class="btn-main" href="/destinations/2/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -351,7 +351,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="{{ route('destinationinfo.show') }}">
+                                                <a href="/destinations/3/view">
                                                     Skógafoss
                                                     <span style="font-weight: 300;">: Iceland's Majestic Waterfall
                                                     </span></a>
@@ -360,7 +360,7 @@
                                                 Skógafoss is one of Iceland's most popular waterfalls, and for good reason.
                                                 The waterfall is 60 meters...
                                             </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.show') }}">Read More</a>
+                                            <a class="btn-main" href="/destinations/3/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -379,7 +379,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="{{ route('destinationinfo.show') }}">
+                                                <a href="/destinations/1/view">
                                                     Reynisdrangar Sea Stacks
                                                     <span style="font-weight: 300;">: Iceland's Mysterious and Photogenic
                                                         Rock Formations</span></a>
@@ -388,7 +388,7 @@
                                                 The Reynisdrangar sea stacks are a group of three basalt rock pillars that
                                                 rise out of the Atlantic...
                                             </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.show') }}">Read More</a>
+                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -407,7 +407,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="{{ route('destinationinfo.show') }}">
+                                                <a href="/destinations/1/view">
                                                     The Blue Lagoon
                                                     <span style="font-weight: 300;">: Iceland's Iconic Geothermal
                                                         Spa</span></a>
@@ -416,7 +416,7 @@
                                                 The Blue Lagoon is a geothermal spa located in a lava field in southwest
                                                 Iceland. The lagoon is fed...
                                             </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.show') }}">Read More</a>
+                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -435,7 +435,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="{{ route('destinationinfo.show') }}">
+                                                <a href="/destinations/1/view">
                                                     Reykjavík
                                                     <span style="font-weight: 300;">: The Capital of Iceland</span></a>
                                             </h4>
@@ -443,7 +443,7 @@
                                                 Reykjavík is the capital of Iceland and the most populous city in the
                                                 country. It is located...
                                             </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.show') }}">Read More</a>
+                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -462,7 +462,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="{{ route('destinationinfo.show') }}">
+                                                <a href="/destinations/1/view">
                                                     Skógafoss
                                                     <span style="font-weight: 300;">: Iceland's Majestic
                                                         Waterfall</span></a>
@@ -471,7 +471,7 @@
                                                 Skógafoss is one of Iceland's most popular waterfalls, and for good reason.
                                                 The waterfall is 60 meters...
                                             </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.show') }}">Read More</a>
+                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -490,7 +490,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="{{ route('destinationinfo.show') }}">
+                                                <a href="/destinations/1/view">
                                                     Þingvellir National Park
                                                     <span style="font-weight: 300;">: Iceland's Historical and Natural
                                                         Gem</span></a>
@@ -499,7 +499,7 @@
                                                 Þingvellir National Park is a UNESCO World Heritage Site located in
                                                 southwest Iceland. The...
                                             </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.show') }}">Read More</a>
+                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -518,7 +518,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="{{ route('destinationinfo.show') }}">
+                                                <a href="/destinations/1/view">
                                                     Vatnajökull National Park
                                                     <span style="font-weight: 300;">: Iceland's Largest National
                                                         Park</span></a>
@@ -527,7 +527,7 @@
                                                 Vatnajökull National Park is the largest national park in Iceland, and it is
                                                 home to some of the most...
                                             </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.show') }}">Read More</a>
+                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -546,7 +546,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="{{ route('destinationinfo.show') }}">
+                                                <a href="/destinations/1/view">
                                                     Akureyri
                                                     <span style="font-weight: 300;">: The Capital of the North</span></a>
                                             </h4>
@@ -554,7 +554,7 @@
                                                 Akureyri is the second-largest city in Iceland, located in the north of the
                                                 country. The city is known for...
                                             </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.show') }}">Read More</a>
+                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -573,7 +573,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="{{ route('destinationinfo.show') }}">
+                                                <a href="/destinations/1/view">
                                                     Seljalandsfoss
                                                     <span style="font-weight: 300;">: Iceland's Hidden Waterfall</span></a>
                                             </h4>
@@ -581,7 +581,7 @@
                                                 Seljalandsfoss is one of Iceland's most popular waterfalls, and for good
                                                 reason. The waterfall is 60...
                                             </p>
-                                            <a class="btn-main" href="{{ route('destinationinfo.show') }}">Read More</a>
+                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>

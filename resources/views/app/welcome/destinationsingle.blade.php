@@ -37,7 +37,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <h1>Destinations</h1>
+                            <h1>{{$destination_info->destination_title}}</h1>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -52,33 +52,17 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="blog-read">
-                            <img alt="" src="{{ asset('img/destinations/destination_golden_circle.webp') }}"
+                            <img alt="" src="{{ asset('img/destinations/' . $destination_info->destination_image) }}"
                                 class="img-fullwidth mb30">
                             <div class="post-text">
                                 <p style="text-align: justify;">
-                                    Iceland is a land of natural wonders, from towering glaciers to geysers to black sand
-                                    beaches. But one of the most popular tourist destinations in Iceland is the Golden
-                                    Circle, a 300-kilometer (186-mile) loop that takes in three of the country's most iconic
-                                    natural attractions: Þingvellir National Park, Gullfoss waterfall, and Geysir geothermal
-                                    area.
+                                    {{$destination_info->destination_description_introduction}}
                                 </p>
                                 <p style="text-align: justify;">
-                                    Þingvellir National Park is a UNESCO World Heritage Site and is home to the Alþingi, the
-                                    world's oldest parliament. The park is also a geological wonder, as it sits on the
-                                    Mid-Atlantic Ridge, where the North American and Eurasian tectonic plates are slowly
-                                    moving apart.
-                                    Gullfoss waterfall is one of the most powerful waterfalls in Iceland, with a drop of 32
-                                    meters (105 feet). The waterfall is located on the Hvítá River, which flows from
-                                    Langjökull glacier.
-                                    Geysir geothermal area is home to Strokkur, one of the most active geysers in the world.
-                                    Strokkur erupts every 5-10 minutes, shooting a column of boiling water up to 70 meters
-                                    (230 feet) into the air.
+                                    {{$destination_info->destination_description_body}}
                                 </p>
                                 <p style="text-align: justify;">
-                                    The Golden Circle is a great way to experience the best of Iceland in a single day. The
-                                    loop can be easily driven by car, and there are plenty of opportunities to stop and take
-                                    in the scenery. If you're looking for an action-packed day of sightseeing, the Golden
-                                    Circle is definitely worth considering.
+                                    {{$destination_info->destination_description_conclusion}}
                                 </p>
                             </div>
                         </div>
