@@ -24,19 +24,25 @@
     <link rel="canonical" href="https://openroadscarrental.com/">
 @endsection
 
-@section('meta_desc')
+@section('meta_dsc')
+<meta name="description"
+    content="Explore Iceland at your own pace with a car rental from Open Roads Car Rental. Book your Iceland car rental today and start your adventure!">
+@endsection
+
+@section('meta_tgs')
     <meta name="keywords"
         content="Car rental Iceland, Car hire Iceland, Reykjavik, Blue Lagoon, Golden Circle, Vik, Geysir, Kirkjufell, Akureyri, Skaftafell, Hiking in Iceland, Geysers in Iceland, Waterfalls in Iceland, Iceland attractions, Iceland tourism, Iceland travel, Explore Iceland, Must-visit places in Iceland, Iceland adventure, Iceland natural wonders, Renting cars in iceland, Rent a car in iceland, Iceland car rental, Van rental Reykjavik, Northmound, 4x4 car rental Iceland, KEF Airport, Cheap car rental Iceland, Icelandic culture, Icelandic people physical traits, black sand beach Iceland, black beach Iceland, Iceland black sand beach, elephant rock Iceland, Iceland elephant rock, elephant Island Iceland">
     {{-- meta opengraph --}}
     <meta property="og:url" content="https://openroadscarrental.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Car rental in Iceland | Rent a car at KEF airport or in Reykjavik" />
-    <meta property="og:description" content="Experience Iceland, rent a car from Open Roads Car Rental at Keflavik International Airport or in Reykjavik. We offer quality service and the best prices." />
+    <meta property="og:description"
+        content="Experience Iceland, rent a car from Open Roads Car Rental at Keflavik International Airport or in Reykjavik. We offer quality service and the best prices." />
     <meta property="og:video" content="https://www.facebook.com/openroadscarrental/videos/281783694224604" />
 @endsection
 
 @section('fbpage_body')
-<div id="fb-root"></div>
+    <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v17.0"
         nonce="5QWrQQc3"></script>
 @endsection
@@ -44,7 +50,29 @@
 @section('welcomebody')
     <!-- content begin -->
     <style>
-#mainmenu a:hover{color:#3273ff;transform:scale(1.2)}.shadow-soft{background:linear-gradient(to bottom,rgb(255,255,255,.8) 100%,#000 100%)}.radio-img img:hover{transition:transform .2s;transform:scale(1.2)}.dark-image{filter:brightness(70%)}@media (max-width:767px){.de_form{display:none}}
+        #mainmenu a:hover {
+            color: #3273ff;
+            transform: scale(1.2)
+        }
+
+        .shadow-soft {
+            background: linear-gradient(to bottom, rgb(255, 255, 255, .8) 100%, #000 100%)
+        }
+
+        .radio-img img:hover {
+            transition: transform .2s;
+            transform: scale(1.2)
+        }
+
+        .dark-image {
+            filter: brightness(70%)
+        }
+
+        @media (max-width:767px) {
+            .de_form {
+                display: none
+            }
+        }
     </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
@@ -63,8 +91,8 @@
                             for everyday use, we've got you covered. Our wide range of vehicles suits every occasion and
                             budget.</p>
                         <p style="font-size: 120%"><strong>ALL our prices include
-                            CDW, SCDW,TP,GP, SAAP Insurances, unlimited mileage,GPS and studded tires during
-                            winter</strong></p>
+                                CDW, SCDW,TP,GP, SAAP Insurances, unlimited mileage,GPS and studded tires during
+                                winter</strong></p>
                     </div>
 
                     <div class="col-lg-7">
@@ -277,16 +305,20 @@
                             <div class="col-lg-12">
                                 <div class="de-item mb30">
                                     <div class="d-img">
-                                        <img src="{{ asset('img/cars/' . $item->vehicle_image) }}" class="img-fluid" style="width: 387px; height: 271px;">
+                                        <img src="{{ asset('img/cars/' . $item->vehicle_image) }}" class="img-fluid"
+                                            style="width: 387px; height: 271px;">
                                     </div>
                                     <div class="d-info">
                                         <div class="d-text">
                                             <h4>{{ $item->displaying_name }}</h4>
 
                                             <div class="d-atr-group">
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/1.svg') }}" >{{ $item->no_of_seats }}</span>
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/2.svg') }}" >{{ $item->no_of_suitcases }}</span>
-                                                <span class="d-atr"><img src="{{ asset('welcome/images/icons/4.svg') }}" >{{ $item->category }}</span>
+                                                <span class="d-atr"><img
+                                                        src="{{ asset('welcome/images/icons/1.svg') }}">{{ $item->no_of_seats }}</span>
+                                                <span class="d-atr"><img
+                                                        src="{{ asset('welcome/images/icons/2.svg') }}">{{ $item->no_of_suitcases }}</span>
+                                                <span class="d-atr"><img
+                                                        src="{{ asset('welcome/images/icons/4.svg') }}">{{ $item->category }}</span>
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from
@@ -323,13 +355,15 @@
                             <ul>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Choose a vehicle</p>
-                                    <p><strong>Browse our selection of vehicles and choose the one that suits your travel needs.</strong></p>
+                                    <p><strong>Browse our selection of vehicles and choose the one that suits your travel
+                                            needs.</strong></p>
                                 </li>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Pick location &amp; date</p>
-                                    <p><strong>Select your preferred pickup location and date to book your ride in just a few
-                                        clicks.
-                                    </strong></p>
+                                    <p><strong>Select your preferred pickup location and date to book your ride in just a
+                                            few
+                                            clicks.
+                                        </strong></p>
                                 </li>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Make a booking</p>
@@ -338,8 +372,9 @@
                                 </li>
                                 <li>
                                     <p style="font-size: 120%; font-weight: 700;">Sit back &amp; relax</p>
-                                    <p><strong>Get ready to hit the road! Sit back and relax while we prepare your ride for the
-                                        ultimate driving experience.</strong>
+                                    <p><strong>Get ready to hit the road! Sit back and relax while we prepare your ride for
+                                            the
+                                            ultimate driving experience.</strong>
                                     </p>
                                 </li>
                             </ul>
@@ -372,7 +407,8 @@
                                             src="{{ asset('img/destinations/blue_lagoon.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <p style="font-size: 120%; font-weight: 700;"><a href="{{ route('destinationinfo.index') }}">The Blue
+                                        <p style="font-size: 120%; font-weight: 700;"><a
+                                                href="{{ route('destinationinfo.index') }}">The Blue
                                                 Lagoon<span></span></a>
                                         </p>
                                         <p>
@@ -397,7 +433,8 @@
                                             src="{{ asset('img/destinations/vik.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <p style="font-size: 120%; font-weight: 700;"><a href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
+                                        <p style="font-size: 120%; font-weight: 700;"><a
+                                                href="{{ route('destinationinfo.index') }}">Vík<span></span></a>
                                         </p>
                                         <p>
                                             Embark on a captivating journey along the mesmerizing southern coast of
@@ -446,7 +483,8 @@
                                             src="{{ asset('img/destinations/kirkjufell.webp') }}" class="lazy">
                                     </div>
                                     <div class="post-text">
-                                        <p style="font-size: 120%; font-weight: 700;"><a href="{{ route('destinationinfo.index') }}">Mt.
+                                        <p style="font-size: 120%; font-weight: 700;"><a
+                                                href="{{ route('destinationinfo.index') }}">Mt.
                                                 Kirkjufell<span></span></a>
                                         </p>
                                         <p>
@@ -585,7 +623,6 @@
                                     days , no problem, carry on .
                                     Very good service, no hassle , top marks.
                                     we will be using them again.
-                                    hassle free
                                     <span class="by">
                                         <p style="font-size: 120%; font-weight: 700;">Ken Fitzgerald</p>
                                     </span>

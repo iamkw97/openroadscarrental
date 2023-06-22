@@ -19,7 +19,7 @@
     About Us | Open Roads Car Rental in Iceland
 @endsection
 
-@section('meta_desc')
+@section('meta_tgs')
     <meta name="keywords"
         content="Trustworthy car rental Iceland, Budget-friendly car rental Iceland, Convenient car rental service Iceland, Customer service Iceland, Knowledgeable car rental staff Iceland, Professional car rental service Iceland, Local car rental company Iceland, Iceland car rental agency, Family-owned car rental business Iceland, Iceland travel, Iceland tourism, Iceland vacation, Iceland adventure, Affordable car rental Iceland, Reliable car rental Iceland, Friendly car rental Iceland, Experienced car rental Iceland">
 @endsection

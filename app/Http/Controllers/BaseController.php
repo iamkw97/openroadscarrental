@@ -105,4 +105,12 @@ class BaseController extends Controller
     {
         return view('app.welcome.destinationinfo');
     }
+    public function destinationSingle()
+    {
+        return view('app.welcome.destinationsingle');
+    }
+    public function blogInfo()
+    {
+        return view('app.welcome.bloginfo');
+    }
 }

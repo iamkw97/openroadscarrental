@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 | Welcome Routes
 |--------------------------------------------------------------------------
 */
+
 Route::get('/', [BaseController::class, 'home'])->name('home.index');
 Route::get('/cars', [BaseController::class, 'cars'])->name('cars.index');
 Route::get('/cars/view/{id}', [BaseController::class, 'carInfo'])->name('cars.show');
@@ -35,6 +36,8 @@ Route::post('/userdetails/view', [BaseController::class, 'showPersonalInfo'])->n
 Route::get('/aboutus', [BaseController::class, 'about'])->name('about.index');
 Route::get('/contactus', [BaseController::class, 'contact'])->name('contact.index');
 Route::get('/destinations', [BaseController::class, 'destinationInfo'])->name('destinationinfo.index');
+Route::get('/destinations/view', [BaseController::class, 'destinationSingle'])->name('destinationinfo.show');
+Route::get('/blog', [BaseController::class, 'blogInfo'])->name('bloginfo.index');
 
 Route::get('/getcars', [CarController::class, 'getcar'])->name('getcars.details');
 
@@ -74,7 +77,7 @@ Route::middleware(['web'])->group(function () {
     | User Protected Routes
     |--------------------------------------------------------------------------
     */
-     Route::middleware(['user'])->group(function () {
+    Route::middleware(['user'])->group(function () {
         Route::get('/user/home', [UserController::class, 'userHome'])->name('user.home');
         Route::get('/user/bookings', [UserController::class, 'userBookings'])->name('user.bookings');
         Route::get('/user/cars/', [UserController::class, 'userCars'])->name('user.cars');

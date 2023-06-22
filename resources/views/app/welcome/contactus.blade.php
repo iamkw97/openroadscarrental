@@ -19,7 +19,7 @@
     Contact | Open Roads Car Rental in Iceland
 @endsection
 
-@section('meta_desc')
+@section('meta_tgs')
     <meta name="keywords"
         content="Car rental contact, Car hire inquiry, Contact information, Get in touch, Customer support, Reservation assistance, Booking inquiries, Car rental quote, Contact form, Email contact, Phone contact, Office location, Customer service team, Feedback and suggestions, Assistance with rental, Rental terms and conditions, Car rental policies, Rental duration and availability, Modifications and cancellations">
 @endsection
