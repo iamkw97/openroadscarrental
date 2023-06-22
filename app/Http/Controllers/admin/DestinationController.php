@@ -29,8 +29,11 @@ class DestinationController extends Controller
 
         $destination = Destination::create([
             'destination_title' => $data['destination_title'],
+            'destination_sub_title' => $data['destination_sub_title'],
             'published_date' => $data['published_date'],
-            'destination_description' => $data['destination_description'],
+            'destination_description_introduction' => $data['destination_description_introduction'],
+            'destination_description_body' => $data['destination_description_body'],
+            'destination_description_conclusion' => $data['destination_description_conclusion'],
             'destination_image' => $destination_image = $imageName
         ]);
 

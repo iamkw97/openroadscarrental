@@ -69,9 +69,30 @@
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col-md-12 my-1">
-                                            <label for="destination_description" class="form-label">Description<span
+                                            <label for="destination_sub_title" class="form-label">Sub Title</label>
+                                            <input type="text" class="form-control" id="destination_sub_title"
+                                                name="destination_sub_title" placeholder="Enter displaying title">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-12 my-1">
+                                            <label for="destination_description_introduction" class="form-label">Description Introduction<span
                                                     style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
-                                            <textarea class="form-control" id="destination_description" name="destination_description" rows="5"></textarea>
+                                            <textarea class="form-control" id="destination_description_introduction" name="destination_description_introduction" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-12 my-1">
+                                            <label for="destination_description_body" class="form-label">Description Body<span
+                                                    style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                            <textarea class="form-control" id="destination_description_body" name="destination_description_body" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-12 my-1">
+                                            <label for="destination_description_conclusion" class="form-label">Description Conclusion<span
+                                                    style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                            <textarea class="form-control" id="destination_description_conclusion" name="destination_description_conclusion" rows="5"></textarea>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
@@ -143,8 +164,11 @@
 
                 var formData = new FormData();
                 formData.append('destination_title', $('#destination_title').val());
+                formData.append('destination_sub_title', $('#destination_sub_title').val());
                 formData.append('published_date', $('#published_date').val());
-                formData.append('destination_description', $('#destination_description').val());
+                formData.append('destination_description_introduction', $('#destination_description_introduction').val());
+                formData.append('destination_description_body', $('#destination_description_body').val());
+                formData.append('destination_description_conclusion', $('#destination_description_conclusion').val());
                 formData.append('destination_image', $('#destination_image')[0].files[0]);
 
                 $.ajax({

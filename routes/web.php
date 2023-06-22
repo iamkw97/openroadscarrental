@@ -69,6 +69,7 @@ Route::middleware(['web'])->group(function () {
         Route::get('/admin/bookings/{id}', [BookingController::class, 'show'])->name('admin.bookings.show');
         Route::get('/admin/destinations', [DestinationController::class, 'index'])->name('admin.destinations.index');
         Route::get('/admin/destinations/new', [DestinationController::class, 'create'])->name('admin.destinations.create');
+        Route::get('/admin/destinations/store', [DestinationController::class, 'store'])->name('admin.destinations.store');
         Route::delete('/admin/destinations/{id}/delete', [DestinationController::class, 'delete'])->name('admin.destinations.delete');
     });
 

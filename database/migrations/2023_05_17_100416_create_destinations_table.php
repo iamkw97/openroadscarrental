@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('destinations', function (Blueprint $table) {
             $table->id();
             $table->string('destination_title');
+            $table->string('destination_sub_title')->nullable();
             $table->string('published_date')->nullable();
-            $table->string('destination_description');
+            $table->text('destination_description_introduction');
+            $table->text('destination_description_body');
+            $table->text('destination_description_conclusion');
             $table->string('destination_image');
             $table->timestamps();
         });
