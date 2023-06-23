@@ -123,18 +123,7 @@
                                                 only took
                                                 around 15 mins or less); they were waiting for us at the airport on time.
                                                 Car was in good condition. We took the Toyota rav4 AWD, which was an
-                                                excellent option
-                                                for our trip through the ring road in winter time. Everything ran super
-                                                smoothly.
-                                                On the top of that they include wireless internet, so no need to get an
-                                                additional SIM
-                                                card. We had a power bank for our cellphones and also helped with the
-                                                provided internet
-                                                devices in our hiking activities.
-                                                The delivery process also was super simple at the airport, which make it
-                                                very efficient
-                                                for the customers.
-                                                Last, but not least, service was excellent. They reply in within minutes.
+                                                excellent option...
                                             </p>
                                             <div class="de_testi_by">
                                                 <span>- Flavio Rodriguez</span>
@@ -147,22 +136,11 @@
                                         <blockquote>
                                             <p style="text-align: justify;">
                                                 We picked Open Roads Car Rental after comparing their service against some
-                                                of the larger
-                                                providers. We were a little unsure but I am so glad we did. The personal
+                                                of the larger providers. We were a little unsure but I am so glad we did.
+                                                The personal
                                                 service offered
                                                 by the team was excellent. No hidden charges or longs waits to collect your
-                                                car. We were
-                                                greeted at the airport on time and taken to our vehicle. We were also
-                                                provided lots of
-                                                useful local information on roads and directed to services that supported
-                                                our self drive
-                                                trip. The car was in good condition - no issues at all. Drop off was smooth
-                                                and without
-                                                issue. Communications were instant before and after our trip. Based on my
-                                                experience I
-                                                would not hesitate to recommend them for your rental needs. Thank you to the
-                                                Open Roads
-                                                Team for making our trip hassle free.
+                                                car...
                                             </p>
                                             <div class="de_testi_by">
                                                 <span>- Kam Bains</span>
@@ -242,14 +220,7 @@
                                                 everyone!! They answer very fast and clear on the socials and are open to
                                                 help. When we
                                                 arrived in Iceland the car was there! We had a nice car, drove very good and
-                                                I felt
-                                                safe. The service was so good that even when the car had a little problem.
-                                                They came
-                                                immediately ( 7:00 AM) with a new car. So as you can read, the service is
-                                                great, the
-                                                people are nice and the price is lower than renting it ‘official’. Thank you
-                                                Open Roads
-                                                car rental for the great car!
+                                                I felt...
                                             </p>
                                             <div class="de_testi_by">
                                                 <span>- Sara Piantanida</span>
@@ -379,7 +350,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="/destinations/1/view">
+                                                <a href="/destinations/4/view">
                                                     Reynisdrangar Sea Stacks
                                                     <span style="font-weight: 300;">: Iceland's Mysterious and Photogenic
                                                         Rock Formations</span></a>
@@ -388,7 +359,7 @@
                                                 The Reynisdrangar sea stacks are a group of three basalt rock pillars that
                                                 rise out of the Atlantic...
                                             </p>
-                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
+                                            <a class="btn-main" href="/destinations/4/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -407,7 +378,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="/destinations/1/view">
+                                                <a href="/destinations/5/view">
                                                     The Blue Lagoon
                                                     <span style="font-weight: 300;">: Iceland's Iconic Geothermal
                                                         Spa</span></a>
@@ -416,7 +387,7 @@
                                                 The Blue Lagoon is a geothermal spa located in a lava field in southwest
                                                 Iceland. The lagoon is fed...
                                             </p>
-                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
+                                            <a class="btn-main" href="/destinations/5/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -435,7 +406,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="/destinations/1/view">
+                                                <a href="/destinations/6/view">
                                                     Reykjavík
                                                     <span style="font-weight: 300;">: The Capital of Iceland</span></a>
                                             </h4>
@@ -443,7 +414,7 @@
                                                 Reykjavík is the capital of Iceland and the most populous city in the
                                                 country. It is located...
                                             </p>
-                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
+                                            <a class="btn-main" href="/destinations/6/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -457,21 +428,20 @@
                                                 <div class="d">MAR</div>
                                             </div> --}}
                                             <img alt=""
-                                                src="{{ asset('img/destinations/destination_skógafoss.webp') }}"
+                                                src="{{ asset('img/destinations/destination_westfjords.webp') }}"
                                                 class="lazy">
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="/destinations/1/view">
-                                                    Skógafoss
-                                                    <span style="font-weight: 300;">: Iceland's Majestic
-                                                        Waterfall</span></a>
+                                                <a href="/destinations/9/view">
+                                                    Westfjords
+                                                    <span style="font-weight: 300;">: A Land of Untamed Beauty</span></a>
                                             </h4>
                                             <p style="text-align: justify;">
-                                                Skógafoss is one of Iceland's most popular waterfalls, and for good reason.
-                                                The waterfall is 60 meters...
+                                                The Westfjords of Iceland are a remote and rugged region, located on the
+                                                country's northwestern coast...
                                             </p>
-                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
+                                            <a class="btn-main" href="/destinations/9/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -490,7 +460,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="/destinations/1/view">
+                                                <a href="/destinations/7/view">
                                                     Þingvellir National Park
                                                     <span style="font-weight: 300;">: Iceland's Historical and Natural
                                                         Gem</span></a>
@@ -499,7 +469,7 @@
                                                 Þingvellir National Park is a UNESCO World Heritage Site located in
                                                 southwest Iceland. The...
                                             </p>
-                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
+                                            <a class="btn-main" href="/destinations/7/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -518,7 +488,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="/destinations/1/view">
+                                                <a href="/destinations/8/view">
                                                     Vatnajökull National Park
                                                     <span style="font-weight: 300;">: Iceland's Largest National
                                                         Park</span></a>
@@ -527,7 +497,7 @@
                                                 Vatnajökull National Park is the largest national park in Iceland, and it is
                                                 home to some of the most...
                                             </p>
-                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
+                                            <a class="btn-main" href="/destinations/8/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -546,7 +516,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="/destinations/1/view">
+                                                <a href="/destinations/10/view">
                                                     Akureyri
                                                     <span style="font-weight: 300;">: The Capital of the North</span></a>
                                             </h4>
@@ -554,7 +524,7 @@
                                                 Akureyri is the second-largest city in Iceland, located in the north of the
                                                 country. The city is known for...
                                             </p>
-                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
+                                            <a class="btn-main" href="/destinations/10/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -573,7 +543,7 @@
                                         </div>
                                         <div class="post-text">
                                             <h4>
-                                                <a href="/destinations/1/view">
+                                                <a href="/destinations/11/view">
                                                     Seljalandsfoss
                                                     <span style="font-weight: 300;">: Iceland's Hidden Waterfall</span></a>
                                             </h4>
@@ -581,7 +551,7 @@
                                                 Seljalandsfoss is one of Iceland's most popular waterfalls, and for good
                                                 reason. The waterfall is 60...
                                             </p>
-                                            <a class="btn-main" href="/destinations/1/view">Read More</a>
+                                            <a class="btn-main" href="/destinations/11/view">Read More</a>
                                         </div>
                                     </div>
                                 </div>
