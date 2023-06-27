@@ -36,35 +36,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <div class="container" style="position: relative; top:150px;">
-                                <!-- For demo purpose -->
-                                <div class="row py-5">
-                                    <div class="col-lg-9 mx-auto text-white text-center">
-                                        <form action="">
-                                            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4"
-                                                style="opacity: 0.9;">
-                                                <div class="input-group">
-                                                    <input type="search" placeholder="What're you searching for?"
-                                                        aria-describedby="button-addon1"
-                                                        class="form-control border-0 bg-light">
-                                                    <div class="input-group-append">
-                                                        <button id="button-addon1" type="submit"
-                                                            class="btn btn-link text-primary"><i
-                                                                class="fa fa-search"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <h3 class="lead">
-                                            Choose your prefered car
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
+                            <h1>Vehicle Fleet</h1>
                         </div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
+            </div>
         </section>
         <!-- section close -->
 
