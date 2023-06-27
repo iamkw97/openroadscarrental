@@ -118,7 +118,7 @@
 
                     <div class="topbar-right">
                         <div class="social-icons">
-                           <a class="mb-2" href="https://wa.me/003547737904"><i class="fa fa-whatsapp fa-lg" style="color: #fff;"></i></a>
+                           <a class="mb-2" href="https://wa.me/+3547737904"><i class="fa fa-whatsapp fa-lg" style="color: #fff;"></i></a>
                                 <a class="mb-2" href="https://www.facebook.com/openroadscarrental"><i
                                         class="fa fa-facebook fa-lg" style="color: #fff;"></i></a>
                                 <a class="mb-2" href="https://www.linkedin.com/in/open-roads-car-rental-793ba7278/"><i class="fa fa-linkedin fa-lg" style="color: #fff;"></i></a>
@@ -238,7 +238,7 @@
                         <div class="widget">
                             <p style="font-size: 125%; font-weight: 700;">Social Network</p>
                             <div class="social-icons">
-                                <a class="mb-2" href="https://wa.me/003547737904"><i class="fa fa-whatsapp fa-lg" style="color: blue;"></i></a>
+                                <a class="mb-2" href="https://wa.me/+3547737904"><i class="fa fa-whatsapp fa-lg" style="color: blue;"></i></a>
                                 <a class="mb-2" href="https://www.facebook.com/openroadscarrental"><i
                                         class="fa fa-facebook fa-lg" style="color: blue;"></i></a>
                                 <a class="mb-2" href="https://www.linkedin.com/in/open-roads-car-rental-793ba7278/"><i class="fa fa-linkedin fa-lg" style="color: blue;"></i></a>

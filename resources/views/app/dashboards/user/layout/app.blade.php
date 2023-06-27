@@ -6,7 +6,7 @@
         @yield('usertitle')
     </title>
     <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
-    
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -27,7 +27,7 @@
                 Reykjavik,
                 Open Roads Car Rental">
     <meta name="author" content="openroadscarrental.com">
-    
+
     <!-- CSS Files
     ================================================== -->
     <link href="{{ asset('welcome/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
@@ -72,7 +72,7 @@
                         <div class="topbar-widget">
                             <div class="topbar-widget">
                                 <div class="topbar-widget">
-                                    <a href="tel:+003547737904">
+                                    <a href="tel:++3547737904">
                                         <i class="fa fa-phone"></i>
                                         00354 773 7904</a>
                                 </div>
@@ -89,7 +89,7 @@
 
                     <div class="topbar-right">
                         <div class="social-icons">
-                            <a href="https://wa.me/003547737904"><i class="fa fa-whatsapp fa-lg"></i></a>
+                            <a href="https://wa.me/+3547737904"><i class="fa fa-whatsapp fa-lg"></i></a>
                             <a href="https://www.facebook.com/openroadscarrental"><i
                                     class="fa fa-facebook fa-lg"></i></a>
                             {{-- <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
@@ -295,8 +295,8 @@
                         <div class="widget">
                             <h5>Social Network</h5>
                             <div class="social-icons">
-                                <a href="tel:+003547737904"><i class="fa fa-phone fa-lg"></i></a>
-                                <a href="https://wa.me/003547737904"><i class="fa fa-whatsapp fa-lg"></i></a>
+                                <a href="tel:++3547737904"><i class="fa fa-phone fa-lg"></i></a>
+                                <a href="https://wa.me/+3547737904"><i class="fa fa-whatsapp fa-lg"></i></a>
                                 <a href="https://www.facebook.com/openroadscarrental"><i
                                         class="fa fa-facebook fa-lg"></i></a>
                                 {{-- <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
