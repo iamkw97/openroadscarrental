@@ -29,7 +29,7 @@
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img"
+            <img src="{{ asset('welcome/images/background/back1.png') }}" class="jarallax-img"
                 alt="openroadscarrental-welcome-background">
             <div class="center-y relative text-center">
                 <div class="container">

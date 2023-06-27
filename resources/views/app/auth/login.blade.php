@@ -24,7 +24,7 @@
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
         <section id="section-hero" aria-label="section" class="jarallax">
-            <img src="{{ asset('welcome/images/background/back1.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('welcome/images/background/back1.png') }}" class="jarallax-img" alt="">
             <div class="v-center">
                 <div class="container">
                     <div class="row align-items-center">
