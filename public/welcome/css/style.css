@@ -1240,7 +1240,7 @@ footer {
 #content,
 .overlay-gradient,
 section {
-    padding: 90px 0;
+    padding: 30px 0;
 }
 .de-submenu-profile a {
     color: #0d0c22;
@@ -4964,7 +4964,7 @@ header.smaller {
     border-right: none;
 }
 .de-price {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgb(240, 240, 255);
     padding: 20px 0 10px;
     font-size: 18px;
     border-radius: 6px;

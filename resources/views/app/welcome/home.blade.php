@@ -25,8 +25,8 @@
 @endsection
 
 @section('meta_dsc')
-<meta name="description"
-    content="Explore Iceland at your own pace with a car rental from Open Roads Car Rental. Book your Iceland car rental today and start your adventure!">
+    <meta name="description"
+        content="Explore Iceland at your own pace with a car rental from Open Roads Car Rental. Book your Iceland car rental today and start your adventure!">
 @endsection
 
 @section('meta_tgs')
@@ -73,6 +73,24 @@
                 display: none
             }
         }
+
+        .home_inputs {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            width: 100%
+        }
+
+        .home_inputs_label {
+            font-size: 90%;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .home_input_error_msg {
+            font-size: 80%;
+            color: red;
+        }
     </style>
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
@@ -98,39 +116,34 @@
                     <div class="col-lg-7">
                         <div class="spacer-single sm-hide"></div>
 
-                        <form name="contactForm" id='contact_form' method="post">
-
+                        <form name="form_home_input" id='form_home_input' method="post">
                             <div class="col-md-12">
                                 <div class="row my-1">
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p style="font-size: 90%; font-weight: 700;">Pick Up Location</p>
-                                            <select name="" id="pickup-location"
-                                                style="border: none; border-bottom: 1px solid #ccc; outline: none;"
-                                                name="PickupLocation" onfocus="geolocate()"
-                                                placeholder="Enter your pickup location" autocomplete="off"
-                                                class="form-control">
-                                                <option selected value="">Select Location</option>
-                                                <option value="kef_airport">KEF Airport</option>
-                                                <option value="reykjavik">Reykjavik</option>
+                                            <p class="home_inputs_label">Pick Up Location</p>
+                                            <select class="home_inputs form-control" name="home_pickup_location"
+                                                id="home_pickup_location" placeholder="Enter your pickup location"
+                                                autocomplete="off" class="form-control">
+                                                <option selected disabled>Select Location</option>
+                                                <option value="KEF-AIRPORT">KEF AIRPORT</option>
+                                                <option value="REYKJAVIK">REYKJAVIK</option>
                                             </select>
-                                            <div id="PickupLocation_error"></div>
+                                            <div class="home_input_error_msg" id="home_pickup_location_error"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p style="font-size: 90%; font-weight: 700;">Drop Off Location</p>
-                                            <select name="" id="dropoff-location"
-                                                style="border: none; border-bottom: 1px solid #ccc; outline: none;"
-                                                name="PickupLocation" onfocus="geolocate()"
-                                                placeholder="Enter your pickup location" autocomplete="off"
-                                                class="form-control">
-                                                <option selected value="">Select Location</option>
-                                                <option value="reykjavik">Reykjavik</option>
-                                                <option value="kef_airport">KEF Airport</option>
+                                            <p class="home_inputs_label">Drop Off Location</p>
+                                            <select class="home_inputs form-control" name="home_dropoff_location"
+                                                id="home_dropoff_location" placeholder="Enter your pickup location"
+                                                autocomplete="off" class="form-control">
+                                                <option selected disabled>Select Location</option>
+                                                <option value="REYKJAVIK">REYKJAVIK</option>
+                                                <option value="KEF-AIRPORT">KEF AIRPORT</option>
                                                 <option value="same_location">[Return to the same location]</option>
                                             </select>
-                                            <div id="dropoff-location_error"></div>
+                                            <div class="home_input_error_msg" id="home_dropoff_location_error"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -138,27 +151,21 @@
                                 <div class="row  my-1">
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p style="font-size: 90%; font-weight: 700;">Pick Up Date</p>
+                                            <p class="home_inputs_label">Pick Up Date</p>
                                             <div class="date-time-field">
-                                                <input
-                                                    style="width: 100%;
-                                                            border: none;
-                                                            border-bottom: 1px solid #ccc;"
-                                                    type="date" id="pickup-date" name="" value="">
-                                                <div id="pickup_date_error"></div>
+                                                <input class="home_inputs form-control" type="date" id="home_pickup_date"
+                                                    name="home_pickup_date">
+                                                <div class="home_input_error_msg" id="home_pickup_date_error"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p style="font-size: 90%; font-weight: 700;">Return Date</p>
+                                            <p class="home_inputs_label">Return Date</p>
                                             <div class="date-time-field">
-                                                <input
-                                                    style="width: 100%;
-                                                            border: none;
-                                                            border-bottom: 1px solid #ccc;"
-                                                    type="date" id="return-date" name="" value="">
-                                                <div id="return-date-error"></div>
+                                                <input class="home_inputs form-control" type="date" id="home_return_date"
+                                                    name="home_return_date">
+                                                <div class="home_input_error_msg" id="home_return_date_error"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -167,27 +174,21 @@
                                 <div class="row  mt-2 mb-2">
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p style="font-size: 90%; font-weight: 700;">Pick Up Time</p>
+                                            <p class="home_inputs_label">Pick Up Time</p>
                                             <div class="date-time-field">
-                                                <input
-                                                    style="width: 100%;
-                                                            border: none;
-                                                            border-bottom: 1px solid #ccc;"
-                                                    type="time" name="Pick Up Time" id="pickup-time">
-                                                <div id="pickup-time-error"></div>
+                                                <input class="home_inputs form-control" type="time"
+                                                    name="home_pickup_time" id="home_pickup_time">
+                                                <div class="home_input_error_msg" id="home_pickup_time_error"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p style="font-size: 90%; font-weight: 700;">Return Time</p>
+                                            <p class="home_inputs_label">Return Time</p>
                                             <div class="date-time-field">
-                                                <input
-                                                    style="width: 100%;
-                                                            border: none;
-                                                            border-bottom: 1px solid #ccc;"
-                                                    type="time" name="Pick Up Time" id="return-time">
-                                                <div id="return-time-error"></div>
+                                                <input class="home_inputs form-control" type="time"
+                                                    name="home_return_time" id="home_return_time">
+                                                <div class="home_input_error_msg" id="home_return_time_error"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -195,8 +196,8 @@
 
                                 <div class="row mt-3">
                                     <div class="col-md-12">
-                                        <button type='button' id='' onclick="validateForm()"
-                                            class="btn-main pull-right" style="background-color:#004EC2">
+                                        <button type='button' id='btn_home_input' class="btn-main pull-right"
+                                            style="background-color:#004EC2">
                                             Find a Vehicle
                                         </button>
                                     </div>
@@ -761,13 +762,14 @@
     </div>
     {{-- destination_slider to view destinations --}}
     <script>
+        // destination & testimonials slider open
         $(document).ready(function() {
             $(".d_carousel_container").slick({
                 dots: !1,
                 infinite: !0,
                 speed: 200,
-                autoplay: true,
-                autoplaySpeed: 3000,
+                autoplay: !0,
+                autoplaySpeed: 3e3,
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 prevArrow: !1,
@@ -791,7 +793,7 @@
                 dots: !1,
                 infinite: !0,
                 speed: 300,
-                autoplay: true,
+                autoplay: !0,
                 autoplaySpeed: 2500,
                 slidesToShow: 3,
                 slidesToScroll: 1,
@@ -811,6 +813,118 @@
                     }
                 }]
             })
+        });
+        // destination & testimonials slider close
+
+        // home inputs validations and create sessions for passing to next page
+        $(document).ready(function() {
+            // Add a click event listener to the button
+            $('#btn_home_input').click(function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                // Reset error messages
+                resetErrorMessages();
+
+                // Validate each form input
+                let isValid = true;
+
+                const home_pickup_location = $('#home_pickup_location').val();
+                const home_dropoff_location = $('#home_dropoff_location').val();
+                const home_pickup_date = $('#home_pickup_date').val();
+                const home_return_date = $('#home_return_date').val();
+                const home_pickup_time = $('#home_pickup_time').val();
+                const home_return_time = $('#home_return_time').val();
+
+                if (!home_pickup_location) {
+                    displayErrorMessage('home_pickup_location', 'Please select a pickup location');
+                    isValid = false;
+                }
+
+                if (!home_dropoff_location) {
+                    displayErrorMessage('home_dropoff_location', 'Please select a drop-off location');
+                    isValid = false;
+                }
+
+                if (!home_pickup_date) {
+                    displayErrorMessage('home_pickup_date', 'Please select a pickup date');
+                    isValid = false;
+                } else if (!isFutureDate(home_pickup_date)) {
+                    displayErrorMessage('home_pickup_date', 'Pickup date should be a future date');
+                    isValid = false;
+                }
+
+                if (!home_return_date) {
+                    displayErrorMessage('home_return_date', 'Please select a return date');
+                    isValid = false;
+                } else if (!isFutureDate(home_return_date)) {
+                    displayErrorMessage('home_return_date', 'Return date should be a future date');
+                    isValid = false;
+                } else if (!isFutureDateThan(home_pickup_date, home_return_date)) {
+                    displayErrorMessage('home_return_date', 'Return date should be after the pickup date');
+                    isValid = false;
+                }
+
+                if (!home_pickup_time) {
+                    displayErrorMessage('home_pickup_time', 'Please select a pickup time');
+                    isValid = false;
+                } else if (!isFutureTime(home_pickup_date, home_pickup_time)) {
+                    displayErrorMessage('home_pickup_time', 'Pickup time should be in the future');
+                    isValid = false;
+                }
+
+                if (!home_return_time) {
+                    displayErrorMessage('home_return_time', 'Please select a return time');
+                    isValid = false;
+                } else if (!isFutureTime(home_return_date, home_return_time)) {
+                    displayErrorMessage('home_return_time', 'Return time should be in the future');
+                    isValid = false;
+                }
+
+                // If all validations pass, create sessions
+                if (isValid) {
+                    // Save the form input values in the session
+                    sessionStorage.setItem('home_pickup_location', home_pickup_location);
+                    sessionStorage.setItem('home_dropoff_location', home_dropoff_location);
+                    sessionStorage.setItem('home_pickup_date', home_pickup_date);
+                    sessionStorage.setItem('home_return_date', home_return_date);
+                    sessionStorage.setItem('home_pickup_time', home_pickup_time);
+                    sessionStorage.setItem('home_return_time', home_return_time);
+
+                    // Redirect to the '/cars' page
+                    window.location.href = '/cars';
+                }
+            });
+
+            // Function to display an error message for a specific input field
+            function displayErrorMessage(inputId, message) {
+                $(`#${inputId}_error`).text(message);
+            }
+
+            // Function to reset all error messages
+            function resetErrorMessages() {
+                $('[id$="_error"]').text('');
+            }
+
+            // Function to check if a date is in the future
+            function isFutureDate(date) {
+                const selectedDate = new Date(date);
+                const currentDate = new Date();
+                return selectedDate >= currentDate;
+            }
+
+            // Function to check if a date is in the future compared to another date
+            function isFutureDateThan(date1, date2) {
+                const selectedDate1 = new Date(date1);
+                const selectedDate2 = new Date(date2);
+                return selectedDate2 >= selectedDate1;
+            }
+
+            // Function to check if a time is in the future (relative to a given date)
+            function isFutureTime(date, time) {
+                const selectedDateTime = new Date(`${date} ${time}`);
+                const currentDateTime = new Date();
+                return selectedDateTime >= currentDateTime;
+            }
         });
     </script>
 

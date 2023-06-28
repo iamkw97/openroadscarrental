@@ -10,7 +10,6 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'G-0E1P706JRR');
     </script>
 @endsection
@@ -23,11 +22,46 @@
     <meta name="keywords"
         content="Car rental Iceland, Car hire Iceland, car rental, car hire, Iceland, SUV, 4x4, automatic, Ford Kuga, Toyota Rav4, BMW, Ford Kuga 4x4 Automatic, Toyota Rav4 4x4 Automatic, Nissan X-Trail 7 Seater Automatic, BMW 5 Series Luxury Car Model 2020, Dacia Duster, VW Caravelle, CDW insurance, SCDW insurance, TP insurance, GP insurance, SAAP insurance, Unlimited mileage, GPS included, Studded tires, Winter car rental, Car rental prices, Cheap car rental, Best cars for rent, Luxury vehicles, Affordable car hire, Car hire deals, Car hire options, Car hire discounts, Car hire services, Car hire rates">
 @endsection
+{{-- form wizard stylesheet --}}
+<link rel="stylesheet" href="{{ asset('plugins/bs-stepper/css/bs-stepper.min.css') }}">
 
 @section('welcomebody')
     <style>
         .text_justify {
             text-align: justify;
+        }
+
+        .carinfo_tour_input {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            color: #0745a9;
+            width: 100%;
+        }
+
+        .carinfo_tour_input[readonly] {
+            background-color: #ffffff;
+        }
+
+        .carinfo_inputs_label {
+            padding: 5px;
+            padding-left: 8px;
+            font-size: 90%;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #252525;
+            background-color: rgb(228, 228, 228);
+            width: 100%;
+            border-radius: 3px;
+        }
+
+        .carinfo_input_error_msg {
+            font-size: 75%;
+            color: red;
+        }
+
+        .btns_stepper {
+            text-align: right;
         }
     </style>
     <!-- content begin -->
@@ -36,12 +70,13 @@
 
         <!-- section begin -->
         <section id="subheader" class="jarallax text-light">
-            <img src="{{ asset('welcome/images/background/back1.png') }}" class="jarallax-img" alt="openroadscarrental-welcome-background">
+            <img src="{{ asset('welcome/images/background/back1.png') }}" class="jarallax-img"
+                alt="openroadscarrental-welcome-background">
             <div class="center-y relative text-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <h1 id="vehicle_header_name"></h1>
+                            <h1>Booking Process</h1>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -52,255 +87,383 @@
 
         <section id="section-car-details">
             <div class="container">
-                <div class="row g-5">
-                    <div class="col-lg-6">
-                        {{-- insuarance --}}
-                        <h2>Insuarances</h2>
-                        <p class="text_justify">Please Note<span style="color: red">*</span><br><strong>ALL our prices
-                                include CDW, SCDW,TP,GP,
-                                SAAP Insurances, unlimited mileage,GPS and studded tires during winter.</strong></p>
-                        <p class="text_justify">
-                            Our goal is to offer transparency throughout the booking process and during your rental period.
-                            Usually, the insurance terms are hard to understand, but we want to change that. Here we try to
-                            explain the insurances, so they are easy to understand. This way you know what is included and
-                            what is not, so nothing should come as a surprise to you.
-                        </p>
-                        <p class="text_justify">
-                            If you have insurance through your credit card and you wish to decline our insurance. Please
-                            contact us by email at <strong>openroadscarrental@gmail.com</strong> and we will happily assist you.
-                        </p>
-                        <p class="text_justify">
-                            Included in the price:
-                        </p>
-                        <p class="text_justify">
-                            When you book a car through our website there are four insurances that are included in the price
-                            Each insurance has a liability (excess). That means if you happen to have damage to the car when
-                            you return it you will be charged the liability (excess) amount.
-                        </p>
-                        <p class="text_justify">
-                            Collision damage waiver and super collision damage waiver (CDW/SCDW) (included)
-                        </p>
-                        <p class="text_justify">
-                            CDW and SCDW cover the bodywork of the car. In a collision, the bodywork is usually the first
-                            thing that gets damaged. The liability (excess) depends on the size of the car.
-                        </p>
-                        {{-- <p class="text_justify">
-                            Example: You return a 2WD car with a dent on the passenger door. We inspect the car and see that
-                            the damage was not there when you picked up the car. Our employee will let you know about the
-                            new damage and charge you 90.000 ISK (approx. $700). The 90.000 ISK (approx. $700) is the
-                            absolute maximum you will be charged. If the third-party damage repair report will estimate that
-                            the repair will cost less than 90.000 ISK ($700) the difference will be refunded.
-                        </p> --}}
-
-                        <h3>GRAVEL PROTECTION (GP) (INCLUDED)</h3>
-                        <p class="text_justify">
-                            The gravel protection is important insurance while renting a car in Iceland. Gravel are common
-                            around the whole Iceland. When driving on gravel roads the small stones will leave chipped paint
-                            at the front of the bumper. Chipped paint damages are nothing to worry about and you will not be
-                            charged for them.
-                        </p>
-                        <p class="text_justify">
-                            The gravel protection also covers the windscreen, headlights, and mirrors.
-                            {{-- The liability
-                            (excess) for broken windscreen, headlights, and mirrors is 20.000 ISK (approx. $150). --}}
-                        </p>
-
-                        <h3>THEFT PROTECTION (TP) (INCLUDED)</h3>
-                        <p class="text_justify">
-                            Luckily Iceland is a very safe place and vehicle thefts are not very common. Though this is not
-                            common the car is always covered by insurance if it gets stolen. Theft protection has no
-                            liability (excess).
-                            Keep in mind that TP does not cover items stolen within the vehicle.
-                        </p>
-
-                        <h3>SAND & ASH PROTECTION (SAAP) (INCLUDED)</h3>
-                        <p class="text_justify">
-                            The SAAP insurance was introduced because our standard insurance did not cover sand and ash
-                            damages. Sand damage is very common damage, especially when driving on the south coast. This can
-                            happen all year round.
-                        </p>
-                        <p class="text_justify">
-                            Sand and ash damages are extremely costly and without the SAAP the cost for the damage
-                            is completely the renter’s responsibility.
-                            {{-- The SAAP reduces the liability down to 90.000 ISK (approx. $900)
-                            The price per day is 1.650 ISK --}}
-                        </p>
-
-                        <h3>LIABILITY WAIVER (INCLUDED)</h3>
-                        <p class="text_justify">
-                            All our customers can reduce their liability to zero by opting for our Liability Waiver. As many
-                            of our customers wanted to have a carefree experience while driving around Iceland, we
-                            introduced the Liability Waiver. This allows our renters to drive carefree with <strong>Open Roads Car Rental</strong>
-                            while enjoying our beautiful Iceland.
-                        </P>
-                        <P class="text_justify">
-                            Keep in mind that the Liability Waiver is not extra insurance but an option for our renters to
-                            waive their liability in case of any damage covered by our insurance. This includes CDW/SCDW,
-                            GP, TP, SAAP, and Tire Protection and is subject to the terms and conditions of the Rental
-                            Agreement.
-                             {{-- Excluded are any damages not covered by insurance as stated in Article 29 and 32 in
-                            the Rental Agreement and terms and conditions. --}}
-                        </P>
-                        <P class="text_justify">
-                            *Note - Tire Protection only covers the damage of the tire, i.e. the repair or cost of new tire.
-                            It does NOT cover the assistance required. By purchasing Roadside Assistance Waiver the cost for
-                            the assistance is waived.
-                        </P>
-                        {{-- <P class="text_justify">
-                            Example: You return a 2WD car with a dent on the passenger door and sand damages. We inspect the
-                            car and see that the damage was not there when you picked up the car. Our employee will let you
-                            know about the new damage but because you opt for the liability waiver there will be nothing
-                            charged.
-                        </P> --}}
-                        <P class="text_justify">
-                            Liability Waiver reduces liability on each insurance down to zero.
-                        </P>
-                        {{-- <P class="text_justify">
-                            The price per day is 3.800 ISK for 2WD and 4.900 ISK for 4WD and vans.
-                        </p> --}}
-                    </div>
-
-
-                    <div class="col-lg-3">
-                        <h3 id="vehicle_description"></h3>
-                        <p id="vehicleMoreinf"></p>
-
-                        <div class="spacer-10"></div>
-
-                        <h4>Specifications</h4>
-                        <div class="de-spec">
-                            <div class="item" id="CarImage">
-
-                            </div>
-                            <div class="d-row">
-                                <span class="d-title">Vehicle Category</span>
-                                <spam class="d-value" id="VehicleCategory"></spam>
-                            </div>
-                            <div class="d-row">
-                                <span class="d-title">Vehicle Make</span>
-                                <spam class="d-value" id="VehicleMake"></spam>
-                            </div>
-
-                            <div class="d-row">
-                                <span class="d-title">Vehicle Model</span>
-                                <spam class="d-value" id="VehicleModel"></spam>
-                            </div>
-                            <div class="d-row">
-                                <span class="d-title">Passengers</span>
-                                <spam class="d-value" id="NumberofSeats"></spam>
-                            </div>
-                            <div class="d-row">
-                                <span class="d-title">Suitcases</span>
-                                <spam class="d-value" id="NumberofSuitcases"></spam>
-                            </div>
-                            <div class="d-row">
-                                <span class="d-title">Condition</span>
-                                <spam class="d-value" id="condition"></spam>
-                            </div>
-                            <div class="d-row">
-                                <span class="d-title">Fuel State</span>
-                                <spam class="d-value" id="FuelState"></spam>
-                            </div>
+                {{-- stepper open --}}
+                <div class="bs-stepper">
+                    <div class="bs-stepper-header" role="tablist">
+                        <!-- Step 1 -->
+                        <div class="step" data-target="#step3_cars_info">
+                            <button type="button" class="step-trigger" role="tab" aria-controls="step3_cars_info"
+                                id="step3_cars_info-trigger">
+                                <span class="bs-stepper-circle">
+                                    <span aria-hidden="true" class="icon_compass_alt"></span>
+                                </span>
+                                <span class="bs-stepper-label">Car Information</span>
+                            </button>
                         </div>
-
-                        <div class="spacer-single"></div>
-
-                        <h4>Additional Features</h4>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="additional_baby_seat"
-                                name="additional_baby_seat">
-                            <label class="form-check-label" for="additional_baby_seat"><strong>Baby Seat</strong><span>|ISK
-                                    1000/daily</span></label>
+                        <div class="line"></div>
+                        <!-- Step 2 -->
+                        <div class="step" data-target="#step4_insuarance">
+                            <button type="button" class="step-trigger" role="tab" aria-controls="step4_insuarance"
+                                id="step4_insuarance-trigger">
+                                <span class="bs-stepper-circle">
+                                    <span aria-hidden="true" class="icon_shield"></span>
+                                </span>
+                                <span class="bs-stepper-label">Insuarance</span>
+                            </button>
                         </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="additional_wifi"
-                                name="additional_wifi">
-                            <label class="form-check-label" for="additional_wifi"><strong>WIFI
-                                    (Unlimited)</strong><span>|ISK 1300/daily</span></label>
+                        <div class="line"></div>
+                        <!-- Step 3 -->
+                        <div class="step" data-target="#step5_additional_features">
+                            <button type="button" class="step-trigger" role="tab"
+                                aria-controls="step5_additional_features" id="step5_additional_features-trigger">
+                                <span class="bs-stepper-circle">
+                                    <span aria-hidden="true" class="icon_link_alt"></span>
+                                </span>
+                                <span class="bs-stepper-label">Additional Options</span>
+                            </button>
                         </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="additional_driver"
-                                name="additional_driver">
-                            <label class="form-check-label" for="additional_driver"><strong>Extra
-                                    Driver</strong><span>|FREE</span></label>
+                        <div class="line"></div>
+                        <!-- Step 4 -->
+                        <div class="step" data-target="#step6_user_info">
+                            <button type="button" class="step-trigger" role="tab" aria-controls="step6_user_info"
+                                id="step6_user_info-trigger">
+                                <span class="bs-stepper-circle">
+                                    <span aria-hidden="true" class="icon_documents_alt"></span>
+                                </span>
+                                <span class="bs-stepper-label">User Information</span>
+                            </button>
+                        </div>
+                        <div class="line"></div>
+                        <!-- Step 5 -->
+                        <div class="step" data-target="#step7_confirmation">
+                            <button type="button" class="step-trigger" role="tab" aria-controls="step7_confirmation"
+                                id="step7_confirmation-trigger">
+                                <span class="bs-stepper-circle">
+                                    <span aria-hidden="true" class="icon_check"></span>
+                                </span>
+                                <span class="bs-stepper-label">Confirmation</span>
+                            </button>
                         </div>
                     </div>
-
-                    <div class="col-lg-3">
-                        <div class="de-price text-center">
-                            Daily Rate<h4>ISK <span id="total_cost"></span></h4>
-                        </div>
-                        <div class="spacer-30"></div>
-                        <div class="de-box mb10">
-                            <form name="contactForm" id='contact_form' method="post">
-                                <div class="row">
-                                    <div class="col-lg-12 mb20">
-                                        <input id="car_id" name="car_engine_3" type="hidden">
-                                    </div>
-                                    <div class="col-lg-12 mb20">
-                                        <h5>Pick Up Location</h5><select name="" id="PickupLocationfinal"
-                                            style="border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
-                                            name="PickupLocation" placeholder="Enter your pickup location"
-                                            autocomplete="off" class="form-control">
-                                            <option selected value="">Select Location</option>
-                                            <option value="kef_airport">KEF Airport</option>
-                                            <option value="reykjavik">Reykjavik</option>
-                                        </select>
-                                        <div class="jls-address-preview jls-address-preview--hidden">
-                                            <div class="jls-address-preview__header">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 mb20">
-                                        <h5>Drop Off Location</h5><select name="" id="DropoffLocationfinal"
-                                            style="width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;"
-                                            name="PickupLocation" placeholder="Enter your pickup location"
-                                            autocomplete="off" class="form-control">
-                                            <option selected value="">Select Location</option>
-                                            <option value="reykjavik">Reykjavik</option>
-                                            <option value="kef_airport">KEF Airport</option>
-                                            <option value="same_location">[Return to the same location]</option>
-                                        </select>
-                                        <div class="jls-address-preview jls-address-preview--hidden">
-                                            <div class="jls-address-preview__header">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 mb20">
-                                        <h5>Pick Up Date & Time</h5>
-                                        <input id="date-pickerfinal" name="car_engine_3" type="date"
-                                            style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-                                        <input id="pickup-timefinal" name="car_engine_3" type="time"
-                                            style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9; margin-top:10px;">
-                                    </div>
-
-                                    <div class="col-lg-12 mb20">
-                                        <h5>Return Date & Time</h5>
-                                        <div class="date-time-field">
-                                            <input id="date-dropfinal" name="car_engine_3" type="date"
-                                                style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9;">
-                                            <input id="dropoff-timefinal" name="car_engine_3" type="time"
-                                                style=" width: 100%; border: none; border-bottom: 1px solid #ccc; outline: none; color:#0745a9; margin-top:10px;">
+                    <div class="line mb-4"></div>
+                    <div class="bs-stepper-content">
+                        <!-- Step 1 content -->
+                        <div id="step3_cars_info" class="content" role="tabpanel" aria-labelledby="step3_cars_info-trigger">
+                            {{-- step 1 cars_info content open --}}
+                            <div class="row g-3">
+                                <div class="col-lg-6">
+                                    <div id="slider-carousel" class="owl-carousel">
+                                        <div class="item">
+                                            <img src="{{ asset('img/cars/' . $selected_car_img->vehicle_image) }}"
+                                                alt="">
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-primary" id="submit_btn">Book Now</button>
-                                <div class="clearfix"></div>
 
-                            </form>
+                                <div class="col-lg-3">
+                                    <div class="de-price text-center">
+                                        <h4>ISK <span class="text-danger"
+                                                id="step1_rental_cost_isk"><strong>{{ $rental_cost_isk }}</strong></span>/daily
+                                        </h4>
+
+                                    </div>
+                                    <div class="spacer-20"></div>
+                                    <h3>{{ $selected_car_info->displaying_name }}</h3>
+                                    <p class="text_justify">{{ $selected_car_info->vehicle_description }}</p>
+                                    <div class="spacer-10"></div>
+                                    <h4>SPECIFICATIONS</h4>
+                                    <div class="de-spec">
+                                        <div class="d-row">
+                                            <span class="d-title">Category</span>
+                                            <spam class="d-value">{{ $selected_car_info->category }}</spam>
+                                        </div>
+                                        <div class="d-row">
+                                            <span class="d-title">Make</span>
+                                            <spam class="d-value">{{ $selected_car_info->vehicle_make }}</spam>
+                                        </div>
+                                        <div class="d-row">
+                                            <span class="d-title">Model</span>
+                                            <spam class="d-value">{{ $selected_car_info->vehicle_model }}</spam>
+                                        </div>
+                                        <div class="d-row">
+                                            <span class="d-title">Passengers</span>
+                                            <spam class="d-value">{{ $selected_car_info->no_of_seats }}</spam>
+                                        </div>
+                                        <div class="d-row">
+                                            <span class="d-title">Suitcases</span>
+                                            <spam class="d-value">{{ $selected_car_info->no_of_suitcases }}</spam>
+                                        </div>
+                                        <div class="d-row">
+                                            <span class="d-title">Fuel State</span>
+                                            <spam class="d-value">{{ $selected_car_info->fuel_state }}</spam>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="de-box mb10">
+                                        <form name="form_carinfo_step1_tour" id='form_carinfo_step1_tour' method="post">
+                                            <div class="row">
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Pick Up Location</p>
+                                                    <input readonly name="carinfo_step1_pickup_location"
+                                                        id="carinfo_step1_pickup_location"
+                                                        placeholder="Enter your pickup location"
+                                                        class="carinfo_tour_input form-control">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step1_pickup_location_error"></div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Drop Off Location</p>
+                                                    <input readonly name="carinfo_step1_dropoff_location"
+                                                        id="carinfo_step1_dropoff_location"
+                                                        placeholder="Enter your pickup location"
+                                                        class="carinfo_tour_input form-control">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step1_dropoff_location_error"></div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Pick Up Date & Time</p>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step1_pickup_date" id="carinfo_step1_pickup_date"
+                                                        type="date">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step1_pickup_date_error">
+                                                    </div>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step1_pickup_time" id="carinfo_step1_pickup_time"
+                                                        type="time">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step1_pickup_time_error">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb10">
+                                                    <p class="carinfo_inputs_label">Return Date & Time</p>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step1_return_date" id="carinfo_step1_return_date"
+                                                        type="date">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step1_return_date_error">
+                                                    </div>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step1_return_time" id="carinfo_step1_return_time"
+                                                        type="time">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step1_return_time_error">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- step 1 cars_info content close --}}
+                            <div class="line my-4"></div>
+                            <div class="btns_stepper">
+                                <button class="btn btn-lg btn-primary btn_next">Next</button>
+                            </div>
+                        </div>
+                        <!-- Step 2 content -->
+                        <div id="step4_insuarance" class="content" role="tabpanel"
+                            aria-labelledby="step4_insuarance-trigger">
+                            {{-- step 2 insuarance content open --}}
+                            <div class="row g-3">
+                                <div class="col-lg-6">
+
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="de-item mb10">
+                                        <div class="d-img">
+                                            {{-- <img src="{{ asset('img/cars/' . $selected_car_img->vehicle_image) }}"
+                                            alt=""> --}}
+                                        </div>
+
+                                        <div class="de-spec">
+                                            <h4 class="carinfo_inputs_label">PRICE SUMMARY</h4>
+                                            <div class="d-row">
+                                            <p id="step2_date_count"></p>
+                                            </div>
+                                            <div class="d-row">
+                                                <span class="d-title">Vehicle</span>
+                                                <spam class="d-value" id="step2_vehicle_total_price_isk"></spam>
+                                            </div>
+                                            <div class="d-row">
+                                                <span class="d-title">Total</span>
+                                                <spam class="d-value" id="step2_total"></spam>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="de-box mb10">
+                                        <form name="form_carinfo_step2_tour" id='form_carinfo_step2_tour' method="post">
+                                            <div class="row">
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Pick Up Location</p>
+                                                    <input readonly name="carinfo_step2_pickup_location"
+                                                        id="carinfo_step2_pickup_location"
+                                                        placeholder="Enter your pickup location"
+                                                        class="carinfo_tour_input form-control">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step2_pickup_location_error"></div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Drop Off Location</p>
+                                                    <input readonly name="carinfo_step2_dropoff_location"
+                                                        id="carinfo_step2_dropoff_location"
+                                                        placeholder="Enter your pickup location"
+                                                        class="carinfo_tour_input form-control">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step2_dropoff_location_error"></div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Pick Up Date & Time</p>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step2_pickup_date" id="carinfo_step2_pickup_date"
+                                                        type="date">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step2_pickup_date_error">
+                                                    </div>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step2_pickup_time" id="carinfo_step2_pickup_time"
+                                                        type="time">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step2_pickup_time_error">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb10">
+                                                    <p class="carinfo_inputs_label">Return Date & Time</p>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step2_return_date" id="carinfo_step2_return_date"
+                                                        type="date">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step2_return_date_error">
+                                                    </div>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step2_return_time" id="carinfo_step2_return_time"
+                                                        type="time">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step2_return_time_error">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- step 2 insuarance content close --}}
+                            <div class="line my-4"></div>
+                            <div class="btns_stepper">
+                                <button class="btn btn-lg btn-primary btn_previous">Previous</button>
+                                <button class="btn btn-lg btn-primary btn_next">Next</button>
+                            </div>
+                        </div>
+                        <!-- Step 3 content -->
+                        <div id="step5_additional_features" class="content" role="tabpanel"
+                            aria-labelledby="step5_additional_features-trigger">
+                            {{-- step 3 additioanal features content open --}}
+                            {{-- step 3 additioanal features content close --}}
+                            <div class="line my-4"></div>
+                            <div class="btns_stepper">
+                                <button class="btn btn-lg btn-primary btn_previous">Previous</button>
+                                <button class="btn btn-lg btn-primary btn_next">Next</button>
+                            </div>
+                        </div>
+                        <!-- Step 4 content -->
+                        <div id="step6_user_info" class="content" role="tabpanel"
+                            aria-labelledby="step6_user_info-trigger">
+                            {{-- step 4 user info content open --}}
+                            {{-- step 4 user info content close --}}
+                            <div class="line my-4"></div>
+                            <div class="btns_stepper">
+                                <button class="btn btn-lg btn-primary btn_previous">Previous</button>
+                                <button class="btn btn-lg btn-primary btn_next">Next</button>
+                            </div>
+                        </div>
+                        <!-- Step 3 content -->
+                        <div id="step7_confirmation" class="content" role="tabpanel"
+                            aria-labelledby="step7_confirmation-trigger">
+                            {{-- step 5 confirmation content open --}}
+                            {{-- step 5 confirmation content close --}}
+                            <div class="line my-4"></div>
+                            <div class="btns_stepper">
+                                <button class="btn btn-lg btn-primary btn_previous">Previous</button>
+                                <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                {{-- stepper close --}}
             </div>
         </section>
-
-
     </div>
+    <script src="{{ asset('plugins/bs-stepper/js/bs-stepper.min.js') }}"></script>
+    <script>
+        // stepper navigator open
+        $(document).ready(function() {
+            var stepper = new Stepper($('.bs-stepper')[0]);
+            // Next button click event
+            $('.btn_next').on('click', function() {
+                stepper.next();
+            });
+            // Previous button click event
+            $('.btn_previous').on('click', function() {
+                stepper.previous();
+            });
+        });
+        // stepper navigator close
+        // get and set session data from cars page tour open
+        $(document).ready(function() {
+            // Retrieve the values from sessionStorage and display them
+            // step 1
+            $('#carinfo_step1_pickup_location').val(sessionStorage.getItem('cars_pickup_location'));
+            $('#carinfo_step1_dropoff_location').val(sessionStorage.getItem('cars_dropoff_location'));
+            $('#carinfo_step1_pickup_date').val(sessionStorage.getItem('cars_pickup_date'));
+            $('#carinfo_step1_return_date').val(sessionStorage.getItem('cars_return_date'));
+            $('#carinfo_step1_pickup_time').val(sessionStorage.getItem('cars_pickup_time'));
+            $('#carinfo_step1_return_time').val(sessionStorage.getItem('cars_return_time'));
+            // step 2
+            $('#carinfo_step2_pickup_location').val(sessionStorage.getItem('cars_pickup_location'));
+            $('#carinfo_step2_dropoff_location').val(sessionStorage.getItem('cars_dropoff_location'));
+            $('#carinfo_step2_pickup_date').val(sessionStorage.getItem('cars_pickup_date'));
+            $('#carinfo_step2_return_date').val(sessionStorage.getItem('cars_return_date'));
+            $('#carinfo_step2_pickup_time').val(sessionStorage.getItem('cars_pickup_time'));
+            $('#carinfo_step2_return_time').val(sessionStorage.getItem('cars_return_time'));
+
+        });
+        // get and set session data from cars page tour close
+        // step 2 calculation open
+        $(document).ready(function() {
+            var vehicle_rental_cost_isk = parseFloat($('#step1_rental_cost_isk').text());
+            var pickup_date = $('#carinfo_step1_pickup_date').val();
+            var return_date = $('#carinfo_step1_return_date').val();
+            // Convert pickup and return dates to JavaScript Date objects
+            var pickupDateObj = new Date(pickup_date);
+            var returnDateObj = new Date(return_date);
+            // Calculate the difference in milliseconds between the two dates
+            var dateDifference = returnDateObj.getTime() - pickupDateObj.getTime();
+            // Convert the date difference from milliseconds to days
+            var dateCount = Math.ceil(dateDifference / (1000 * 60 * 60 * 24));
+            // Calculate the total cost by multiplying date count and vehicle daily rental
+            var vehicle_total_cost_isk = dateCount * vehicle_rental_cost_isk;
+            // Display the total cost in the designated element
+
+            $('#step2_date_count').text(dateCount + ' day tour');
+            $('#step2_vehicle_total_price_isk').text(vehicle_total_cost_isk + ' ISK');
+            $('#step2_total').text(vehicle_total_cost_isk+ ' ISK');
+
+        });
+
+        // step 2 calculation close
+    </script>
     <!-- content close -->
-
-
-
-    {{-- @include('layout.footer') --}}
 @endsection

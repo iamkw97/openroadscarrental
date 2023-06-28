@@ -7,6 +7,7 @@ use App\Models\Car;
 use App\Models\CarImage;
 use App\Models\Destination;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class BaseController extends Controller
@@ -39,22 +40,20 @@ class BaseController extends Controller
     {
         return view('app.welcome.cars');
     }
-    public function carInfo(Request $request, $id)
+    public function carList()
     {
         $cars = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
-            ->leftJoin('car_availabilities', 'cars.id', '=', 'car_availabilities.car_id')
             ->select(
                 'cars.*',
                 'car_prices.apr2sep_isk_cost_rental_per_day',
-                'car_prices.apr2sep_isk_cost_rental_per_day',
+                'car_prices.apr2sep_usd_cost_rental_per_day',
                 'car_prices.apr2sep_eur_cost_rental_per_day',
                 'car_prices.sep2apr_isk_cost_rental_per_day',
-                'car_prices.sep2apr_isk_cost_rental_per_day',
                 'car_prices.sep2apr_usd_cost_rental_per_day',
-                'car_prices.sep2apr_eur_cost_rental_per_day'
+                'car_prices.sep2apr_eur_cost_rental_per_day',
             )
-            ->where('cars.id', $id)
             ->get();
+
         foreach ($cars as $car) {
             $carImages = CarImage::where('car_id', $car->id)->get();
             $car->images = $carImages;
@@ -63,10 +62,40 @@ class BaseController extends Controller
         $response['data'] = $cars;
         return response()->json($response);
     }
-    public function bookingStep2()
+
+    public function carInfo(Request $request, $id)
     {
-        return view('app.welcome.carinfo');
+        $selected_car_info = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
+            ->leftJoin('car_availabilities', 'cars.id', '=', 'car_availabilities.car_id')
+            ->select(
+                'cars.*',
+                'car_prices.apr2sep_isk_cost_rental_per_day',
+                'car_prices.apr2sep_usd_cost_rental_per_day',
+                'car_prices.apr2sep_eur_cost_rental_per_day',
+                'car_prices.sep2apr_isk_cost_rental_per_day',
+                'car_prices.sep2apr_usd_cost_rental_per_day',
+                'car_prices.sep2apr_eur_cost_rental_per_day'
+            )
+            ->where('cars.id', $id)
+            ->first();
+        $selected_car_img  = Car::find($id)
+            ->join('car_images', 'cars.id', '=', 'car_images.car_id')
+            ->select('car_images.vehicle_image')
+            ->first();
+
+        $currentDate = Carbon::now();
+        $startApr2Sep = Carbon::createFromFormat('Y-m-d', $currentDate->format('Y') . '-04-01');
+        $endApr2Sep = Carbon::createFromFormat('Y-m-d', $currentDate->format('Y') . '-08-31');
+
+        if ($currentDate->greaterThanOrEqualTo($startApr2Sep) && $currentDate->lessThanOrEqualTo($endApr2Sep)) {
+            $rental_cost_isk = $selected_car_info->apr2sep_isk_cost_rental_per_day;
+        } else {
+            $rental_cost_isk = $selected_car_info->sep2apr_isk_cost_rental_per_day;
+        }
+
+        return view('app.welcome.carinfo', compact('selected_car_info', 'selected_car_img', 'rental_cost_isk'));
     }
+
     public function booking()
     {
         return view('app.welcome.booking');
