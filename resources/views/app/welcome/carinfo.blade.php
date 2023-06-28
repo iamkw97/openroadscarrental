@@ -63,6 +63,11 @@
         .btns_stepper {
             text-align: right;
         }
+
+        .total_ {
+            color: rgb(3, 209, 0);
+            font-weight: 500;
+        }
     </style>
     <!-- content begin -->
     <div class="no-bottom no-top zebra" id="content">
@@ -272,20 +277,127 @@
                             {{-- step 2 insuarance content open --}}
                             <div class="row g-3">
                                 <div class="col-lg-6">
-
+                                    <h2>Insurance Coverage</h2>
+                                    <table class="table table-bordered">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>INSURANCE COVERAGE TYPE</th>
+                                                <th>SILVER</th>
+                                                <th>GOLD</th>
+                                                <th>PLATINUM</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Third Party Liability Insurance</td>
+                                                <td>YES</td>
+                                                <td>YES</td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Super Collision Damage Waiver</td>
+                                                <td>YES</td>
+                                                <td>YES</td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Theft Protection</td>
+                                                <td>YES</td>
+                                                <td>YES</td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gravel Protection</td>
+                                                <td></td>
+                                                <td>YES</td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sand &amp; Ash Protection</td>
+                                                <td></td>
+                                                <td>YES</td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tire Insurance</td>
+                                                <td></td>
+                                                <td>YES</td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>River Crossing Protection</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>F-road Insurance</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Damages caused by Animals</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Towing cost - Deductible: 35.000 ISK</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Free Car wifi &amp; Online Check-in</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Damages Not covered by any Insurance</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>YES</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Insurance Deductible</td>
+                                                <td>150.000 ISK</td>
+                                                <td>65.000 ISK</td>
+                                                <td>0 ISK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Prices</td>
+                                                <td>0 ISK PER DAY</td>
+                                                <td>3.250 ISK PER DAY</td>
+                                                <td>5.250 ISK PER DAY</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Select insurances</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
 
                                 <div class="col-lg-3">
                                     <div class="de-item mb10">
                                         <div class="d-img">
-                                            {{-- <img src="{{ asset('img/cars/' . $selected_car_img->vehicle_image) }}"
-                                            alt=""> --}}
+                                            <h4 class="carinfo_inputs_label">{{ $selected_car_info->displaying_name }}
+                                            </h4>
+                                            <div class="line my-1"></div>
+                                            <img src="{{ asset('img/cars/' . $selected_car_img->vehicle_image) }}"
+                                                alt="">
                                         </div>
-
+                                        <div class="spacer-20"></div>
                                         <div class="de-spec">
                                             <h4 class="carinfo_inputs_label">PRICE SUMMARY</h4>
                                             <div class="d-row">
-                                            <p id="step2_date_count"></p>
+                                                <span class="d-title"><span aria-hidden="true"
+                                                        class="icon_calendar"></span></span>
+                                                <spam class="d-value" id="step2_date_count"></spam>
                                             </div>
                                             <div class="d-row">
                                                 <span class="d-title">Vehicle</span>
@@ -293,7 +405,7 @@
                                             </div>
                                             <div class="d-row">
                                                 <span class="d-title">Total</span>
-                                                <spam class="d-value" id="step2_total"></spam>
+                                                <spam class="d-value total_" id="step2_total"></spam>
                                             </div>
                                         </div>
                                     </div>
@@ -457,9 +569,9 @@
             var vehicle_total_cost_isk = dateCount * vehicle_rental_cost_isk;
             // Display the total cost in the designated element
 
-            $('#step2_date_count').text(dateCount + ' day tour');
+            $('#step2_date_count').text(dateCount + ' Days');
             $('#step2_vehicle_total_price_isk').text(vehicle_total_cost_isk + ' ISK');
-            $('#step2_total').text(vehicle_total_cost_isk+ ' ISK');
+            $('#step2_total').text(vehicle_total_cost_isk + ' ISK');
 
         });
 
