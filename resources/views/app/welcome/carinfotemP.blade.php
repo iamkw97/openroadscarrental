@@ -303,4 +303,76 @@
         </section>
     </div>
     <!-- content close -->
+    <script>
+        var step3_total_cost = step2_total_cost;
+            // hide options when page loads
+            $('#div_step3_addons_label').hide();
+            $('#div_step3_addons_baby_seat').hide();
+            $('#div_step3_addons_wifi').hide();
+            $('#div_step3_addons_driver').hide();
+
+            $('input[type="checkbox"]').change(function() {
+                if ($(this).attr('id') === 'add_option_baby_seat' || $(this).attr('id') ===
+                    'add_option_wifi' || $(this).attr('id') === 'add_option_driver') {
+                    var option_baby_seat_cost = 1000;
+                    var option_baby_seat_type = 'Baby Seat';
+                    var option_wifi_cost = 1300;
+                    var option_wifi_type = 'WIFI';
+                    var option_driver_cost = 0;
+                    var option_driver_type = 'Driver';
+
+                    // step3_total_cost = vehicle_total_cost_isk + parseInt(step3_insurance_cost_, 10);
+                    // $('#step3_total').text(step3_total_cost + ' ISK');
+
+                    // Show the addons label and the corresponding addon if the checkbox is checked
+                    if ($('#add_option_baby_seat').is(':checked')) {
+                        $('#div_step3_addons_label').show();
+                        $('#div_step3_addons_baby_seat').show();
+                        $('#step3_addons_type_baby_seat').text(option_baby_seat_type);
+                        var step3_option_baby_seat_cost = option_baby_seat_cost * dateCount;
+                        $('#step3_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
+                    } else {
+                        // Hide the div and set the cost to 0 if the checkbox is unchecked
+                        $('#div_step3_addons_baby_seat').hide();
+                        $('#div_step3_addons_label').hide();
+                        step3_option_baby_seat_cost = 0;
+                        $('#step3_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
+                    }
+
+                    if ($('#add_option_wifi').is(':checked')) {
+                        $('#div_step3_addons_label').show();
+                        $('#div_step3_addons_wifi').show();
+                        $('#step3_addons_type_wifi').text(option_wifi_type);
+                        var step3_option_wifi_cost = option_wifi_cost * dateCount;
+                        $('#step3_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
+                    } else {
+                        // Hide the div and set the cost to 0 if the checkbox is unchecked
+                        $('#div_step3_addons_wifi').hide();
+                        $('#div_step3_addons_label').hide();
+                        step3_option_wifi_cost = 0;
+                        $('#step3_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
+                    }
+
+                    if ($('#add_option_driver').is(':checked')) {
+                        $('#div_step3_addons_label').show();
+                        $('#div_step3_addons_driver').show();
+                        $('#step3_addons_type_driver').text(option_driver_type);
+                        var step3_option_driver_cost = option_driver_cost * dateCount;
+                        $('#step3_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
+                    } else {
+                        // Hide the div and set the cost to 0 if the checkbox is unchecked
+                        $('#div_step3_addons_driver').hide();
+                        $('#div_step3_addons_label').hide();
+                        step3_option_driver_cost = 0;
+                        $('#step3_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
+                    }
+
+                    // Update the total cost by adding the insurance cost, vehicle total price, and addon costs
+                    step3_total_cost = vehicle_total_cost_isk + parseInt(step3_insurance_cost_, 10) +
+                        step3_option_baby_seat_cost + step3_option_wifi_cost + step3_option_driver_cost;
+                    $('#step3_total').text(step3_total_cost + ' ISK');
+                    console.log(step3_total_cost);
+                }
+            });
+    </script>
 @endsection

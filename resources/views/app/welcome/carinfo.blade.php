@@ -15,7 +15,7 @@
 @endsection
 
 @section('title')
-    Cars | Open Roads Car Rental in Iceland
+    {{ $selected_car_info->displaying_name }} | Open Roads Car Rental in Iceland
 @endsection
 
 @section('meta_tgs')
@@ -23,9 +23,11 @@
         content="Car rental Iceland, Car hire Iceland, car rental, car hire, Iceland, SUV, 4x4, automatic, Ford Kuga, Toyota Rav4, BMW, Ford Kuga 4x4 Automatic, Toyota Rav4 4x4 Automatic, Nissan X-Trail 7 Seater Automatic, BMW 5 Series Luxury Car Model 2020, Dacia Duster, VW Caravelle, CDW insurance, SCDW insurance, TP insurance, GP insurance, SAAP insurance, Unlimited mileage, GPS included, Studded tires, Winter car rental, Car rental prices, Cheap car rental, Best cars for rent, Luxury vehicles, Affordable car hire, Car hire deals, Car hire options, Car hire discounts, Car hire services, Car hire rates">
 @endsection
 {{-- form wizard stylesheet --}}
-<link rel="stylesheet" href="{{ asset('plugins/bs-stepper/css/bs-stepper.min.css') }}">
 
 @section('welcomebody')
+    <link rel="stylesheet" href="{{ asset('plugins/bs-stepper/css/bs-stepper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('welcome/fonts/et-line-font/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('welcome/fonts/font-awesome/css/font-awesome.min.css') }}">
     <style>
         .text_justify {
             text-align: justify;
@@ -570,7 +572,7 @@
                                                 <spam class="d-value"></spam>
                                             </div>
                                             <div class="d-row" id="div_step2_insurance_cost">
-                                                <span class="d-title" id="step2_insurance_type">INSURANCE</span>
+                                                <span class="d-title" id="step2_insurance_type"></span>
                                                 <spam class="d-value" id="step2_insurance_cost"></spam>
                                             </div>
                                             <div class="d-row">
@@ -661,7 +663,77 @@
                             <div class="row g-3">
                                 <div class="col-lg-6">
                                     <h3 class="carinfo_inputs_label_">ADDITIONAL OPTIONS</h3>
-
+                                    <div class="row g-custom-x">
+                                        <div class="col-lg-12 mb30">
+                                            <div class="d-card">
+                                                <div class="row align-items-center">
+                                                    <!-- Added align-items-center class -->
+                                                    <div class="col-md-9">
+                                                        <i class="fa fa-arrows-alt"></i>
+                                                        {{-- <i class="fa fa-fw"></i> --}}
+                                                        <div class="text">
+                                                            <h4>Baby Seat</h4>
+                                                            ISK 1000 / Per a Day
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-check form-switch d-flex justify-content-center">
+                                                            <!-- Added d-flex and justify-content-center classes -->
+                                                            <input class="form-check-input" type="checkbox"
+                                                                role="switch" id="add_option_baby_seat"
+                                                                name="add_option_baby_seat">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 mb30">
+                                            <div class="d-card">
+                                                <div class="row align-items-center">
+                                                    <!-- Added align-items-center class -->
+                                                    <div class="col-md-9">
+                                                        <i class="fa fa-microchip"></i>
+                                                        {{-- <i class="fa fa-fw"></i> --}}
+                                                        <div class="text">
+                                                            <h4>WIFI (Unlimited)</h4>
+                                                            ISK 1300 / Per a Day
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-check form-switch d-flex justify-content-center">
+                                                            <!-- Added d-flex and justify-content-center classes -->
+                                                            <input class="form-check-input" type="checkbox"
+                                                                role="switch" id="add_option_wifi"
+                                                                name="add_option_wifi">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 mb30">
+                                            <div class="d-card">
+                                                <div class="row align-items-center">
+                                                    <!-- Added align-items-center class -->
+                                                    <div class="col-md-9">
+                                                        <i class="fa fa-trophy"></i>
+                                                        {{-- <i class="fa fa-fw"></i> --}}
+                                                        <div class="text">
+                                                            <h4>Additional Driver</h4>
+                                                            Free of Charge
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-check form-switch d-flex justify-content-center">
+                                                            <!-- Added d-flex and justify-content-center classes -->
+                                                            <input class="form-check-input" type="checkbox"
+                                                                role="switch" id="add_option_driver"
+                                                                name="add_option_driver">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="col-lg-3">
@@ -686,8 +758,24 @@
                                                 <spam class="d-value"></spam>
                                             </div>
                                             <div class="d-row" id="div_step3_insurance_cost">
-                                                <span class="d-title" id="step3_insurance_type">INSURANCE</span>
+                                                <span class="d-title" id="step3_insurance_type"></span>
                                                 <spam class="d-value" id="step3_insurance_cost"></spam>
+                                            </div>
+                                            <div class="d-row carinfo_inputs_label p-1" id="div_step3_addons_label">
+                                                <span class="d-title">OPTIONS</span>
+                                                <spam class="d-value"></spam>
+                                            </div>
+                                            <div class="d-row" id="div_step3_addons_baby_seat">
+                                                <span class="d-title" id="step3_addons_type_baby_seat"></span>
+                                                <spam class="d-value" id="step3_addons_cost_baby_seat"></spam>
+                                            </div>
+                                            <div class="d-row" id="div_step3_addons_wifi">
+                                                <span class="d-title" id="step3_addons_type_wifi"></span>
+                                                <spam class="d-value" id="step3_addons_cost_wifi"></spam>
+                                            </div>
+                                            <div class="d-row" id="div_step3_addons_driver">
+                                                <span class="d-title" id="step3_addons_type_driver"></span>
+                                                <spam class="d-value" id="step3_addons_cost_driver"></spam>
                                             </div>
                                             <div class="d-row">
                                                 <span class="d-title">Vehicle</span>
@@ -865,47 +953,127 @@
             // Select the silver_insurance checkbox by default
             $('#silver_insurance').prop('checked', true);
             // Calculate the insurance cost and update the values
-            var insurance_cost = 0;
-            var insurance_type = 'SILVER';
-            $('#step2_insurance_type').text(insurance_type);
-            $('#step2_insurance_cost').text(insurance_cost * dateCount + ' ISK');
+            var step2_insurance_cost = 0;
+            var step2_insurance_type = 'SILVER';
+            $('#step2_insurance_type').text(step2_insurance_type);
+            $('#step3_insurance_type').text(step2_insurance_type);
+            $('#step2_insurance_cost').text(step2_insurance_cost * dateCount + ' ISK');
+            $('#step3_insurance_cost').text(step2_insurance_cost * dateCount + ' ISK');
             // Update the total cost by adding the insurance cost and vehicle total price
-            var total_cost = vehicle_total_cost_isk + (insurance_cost * dateCount);
-            $('#step2_total').text(total_cost + ' ISK');
+            var step2_total_cost = vehicle_total_cost_isk + (step2_insurance_cost * dateCount);
+            $('#step2_total').text(step2_total_cost + ' ISK');
+            var step2_insurance_cost_total = 0;
             // When any checkbox is changed
             $('input[type="checkbox"]').change(function() {
-                // Unselect the other two checkboxes
-                $('input[type="checkbox"]').not(this).prop('checked', false);
-                // Hide the insurance label and cost divs
-                $('#div_step2_insurance_label').hide();
-                $('#div_step2_insurance_cost').hide();
-                // Reset insurance cost and type
-                insurance_cost = 0;
-                insurance_type = '';
-                if ($('#silver_insurance').is(':checked')) {
-                    insurance_cost = 0;
-                    insurance_type = 'SILVER';
-                } else if ($('#gold_insurance').is(':checked')) {
-                    insurance_cost = 3250;
-                    insurance_type = 'GOLD';
-                } else if ($('#platinum_insurance').is(':checked')) {
-                    insurance_cost = 5250;
-                    insurance_type = 'PLATINUM';
+                if ($(this).attr('id') === 'silver_insurance' || $(this).attr('id') ===
+                    'gold_insurance' ||
+                    $(this).attr('id') === 'platinum_insurance') {
+                    // Unselect the other two checkboxes
+                    $('input[type="checkbox"]').not(this).prop('checked', false);
+                    // Hide the insurance label and cost divs
+                    $('#div_step2_insurance_label').hide();
+                    $('#div_step2_insurance_cost').hide();
+                    // Reset insurance cost and type
+                    step2_insurance_cost = 0;
+                    step2_insurance_type = '';
+                    if ($('#silver_insurance').is(':checked')) {
+                        step2_insurance_cost = 0;
+                        step2_insurance_type = 'SILVER';
+                    } else if ($('#gold_insurance').is(':checked')) {
+                        step2_insurance_cost = 3250;
+                        step2_insurance_type = 'GOLD';
+                    } else if ($('#platinum_insurance').is(':checked')) {
+                        step2_insurance_cost = 5250;
+                        step2_insurance_type = 'PLATINUM';
+                    }
+                    // Show the insurance label and cost divs
+                    $('#div_step2_insurance_label').show();
+                    $('#div_step2_insurance_cost').show();
+                    // Update the insurance type and cost with the calculated values
+                    $('#step2_insurance_type').text(step2_insurance_type);
+                    $('#step3_insurance_type').text(step2_insurance_type);
+                    step2_insurance_cost_total = step2_insurance_cost * dateCount;
+                    $('#step2_insurance_cost').text(step2_insurance_cost_total + ' ISK');
+                    $('#step3_insurance_cost').text(step2_insurance_cost_total + ' ISK');
+                    // Update the total cost by adding the insurance cost and vehicle total price
+                    var step2_total_cost = vehicle_total_cost_isk + step2_insurance_cost_total;
+                    $('#step2_total').text(step2_total_cost + ' ISK');
+                    $('#step3_total').text(step2_total_cost + ' ISK');
                 }
-                // Show the insurance label and cost divs
-                $('#div_step2_insurance_label').show();
-                $('#div_step2_insurance_cost').show();
-                // Update the insurance type and cost with the calculated values
-                $('#step2_insurance_type').text(insurance_type);
-                $('#step2_insurance_cost').text(insurance_cost * dateCount + ' ISK');
-                // Update the total cost by adding the insurance cost and vehicle total price
-                var total_cost = vehicle_total_cost_isk + (insurance_cost * dateCount);
-                $('#step2_total').text(total_cost + ' ISK');
+            });
+
+            // step 3 calculations
+            var step3_insurance_type_ = $('#step3_insurance_type').text();
+            var step3_insurance_cost_ = step2_insurance_cost_total;
+            console.log(step3_insurance_cost_);
+            var step3_total_cost = step2_total_cost;
+            // hide options when page loads
+            $('#div_step3_addons_label').hide();
+            $('#div_step3_addons_baby_seat').hide();
+            $('#div_step3_addons_wifi').hide();
+            $('#div_step3_addons_driver').hide();
+
+            $('input[type="checkbox"]').change(function() {
+                if ($(this).attr('id') === 'add_option_baby_seat' || $(this).attr('id') ===
+                    'add_option_wifi' || $(this).attr('id') === 'add_option_driver') {
+                    var option_baby_seat_cost = 1000;
+                    var option_baby_seat_type = 'Baby Seat';
+                    var option_wifi_cost = 1300;
+                    var option_wifi_type = 'WIFI';
+                    var option_driver_cost = 0;
+                    var option_driver_type = 'Driver';
+
+                    // Show the addons label and the corresponding addon if the checkbox is checked
+                    if ($('#add_option_baby_seat').is(':checked')) {
+                        $('#div_step3_addons_label').show();
+                        $('#div_step3_addons_baby_seat').show();
+                        $('#step3_addons_type_baby_seat').text(option_baby_seat_type);
+                        var step3_option_baby_seat_cost = option_baby_seat_cost * dateCount;
+                        $('#step3_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
+                    } else {
+                        // Hide the div and set the cost to 0 if the checkbox is unchecked
+                        $('#div_step3_addons_baby_seat').hide();
+                        $('#div_step3_addons_label').hide();
+                        step3_option_baby_seat_cost = 0;
+                        $('#step3_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
+                    }
+
+                    if ($('#add_option_wifi').is(':checked')) {
+                        $('#div_step3_addons_label').show();
+                        $('#div_step3_addons_wifi').show();
+                        $('#step3_addons_type_wifi').text(option_wifi_type);
+                        var step3_option_wifi_cost = option_wifi_cost * dateCount;
+                        $('#step3_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
+                    } else {
+                        // Hide the div and set the cost to 0 if the checkbox is unchecked
+                        $('#div_step3_addons_wifi').hide();
+                        $('#div_step3_addons_label').hide();
+                        step3_option_wifi_cost = 0;
+                        $('#step3_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
+                    }
+
+                    if ($('#add_option_driver').is(':checked')) {
+                        $('#div_step3_addons_label').show();
+                        $('#div_step3_addons_driver').show();
+                        $('#step3_addons_type_driver').text(option_driver_type);
+                        var step3_option_driver_cost = option_driver_cost * dateCount;
+                        $('#step3_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
+                    } else {
+                        // Hide the div and set the cost to 0 if the checkbox is unchecked
+                        $('#div_step3_addons_driver').hide();
+                        $('#div_step3_addons_label').hide();
+                        step3_option_driver_cost = 0;
+                        $('#step3_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
+                    }
+
+                    // Update the total cost by adding the insurance cost, vehicle total price, and addon costs
+                    step3_total_cost = vehicle_total_cost_isk + parseInt(step3_insurance_cost_, 10) +
+                        step3_option_baby_seat_cost + step3_option_wifi_cost + step3_option_driver_cost;
+                    $('#step3_total').text(step3_total_cost + ' ISK');
+                    console.log(step3_total_cost);
+                }
             });
         });
-
-
-
         // step 2 calculation close
     </script>
     <!-- content close -->
