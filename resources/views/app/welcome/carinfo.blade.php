@@ -55,6 +55,18 @@
             border-radius: 3px;
         }
 
+        .carinfo_inputs_label_ {
+            padding: 7px;
+            padding-left: 8px;
+            font-size: 100%;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #252525;
+            background-color: rgb(228, 228, 228);
+            width: 100%;
+            border-radius: 3px;
+        }
+
         .carinfo_input_error_msg {
             font-size: 75%;
             color: red;
@@ -67,6 +79,10 @@
         .total_ {
             color: rgb(3, 209, 0);
             font-weight: 500;
+        }
+
+        .align_text_center {
+            text-align: center;
         }
     </style>
     <!-- content begin -->
@@ -214,7 +230,7 @@
                                                     <input readonly name="carinfo_step1_pickup_location"
                                                         id="carinfo_step1_pickup_location"
                                                         placeholder="Enter your pickup location"
-                                                        class="carinfo_tour_input form-control">
+                                                        class="carinfo_tour_input carinfo_pickup_location form-control">
                                                     <div class="carinfo_input_error_msg"
                                                         id="carinfo_step1_pickup_location_error"></div>
                                                 </div>
@@ -224,20 +240,22 @@
                                                     <input readonly name="carinfo_step1_dropoff_location"
                                                         id="carinfo_step1_dropoff_location"
                                                         placeholder="Enter your pickup location"
-                                                        class="carinfo_tour_input form-control">
+                                                        class="carinfo_tour_input carinfo_dropoff_location form-control">
                                                     <div class="carinfo_input_error_msg"
                                                         id="carinfo_step1_dropoff_location_error"></div>
                                                 </div>
 
                                                 <div class="col-lg-12 mb20">
                                                     <p class="carinfo_inputs_label">Pick Up Date & Time</p>
-                                                    <input readonly class="carinfo_tour_input form-control"
+                                                    <input readonly
+                                                        class="carinfo_tour_input carinfo_pickup_date form-control"
                                                         name="carinfo_step1_pickup_date" id="carinfo_step1_pickup_date"
                                                         type="date">
                                                     <div class="carinfo_input_error_msg"
                                                         id="carinfo_step1_pickup_date_error">
                                                     </div>
-                                                    <input readonly class="carinfo_tour_input form-control"
+                                                    <input readonly
+                                                        class="carinfo_tour_input carinfo_pickup_time form-control"
                                                         name="carinfo_step1_pickup_time" id="carinfo_step1_pickup_time"
                                                         type="time">
                                                     <div class="carinfo_input_error_msg"
@@ -247,13 +265,15 @@
 
                                                 <div class="col-lg-12 mb10">
                                                     <p class="carinfo_inputs_label">Return Date & Time</p>
-                                                    <input readonly class="carinfo_tour_input form-control"
+                                                    <input readonly
+                                                        class="carinfo_tour_input carinfo_return_date form-control"
                                                         name="carinfo_step1_return_date" id="carinfo_step1_return_date"
                                                         type="date">
                                                     <div class="carinfo_input_error_msg"
                                                         id="carinfo_step1_return_date_error">
                                                     </div>
-                                                    <input readonly class="carinfo_tour_input form-control"
+                                                    <input readonly
+                                                        class="carinfo_tour_input carinfo_return_time form-control"
                                                         name="carinfo_step1_return_time" id="carinfo_step1_return_time"
                                                         type="time">
                                                     <div class="carinfo_input_error_msg"
@@ -277,106 +297,252 @@
                             {{-- step 2 insuarance content open --}}
                             <div class="row g-3">
                                 <div class="col-lg-6">
-                                    <h2>Insurance Coverage</h2>
-                                    <table class="table table-bordered">
-                                        <thead class="thead-dark">
+                                    <h3 class="carinfo_inputs_label_">INSURANCE COVERAGE</h3>
+                                    <table class="table de-table table">
+                                        <thead>
                                             <tr>
-                                                <th>INSURANCE COVERAGE TYPE</th>
-                                                <th>SILVER</th>
-                                                <th>GOLD</th>
-                                                <th>PLATINUM</th>
+                                                <th scope="col">
+                                                    <span class="text-uppercase fs-16 text-gray bold">INSURANCE
+                                                        COVERAGE</span>
+                                                </th>
+                                                <th scope="col" class="align_text_center">
+                                                    <span class="text-uppercase fs-16 text-gray"><strong>SILVER</strong>
+                                                        <br> (BASIC)</span>
+                                                </th>
+                                                <th scope="col" class="align_text_center">
+                                                    <span class="text-uppercase fs-16 text-gray"><strong>GOLD</strong> <br>
+                                                        (GOOD VALUE)<span>
+                                                </th>
+                                                <th scope="col" class="align_text_center">
+                                                    <span class="text-uppercase fs-16 text-gray"><strong>PLATINUM</strong>
+                                                        <br> (BEST COVER)</span>
+                                                </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Third Party Liability Insurance</td>
-                                                <td>YES</td>
-                                                <td>YES</td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">Third Party Liability Insurance</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-secondary">YES</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-warning">YES</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Super Collision Damage Waiver</td>
-                                                <td>YES</td>
-                                                <td>YES</td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">Super Collision Damage Waiver</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-secondary">YES</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-warning">YES</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Theft Protection</td>
-                                                <td>YES</td>
-                                                <td>YES</td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">Theft Protection</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-secondary">YES</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-warning">YES</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Gravel Protection</td>
-                                                <td></td>
-                                                <td>YES</td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">Gravel Protection</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-warning">YES</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Sand &amp; Ash Protection</td>
-                                                <td></td>
-                                                <td>YES</td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">Sand &amp; Ash Protection</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-warning">YES</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Tire Insurance</td>
-                                                <td></td>
-                                                <td>YES</td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">Tire Insurance</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-warning">YES</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>River Crossing Protection</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">River Crossing Protection</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-warning"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>F-road Insurance</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">F-road Insurance</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-warning"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Damages caused by Animals</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">Damages caused by Animals</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-warning"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Towing cost - Deductible: 35.000 ISK</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">Towing cost - Deductible : 35.000 ISK</span>
+                                                </td>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-warning"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Free Car wifi &amp; Online Check-in</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">Damages Not covered by any
+                                                        Insurance</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-warning"></div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Damages Not covered by any Insurance</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>YES</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">Insurance Deductible</span>
+                                                </td>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-danger">150.000 ISK</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-danger">65.000 ISK</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-danger">0 ISK</div>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Insurance Deductible</td>
-                                                <td>150.000 ISK</td>
-                                                <td>65.000 ISK</td>
-                                                <td>0 ISK</td>
+                                                <td>
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">Prices</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-success">0 ISK / Daily</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-success">3.250 ISK / Daily
+                                                    </div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-success">5.250 ISK / Daily
+                                                    </div>
+                                                </td>
                                             </tr>
-                                            <tr>
-                                                <td>Prices</td>
-                                                <td>0 ISK PER DAY</td>
-                                                <td>3.250 ISK PER DAY</td>
-                                                <td>5.250 ISK PER DAY</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Select insurances</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                            <tr class="carinfo_inputs_label p-1">
+                                                <td class="ml-1 fs-16">
+                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                    <span class="bold">SELECT INSURANCE</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="form-check align_text_center">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="silver_insurance">
+                                                    </div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="gold_insurance">
+                                                    </div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="platinum_insurance">
+                                                    </div>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -384,10 +550,10 @@
 
                                 <div class="col-lg-3">
                                     <div class="de-item mb10">
-                                        <div class="d-img">
+                                        <div class="d-img mt-1">
                                             <h4 class="carinfo_inputs_label">{{ $selected_car_info->displaying_name }}
                                             </h4>
-                                            <div class="line my-1"></div>
+                                            <div class="my-2"></div>
                                             <img src="{{ asset('img/cars/' . $selected_car_img->vehicle_image) }}"
                                                 alt="">
                                         </div>
@@ -399,13 +565,22 @@
                                                         class="icon_calendar"></span></span>
                                                 <spam class="d-value" id="step2_date_count"></spam>
                                             </div>
+                                            <div class="d-row carinfo_inputs_label p-1" id="div_step2_insurance_label">
+                                                <span class="d-title">INSURANCE</span>
+                                                <spam class="d-value"></spam>
+                                            </div>
+                                            <div class="d-row" id="div_step2_insurance_cost">
+                                                <span class="d-title" id="step2_insurance_type">INSURANCE</span>
+                                                <spam class="d-value" id="step2_insurance_cost"></spam>
+                                            </div>
                                             <div class="d-row">
                                                 <span class="d-title">Vehicle</span>
                                                 <spam class="d-value" id="step2_vehicle_total_price_isk"></spam>
                                             </div>
-                                            <div class="d-row">
+                                            <div class="my-1"></div>
+                                            <div class="d-row carinfo_inputs_label p-1">
                                                 <span class="d-title">Total</span>
-                                                <spam class="d-value total_" id="step2_total"></spam>
+                                                <spam class="d-value" id="step2_total"></spam>
                                             </div>
                                         </div>
                                     </div>
@@ -483,6 +658,111 @@
                         <div id="step5_additional_features" class="content" role="tabpanel"
                             aria-labelledby="step5_additional_features-trigger">
                             {{-- step 3 additioanal features content open --}}
+                            <div class="row g-3">
+                                <div class="col-lg-6">
+                                    <h3 class="carinfo_inputs_label_">ADDITIONAL OPTIONS</h3>
+
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="de-item mb10">
+                                        <div class="d-img mt-1">
+                                            <h4 class="carinfo_inputs_label">{{ $selected_car_info->displaying_name }}
+                                            </h4>
+                                            <div class="my-2"></div>
+                                            <img src="{{ asset('img/cars/' . $selected_car_img->vehicle_image) }}"
+                                                alt="">
+                                        </div>
+                                        <div class="spacer-20"></div>
+                                        <div class="de-spec">
+                                            <h4 class="carinfo_inputs_label">PRICE SUMMARY</h4>
+                                            <div class="d-row">
+                                                <span class="d-title"><span aria-hidden="true"
+                                                        class="icon_calendar"></span></span>
+                                                <spam class="d-value" id="step3_date_count"></spam>
+                                            </div>
+                                            <div class="d-row carinfo_inputs_label p-1" id="div_step3_insurance_label">
+                                                <span class="d-title">INSURANCE</span>
+                                                <spam class="d-value"></spam>
+                                            </div>
+                                            <div class="d-row" id="div_step3_insurance_cost">
+                                                <span class="d-title" id="step3_insurance_type">INSURANCE</span>
+                                                <spam class="d-value" id="step3_insurance_cost"></spam>
+                                            </div>
+                                            <div class="d-row">
+                                                <span class="d-title">Vehicle</span>
+                                                <spam class="d-value" id="step3_vehicle_total_price_isk"></spam>
+                                            </div>
+                                            <div class="my-1"></div>
+                                            <div class="d-row carinfo_inputs_label p-1">
+                                                <span class="d-title">Total</span>
+                                                <spam class="d-value" id="step3_total"></spam>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="de-box mb10">
+                                        <form name="form_carinfo_step3_tour" id='form_carinfo_step3_tour' method="post">
+                                            <div class="row">
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Pick Up Location</p>
+                                                    <input readonly name="carinfo_step3_pickup_location"
+                                                        id="carinfo_step3_pickup_location"
+                                                        placeholder="Enter your pickup location"
+                                                        class="carinfo_tour_input form-control">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step3_pickup_location_error"></div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Drop Off Location</p>
+                                                    <input readonly name="carinfo_step3_dropoff_location"
+                                                        id="carinfo_step3_dropoff_location"
+                                                        placeholder="Enter your pickup location"
+                                                        class="carinfo_tour_input form-control">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step3_dropoff_location_error"></div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Pick Up Date & Time</p>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step3_pickup_date" id="carinfo_step3_pickup_date"
+                                                        type="date">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step3_pickup_date_error">
+                                                    </div>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step3_pickup_time" id="carinfo_step3_pickup_time"
+                                                        type="time">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step3_pickup_time_error">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb10">
+                                                    <p class="carinfo_inputs_label">Return Date & Time</p>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step3_return_date" id="carinfo_step3_return_date"
+                                                        type="date">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step3_return_date_error">
+                                                    </div>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step3_return_time" id="carinfo_step3_return_time"
+                                                        type="time">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step3_return_time_error">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                             {{-- step 3 additioanal features content close --}}
                             <div class="line my-4"></div>
                             <div class="btns_stepper">
@@ -550,12 +830,21 @@
             $('#carinfo_step2_return_date').val(sessionStorage.getItem('cars_return_date'));
             $('#carinfo_step2_pickup_time').val(sessionStorage.getItem('cars_pickup_time'));
             $('#carinfo_step2_return_time').val(sessionStorage.getItem('cars_return_time'));
+            // step 3
+            $('#carinfo_step3_pickup_location').val(sessionStorage.getItem('cars_pickup_location'));
+            $('#carinfo_step3_dropoff_location').val(sessionStorage.getItem('cars_dropoff_location'));
+            $('#carinfo_step3_pickup_date').val(sessionStorage.getItem('cars_pickup_date'));
+            $('#carinfo_step3_return_date').val(sessionStorage.getItem('cars_return_date'));
+            $('#carinfo_step3_pickup_time').val(sessionStorage.getItem('cars_pickup_time'));
+            $('#carinfo_step3_return_time').val(sessionStorage.getItem('cars_return_time'));
 
         });
         // get and set session data from cars page tour close
         // step 2 calculation open
         $(document).ready(function() {
+            // Retrieve initial vehicle rental cost
             var vehicle_rental_cost_isk = parseFloat($('#step1_rental_cost_isk').text());
+            // Retrieve pickup and return dates
             var pickup_date = $('#carinfo_step1_pickup_date').val();
             var return_date = $('#carinfo_step1_return_date').val();
             // Convert pickup and return dates to JavaScript Date objects
@@ -568,12 +857,54 @@
             // Calculate the total cost by multiplying date count and vehicle daily rental
             var vehicle_total_cost_isk = dateCount * vehicle_rental_cost_isk;
             // Display the total cost in the designated element
-
             $('#step2_date_count').text(dateCount + ' Days');
+            $('#step3_date_count').text(dateCount + ' Days');
             $('#step2_vehicle_total_price_isk').text(vehicle_total_cost_isk + ' ISK');
+            $('#step3_vehicle_total_price_isk').text(vehicle_total_cost_isk + ' ISK');
             $('#step2_total').text(vehicle_total_cost_isk + ' ISK');
-
+            // Select the silver_insurance checkbox by default
+            $('#silver_insurance').prop('checked', true);
+            // Calculate the insurance cost and update the values
+            var insurance_cost = 0;
+            var insurance_type = 'SILVER';
+            $('#step2_insurance_type').text(insurance_type);
+            $('#step2_insurance_cost').text(insurance_cost * dateCount + ' ISK');
+            // Update the total cost by adding the insurance cost and vehicle total price
+            var total_cost = vehicle_total_cost_isk + (insurance_cost * dateCount);
+            $('#step2_total').text(total_cost + ' ISK');
+            // When any checkbox is changed
+            $('input[type="checkbox"]').change(function() {
+                // Unselect the other two checkboxes
+                $('input[type="checkbox"]').not(this).prop('checked', false);
+                // Hide the insurance label and cost divs
+                $('#div_step2_insurance_label').hide();
+                $('#div_step2_insurance_cost').hide();
+                // Reset insurance cost and type
+                insurance_cost = 0;
+                insurance_type = '';
+                if ($('#silver_insurance').is(':checked')) {
+                    insurance_cost = 0;
+                    insurance_type = 'SILVER';
+                } else if ($('#gold_insurance').is(':checked')) {
+                    insurance_cost = 3250;
+                    insurance_type = 'GOLD';
+                } else if ($('#platinum_insurance').is(':checked')) {
+                    insurance_cost = 5250;
+                    insurance_type = 'PLATINUM';
+                }
+                // Show the insurance label and cost divs
+                $('#div_step2_insurance_label').show();
+                $('#div_step2_insurance_cost').show();
+                // Update the insurance type and cost with the calculated values
+                $('#step2_insurance_type').text(insurance_type);
+                $('#step2_insurance_cost').text(insurance_cost * dateCount + ' ISK');
+                // Update the total cost by adding the insurance cost and vehicle total price
+                var total_cost = vehicle_total_cost_isk + (insurance_cost * dateCount);
+                $('#step2_total').text(total_cost + ' ISK');
+            });
         });
+
+
 
         // step 2 calculation close
     </script>
