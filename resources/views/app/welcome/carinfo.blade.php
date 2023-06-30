@@ -1401,113 +1401,8 @@
         // pass data into backend open
         $("#btn_confirm_booking").on("click", function(e) {
             e.preventDefault();
-
+console.log(1);
             // Perform input field validations
-            if (!validateForm()) {
-                return;
-            }
-
-            // Get vehicle ID
-            var car_id = $("#vehicle_ID").val();
-            // Get tour details
-            var pickupLocation = $("#carinfo_step4_pickup_location").val();
-            var dropOffLocation = $("#carinfo_step4_dropoff_location").val();
-            var pickupDate = $("#carinfo_step4_pickup_date").val();
-            var returnDate = $("#carinfo_step4_return_date").val();
-            var pickupTime = $("#carinfo_step4_pickup_time").val();
-            var returnTime = $("#carinfo_step4_return_time").val();
-            // Price details
-            var total_with_currency = $('#step4_total').text();
-            var total_without_currency = total_with_currency.replace(' ISK', '');
-            var totalCost = parseInt(total_without_currency);
-            // Additional options
-            var additionalBabySeat = $("#add_option_baby_seat").is(":checked");
-            var additionalWifi = $("#add_option_wifi").is(":checked");
-            var additionalDriver = $("#add_option_driver").is(":checked");
-            // Get personal information
-            var fullname = $("#fullname").val();
-            var email = $("#email").val();
-            var address = $("#address").val();
-            var city = $("#city").val();
-            var phone1 = $("#phone1").val();
-            var phone2 = $("#phone2").val();
-            var license_img = $('input[name="license_img[]"]').prop('files')[0];
-            var flight_no = $("#flight_no").val();
-            var driver_name = $("#driver_name").val();
-            var license_valid_date = $("#license_valid_date").val();
-            var license_no = $("#license_no").val();
-            var password = $("#password").val();
-            var repassword = $("#repassword").val();
-
-            // Create a FormData object and append data
-            var formData = new FormData();
-
-            formData.append("car_id", car_id);
-            formData.append("pickupLocation", pickupLocation);
-            formData.append("dropOffLocation", dropOffLocation);
-            formData.append("pickupDate", pickupDate);
-            formData.append("returnDate", returnDate);
-            formData.append("pickupTime", pickupTime);
-            formData.append("returnTime", returnTime);
-            formData.append("totalCost", totalCost);
-            formData.append("additionalBabySeat", additionalBabySeat);
-            formData.append("additionalWifi", additionalWifi);
-            formData.append("additionalDriver", additionalDriver);
-            formData.append("fullname", fullname);
-            formData.append("email", email);
-            formData.append("address", address);
-            formData.append("city", city);
-            formData.append("phone1", phone1);
-            formData.append("phone2", phone2);
-            formData.append("license_img", license_img);
-            formData.append("flight_no", flight_no);
-            formData.append("driver_name", driver_name);
-            formData.append("license_valid_date", license_valid_date);
-            formData.append("license_no", license_no);
-            formData.append("password", password);
-            formData.append("repassword", repassword);
-
-            // Make an AJAX request to submit the form data
-            $.ajax({
-                type: "POST",
-                url: "/booking/complete",
-                headers: {
-                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
-                },
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function(response, status, xhr) {
-                    if (xhr.status === 200) {
-                        console.log('success');
-                        Swal.fire({
-                            position: "center",
-                            icon: "success",
-                            title: "Your booking has been successfully added!",
-                            text: "Use your given email & password to login.",
-                            showConfirmButton: true
-                        }).then(function(result) {
-                            if (result.isConfirmed) {
-                                window.location.href = "/login";
-                            }
-                        });
-                    } else {
-                        Swal.fire({
-                            position: "center",
-                            icon: "error",
-                            title: "Error",
-                            text: "Booking Failed!",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                    }
-                }
-            });
-        });
-
-        function validateForm() {
-            var isValid = true;
-
             // Clear previous error messages
             $(".errmsg").text("");
 
@@ -1574,9 +1469,106 @@
                 $("#error_msg_license_img").text("License Image is required.");
                 isValid = false;
             }
+            
+            console.log(2);
+            // Get vehicle ID
+            var car_id = $("#vehicle_ID").val();
+            // Get tour details
+            var pickupLocation = $("#carinfo_step4_pickup_location").val();
+            var dropOffLocation = $("#carinfo_step4_dropoff_location").val();
+            var pickupDate = $("#carinfo_step4_pickup_date").val();
+            var returnDate = $("#carinfo_step4_return_date").val();
+            var pickupTime = $("#carinfo_step4_pickup_time").val();
+            var returnTime = $("#carinfo_step4_return_time").val();
+            // Price details
+            var total_with_currency = $('#step4_total').text();
+            var total_without_currency = total_with_currency.replace(' ISK', '');
+            var totalCost = parseInt(total_without_currency);
+            // Additional options
+            var additionalBabySeat = $("#add_option_baby_seat").is(":checked");
+            var additionalWifi = $("#add_option_wifi").is(":checked");
+            var additionalDriver = $("#add_option_driver").is(":checked");
+            // Get personal information
+            var fullname = $("#fullname").val();
+            var email = $("#email").val();
+            var address = $("#address").val();
+            var city = $("#city").val();
+            var phone1 = $("#phone1").val();
+            var phone2 = $("#phone2").val();
+            var license_img = $('input[name="license_img[]"]').prop('files')[0];
+            var flight_no = $("#flight_no").val();
+            var driver_name = $("#driver_name").val();
+            var license_valid_date = $("#license_valid_date").val();
+            var license_no = $("#license_no").val();
+            var password = $("#password").val();
+            var repassword = $("#repassword").val();
+            console.log(3);
+            // Create a FormData object and append data
+            var formData = new FormData();
 
-            return isValid;
-        }
+            formData.append("car_id", car_id);
+            formData.append("pickupLocation", pickupLocation);
+            formData.append("dropOffLocation", dropOffLocation);
+            formData.append("pickupDate", pickupDate);
+            formData.append("returnDate", returnDate);
+            formData.append("pickupTime", pickupTime);
+            formData.append("returnTime", returnTime);
+            formData.append("totalCost", totalCost);
+            formData.append("additionalBabySeat", additionalBabySeat);
+            formData.append("additionalWifi", additionalWifi);
+            formData.append("additionalDriver", additionalDriver);
+            formData.append("fullname", fullname);
+            formData.append("email", email);
+            formData.append("address", address);
+            formData.append("city", city);
+            formData.append("phone1", phone1);
+            formData.append("phone2", phone2);
+            formData.append("license_img", license_img);
+            formData.append("flight_no", flight_no);
+            formData.append("driver_name", driver_name);
+            formData.append("license_valid_date", license_valid_date);
+            formData.append("license_no", license_no);
+            formData.append("password", password);
+            formData.append("repassword", repassword);
+            console.log(4);
+            // Make an AJAX request to submit the form data
+            $.ajax({
+                type: "POST",
+                url: "/booking/complete",
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                },
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response, status, xhr) {
+                    if (xhr.status === 200) {
+                        console.log('success');
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: "Your booking has been successfully added!",
+                            text: "Use your given email & password to login.",
+                            showConfirmButton: true
+                        }).then(function(result) {
+                            if (result.isConfirmed) {
+                                window.location.href = "/login";
+                            }
+                        });
+                    } else {
+                        console.log(5);
+                        Swal.fire({
+                            position: "center",
+                            icon: "error",
+                            title: "Error",
+                            text: "Booking Failed!",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                }
+            });
+        });
         // pass data into backend close
         // validate personal email already exit or not open
         $(document).ready(function() {

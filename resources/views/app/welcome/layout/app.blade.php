@@ -267,9 +267,9 @@
                         <div class="col-md-12">
                             <div class="de-flex">
                                 <div class="de-flex-col">
-                                    <a href="https://realit.lk/">
+                                    {{-- <a href="https://realit.lk/">
                                         Copyright 2023 - Real IT PVT (LTD)
-                                    </a>
+                                    </a> --}}
                                 </div>
                                 <ul class="menu-simple">
                                     <li><a href="#">Terms &amp; Conditions</a></li>
