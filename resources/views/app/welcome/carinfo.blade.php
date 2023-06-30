@@ -25,6 +25,9 @@
 {{-- form wizard stylesheet --}}
 
 @section('welcomebody')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.min.css"
+        integrity="sha512-InYSgxgTnnt8BG3Yy0GcpSnorz5gxHvT6OEoRWj91Gg+RvNdCiAharnBe+XFIDS754Kd9TekdjXw3V7TAgh6Vw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('plugins/bs-stepper/css/bs-stepper.min.css') }}">
     <link rel="stylesheet" href="{{ asset('welcome/fonts/et-line-font/style.css') }}">
     <link rel="stylesheet" href="{{ asset('welcome/fonts/font-awesome/css/font-awesome.min.css') }}">
@@ -153,7 +156,7 @@
                                 <span class="bs-stepper-circle">
                                     <span aria-hidden="true" class="icon_documents_alt"></span>
                                 </span>
-                                <span class="bs-stepper-label">User Information</span>
+                                <span class="bs-stepper-label">Personal Information</span>
                             </button>
                         </div>
                         <div class="line"></div>
@@ -192,6 +195,8 @@
                                     </div>
                                     <div class="spacer-20"></div>
                                     <h3>{{ $selected_car_info->displaying_name }}</h3>
+                                    <input type="hidden" name="vehicle_ID" id="vehicle_ID"
+                                        value="{{ $selected_car_info->id }}">
                                     <p class="text_justify">{{ $selected_car_info->vehicle_description }}</p>
                                     <div class="spacer-10"></div>
                                     <h4>SPECIFICATIONS</h4>
@@ -290,6 +295,7 @@
                             {{-- step 1 cars_info content close --}}
                             <div class="line my-4"></div>
                             <div class="btns_stepper">
+                                <a href="/cars" class="btn btn-lg btn-secondary">Back</a>
                                 <button class="btn btn-lg btn-primary btn_next">Next</button>
                             </div>
                         </div>
@@ -653,7 +659,7 @@
                             <div class="line my-4"></div>
                             <div class="btns_stepper">
                                 <button class="btn btn-lg btn-primary btn_previous">Previous</button>
-                                <button class="btn btn-lg btn-primary btn_next">Next</button>
+                                <button class="btn btn-lg btn-primary" id="btn_insurance_required">Next</button>
                             </div>
                         </div>
                         <!-- Step 3 content -->
@@ -865,7 +871,134 @@
                             <div class="row g-3">
                                 <div class="col-lg-6">
                                     <h3 class="carinfo_inputs_label_">PERSONAL INFORMATION</h3>
-
+                                    <form name="form_user_info" id='form_user_info' action="" class="form-border"
+                                        method="post">
+                                        @csrf
+                                        @method('post')
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <div class="field-set">
+                                                    <label for='email'>Email Address<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='text' name='email' id='email'
+                                                        class="form-control">
+                                                    <span id="error_msg_email" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-2">
+                                                <div class="field-set">
+                                                    <label for='fullname'>Full Name<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='text' name='fullname' id='fullname'
+                                                        class="form-control">
+                                                    <span id="error_msg_fullname" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-2">
+                                                <div class="field-set">
+                                                    <label for='address'>Address<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='text' name='address' id='address'
+                                                        class="form-control">
+                                                    <span id="error_msg_address" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-2">
+                                                <div class="field-set">
+                                                    <label for='city'>City<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='text' name='city' id='city'
+                                                        class="form-control">
+                                                    <span id="error_msg_city" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-2">
+                                                <div class="field-set">
+                                                    <label for='phone1'>Phone 1 (with country code)<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='text' name='phone1' id='phone1'
+                                                        class="form-control" placeholder="+354">
+                                                    <span id="error_msg_phone1" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-2">
+                                                <div class="field-set">
+                                                    <label for='phone2'>Phone 2 (with country code)</label>
+                                                    <input type='text' name='phone2' pid='phone2'
+                                                        class="form-control" placeholder="+354">
+                                                    <span id="error_msg_phone2" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="line my-2"></div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <div class="field-set">
+                                                    <label for='flight_no'>Flight Number<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='text' name='flight_no' id='flight_no'
+                                                        class="form-control">
+                                                    <span id="error_msg_flight_no" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <div class="field-set">
+                                                    <label for='driver_name'>Driver's Name<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='text' name='driver_name' id='driver_name'
+                                                        class="form-control">
+                                                    <span id="error_msg_driver_name" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-2">
+                                                <div class="field-set">
+                                                    <label for='license_no'>Driving License<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='text' name='license_no' id='license_no'
+                                                        class="form-control">
+                                                    <span id="error_msg_license_no" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-2">
+                                                <div class="field-set">
+                                                    <label for='license_valid_date'>License Valid Date<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='date' name='license_valid_date'
+                                                        id='license_valid_date' class="form-control">
+                                                    <span id="error_msg_license_valid_date" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-2">
+                                                <div class="field-set">
+                                                    <label for='license_img'>Upload an Image of License<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='file' name='license_img[]' id='license_img'
+                                                        class="form-control">
+                                                    <span id="error_msg_license_img" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-2 tobe_hidden">
+                                                <div class="field-set">
+                                                    <label for='password'>Password<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='password' name='password' id='password'
+                                                        class="form-control">
+                                                    <span id="error_msg_password" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-2 tobe_hidden">
+                                                <div class="field-set">
+                                                    <label for='repassword'>Re-enter Password<span
+                                                            style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
+                                                    <input type='password' name='repassword' id='repassword'
+                                                        class="form-control">
+                                                    <span id="error_msg_repassword" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
 
                                 <div class="col-lg-3">
@@ -983,11 +1116,23 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-lg-12 mb20">
+                                <div class="d-card">
+                                    <div class="row align-items-center">
+                                        <div class="p-2 mt-2">
+                                            <p style="text-align: center; color:rgb(15, 166, 7); font-size:18px;"><span
+                                                    style="color:red;">*</span>PLEASE NOTE : <strong>THE PAYMENTS ARE DONE
+                                                    IN CASH AFTER YOU RECEIVE THE CAR AT THE AIRPORT.</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             {{-- step 4 user info content close --}}
                             <div class="line my-4"></div>
-                            <div class="btns_stepper">
+                            <div class="text-center">
                                 <button class="btn btn-lg btn-primary btn_previous">Previous</button>
-                                <button class="btn btn-lg btn-primary btn_next">Next</button>
+                                <button class="btn btn-lg btn-success" id="btn_confirm_booking"
+                                    type="submit">Confirm</button>
                             </div>
                         </div>
                         <!-- Step 3 content -->
@@ -1012,15 +1157,40 @@
         // stepper navigator open
         $(document).ready(function() {
             var stepper = new Stepper($('.bs-stepper')[0]);
+
             // Next button click event
             $('.btn_next').on('click', function() {
                 stepper.next();
             });
+
+            $('#btn_insurance_required').on('click', function(e) {
+                e.preventDefault();
+                if (validateInsuranceSelection()) {
+                    stepper.next();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'You should select at least one insurance!',
+                    });
+                }
+            });
+
             // Previous button click event
             $('.btn_previous').on('click', function() {
                 stepper.previous();
             });
+
+            // Function to validate insurance selection
+            function validateInsuranceSelection() {
+                var silverChecked = $('#silver_insurance').is(':checked');
+                var goldChecked = $('#gold_insurance').is(':checked');
+                var platinumChecked = $('#platinum_insurance').is(':checked');
+
+                return silverChecked || goldChecked || platinumChecked;
+            }
         });
+
         // stepper navigator close
         // get and set session data from cars page tour open
         $(document).ready(function() {
@@ -1133,6 +1303,7 @@
                     var step2_total_cost = vehicle_total_cost_isk + step2_insurance_cost_total;
                     $('#step2_total').text(step2_total_cost + ' ISK');
                     $('#step3_total').text(step2_total_cost + ' ISK');
+                    $('#step4_total').text(step2_total_cost + ' ISK');
                 }
 
                 // step 3 calculations
@@ -1223,11 +1394,95 @@
                     $('#step4_total').text(step3_total_cost + ' ISK');
                 }
 
+                // pass data into backend open
+                $("#btn_confirm_booking").on("click", function(e) {
+                    e.preventDefault();
+
+                    // get vehicle id
+                    var car_id = $("#vehicle_ID").val();
+                    // get tour details
+                    var pickupLocation = $("#carinfo_step4_pickup_location").val();
+                    var dropOffLocation = $("#carinfo_step4_dropoff_location").val();
+                    var pickupDate = $("#carinfo_step4_pickup_date").val();
+                    var returnDate = $("#carinfo_step4_return_date").val();
+                    var pickupTime = $("#carinfo_step4_pickup_time").val();
+                    var returnTime = $("#carinfo_step4_return_time").val();
+                    // price details
+                    var total_with_currency = $('#step4_total').text();
+                    var total_without_currency = totalCost.replace(' ISK', '');
+                    var totalCost = parseInt(total_without_currency);
+                    console.log(totalCost);
+                    // get personal information
+                    var fullname = $("#fullname").val();
+                    var email = $("#email").val();
+                    var address = $("#address").val();
+                    var city = $("#city").val();
+                    var phone1 = $("#phone1").val();
+                    var phone2 = $("#phone2").val();
+                    var license_img = $('input[name="license_img[]"]').prop('files')[0];
+                    var flight_no = $("#flight_no").val();
+                    var driver_name = $("#driver_name").val();
+                    var license_valid_date = $("#license_valid_date").val();
+                    var license_no = $("#license_no").val();
+                    var password = $("#password").val();
+                    var repassword = $("#repassword").val();
+                    console.log(444448888);
+
+
+                });
+                // pass data into backend close
             });
 
 
         });
         // step 2 calculation close
+        // validate personal email already exit or not open
+        $(document).ready(function() {
+            $('#email').on('input', function() {
+                var enteredEmail = $(this).val();
+                var url = '/userdetails/view';
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {
+                        email: enteredEmail
+                    },
+                    success: function(response) {
+                        // console.log(response);
+                        // var emailList = response.emails;
+                        // $('#email').find('option').remove();
+                        // $.each(emailList, function(index, email) {
+                        //     var option = $('<option>').text(email).val(email);
+                        //     $('#email').append(option);
+                        // });
+                        // Fill relevant data into other input fields
+                        $('#fullname').val(response.fullname);
+                        $('#address').val(response.address);
+                        $('#city').val(response.city);
+                        $('#phone1').val(response.phone1);
+                        $('#phone2').val(response.phone2);
+                        $('#flight_no').val(response.flight_no);
+                        $('#driver_name').val(response.driver_name);
+                        $('#license_no').val(response.license_no);
+                        $('#license_valid_date').val(response.license_valid_date);
+
+                        // Check if email exists in the database
+                        if (enteredEmail == response.email) {
+                            $('.tobe_hidden').hide();
+                            $('#fullname').prop('disabled', true);
+                        } else {
+                            $('.tobe_hidden').show();
+                            $('#fullname').prop('disabled', false);
+                        }
+                    },
+                    error: function(xhr, status, error) {}
+                });
+            });
+        });
+        // validate personal email already exit or not open
     </script>
     <!-- content close -->
 @endsection
