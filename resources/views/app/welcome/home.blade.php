@@ -849,7 +849,7 @@
                     displayErrorMessage('home_pickup_date', 'Please select a pickup date');
                     isValid = false;
                 } else if (!isFutureDate(home_pickup_date)) {
-                    displayErrorMessage('home_pickup_date', 'Pickup date should be a future date');
+                    displayErrorMessage('home_pickup_date', 'Pickup date should be a date ahead from today');
                     isValid = false;
                 }
 

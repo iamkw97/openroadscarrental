@@ -862,6 +862,127 @@
                         <div id="step6_user_info" class="content" role="tabpanel"
                             aria-labelledby="step6_user_info-trigger">
                             {{-- step 4 user info content open --}}
+                            <div class="row g-3">
+                                <div class="col-lg-6">
+                                    <h3 class="carinfo_inputs_label_">PERSONAL INFORMATION</h3>
+
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="de-item mb10">
+                                        <div class="d-img mt-1">
+                                            <h4 class="carinfo_inputs_label">{{ $selected_car_info->displaying_name }}
+                                            </h4>
+                                            <div class="my-2"></div>
+                                            <img src="{{ asset('img/cars/' . $selected_car_img->vehicle_image) }}"
+                                                alt="">
+                                        </div>
+                                        <div class="spacer-20"></div>
+                                        <div class="de-spec">
+                                            <h4 class="carinfo_inputs_label">PRICE SUMMARY</h4>
+                                            <div class="d-row">
+                                                <span class="d-title"><span aria-hidden="true"
+                                                        class="icon_calendar"></span></span>
+                                                <spam class="d-value" id="step4_date_count"></spam>
+                                            </div>
+                                            <div class="d-row carinfo_inputs_label p-1" id="div_step4_insurance_label">
+                                                <span class="d-title">INSURANCE</span>
+                                                <spam class="d-value"></spam>
+                                            </div>
+                                            <div class="d-row" id="div_step4_insurance_cost">
+                                                <span class="d-title" id="step4_insurance_type"></span>
+                                                <spam class="d-value" id="step4_insurance_cost"></spam>
+                                            </div>
+                                            <div class="d-row carinfo_inputs_label p-1" id="div_step4_addons_label">
+                                                <span class="d-title">OPTIONS</span>
+                                                <spam class="d-value"></spam>
+                                            </div>
+                                            <div class="d-row" id="div_step4_addons_baby_seat">
+                                                <span class="d-title" id="step4_addons_type_baby_seat"></span>
+                                                <spam class="d-value" id="step4_addons_cost_baby_seat"></spam>
+                                            </div>
+                                            <div class="d-row" id="div_step4_addons_wifi">
+                                                <span class="d-title" id="step4_addons_type_wifi"></span>
+                                                <spam class="d-value" id="step4_addons_cost_wifi"></spam>
+                                            </div>
+                                            <div class="d-row" id="div_step4_addons_driver">
+                                                <span class="d-title" id="step4_addons_type_driver"></span>
+                                                <spam class="d-value" id="step4_addons_cost_driver"></spam>
+                                            </div>
+                                            <div class="d-row">
+                                                <span class="d-title">Vehicle</span>
+                                                <spam class="d-value" id="step4_vehicle_total_price_isk"></spam>
+                                            </div>
+                                            <div class="my-1"></div>
+                                            <div class="d-row carinfo_inputs_label p-1">
+                                                <span class="d-title">Total</span>
+                                                <spam class="d-value" id="step4_total"></spam>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="de-box mb10">
+                                        <form name="form_carinfo_step4_tour" id='form_carinfo_step4_tour' method="post">
+                                            <div class="row">
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Pick Up Location</p>
+                                                    <input readonly name="carinfo_step4_pickup_location"
+                                                        id="carinfo_step4_pickup_location"
+                                                        placeholder="Enter your pickup location"
+                                                        class="carinfo_tour_input form-control">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step4_pickup_location_error"></div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Drop Off Location</p>
+                                                    <input readonly name="carinfo_step4_dropoff_location"
+                                                        id="carinfo_step4_dropoff_location"
+                                                        placeholder="Enter your pickup location"
+                                                        class="carinfo_tour_input form-control">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step4_dropoff_location_error"></div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb20">
+                                                    <p class="carinfo_inputs_label">Pick Up Date & Time</p>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step4_pickup_date" id="carinfo_step4_pickup_date"
+                                                        type="date">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step4_pickup_date_error">
+                                                    </div>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step4_pickup_time" id="carinfo_step4_pickup_time"
+                                                        type="time">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step4_pickup_time_error">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 mb10">
+                                                    <p class="carinfo_inputs_label">Return Date & Time</p>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step4_return_date" id="carinfo_step4_return_date"
+                                                        type="date">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step4_return_date_error">
+                                                    </div>
+                                                    <input readonly class="carinfo_tour_input form-control"
+                                                        name="carinfo_step4_return_time" id="carinfo_step4_return_time"
+                                                        type="time">
+                                                    <div class="carinfo_input_error_msg"
+                                                        id="carinfo_step4_return_time_error">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                             {{-- step 4 user info content close --}}
                             <div class="line my-4"></div>
                             <div class="btns_stepper">
@@ -925,6 +1046,13 @@
             $('#carinfo_step3_return_date').val(sessionStorage.getItem('cars_return_date'));
             $('#carinfo_step3_pickup_time').val(sessionStorage.getItem('cars_pickup_time'));
             $('#carinfo_step3_return_time').val(sessionStorage.getItem('cars_return_time'));
+            // step 4
+            $('#carinfo_step4_pickup_location').val(sessionStorage.getItem('cars_pickup_location'));
+            $('#carinfo_step4_dropoff_location').val(sessionStorage.getItem('cars_dropoff_location'));
+            $('#carinfo_step4_pickup_date').val(sessionStorage.getItem('cars_pickup_date'));
+            $('#carinfo_step4_return_date').val(sessionStorage.getItem('cars_return_date'));
+            $('#carinfo_step4_pickup_time').val(sessionStorage.getItem('cars_pickup_time'));
+            $('#carinfo_step4_return_time').val(sessionStorage.getItem('cars_return_time'));
 
         });
         // get and set session data from cars page tour close
@@ -947,8 +1075,10 @@
             // Display the total cost in the designated element
             $('#step2_date_count').text(dateCount + ' Days');
             $('#step3_date_count').text(dateCount + ' Days');
+            $('#step4_date_count').text(dateCount + ' Days');
             $('#step2_vehicle_total_price_isk').text(vehicle_total_cost_isk + ' ISK');
             $('#step3_vehicle_total_price_isk').text(vehicle_total_cost_isk + ' ISK');
+            $('#step4_vehicle_total_price_isk').text(vehicle_total_cost_isk + ' ISK');
             $('#step2_total').text(vehicle_total_cost_isk + ' ISK');
             // Select the silver_insurance checkbox by default
             $('#silver_insurance').prop('checked', true);
@@ -957,8 +1087,10 @@
             var step2_insurance_type = 'SILVER';
             $('#step2_insurance_type').text(step2_insurance_type);
             $('#step3_insurance_type').text(step2_insurance_type);
+            $('#step4_insurance_type').text(step2_insurance_type);
             $('#step2_insurance_cost').text(step2_insurance_cost * dateCount + ' ISK');
             $('#step3_insurance_cost').text(step2_insurance_cost * dateCount + ' ISK');
+            $('#step4_insurance_cost').text(step2_insurance_cost * dateCount + ' ISK');
             // Update the total cost by adding the insurance cost and vehicle total price
             var step2_total_cost = vehicle_total_cost_isk + (step2_insurance_cost * dateCount);
             $('#step2_total').text(step2_total_cost + ' ISK');
@@ -992,28 +1124,29 @@
                     // Update the insurance type and cost with the calculated values
                     $('#step2_insurance_type').text(step2_insurance_type);
                     $('#step3_insurance_type').text(step2_insurance_type);
+                    $('#step4_insurance_type').text(step2_insurance_type);
                     step2_insurance_cost_total = step2_insurance_cost * dateCount;
                     $('#step2_insurance_cost').text(step2_insurance_cost_total + ' ISK');
                     $('#step3_insurance_cost').text(step2_insurance_cost_total + ' ISK');
+                    $('#step4_insurance_cost').text(step2_insurance_cost_total + ' ISK');
                     // Update the total cost by adding the insurance cost and vehicle total price
                     var step2_total_cost = vehicle_total_cost_isk + step2_insurance_cost_total;
                     $('#step2_total').text(step2_total_cost + ' ISK');
                     $('#step3_total').text(step2_total_cost + ' ISK');
                 }
-            });
 
-            // step 3 calculations
-            var step3_insurance_type_ = $('#step3_insurance_type').text();
-            var step3_insurance_cost_ = step2_insurance_cost_total;
-            console.log(step3_insurance_cost_);
-            var step3_total_cost = step2_total_cost;
-            // hide options when page loads
-            $('#div_step3_addons_label').hide();
-            $('#div_step3_addons_baby_seat').hide();
-            $('#div_step3_addons_wifi').hide();
-            $('#div_step3_addons_driver').hide();
-
-            $('input[type="checkbox"]').change(function() {
+                // step 3 calculations
+                var step3_insurance_type_ = $('#step3_insurance_type').text();
+                var step3_insurance_cost_ = step2_insurance_cost_total;
+                // hide options when page loads
+                $('#div_step3_addons_label').hide();
+                $('#div_step3_addons_baby_seat').hide();
+                $('#div_step3_addons_wifi').hide();
+                $('#div_step3_addons_driver').hide();
+                $('#div_step4_addons_label').hide();
+                $('#div_step4_addons_baby_seat').hide();
+                $('#div_step4_addons_wifi').hide();
+                $('#div_step4_addons_driver').hide();
                 if ($(this).attr('id') === 'add_option_baby_seat' || $(this).attr('id') ===
                     'add_option_wifi' || $(this).attr('id') === 'add_option_driver') {
                     var option_baby_seat_cost = 1000;
@@ -1023,56 +1156,76 @@
                     var option_driver_cost = 0;
                     var option_driver_type = 'Driver';
 
-                    // Show the addons label and the corresponding addon if the checkbox is checked
-                    if ($('#add_option_baby_seat').is(':checked')) {
+                    // Show the addons label and the corresponding addon if any of the checkboxes are checked
+                    if ($('#add_option_baby_seat').is(':checked') || $('#add_option_wifi').is(':checked') ||
+                        $('#add_option_driver').is(':checked')) {
                         $('#div_step3_addons_label').show();
-                        $('#div_step3_addons_baby_seat').show();
-                        $('#step3_addons_type_baby_seat').text(option_baby_seat_type);
-                        var step3_option_baby_seat_cost = option_baby_seat_cost * dateCount;
-                        $('#step3_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
-                    } else {
-                        // Hide the div and set the cost to 0 if the checkbox is unchecked
-                        $('#div_step3_addons_baby_seat').hide();
-                        $('#div_step3_addons_label').hide();
-                        step3_option_baby_seat_cost = 0;
-                        $('#step3_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
-                    }
+                        $('#div_step4_addons_label').show();
+                        // Show the addons label and the corresponding addon if the checkbox is checked
+                        if ($('#add_option_baby_seat').is(':checked')) {
+                            $('#div_step3_addons_baby_seat').show();
+                            $('#step3_addons_type_baby_seat').text(option_baby_seat_type);
+                            $('#div_step4_addons_baby_seat').show();
+                            $('#step4_addons_type_baby_seat').text(option_baby_seat_type);
+                            var step3_option_baby_seat_cost = option_baby_seat_cost * dateCount;
+                            $('#step3_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
+                            $('#step4_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
+                        } else {
+                            // Hide the div and set the cost to 0 if the checkbox is unchecked
+                            $('#div_step3_addons_baby_seat').hide();
+                            $('#div_step4_addons_baby_seat').hide();
+                            step3_option_baby_seat_cost = 0;
+                            $('#step3_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
+                            $('#step4_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
+                        }
 
-                    if ($('#add_option_wifi').is(':checked')) {
-                        $('#div_step3_addons_label').show();
-                        $('#div_step3_addons_wifi').show();
-                        $('#step3_addons_type_wifi').text(option_wifi_type);
-                        var step3_option_wifi_cost = option_wifi_cost * dateCount;
-                        $('#step3_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
-                    } else {
-                        // Hide the div and set the cost to 0 if the checkbox is unchecked
-                        $('#div_step3_addons_wifi').hide();
-                        $('#div_step3_addons_label').hide();
-                        step3_option_wifi_cost = 0;
-                        $('#step3_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
-                    }
+                        if ($('#add_option_wifi').is(':checked')) {
+                            $('#div_step3_addons_wifi').show();
+                            $('#step3_addons_type_wifi').text(option_wifi_type);
+                            $('#div_step4_addons_wifi').show();
+                            $('#step4_addons_type_wifi').text(option_wifi_type);
+                            var step3_option_wifi_cost = option_wifi_cost * dateCount;
+                            $('#step3_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
+                            $('#step4_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
+                        } else {
+                            // Hide the div and set the cost to 0 if the checkbox is unchecked
+                            $('#div_step3_addons_wifi').hide();
+                            $('#div_step4_addons_wifi').hide();
+                            step3_option_wifi_cost = 0;
+                            $('#step3_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
+                            $('#step4_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
+                        }
 
-                    if ($('#add_option_driver').is(':checked')) {
-                        $('#div_step3_addons_label').show();
-                        $('#div_step3_addons_driver').show();
-                        $('#step3_addons_type_driver').text(option_driver_type);
-                        var step3_option_driver_cost = option_driver_cost * dateCount;
-                        $('#step3_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
+                        if ($('#add_option_driver').is(':checked')) {
+                            $('#div_step3_addons_driver').show();
+                            $('#step3_addons_type_driver').text(option_driver_type);
+                            $('#div_step4_addons_driver').show();
+                            $('#step4_addons_type_driver').text(option_driver_type);
+                            var step3_option_driver_cost = option_driver_cost * dateCount;
+                            $('#step3_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
+                            $('#step4_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
+                        } else {
+                            // Hide the div and set the cost to 0 if the checkbox is unchecked
+                            $('#div_step3_addons_driver').hide();
+                            $('#div_step4_addons_driver').hide();
+                            step3_option_driver_cost = 0;
+                            $('#step3_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
+                            $('#step4_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
+                        }
                     } else {
-                        // Hide the div and set the cost to 0 if the checkbox is unchecked
-                        $('#div_step3_addons_driver').hide();
                         $('#div_step3_addons_label').hide();
-                        step3_option_driver_cost = 0;
-                        $('#step3_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
+                        $('#div_step4_addons_label').hide();
                     }
-
                     // Update the total cost by adding the insurance cost, vehicle total price, and addon costs
                     step3_total_cost = vehicle_total_cost_isk + parseInt(step3_insurance_cost_, 10) +
                         step3_option_baby_seat_cost + step3_option_wifi_cost + step3_option_driver_cost;
                     $('#step3_total').text(step3_total_cost + ' ISK');
-                    console.log(step3_total_cost);
+                    $('#step4_total').text(step3_total_cost + ' ISK');
                 }
+
             });
+
+
         });
         // step 2 calculation close
     </script>
