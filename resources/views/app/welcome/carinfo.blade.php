@@ -161,7 +161,7 @@
                         </div>
                         <div class="line"></div>
                         <!-- Step 5 -->
-                        <div class="step" data-target="#step7_confirmation">
+                        {{-- <div class="step" data-target="#step7_confirmation">
                             <button type="button" class="step-trigger" role="tab" aria-controls="step7_confirmation"
                                 id="step7_confirmation-trigger">
                                 <span class="bs-stepper-circle">
@@ -169,7 +169,7 @@
                                 </span>
                                 <span class="bs-stepper-label">Confirmation</span>
                             </button>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="line mb-4"></div>
                     <div class="bs-stepper-content">
@@ -882,7 +882,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='text' name='email' id='email'
                                                         class="form-control">
-                                                    <span id="error_msg_email" class="text-danger"></span>
+                                                    <span id="error_msg_email" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-12 mb-2">
@@ -891,7 +891,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='text' name='fullname' id='fullname'
                                                         class="form-control">
-                                                    <span id="error_msg_fullname" class="text-danger"></span>
+                                                    <span id="error_msg_fullname" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-2">
@@ -900,7 +900,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='text' name='address' id='address'
                                                         class="form-control">
-                                                    <span id="error_msg_address" class="text-danger"></span>
+                                                    <span id="error_msg_address" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-2">
@@ -909,7 +909,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='text' name='city' id='city'
                                                         class="form-control">
-                                                    <span id="error_msg_city" class="text-danger"></span>
+                                                    <span id="error_msg_city" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-2">
@@ -918,7 +918,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='text' name='phone1' id='phone1'
                                                         class="form-control" placeholder="+354">
-                                                    <span id="error_msg_phone1" class="text-danger"></span>
+                                                    <span id="error_msg_phone1" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-2">
@@ -926,7 +926,7 @@
                                                     <label for='phone2'>Phone 2 (with country code)</label>
                                                     <input type='text' name='phone2' pid='phone2'
                                                         class="form-control" placeholder="+354">
-                                                    <span id="error_msg_phone2" class="text-danger"></span>
+                                                    <span id="error_msg_phone2" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -938,7 +938,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='text' name='flight_no' id='flight_no'
                                                         class="form-control">
-                                                    <span id="error_msg_flight_no" class="text-danger"></span>
+                                                    <span id="error_msg_flight_no" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -949,7 +949,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='text' name='driver_name' id='driver_name'
                                                         class="form-control">
-                                                    <span id="error_msg_driver_name" class="text-danger"></span>
+                                                    <span id="error_msg_driver_name" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-2">
@@ -958,7 +958,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='text' name='license_no' id='license_no'
                                                         class="form-control">
-                                                    <span id="error_msg_license_no" class="text-danger"></span>
+                                                    <span id="error_msg_license_no" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-2">
@@ -967,7 +967,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='date' name='license_valid_date'
                                                         id='license_valid_date' class="form-control">
-                                                    <span id="error_msg_license_valid_date" class="text-danger"></span>
+                                                    <span id="error_msg_license_valid_date" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-2">
@@ -976,7 +976,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='file' name='license_img[]' id='license_img'
                                                         class="form-control">
-                                                    <span id="error_msg_license_img" class="text-danger"></span>
+                                                    <span id="error_msg_license_img" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-2 tobe_hidden">
@@ -985,7 +985,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='password' name='password' id='password'
                                                         class="form-control">
-                                                    <span id="error_msg_password" class="text-danger"></span>
+                                                    <span id="error_msg_password" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-2 tobe_hidden">
@@ -994,7 +994,7 @@
                                                             style="color:rgb(255, 0, 0)">&nbsp;*</span></label>
                                                     <input type='password' name='repassword' id='repassword'
                                                         class="form-control">
-                                                    <span id="error_msg_repassword" class="text-danger"></span>
+                                                    <span id="error_msg_repassword" class="text-danger errmsg"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1117,7 +1117,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-12 mb20">
-                                <div class="d-card">
+                                <div class="d-card" style="background-color: #ffeff4;">
                                     <div class="row align-items-center">
                                         <div class="p-2 mt-2">
                                             <p style="text-align: center; color:rgb(15, 166, 7); font-size:18px;"><span
@@ -1136,16 +1136,16 @@
                             </div>
                         </div>
                         <!-- Step 3 content -->
-                        <div id="step7_confirmation" class="content" role="tabpanel"
-                            aria-labelledby="step7_confirmation-trigger">
-                            {{-- step 5 confirmation content open --}}
-                            {{-- step 5 confirmation content close --}}
-                            <div class="line my-4"></div>
+                        {{-- <div id="step7_confirmation" class="content" role="tabpanel"
+                            aria-labelledby="step7_confirmation-trigger"> --}}
+                        {{-- step 5 confirmation content open --}}
+                        {{-- step 5 confirmation content close --}}
+                        {{-- <div class="line my-4"></div>
                             <div class="btns_stepper">
                                 <button class="btn btn-lg btn-primary btn_previous">Previous</button>
                                 <button class="btn btn-lg btn-primary" type="submit">Submit</button>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 {{-- stepper close --}}
@@ -1194,36 +1194,18 @@
         // stepper navigator close
         // get and set session data from cars page tour open
         $(document).ready(function() {
-            // Retrieve the values from sessionStorage and display them
-            // step 1
-            $('#carinfo_step1_pickup_location').val(sessionStorage.getItem('cars_pickup_location'));
-            $('#carinfo_step1_dropoff_location').val(sessionStorage.getItem('cars_dropoff_location'));
-            $('#carinfo_step1_pickup_date').val(sessionStorage.getItem('cars_pickup_date'));
-            $('#carinfo_step1_return_date').val(sessionStorage.getItem('cars_return_date'));
-            $('#carinfo_step1_pickup_time').val(sessionStorage.getItem('cars_pickup_time'));
-            $('#carinfo_step1_return_time').val(sessionStorage.getItem('cars_return_time'));
-            // step 2
-            $('#carinfo_step2_pickup_location').val(sessionStorage.getItem('cars_pickup_location'));
-            $('#carinfo_step2_dropoff_location').val(sessionStorage.getItem('cars_dropoff_location'));
-            $('#carinfo_step2_pickup_date').val(sessionStorage.getItem('cars_pickup_date'));
-            $('#carinfo_step2_return_date').val(sessionStorage.getItem('cars_return_date'));
-            $('#carinfo_step2_pickup_time').val(sessionStorage.getItem('cars_pickup_time'));
-            $('#carinfo_step2_return_time').val(sessionStorage.getItem('cars_return_time'));
-            // step 3
-            $('#carinfo_step3_pickup_location').val(sessionStorage.getItem('cars_pickup_location'));
-            $('#carinfo_step3_dropoff_location').val(sessionStorage.getItem('cars_dropoff_location'));
-            $('#carinfo_step3_pickup_date').val(sessionStorage.getItem('cars_pickup_date'));
-            $('#carinfo_step3_return_date').val(sessionStorage.getItem('cars_return_date'));
-            $('#carinfo_step3_pickup_time').val(sessionStorage.getItem('cars_pickup_time'));
-            $('#carinfo_step3_return_time').val(sessionStorage.getItem('cars_return_time'));
-            // step 4
-            $('#carinfo_step4_pickup_location').val(sessionStorage.getItem('cars_pickup_location'));
-            $('#carinfo_step4_dropoff_location').val(sessionStorage.getItem('cars_dropoff_location'));
-            $('#carinfo_step4_pickup_date').val(sessionStorage.getItem('cars_pickup_date'));
-            $('#carinfo_step4_return_date').val(sessionStorage.getItem('cars_return_date'));
-            $('#carinfo_step4_pickup_time').val(sessionStorage.getItem('cars_pickup_time'));
-            $('#carinfo_step4_return_time').val(sessionStorage.getItem('cars_return_time'));
-
+            $('#carinfo_step1_pickup_location,#carinfo_step2_pickup_location,#carinfo_step3_pickup_location,#carinfo_step4_pickup_location')
+                .val(sessionStorage.getItem('cars_pickup_location'));
+            $('#carinfo_step1_dropoff_location,#carinfo_step2_dropoff_location,#carinfo_step3_dropoff_location,#carinfo_step4_dropoff_location')
+                .val(sessionStorage.getItem('cars_dropoff_location'));
+            $('#carinfo_step1_pickup_date,#carinfo_step2_pickup_date,#carinfo_step3_pickup_date,#carinfo_step4_pickup_date')
+                .val(sessionStorage.getItem('cars_pickup_date'));
+            $('#carinfo_step1_return_date,#carinfo_step2_return_date,#carinfo_step3_return_date,#carinfo_step4_return_date')
+                .val(sessionStorage.getItem('cars_return_date'));
+            $('#carinfo_step1_pickup_time,#carinfo_step2_pickup_time,#carinfo_step3_pickup_time,#carinfo_step4_pickup_time')
+                .val(sessionStorage.getItem('cars_pickup_time'));
+            $('#carinfo_step1_return_time,#carinfo_step2_return_time,#carinfo_step3_return_time,#carinfo_step4_return_time')
+                .val(sessionStorage.getItem('cars_return_time'));
         });
         // get and set session data from cars page tour close
         // step 2 calculation open
@@ -1251,7 +1233,7 @@
             $('#step4_vehicle_total_price_isk').text(vehicle_total_cost_isk + ' ISK');
             $('#step2_total').text(vehicle_total_cost_isk + ' ISK');
             // Select the silver_insurance checkbox by default
-            $('#silver_insurance').prop('checked', true);
+            $('#silver_insurance').prop('checked', false);
             // Calculate the insurance cost and update the values
             var step2_insurance_cost = 0;
             var step2_insurance_type = 'SILVER';
@@ -1265,6 +1247,17 @@
             var step2_total_cost = vehicle_total_cost_isk + (step2_insurance_cost * dateCount);
             $('#step2_total').text(step2_total_cost + ' ISK');
             var step2_insurance_cost_total = 0;
+
+            // hide divs by default
+            $('#div_step3_addons_label').hide();
+                $('#div_step3_addons_baby_seat').hide();
+                $('#div_step3_addons_wifi').hide();
+                $('#div_step3_addons_driver').hide();
+                $('#div_step4_addons_label').hide();
+                $('#div_step4_addons_baby_seat').hide();
+                $('#div_step4_addons_wifi').hide();
+                $('#div_step4_addons_driver').hide();
+
             // When any checkbox is changed
             $('input[type="checkbox"]').change(function() {
                 if ($(this).attr('id') === 'silver_insurance' || $(this).attr('id') ===
@@ -1277,7 +1270,7 @@
                     $('#div_step2_insurance_cost').hide();
                     // Reset insurance cost and type
                     step2_insurance_cost = 0;
-                    step2_insurance_type = '';
+                    step2_insurance_type = 'SILVER';
                     if ($('#silver_insurance').is(':checked')) {
                         step2_insurance_cost = 0;
                         step2_insurance_type = 'SILVER';
@@ -1309,6 +1302,11 @@
                 // step 3 calculations
                 var step3_insurance_type_ = $('#step3_insurance_type').text();
                 var step3_insurance_cost_ = step2_insurance_cost_total;
+
+                var step3_option_baby_seat_cost = 0;
+                var step3_option_wifi_cost = 0;
+                var step3_option_wifi_driver = 0;
+
                 // hide options when page loads
                 $('#div_step3_addons_label').hide();
                 $('#div_step3_addons_baby_seat').hide();
@@ -1318,6 +1316,8 @@
                 $('#div_step4_addons_baby_seat').hide();
                 $('#div_step4_addons_wifi').hide();
                 $('#div_step4_addons_driver').hide();
+
+
                 if ($(this).attr('id') === 'add_option_baby_seat' || $(this).attr('id') ===
                     'add_option_wifi' || $(this).attr('id') === 'add_option_driver') {
                     var option_baby_seat_cost = 1000;
@@ -1326,6 +1326,7 @@
                     var option_wifi_type = 'WIFI';
                     var option_driver_cost = 0;
                     var option_driver_type = 'Driver';
+
 
                     // Show the addons label and the corresponding addon if any of the checkboxes are checked
                     if ($('#add_option_baby_seat').is(':checked') || $('#add_option_wifi').is(':checked') ||
@@ -1338,7 +1339,7 @@
                             $('#step3_addons_type_baby_seat').text(option_baby_seat_type);
                             $('#div_step4_addons_baby_seat').show();
                             $('#step4_addons_type_baby_seat').text(option_baby_seat_type);
-                            var step3_option_baby_seat_cost = option_baby_seat_cost * dateCount;
+                            step3_option_baby_seat_cost = option_baby_seat_cost * dateCount;
                             $('#step3_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
                             $('#step4_addons_cost_baby_seat').text(step3_option_baby_seat_cost + ' ISK');
                         } else {
@@ -1355,7 +1356,7 @@
                             $('#step3_addons_type_wifi').text(option_wifi_type);
                             $('#div_step4_addons_wifi').show();
                             $('#step4_addons_type_wifi').text(option_wifi_type);
-                            var step3_option_wifi_cost = option_wifi_cost * dateCount;
+                            step3_option_wifi_cost = option_wifi_cost * dateCount;
                             $('#step3_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
                             $('#step4_addons_cost_wifi').text(step3_option_wifi_cost + ' ISK');
                         } else {
@@ -1372,7 +1373,7 @@
                             $('#step3_addons_type_driver').text(option_driver_type);
                             $('#div_step4_addons_driver').show();
                             $('#step4_addons_type_driver').text(option_driver_type);
-                            var step3_option_driver_cost = option_driver_cost * dateCount;
+                            step3_option_driver_cost = option_driver_cost * dateCount;
                             $('#step3_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
                             $('#step4_addons_cost_driver').text(step3_option_driver_cost + ' ISK');
                         } else {
@@ -1387,55 +1388,196 @@
                         $('#div_step3_addons_label').hide();
                         $('#div_step4_addons_label').hide();
                     }
+                    console.log(step3_option_driver_cost);
                     // Update the total cost by adding the insurance cost, vehicle total price, and addon costs
                     step3_total_cost = vehicle_total_cost_isk + parseInt(step3_insurance_cost_, 10) +
                         step3_option_baby_seat_cost + step3_option_wifi_cost + step3_option_driver_cost;
                     $('#step3_total').text(step3_total_cost + ' ISK');
                     $('#step4_total').text(step3_total_cost + ' ISK');
                 }
-
-                // pass data into backend open
-                $("#btn_confirm_booking").on("click", function(e) {
-                    e.preventDefault();
-
-                    // get vehicle id
-                    var car_id = $("#vehicle_ID").val();
-                    // get tour details
-                    var pickupLocation = $("#carinfo_step4_pickup_location").val();
-                    var dropOffLocation = $("#carinfo_step4_dropoff_location").val();
-                    var pickupDate = $("#carinfo_step4_pickup_date").val();
-                    var returnDate = $("#carinfo_step4_return_date").val();
-                    var pickupTime = $("#carinfo_step4_pickup_time").val();
-                    var returnTime = $("#carinfo_step4_return_time").val();
-                    // price details
-                    var total_with_currency = $('#step4_total').text();
-                    var total_without_currency = totalCost.replace(' ISK', '');
-                    var totalCost = parseInt(total_without_currency);
-                    console.log(totalCost);
-                    // get personal information
-                    var fullname = $("#fullname").val();
-                    var email = $("#email").val();
-                    var address = $("#address").val();
-                    var city = $("#city").val();
-                    var phone1 = $("#phone1").val();
-                    var phone2 = $("#phone2").val();
-                    var license_img = $('input[name="license_img[]"]').prop('files')[0];
-                    var flight_no = $("#flight_no").val();
-                    var driver_name = $("#driver_name").val();
-                    var license_valid_date = $("#license_valid_date").val();
-                    var license_no = $("#license_no").val();
-                    var password = $("#password").val();
-                    var repassword = $("#repassword").val();
-                    console.log(444448888);
-
-
-                });
-                // pass data into backend close
             });
-
-
         });
         // step 2 calculation close
+        // pass data into backend open
+        $("#btn_confirm_booking").on("click", function(e) {
+            e.preventDefault();
+
+            // Perform input field validations
+            if (!validateForm()) {
+                return;
+            }
+
+            // Get vehicle ID
+            var car_id = $("#vehicle_ID").val();
+            // Get tour details
+            var pickupLocation = $("#carinfo_step4_pickup_location").val();
+            var dropOffLocation = $("#carinfo_step4_dropoff_location").val();
+            var pickupDate = $("#carinfo_step4_pickup_date").val();
+            var returnDate = $("#carinfo_step4_return_date").val();
+            var pickupTime = $("#carinfo_step4_pickup_time").val();
+            var returnTime = $("#carinfo_step4_return_time").val();
+            // Price details
+            var total_with_currency = $('#step4_total').text();
+            var total_without_currency = total_with_currency.replace(' ISK', '');
+            var totalCost = parseInt(total_without_currency);
+            // Additional options
+            var additionalBabySeat = $("#add_option_baby_seat").is(":checked");
+            var additionalWifi = $("#add_option_wifi").is(":checked");
+            var additionalDriver = $("#add_option_driver").is(":checked");
+            // Get personal information
+            var fullname = $("#fullname").val();
+            var email = $("#email").val();
+            var address = $("#address").val();
+            var city = $("#city").val();
+            var phone1 = $("#phone1").val();
+            var phone2 = $("#phone2").val();
+            var license_img = $('input[name="license_img[]"]').prop('files')[0];
+            var flight_no = $("#flight_no").val();
+            var driver_name = $("#driver_name").val();
+            var license_valid_date = $("#license_valid_date").val();
+            var license_no = $("#license_no").val();
+            var password = $("#password").val();
+            var repassword = $("#repassword").val();
+
+            // Create a FormData object and append data
+            var formData = new FormData();
+
+            formData.append("car_id", car_id);
+            formData.append("pickupLocation", pickupLocation);
+            formData.append("dropOffLocation", dropOffLocation);
+            formData.append("pickupDate", pickupDate);
+            formData.append("returnDate", returnDate);
+            formData.append("pickupTime", pickupTime);
+            formData.append("returnTime", returnTime);
+            formData.append("totalCost", totalCost);
+            formData.append("additionalBabySeat", additionalBabySeat);
+            formData.append("additionalWifi", additionalWifi);
+            formData.append("additionalDriver", additionalDriver);
+            formData.append("fullname", fullname);
+            formData.append("email", email);
+            formData.append("address", address);
+            formData.append("city", city);
+            formData.append("phone1", phone1);
+            formData.append("phone2", phone2);
+            formData.append("license_img", license_img);
+            formData.append("flight_no", flight_no);
+            formData.append("driver_name", driver_name);
+            formData.append("license_valid_date", license_valid_date);
+            formData.append("license_no", license_no);
+            formData.append("password", password);
+            formData.append("repassword", repassword);
+
+            // Make an AJAX request to submit the form data
+            $.ajax({
+                type: "POST",
+                url: "/booking/complete",
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                },
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response, status, xhr) {
+                    if (xhr.status === 200) {
+                        console.log('success');
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: "Your booking has been successfully added!",
+                            text: "Use your given email & password to login.",
+                            showConfirmButton: true
+                        }).then(function(result) {
+                            if (result.isConfirmed) {
+                                window.location.href = "/login";
+                            }
+                        });
+                    } else {
+                        Swal.fire({
+                            position: "center",
+                            icon: "error",
+                            title: "Error",
+                            text: "Booking Failed!",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                }
+            });
+        });
+
+        function validateForm() {
+            var isValid = true;
+
+            // Clear previous error messages
+            $(".errmsg").text("");
+
+            // Perform validations for each input field
+            if ($("#email").val() === "") {
+                $("#error_msg_email").text("Email Address is required.");
+                isValid = false;
+            }
+
+            if ($("#fullname").val() === "") {
+                $("#error_msg_fullname").text("Full Name is required.");
+                isValid = false;
+            }
+
+            if ($("#address").val() === "") {
+                $("#error_msg_address").text("Address is required.");
+                isValid = false;
+            }
+
+            if ($("#city").val() === "") {
+                $("#error_msg_city").text("City is required.");
+                isValid = false;
+            }
+
+            var phone1Value = $("#phone1").val();
+            if (phone1Value === "") {
+                $("#error_msg_phone1").text("Phone 1 is required.");
+                isValid = false;
+            } else if (!/^(\+\d{1,3})?\d+$/.test(phone1Value)) {
+                $("#error_msg_phone1").text("Invalid phone number.");
+                isValid = false;
+            }
+
+            if ($("#flight_no").val() === "") {
+                $("#error_msg_flight_no").text("Flight Number is required.");
+                isValid = false;
+            }
+
+            if ($("#driver_name").val() === "") {
+                $("#error_msg_driver_name").text("Driver's Name is required.");
+                isValid = false;
+            }
+
+            if ($("#license_no").val() === "") {
+                $("#error_msg_license_no").text("Driving License is required.");
+                isValid = false;
+            }
+
+            if ($("#license_valid_date").val() === "") {
+                $("#error_msg_license_valid_date").text("License Valid Date is required.");
+                isValid = false;
+            }
+
+            var passwordValue = $("#password").val();
+            if (passwordValue === "") {
+                $("#error_msg_password").text("Password is required.");
+                isValid = false;
+            } else if (passwordValue !== $("#repassword").val()) {
+                $("#error_msg_repassword").text("Passwords do not match.");
+                isValid = false;
+            }
+
+            if ($("#license_img").get(0).files.length === 0) {
+                $("#error_msg_license_img").text("License Image is required.");
+                isValid = false;
+            }
+
+            return isValid;
+        }
+        // pass data into backend close
         // validate personal email already exit or not open
         $(document).ready(function() {
             $('#email').on('input', function() {
