@@ -89,6 +89,7 @@
         .align_text_center {
             text-align: center;
         }
+
     </style>
     <!-- content begin -->
     <div class="no-bottom no-top zebra" id="content">
@@ -306,7 +307,7 @@
                             <div class="row g-3">
                                 <div class="col-lg-6">
                                     <h3 class="carinfo_inputs_label_">INSURANCE COVERAGE</h3>
-                                    <table class="table de-table table">
+                                    <table id="ins_table" class="table de-table table">
                                         <thead>
                                             <tr>
                                                 <th scope="col">
@@ -554,6 +555,8 @@
                                             </tr>
                                         </tbody>
                                     </table>
+
+
                                 </div>
 
                                 <div class="col-lg-3">
