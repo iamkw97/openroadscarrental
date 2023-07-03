@@ -307,7 +307,8 @@
                             <div class="row g-3">
                                 <div class="col-lg-6">
                                     <h3 class="carinfo_inputs_label_">INSURANCE COVERAGE</h3>
-                                    <table id="ins_table" class="table de-table table">
+                                    <div class="table-responsive">
+                                    <table id="ins_table" class="table">
                                         <thead>
                                             <tr>
                                                 <th scope="col">
@@ -330,9 +331,18 @@
                                         </thead>
                                         <tbody>
                                             <tr>
+                                                <td><span class="bold">Third Party Liability Insurance</span>
+                                                </td>
+                                                <td class="align_text_center"> <div class="badge badge-lg rounded-pill bg-secondary">YES</div>
+                                                </td>
+                                                <td class="align_text_center"><div class="badge badge-lg rounded-pill bg-warning">YES</div>
+                                                </td>
+                                                <td class="align_text_center">  <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
-                                                    <span class="bold">Third Party Liability Insurance</span>
+                                                     <span class="bold">Super Collision Damage Waiver</span>
                                                 </td>
                                                 <td class="align_text_center">
                                                     <div class="badge badge-lg rounded-pill bg-secondary">YES</div>
@@ -346,8 +356,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
-                                                    <span class="bold">Super Collision Damage Waiver</span>
+                                                     <span class="bold">Theft Protection</span>
                                                 </td>
                                                 <td class="align_text_center">
                                                     <div class="badge badge-lg rounded-pill bg-secondary">YES</div>
@@ -361,26 +370,10 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
-                                                    <span class="bold">Theft Protection</span>
+                                                     <span class="bold">Gravel Protection</span>
                                                 </td>
                                                 <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-secondary">YES</div>
-                                                </td>
-                                                <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-warning">YES</div>
-                                                </td>
-                                                <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
-                                                    <span class="bold">Gravel Protection</span>
-                                                </td>
-                                                <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                    <div class="">-</div>
                                                 </td>
                                                 <td class="align_text_center">
                                                     <div class="badge badge-lg rounded-pill bg-warning">YES</div>
@@ -391,11 +384,10 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
                                                     <span class="bold">Sand &amp; Ash Protection</span>
                                                 </td>
                                                 <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                    <div class="">-</div>
                                                 </td>
                                                 <td class="align_text_center">
                                                     <div class="badge badge-lg rounded-pill bg-warning">YES</div>
@@ -406,11 +398,10 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
                                                     <span class="bold">Tire Insurance</span>
                                                 </td>
                                                 <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                    <div class="">-</div>
                                                 </td>
                                                 <td class="align_text_center">
                                                     <div class="badge badge-lg rounded-pill bg-warning">YES</div>
@@ -421,14 +412,13 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
                                                     <span class="bold">River Crossing Protection</span>
                                                 </td>
                                                 <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                    <div class="">-</div>
                                                 </td>
                                                 <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-warning"></div>
+                                                    <div class="">-</div>
                                                 </td>
                                                 <td class="align_text_center">
                                                     <div class="badge badge-lg rounded-pill bg-primary">YES</div>
@@ -436,29 +426,13 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
                                                     <span class="bold">F-road Insurance</span>
                                                 </td>
                                                 <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                    <div class="">-</div>
                                                 </td>
                                                 <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-warning"></div>
-                                                </td>
-                                                <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
-                                                    <span class="bold">Damages caused by Animals</span>
-                                                </td>
-                                                <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
-                                                </td>
-                                                <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-warning"></div>
+                                                    <div class="">-</div>
                                                 </td>
                                                 <td class="align_text_center">
                                                     <div class="badge badge-lg rounded-pill bg-primary">YES</div>
@@ -466,15 +440,28 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
+                                                   <span class="bold">Damages caused by Animals</span>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="">-</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="">-</div>
+                                                </td>
+                                                <td class="align_text_center">
+                                                    <div class="badge badge-lg rounded-pill bg-primary">YES</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
                                                     <span class="bold">Towing cost - Deductible : 35.000 ISK</span>
                                                 </td>
                                                 </td>
                                                 <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                    <div class="">-</div>
                                                 </td>
                                                 <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-warning"></div>
+                                                    <div class="">-</div>
                                                 </td>
                                                 <td class="align_text_center">
                                                     <div class="badge badge-lg rounded-pill bg-primary">YES</div>
@@ -482,15 +469,14 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
                                                     <span class="bold">Damages Not covered by any
                                                         Insurance</span>
                                                 </td>
                                                 <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-secondary"></div>
+                                                    <div class="">-</div>
                                                 </td>
                                                 <td class="align_text_center">
-                                                    <div class="badge badge-lg rounded-pill bg-warning"></div>
+                                                    <div class="">-</div>
                                                 </td>
                                                 <td class="align_text_center">
                                                     <div class="badge badge-lg rounded-pill bg-primary">YES</div>
@@ -498,8 +484,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
-                                                    <span class="bold">Insurance Deductible</span>
+                                                   <span class="bold">Insurance Deductible</span>
                                                 </td>
                                                 </td>
                                                 <td class="align_text_center">
@@ -514,8 +499,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
-                                                    <span class="bold">Prices</span>
+                                                   <span class="bold">Prices</span>
                                                 </td>
                                                 <td class="align_text_center">
                                                     <div class="badge badge-lg rounded-pill bg-success">0 ISK / Daily</div>
@@ -531,7 +515,6 @@
                                             </tr>
                                             <tr class="carinfo_inputs_label p-1">
                                                 <td class="ml-1 fs-16">
-                                                    <span class="d-lg-none d-sm-block">INSURANCE COVERAGE</span>
                                                     <span class="bold">SELECT INSURANCE</span>
                                                 </td>
                                                 <td class="align_text_center">
@@ -555,7 +538,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-
+                                    </div>
 
                                 </div>
 
@@ -1619,6 +1602,7 @@
             });
         });
         // validate personal email already exit or not open
+        
     </script>
     <!-- content close -->
 @endsection
