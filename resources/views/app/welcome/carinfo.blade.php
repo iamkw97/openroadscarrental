@@ -180,7 +180,7 @@
                                 <div class="col-lg-6">
                                     <div id="slider-carousel" class="owl-carousel">
                                         <div class="item">
-                                            <img src="{{ asset('img/cars/' . $selected_car_img->vehicle_image) }}"
+                                            <img src="{{ asset('img/cars/' . $selected_car_info->vehicle_image) }}"
                                                 alt="">
                                         </div>
                                     </div>
@@ -562,7 +562,7 @@
                                             <h4 class="carinfo_inputs_label">{{ $selected_car_info->displaying_name }}
                                             </h4>
                                             <div class="my-2"></div>
-                                            <img src="{{ asset('img/cars/' . $selected_car_img->vehicle_image) }}"
+                                            <img src="{{ asset('img/cars/' . $selected_car_info->vehicle_image) }}"
                                                 alt="">
                                         </div>
                                         <div class="spacer-20"></div>
@@ -748,7 +748,7 @@
                                             <h4 class="carinfo_inputs_label">{{ $selected_car_info->displaying_name }}
                                             </h4>
                                             <div class="my-2"></div>
-                                            <img src="{{ asset('img/cars/' . $selected_car_img->vehicle_image) }}"
+                                            <img src="{{ asset('img/cars/' . $selected_car_info->vehicle_image) }}"
                                                 alt="">
                                         </div>
                                         <div class="spacer-20"></div>
@@ -1007,7 +1007,7 @@
                                             <h4 class="carinfo_inputs_label">{{ $selected_car_info->displaying_name }}
                                             </h4>
                                             <div class="my-2"></div>
-                                            <img src="{{ asset('img/cars/' . $selected_car_img->vehicle_image) }}"
+                                            <img src="{{ asset('img/cars/' . $selected_car_info->vehicle_image) }}"
                                                 alt="">
                                         </div>
                                         <div class="spacer-20"></div>
@@ -1401,7 +1401,7 @@
         // pass data into backend open
         $("#btn_confirm_booking").on("click", function(e) {
             e.preventDefault();
-console.log(1);
+
             // Perform input field validations
             // Clear previous error messages
             $(".errmsg").text("");
@@ -1469,8 +1469,7 @@ console.log(1);
                 $("#error_msg_license_img").text("License Image is required.");
                 isValid = false;
             }
-            
-            console.log(2);
+
             // Get vehicle ID
             var car_id = $("#vehicle_ID").val();
             // Get tour details
@@ -1502,7 +1501,7 @@ console.log(1);
             var license_no = $("#license_no").val();
             var password = $("#password").val();
             var repassword = $("#repassword").val();
-            console.log(3);
+
             // Create a FormData object and append data
             var formData = new FormData();
 
@@ -1530,7 +1529,7 @@ console.log(1);
             formData.append("license_no", license_no);
             formData.append("password", password);
             formData.append("repassword", repassword);
-            console.log(4);
+
             // Make an AJAX request to submit the form data
             $.ajax({
                 type: "POST",

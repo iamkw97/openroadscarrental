@@ -113,98 +113,99 @@
                                 winter</strong></p>
                     </div>
 
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 mb-5">
                         <div class="spacer-single sm-hide"></div>
+<div class="my-4">
+    <form name="form_home_input" id='form_home_input' method="post">
+        <div class="col-md-12">
+            <div class="row my-1">
+                <div class="col-md-6">
+                    <div class="p-2 my-1 rounded-3 shadow-soft">
+                        <p class="home_inputs_label">Pick Up Location</p>
+                        <select class="home_inputs form-control" name="home_pickup_location"
+                            id="home_pickup_location" placeholder="Enter your pickup location"
+                            autocomplete="off" class="form-control">
+                            <option selected disabled>Select Location</option>
+                            <option value="KEF-AIRPORT">KEF AIRPORT</option>
+                            <option value="REYKJAVIK">REYKJAVIK</option>
+                        </select>
+                        <div class="home_input_error_msg" id="home_pickup_location_error"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-2 my-1 rounded-3 shadow-soft">
+                        <p class="home_inputs_label">Drop Off Location</p>
+                        <select class="home_inputs form-control" name="home_dropoff_location"
+                            id="home_dropoff_location" placeholder="Enter your pickup location"
+                            autocomplete="off" class="form-control">
+                            <option selected disabled>Select Location</option>
+                            <option value="REYKJAVIK">REYKJAVIK</option>
+                            <option value="KEF-AIRPORT">KEF AIRPORT</option>
+                            <option value="same_location">[Return to the same location]</option>
+                        </select>
+                        <div class="home_input_error_msg" id="home_dropoff_location_error"></div>
+                    </div>
+                </div>
+            </div>
 
-                        <form name="form_home_input" id='form_home_input' method="post">
-                            <div class="col-md-12">
-                                <div class="row my-1">
-                                    <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p class="home_inputs_label">Pick Up Location</p>
-                                            <select class="home_inputs form-control" name="home_pickup_location"
-                                                id="home_pickup_location" placeholder="Enter your pickup location"
-                                                autocomplete="off" class="form-control">
-                                                <option selected disabled>Select Location</option>
-                                                <option value="KEF-AIRPORT">KEF AIRPORT</option>
-                                                <option value="REYKJAVIK">REYKJAVIK</option>
-                                            </select>
-                                            <div class="home_input_error_msg" id="home_pickup_location_error"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p class="home_inputs_label">Drop Off Location</p>
-                                            <select class="home_inputs form-control" name="home_dropoff_location"
-                                                id="home_dropoff_location" placeholder="Enter your pickup location"
-                                                autocomplete="off" class="form-control">
-                                                <option selected disabled>Select Location</option>
-                                                <option value="REYKJAVIK">REYKJAVIK</option>
-                                                <option value="KEF-AIRPORT">KEF AIRPORT</option>
-                                                <option value="same_location">[Return to the same location]</option>
-                                            </select>
-                                            <div class="home_input_error_msg" id="home_dropoff_location_error"></div>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="row  my-1">
+                <div class="col-md-6">
+                    <div class="p-2 my-1 rounded-3 shadow-soft">
+                        <p class="home_inputs_label">Pick Up Date</p>
+                        <div class="date-time-field">
+                            <input class="home_inputs form-control" type="date" id="home_pickup_date"
+                                name="home_pickup_date">
+                            <div class="home_input_error_msg" id="home_pickup_date_error"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-2 my-1 rounded-3 shadow-soft">
+                        <p class="home_inputs_label">Return Date</p>
+                        <div class="date-time-field">
+                            <input class="home_inputs form-control" type="date" id="home_return_date"
+                                name="home_return_date">
+                            <div class="home_input_error_msg" id="home_return_date_error"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                                <div class="row  my-1">
-                                    <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p class="home_inputs_label">Pick Up Date</p>
-                                            <div class="date-time-field">
-                                                <input class="home_inputs form-control" type="date" id="home_pickup_date"
-                                                    name="home_pickup_date">
-                                                <div class="home_input_error_msg" id="home_pickup_date_error"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p class="home_inputs_label">Return Date</p>
-                                            <div class="date-time-field">
-                                                <input class="home_inputs form-control" type="date" id="home_return_date"
-                                                    name="home_return_date">
-                                                <div class="home_input_error_msg" id="home_return_date_error"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="row  mt-2 mb-2">
+                <div class="col-md-6">
+                    <div class="p-2 my-1 rounded-3 shadow-soft">
+                        <p class="home_inputs_label">Pick Up Time</p>
+                        <div class="date-time-field">
+                            <input class="home_inputs form-control" type="time"
+                                name="home_pickup_time" id="home_pickup_time">
+                            <div class="home_input_error_msg" id="home_pickup_time_error"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-2 my-1 rounded-3 shadow-soft">
+                        <p class="home_inputs_label">Return Time</p>
+                        <div class="date-time-field">
+                            <input class="home_inputs form-control" type="time"
+                                name="home_return_time" id="home_return_time">
+                            <div class="home_input_error_msg" id="home_return_time_error"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                                <div class="row  mt-2 mb-2">
-                                    <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p class="home_inputs_label">Pick Up Time</p>
-                                            <div class="date-time-field">
-                                                <input class="home_inputs form-control" type="time"
-                                                    name="home_pickup_time" id="home_pickup_time">
-                                                <div class="home_input_error_msg" id="home_pickup_time_error"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="p-2 my-1 rounded-3 shadow-soft">
-                                            <p class="home_inputs_label">Return Time</p>
-                                            <div class="date-time-field">
-                                                <input class="home_inputs form-control" type="time"
-                                                    name="home_return_time" id="home_return_time">
-                                                <div class="home_input_error_msg" id="home_return_time_error"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row mt-3">
-                                    <div class="col-md-12">
-                                        <button type='button' id='btn_home_input' class="btn-main pull-right"
-                                            style="background-color:#004EC2">
-                                            Find a Vehicle
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </form>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <button type='button' id='btn_home_input' class="btn-main pull-right"
+                        style="background-color:#004EC2">
+                        Find a Vehicle
+                    </button>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </form>
+</div>
                     </div>
                 </div>
             </div>
@@ -867,18 +868,21 @@
                 if (!home_pickup_time) {
                     displayErrorMessage('home_pickup_time', 'Please select a pickup time');
                     isValid = false;
-                } else if (!isFutureTime(home_pickup_date, home_pickup_time)) {
-                    displayErrorMessage('home_pickup_time', 'Pickup time should be in the future');
-                    isValid = false;
                 }
+                // else if (!isFutureTime(home_pickup_date, home_pickup_time)) {
+                //     displayErrorMessage('home_pickup_time', 'Pickup time should be in the future');
+                //     isValid = false;
+                // }
 
                 if (!home_return_time) {
                     displayErrorMessage('home_return_time', 'Please select a return time');
                     isValid = false;
-                } else if (!isFutureTime(home_return_date, home_return_time)) {
-                    displayErrorMessage('home_return_time', 'Return time should be in the future');
-                    isValid = false;
                 }
+
+                // else if (!isFutureTime(home_return_date, home_return_time)) {
+                //     displayErrorMessage('home_return_time', 'Return time should be in the future');
+                //     isValid = false;
+                // }
 
                 // If all validations pass, create sessions
                 if (isValid) {

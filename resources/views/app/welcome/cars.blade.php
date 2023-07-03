@@ -457,6 +457,7 @@
                         var vehicle_id = $(this).attr('id');
                         event.preventDefault();
 
+
                         // Reset error messages
                         resetErrorMessages();
 
@@ -510,21 +511,23 @@
                             displayErrorMessage('cars_pickup_time',
                                 'Please select a pickup time');
                             isValid = false;
-                        } else if (!isFutureTime(cars_pickup_date, cars_pickup_time)) {
-                            displayErrorMessage('cars_pickup_time',
-                                'Pickup time should be in the future');
-                            isValid = false;
                         }
+                        // else if (!isFutureTime(cars_pickup_date, cars_pickup_time)) {
+                        //     displayErrorMessage('cars_pickup_time',
+                        //         'Pickup time should be in the future');
+                        //     isValid = false;
+                        // }
 
                         if (!cars_return_time) {
                             displayErrorMessage('cars_return_time',
                                 'Please select a return time');
                             isValid = false;
-                        } else if (!isFutureTime(cars_return_date, cars_return_time)) {
-                            displayErrorMessage('cars_return_time',
-                                'Return time should be in the future');
-                            isValid = false;
                         }
+                        // else if (!isFutureTime(cars_return_date, cars_return_time)) {
+                        //     displayErrorMessage('cars_return_time',
+                        //         'Return time should be in the future');
+                        //     isValid = false;
+                        // }
 
                         // If all validations pass, create sessions
                         if (isValid) {

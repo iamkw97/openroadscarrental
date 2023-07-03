@@ -65,10 +65,13 @@ class BaseController extends Controller
 
     public function carInfo(Request $request, $id)
     {
+
         $selected_car_info = Car::leftJoin('car_prices', 'cars.id', '=', 'car_prices.car_id')
             ->leftJoin('car_availabilities', 'cars.id', '=', 'car_availabilities.car_id')
+            ->leftJoin('car_images', 'cars.id', '=', 'car_images.car_id')
             ->select(
                 'cars.*',
+                'car_images.vehicle_image',
                 'car_prices.apr2sep_isk_cost_rental_per_day',
                 'car_prices.apr2sep_usd_cost_rental_per_day',
                 'car_prices.apr2sep_eur_cost_rental_per_day',
@@ -77,10 +80,6 @@ class BaseController extends Controller
                 'car_prices.sep2apr_eur_cost_rental_per_day'
             )
             ->where('cars.id', $id)
-            ->first();
-        $selected_car_img  = Car::find($id)
-            ->join('car_images', 'cars.id', '=', 'car_images.car_id')
-            ->select('car_images.vehicle_image')
             ->first();
 
         $currentDate = Carbon::now();
@@ -93,7 +92,7 @@ class BaseController extends Controller
             $rental_cost_isk = $selected_car_info->sep2apr_isk_cost_rental_per_day;
         }
 
-        return view('app.welcome.carinfo', compact('selected_car_info', 'selected_car_img', 'rental_cost_isk'));
+        return view('app.welcome.carinfo', compact('selected_car_info', 'rental_cost_isk'));
     }
 
     public function booking()
