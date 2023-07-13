@@ -1108,7 +1108,7 @@
                                         <div class="p-2 mt-2">
                                             <p style="text-align: center; color:rgb(15, 166, 7); font-size:18px;"><span
                                                     style="color:red;">*</span>PLEASE NOTE : <strong>THE PAYMENTS ARE DONE
-                                                    IN CASH AFTER YOU RECEIVE THE CAR AT THE AIRPORT.</strong></p>
+                                                    IN CASH OR CARD AFTER YOU RECEIVE THE CAR AT THE AIRPORT.</strong></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1602,7 +1602,7 @@
             });
         });
         // validate personal email already exit or not open
-        
+
     </script>
     <!-- content close -->
 @endsection
